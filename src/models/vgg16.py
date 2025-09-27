@@ -11,7 +11,7 @@ import torch.nn as nn
 #implementation
 
 class VGG16(nn.Module):
-    def __init__(self, num_classes=1000):
+    def __init__(self, num_classes=200):
         super(VGG16, self).__init__()
         
         # feature extractor
@@ -60,7 +60,7 @@ class VGG16(nn.Module):
         
         # classifier
         self.classifier = nn.Sequential(
-            nn.Linear(512 * 7 * 7, 4096),  # assuming 224x224 entry
+            nn.Linear(512 * 2 * 2, 4096),  # 64x64 input(tinyImagenet)
             nn.ReLU(inplace=True),
             nn.Dropout(),
             nn.Linear(4096, 4096),
