@@ -4,73 +4,100 @@
 ### Functions that manage the training workflow
 ###
 
-# imports
 import torch
 import torch.nn as nn
 import torch.optim as optim
-import time
+from torch.utils.data import DataLoader
+from tqdm import tqdm
+import os
+from ..utils import data_loader, logging, performance
+from . import inference_pipeline # Para avaliação final
 
-# hyperparams
-target_accuracy_percentage = 90
-learning_rate = 0.001
-num_epochs = 300
+def get_model(model_name: str, num_classes: int) -> torch.nn.Module:
+    """
+    Factory function to instantiate a model based on its name.
+    Dynamically loads the model module to keep this function clean.
+    """
+    try:
+        # Constrói o caminho para o módulo do modelo
+        module_path = f"src.models.{model_name.lower()}"
+        model_module = __import__(module_path, fromlist=[''])
+        
+        # Pega a classe do modelo (assumindo que o nome da classe é o mesmo que o nome do arquivo, capitalizado)
+        model_class = getattr(model_module, model_name.upper())
+        
+        return model_class(num_classes=num_classes)
+    except (ImportError, AttributeError):
+        raise ValueError(f"Modelo '{model_name}' não encontrado ou o módulo não tem a classe correspondente.")
 
 
-# implementations
-class Trainer:
-    def __init__(self, model, trainloader, testloader, device=None, lr=learning_rate, epochs=num_epochs):
-        self.device = device or ("cuda" if torch.cuda.is_available() else "cpu")
-        self.model = model.to(self.device)
-        self.trainloader = trainloader
-        self.testloader = testloader
-        self.criterion = nn.CrossEntropyLoss()
-        self.optimizer = optim.Adam(self.model.parameters(), lr=lr)
-        self.epochs = epochs
-        self.history = {"loss": [], "acc": []}
+def run_training(
+    model_name: str,
+    train_data_path: str,
+    val_data_path: str,
+    config: dict,
+    device: torch.device,
+    logger: logging.Logger
+) -> str:
+    """
+    Executes the full training and validation cycle for a model.
+    
+    Args:
+        model_name: Name of the model architecture.
+        train_data_path: Path to the training data.
+        val_data_path: Path to the validation data.
+        config: Dictionary with hyperparameters (learning_rate, epochs, batch_size).
+        device: The device to train on (CPU or CUDA).
+        logger: The logger object for tracking.
+        
+    Returns:
+        Path to the saved trained model.
+    """
+    # Carrega os DataLoaders
+    train_loader = data_loader.get_dataloader(train_data_path, config['batch_size'], shuffle=True)
+    val_loader = data_loader.get_dataloader(val_data_path, config['batch_size'], shuffle=False)
 
-    # trains the model until it reaches 90% or epochs.
-    def train(self, target_acc=target_accuracy_percentage):
-        for epoch in range(self.epochs):
-            self.model.train()
-            running_loss = 0.0
-            start = time.time()
+    # Instancia o modelo, otimizador e função de perda
+    model = get_model(model_name, config['num_classes']).to(device)
+    optimizer = optim.Adam(model.parameters(), lr=config['learning_rate'])
+    criterion = nn.CrossEntropyLoss()
 
-            for images, labels in self.trainloader:
-                images, labels = images.to(self.device), labels.to(self.device)
+    logger.info(f"Iniciando treinamento do modelo {model_name} no dispositivo {device}.")
+    perf_monitor = performance.PerformanceMonitor()
+    perf_monitor.start()
 
-                outputs = self.model(images)
-                loss = self.criterion(outputs, labels)
+    for epoch in range(config['epochs']):
+        model.train()
+        epoch_loss = 0
+        progress_bar = tqdm(train_loader, desc=f"Epoch {epoch+1}/{config['epochs']}", leave=False)
+        
+        for inputs, labels in progress_bar:
+            inputs, labels = inputs.to(device), labels.to(device)
+            
+            optimizer.zero_grad()
+            outputs = model(outputs)
+            loss = criterion(outputs, labels)
+            loss.backward()
+            optimizer.step()
+            
+            epoch_loss += loss.item()
+            progress_bar.set_postfix(loss=f"{loss.item():.4f}")
 
-                self.optimizer.zero_grad()
-                loss.backward()
-                self.optimizer.step()
+        avg_epoch_loss = epoch_loss / len(train_loader)
+        logger.info(f"Época {epoch+1} concluída. Loss média: {avg_epoch_loss:.4f}")
 
-                running_loss += loss.item()
+        # Avaliação no final de cada época (opcional, mas recomendado)
+        inference_pipeline.run_inference(model, val_loader, device, logger)
 
-            # evaluating on test set
-            acc = self.evaluate()
-            elapsed = time.time() - start
+    training_perf_metrics = perf_monitor.stop()
+    logger.info("Métricas de performance do treinamento:")
+    logging.log_results(logger, training_perf_metrics)
 
-            avg_loss = running_loss / len(self.trainloader)
-            self.history["loss"].append(avg_loss)
-            self.history["acc"].append(acc)
-
-            print(f"Epoch {epoch+1}/{self.epochs} | Loss {avg_loss:.4f} | Test Acc {acc:.2f}% | {elapsed:.2f}s")
-
-            # test stopping
-            if acc >= target_acc:
-                print(f"{acc:.2f}% accuracy on test (>= {target_acc}%)\n stopping the training...")
-                break
-
-    # evaluates the model on test set and returns the accuracy
-    def evaluate(self):
-        self.model.eval()
-        correct, total = 0, 0
-        with torch.no_grad():
-            for images, labels in self.testloader:
-                images, labels = images.to(self.device), labels.to(self.device)
-                outputs = self.model(images)
-                _, preds = torch.max(outputs, 1)
-                total += labels.size(0)
-                correct += (preds == labels).sum().item()
-        return 100 * correct / total
+    # Salva o modelo treinado
+    save_dir = "trained_models"
+    os.makedirs(save_dir, exist_ok=True)
+    model_save_path = os.path.join(save_dir, f"{model_name}_final.pth")
+    torch.save(model.state_dict(), model_save_path)
+    logger.info(f"Modelo salvo em: {model_save_path}")
+    
+    return model_save_path
