@@ -1,17 +1,32 @@
+;; manifest.scm
 (use-modules (guix)
              (gnu packages python-xyz)
              (gnu packages machine-learning)
-             (gnu packages data-science) ; Módulo para numpy/pandas
-             (gnu packages plotting)     ; Módulo para matplotlib
-             (gnu packages cuda))
+             (gnu packages data-science)
+             (gnu packages plotting)
+             (gnu packages cuda)
+             (gnu packages compression))
 
+;; Lista completa de pacotes para o projeto de análise de performance de CNNs
 (specification->manifest
-  '("python"
+  '(;; Core
+    "python"
     "python-psutil"
+    "python-pynvml"
+    
+    ;; PyTorch e CUDA
     "pytorch-cudatoolkit"
     "pytorch-cuda"
     "python-torchvision"
+    
+    ;; Análise e Manipulação de Dados
     "python-numpy"
     "python-pandas"
+    "python-scikit-learn"
+    
+    ;; Visualização e Utilitários
     "python-matplotlib"
-    "python-pillow"))
+    "python-seaborn"
+    "python-tqdm"
+    "python-pillow"
+    "python-yaml"))
