@@ -1,0 +1,11 @@
+# Configurações para teste local rápido
+model_params:
+  num_classes: 200
+
+train_params:
+  epochs: 2  # Poucas épocas para teste rápido
+  batch_size: 8 # Batch size pequeno para não consumir muita memória
+  learning_rate: 0.001
+
+inference_params:
+  batch_size: 16
