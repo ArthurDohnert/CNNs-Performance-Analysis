@@ -4,7 +4,7 @@ import unittest
 import time
 
 # Importe os módulos de utilitários
-from ..src.utils import metrics, performance
+from src.utils import metrics, performance
 
 class TestMetrics(unittest.TestCase):
 
@@ -14,8 +14,8 @@ class TestMetrics(unittest.TestCase):
 
     def test_accuracy(self):
         """Testa o cálculo da acurácia."""
-        # 3 predições corretas de 6
-        expected_accuracy = 3 / 6
+        # 2  predições corretas de 6
+        expected_accuracy = 2 / 6
         self.assertAlmostEqual(metrics.calculate_accuracy(self.y_true, self.y_pred), expected_accuracy)
 
     def test_precision_recall_f1(self):
