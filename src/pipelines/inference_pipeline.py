@@ -7,7 +7,10 @@
 import torch
 from torch.utils.data import DataLoader
 from tqdm import tqdm
-from ..utils import metrics, performance, logging
+import logging
+from ..utils import metrics, performance, logging as custom_logging
+
+logging.basicConfig(level=logging.INFO)
 
 def run_inference(
     model: torch.nn.Module, 
@@ -46,6 +49,6 @@ def run_inference(
     }
 
     final_metrics = {**perf_metrics, **quality_metrics}
-    logging.log_results(logger, final_metrics)
+    custom_logging.log_results(logger, final_metrics)
     
     return final_metrics
