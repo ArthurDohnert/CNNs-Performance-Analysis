@@ -1,77 +1,105 @@
 # src/utils/performance.py
 
-
 ###
-### Functions that measure computational performance metrics
+### Functions that measure an extensive set of computational performance metrics
 ###
 
-
-# imports
 import time
 import psutil
 import torch
-import pynvml # Para métricas mais detalhadas da GPU
-
-# Inicializa o NVML para monitoramento da GPU
-pynvml.nvmlInit()
-handle = pynvml.nvmlDeviceGetHandleByIndex(0) # Assumindo GPU 0
-
-
-# implementations
+import pynvml # Importa a biblioteca de monitoramento da NVIDIA
 
 class PerformanceMonitor:
     """
-    A utility class to monitor computational performance (time, CPU, RAM, VRAM).
+    Monitors a comprehensive set of computational performance metrics for a process.
+    This version includes detailed GPU metrics like power, temperature, and utilization.
     """
-    def __init__(self):
+
+    def __init__(self, gpu_index: int = 0):
         self.start_time = None
-        self.end_time = None
-        
-        # CPU
-        self.cpu_usage_start = None
-        
-        # Memória RAM
-        self.ram_usage_start = None
-        
-        # Memória VRAM (GPU)
-        self.vram_usage_start = None
+        self.process = psutil.Process()
+        self.gpu_handle = None
+
+        # Inicializa o NVML para monitoramento da GPU
+        if torch.cuda.is_available():
+            try:
+                pynvml.nvmlInit()
+                self.gpu_handle = pynvml.nvmlDeviceGetHandleByIndex(gpu_index)
+            except pynvml.NVMLError as error:
+                print(f"Erro ao inicializar NVML: {error}. As métricas de GPU (energia, temp) não estarão disponíveis.")
+                self.gpu_handle = None
 
     def start(self):
         """Starts the monitoring timers and records initial resource usage."""
-        self.cpu_usage_start = psutil.cpu_percent(interval=None)
-        self.ram_usage_start = psutil.virtual_memory().used
-        if torch.cuda.is_available():
-            self.vram_usage_start = pynvml.nvmlDeviceGetMemoryInfo(handle).used
-            
+        # Reseta as estatísticas de pico de memória da GPU
+        if self.gpu_handle:
+            torch.cuda.reset_peak_memory_stats()
+            torch.cuda.synchronize()
+        
+        # Captura os valores iniciais dos contadores
+        self.disk_io_start = psutil.disk_io_counters()
+        self.process.cpu_percent(interval=None) # Inicia o contador de CPU
+        
         self.start_time = time.perf_counter()
 
     def stop(self) -> dict:
         """
-        Stops the timers, records final resource usage, and returns a dictionary of metrics.
+        Stops the timers and returns a dictionary of all collected metrics.
         """
-        self.end_time = time.perf_counter()
-        
-        # Captura final do uso de recursos
-        final_cpu_usage = psutil.cpu_percent(interval=None)
-        final_ram_usage = psutil.virtual_memory().used
-        final_vram_usage = 0
-        if torch.cuda.is_available():
-            final_vram_usage = pynvml.nvmlDeviceGetMemoryInfo(handle).used
+        if self.gpu_handle:
+            torch.cuda.synchronize()
+            
+        end_time = time.perf_counter()
 
-        # Calcula as métricas
-        elapsed_time = self.end_time - self.start_time
-        cpu_usage = final_cpu_usage - self.cpu_usage_start
-        ram_usage_bytes = final_ram_usage - self.ram_usage_start
-        vram_usage_bytes = 0
-        if self.vram_usage_start is not None:
-             vram_usage_bytes = final_vram_usage - self.vram_usage_start
+        # --- Coleta de Todas as Métricas ---
+
+        # 1. Tempo
+        elapsed_time = end_time - self.start_time
+        
+        # 2. CPU
+        cpu_usage = self.process.cpu_percent(interval=None) / psutil.cpu_count()
+        
+        # 3. RAM
+        ram_peak_usage_bytes = self.process.memory_info().rss
+        
+        # 4. Disco I/O
+        disk_io_end = psutil.disk_io_counters()
+        disk_read_bytes = disk_io_end.read_bytes - self.disk_io_start.read_bytes
+        disk_write_bytes = disk_io_end.write_bytes - self.disk_io_start.write_bytes
+
+        # --- Métricas Detalhadas da GPU (se disponível) ---
+        vram_peak_usage_bytes = 0
+        gpu_power_watts = 0
+        gpu_temp_celsius = 0
+        gpu_utilization_percent = 0
+
+        if self.gpu_handle:
+            vram_peak_usage_bytes = torch.cuda.max_memory_allocated()
+            gpu_power_watts = pynvml.nvmlDeviceGetPowerUsage(self.gpu_handle) / 1000.0  # Convertido para Watts
+            gpu_temp_celsius = pynvml.nvmlDeviceGetTemperature(self.gpu_handle, pynvml.NVML_TEMPERATURE_GPU)
+            gpu_utilization_percent = pynvml.nvmlDeviceGetUtilizationRates(self.gpu_handle).gpu
 
         return {
+            # Métricas Principais
             "elapsed_time_seconds": elapsed_time,
             "cpu_usage_percent": cpu_usage,
-            "ram_usage_bytes": ram_usage_bytes,
-            "vram_usage_bytes": vram_usage_bytes
+            "ram_peak_usage_bytes": ram_peak_usage_bytes,
+            "vram_peak_usage_bytes": vram_peak_usage_bytes,
+            
+            # Métricas Detalhadas da GPU
+            "gpu_power_watts": gpu_power_watts,
+            "gpu_temp_celsius": gpu_temp_celsius,
+            "gpu_utilization_percent": gpu_utilization_percent,
+            
+            # Métricas de I/O
+            "disk_read_bytes": disk_read_bytes,
+            "disk_write_bytes": disk_write_bytes,
         }
 
-# Lembre-se de chamar pynvml.nvmlShutdown() no final do seu script principal
-# para liberar os recursos do NVML.
+    def shutdown(self):
+        """Shuts down the NVML library to release resources."""
+        if self.gpu_handle:
+            try:
+                pynvml.nvmlShutdown()
+            except pynvml.NVMLError as error:
+                print(f"Erro ao finalizar NVML: {error}")
