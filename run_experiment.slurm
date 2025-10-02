@@ -38,7 +38,7 @@ fi
 guix shell -m manifest.scm -- \
      python -m src.main \
             --model_name "$MODEL_NAME" \
-            --config_path "configs/base_config.yaml" \
+            --config_path "configs/pcad_config.yaml" \
             --train_data_path "/path/to/your/tiny-imagenet-200/train" \
             --val_data_path "/path/to/your/tiny-imagenet-200/val"
 
