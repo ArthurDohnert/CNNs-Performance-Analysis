@@ -39,8 +39,8 @@ guix shell -m manifest.scm -- \
      python -m src.main \
             --model_name "$MODEL_NAME" \
             --config_path "configs/pcad_config.yaml" \
-            --train_data_path "/home/user/ehdmenezes/datasets/tiny-imagenet-200/train" \
-            --val_data_path "/home/user/ehdmenezes/datasets/tiny-imagenet-200/val"
+            --train_data_path "/home/users/ehdmenezes/datasets/tiny-imagenet-200/train" \
+            --val_data_path "/home/users/ehdmenezes/datasets/tiny-imagenet-200/val"
 
 echo "========================================================="
 echo "JOB CONCLUÍDO"
