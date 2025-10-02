@@ -12,21 +12,21 @@ mkdir -p logs
 ALL_MODELS=(
     # --- Lightweight ---
     "MobileNetV1"
-    "SqueezeNet"
-    "ShuffleNetV2"
-    "EfficientNetB0"
+    #"SqueezeNet"
+    #"ShuffleNetV2"
+    #"EfficientNetB0"
     
     # --- Medium-Weight ---
-    "VGG16"
-    "ResNet34"
-    "InceptionV3"
-    "DenseNet121"
+    "vgg16"
+    #"ResNet34"
+    #"InceptionV3"
+    #"DenseNet121"
     
     # --- Heavyweight ---
-    "ResNet101"
-    "InceptionV4"
-    "Xception"
-    "EfficientNetB7"
+    "resnet101"
+    #"InceptionV4"
+    #"Xception"
+    #"EfficientNetB7"
 )
 
 # Loop para submeter um job para cada modelo
