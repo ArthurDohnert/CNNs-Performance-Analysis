@@ -29,4 +29,5 @@
     "python-seaborn"
     "python-tqdm"
     "python-pillow"
-    "python-yaml"))
+    "python-yaml"
+    "python-tabulate"))
