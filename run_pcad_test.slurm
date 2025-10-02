@@ -18,8 +18,8 @@ echo "Nó alocado: $(hostname)"
 echo "Data de início: $(date)"
 echo "========================================================="
 
-DATASET_PATH_TRAIN="/home/user/ehdmenezes/datasets/tiny-imagenet-200/train"
-DATASET_PATH_VAL="/home/user/ehdmenezes/datasets/tiny-imagenet-200/val"
+DATASET_PATH_TRAIN="/home/users/ehdmenezes/datasets/tiny-imagenet-200/train"
+DATASET_PATH_VAL="/home/users/ehdmenezes/datasets/tiny-imagenet-200/val"
 
 # Comando principal
 # Executa o main.py usando o Guix, com o modelo MobileNetV1 e o config de teste
