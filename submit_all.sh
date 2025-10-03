@@ -1,50 +1,56 @@
 #!/bin/bash
 
 echo "========================================================="
-echo "INICIANDO SUBMISSÃO DE TODOS OS JOBS DE TREINAMENTO"
+echo "INICIANDO SUBMISSÃO DE JOBS COM TEMPO DE EXECUÇÃO DINÂMICO"
 echo "========================================================="
 
-# Garante que o diretório de logs existe
 mkdir -p logs
 
-# Lista completa de modelos para o estudo de performance
-# (Use os nomes exatos esperados pelo seu 'get_model')
-ALL_MODELS=(
-    # --- Lightweight ---
-    "MobileNetV1"
-    #"SqueezeNet"
-    #"ShuffleNetV2"
-    #"EfficientNetB0"
+# --- MAPA DE TEMPOS DE EXECUÇÃO (Formato HH:MM:SS) ---
+# **AÇÃO NECESSÁRIA**: Ajuste estes tempos com base na sua experiência
+declare -A MODEL_EXECUTION_TIMES
+MODEL_EXECUTION_TIMES=(
+    # --- Lightweight Models (Ex: 2 horas) ---
+    ["MobileNetV1"]="02:00:00"
+    #["SqueezeNet"]="02:00:00"
+    #["ShuffleNetV2"]="02:00:00"
+    #["EfficientNetB0"]="03:00:00"
+
+    # --- Medium-Weight Models (Ex: 6 horas) ---
+    ["VGG16"]="06:00:00"
+    #["ResNet34"]="06:00:00"
+    #["InceptionV3"]="08:00:00"
+    #["DenseNet121"]="07:00:00"
     
-    # --- Medium-Weight ---
-    "vgg16"
-    #"ResNet34"
-    #"InceptionV3"
-    #"DenseNet121"
-    
-    # --- Heavyweight ---
-    "resnet101"
-    #"InceptionV4"
-    #"Xception"
-    #"EfficientNetB7"
+    # --- Heavyweight Models (Ex: 12-20 horas) ---
+    ["ResNet101"]="15:00:00"
+    #["InceptionV4"]="18:00:00"
+    #["Xception"]="16:00:00"
+    #["EfficientNetB7"]="20:00:00"
 )
 
-# Loop para submeter um job para cada modelo
-for model in "${ALL_MODELS[@]}"
-do
-    job_name="${model}_perf_test"
-    echo "-> Submetendo job: ${job_name}"
-    
-    # Comando sbatch:
-    # --job-name: Define um nome único para fácil identificação no 'squeue'
-    # Passa o nome do modelo como o primeiro argumento ($1) para o run_experiment.slurm
-    sbatch --job-name="${job_name}" run_experiment.slurm "${model}"
-    
-    # Pequena pausa para não sobrecarregar o escalonador do Slurm
-    sleep 1
+# Sementes aleatórias para as execuções independentes
+SEEDS=(10 20 30)
+
+# Loop para submeter um job para cada combinação de modelo e semente
+for model in "${!MODEL_EXECUTION_TIMES[@]}"; do
+    # Obtém o tempo de execução do mapa
+    execution_time=${MODEL_EXECUTION_TIMES[$model]}
+
+    for seed in "${SEEDS[@]}"; do
+        job_name="${model}_seed_${seed}"
+        echo "-> Submetendo job: ${job_name} | Tempo Limite: ${execution_time}"
+        
+        # Passa o tempo dinamicamente para o sbatch usando a flag --time
+        sbatch \
+            --job-name="${job_name}" \
+            --time="${execution_time}" \
+            run_experiment.slurm "${model}" "${seed}"
+        
+        sleep 1 # Evita sobrecarregar o escalonador
+    done
 done
 
 echo "========================================================="
-echo "Todos os jobs foram submetidos."
-echo "Use 'squeue -u <seu_usuario>' para monitorar o status."
+echo "Todos os jobs foram submetidos com tempos de execução personalizados."
 echo "========================================================="

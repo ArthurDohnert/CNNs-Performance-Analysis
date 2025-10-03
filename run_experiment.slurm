@@ -1,49 +1,43 @@
 #!/bin/bash
 
 # ==============================================================================
-# SCRIPT DE SUBMISSÃO SLURM PARA O PROJETO CNNS-PERFORMANCE-ANALYSIS
+# SCRIPT DE SUBMISSÃO SLURM GENÉRICO (TEMPO DEFINIDO NA CHAMADA)
 # ==============================================================================
 
-# --- Configurações do Job ---
-#SBATCH --job-name=cnn_experiment     # Nome padrão do job
-#SBATCH --partition=tupi              # Fila de execução 
-#SBATCH --nodes=1                     # Requisitar 1 nó 
-#SBATCH --ntasks=1                    # Requisitar 1 tarefa
-#SBATCH --gres=gpu:1                  # Requisitar 1 GPU neste nó
-#SBATCH --time=01:00:00               # Tempo máximo: 12 horas
-#SBATCH --output=logs/%x_%j.out       # Log de saída padrão (%x=nome, %j=ID)
-#SBATCH --error=logs/%x_%j.err        # Log de saída de erro
+# --- Configurações do Job (sem o tempo) ---
+#SBATCH --job-name=cnn_experiment     # Nome padrão, será sobrescrito
+#SBATCH --partition=tupi              # Fila para GPUs RTX 4090
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --gres=gpu:1
+#SBATCH --output=logs/%x_%j.out
+#SBATCH --error=logs/%x_%j.err
 
 # --- Ambiente e Execução ---
 echo "========================================================="
 echo "INICIANDO JOB SLURM"
-echo "Job ID: $SLURM_JOB_ID"
-echo "Job Name: $SLURM_JOB_NAME"
-echo "Nó alocado: $(hostname)"
-echo "Data de início: $(date)"
+echo "Job ID: $SLURM_JOB_ID | Job Name: $SLURM_JOB_NAME"
+echo "Nó alocado: $(hostname) | Data: $(date)"
+echo "Tempo requisitado: $SLURM_JOB_TIME_LIMIT"
 echo "========================================================="
 
-# Argumento recebido do 'sbatch': nome do modelo a ser treinado
+# Argumentos recebidos do 'sbatch'
 MODEL_NAME=$1
+SEED=$2 # Assumindo que você está usando a versão com semente
 
-# Verifica se o nome do modelo foi fornecido
-if [ -z "$MODEL_NAME" ]; then
-    echo "Erro: O nome do modelo não foi fornecido."
-    exit 1
-fi
+# **AÇÃO NECESSÁRIA**: Ajuste os caminhos abaixo para os seus diretórios no PCAD
+DATASET_PATH_TRAIN="/home/user/ehdmenezes/datasets/tiny-imagenet-200/train"
+DATASET_PATH_VAL="/home/user/ehdmenezes/datasets/tiny-imagenet-200/val"
 
-# Comando principal: Inicia o ambiente Guix e executa o script principal
-# Usamos 'python -m src.main' para que os imports relativos funcionem
-# O script principal recebe os argumentos e orquestra os pipelines
+# Comando principal
 guix shell -m manifest.scm -- \
      python -m src.main \
             --model_name "$MODEL_NAME" \
             --config_path "configs/pcad_config.yaml" \
-            --train_data_path "/home/users/ehdmenezes/datasets/tiny-imagenet-200/train" \
-            --val_data_path "/home/users/ehdmenezes/datasets/tiny-imagenet-200/val"
+            --train_data_path "$DATASET_PATH_TRAIN" \
+            --val_data_path "$DATASET_PATH_VAL" \
+            --seed "$SEED" # Não esqueça de passar a semente
 
 echo "========================================================="
-echo "JOB CONCLUÍDO"
-echo "Data de término: $(date)"
+echo "JOB CONCLUÍDO | Data: $(date)"
 echo "========================================================="
-

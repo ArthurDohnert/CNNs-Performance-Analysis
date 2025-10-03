@@ -10,6 +10,11 @@ import torch
 import yaml
 from datetime import datetime
 
+parser.add_argument('--seed', type=int, default=42, help='Semente aleatória para reprodutibilidade.')
+from .utils import reproducibility
+reproducibility.set_seed(args.seed)
+
+
 # Importa os pipelines e utilitários do seu projeto
 from .pipelines import train_pipeline, inference_pipeline
 from .utils import logging, data_loader, performance
