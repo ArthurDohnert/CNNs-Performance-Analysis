@@ -26,14 +26,8 @@ source "$VENV_DIR/bin/activate"
 #  Atualiza pip e instala dependências do projeto
 python -m pip install --upgrade pip wheel setuptools
 
-# Se houver um requirements.txt no repositório, use-o. Caso não, instale pacotes mínimos.
-if [ -f requirements.txt ]; then
-  pip install -r requirements.txt
-else
-  # Ajuste a URL de CUDA conforme a versão disponível no nó
-  pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-  pip install numpy pandas scikit-learn matplotlib seaborn tqdm pillow psutil nvidia-ml-py pyyaml
-fi
+pip install -r requirements.txt
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 
 #  Verifica CUDA
 python - <<'PY'
