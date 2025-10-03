@@ -6,7 +6,7 @@
 
 # --- Configurações do Job de Teste ---
 #SBATCH --job-name=pcad_sanity_test_scratch_venv
-#SBATCH --partition=tupi
+#SBATCH --partition=shared
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --gres=gpu:1
@@ -27,7 +27,14 @@ source "$VENV_DIR/bin/activate"
 python -m pip install --upgrade pip wheel setuptools
 
 pip install -r requirements.txt
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+if [[ "${SLURM_JOB_PARTITION}" == "shared" ]]; then
+  echo "[INFO] Partição shared detectada -> instalando PyTorch CPU-only e desabilitando CUDA"
+  pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+  export CUDA_VISIBLE_DEVICES=""        # garante CPU-only
+else
+  echo "[INFO] Partição ${SLURM_JOB_PARTITION} -> instalando PyTorch cu118"
+  pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+fi
 
 #  Verifica CUDA
 python - <<'PY'
