@@ -1,56 +1,37 @@
-#!/bin/bash
+#!/bin/sh
+# Submete jobs via /bin/sh, definindo o tempo por modelo e passando para o sbatch.
 
-echo "========================================================="
-echo "INICIANDO SUBMISSÃO DE JOBS COM TEMPO DE EXECUÇÃO DINÂMICO"
-echo "========================================================="
+set -eu
 
 mkdir -p logs
 
-# --- MAPA DE TEMPOS DE EXECUÇÃO (Formato HH:MM:SS) ---
-# **AÇÃO NECESSÁRIA**: Ajuste estes tempos com base na sua experiência
-declare -A MODEL_EXECUTION_TIMES
-MODEL_EXECUTION_TIMES=(
-    # --- Lightweight Models (Ex: 2 horas) ---
-    ["MobileNetV1"]="02:00:00"
-    #["SqueezeNet"]="02:00:00"
-    #["ShuffleNetV2"]="02:00:00"
-    #["EfficientNetB0"]="03:00:00"
+# Função para escolher tempo por modelo (HH:MM:SS)
+submit_model() {
+  model="$1"
+  seed="$2"
 
-    # --- Medium-Weight Models (Ex: 6 horas) ---
-    ["VGG16"]="06:00:00"
-    #["ResNet34"]="06:00:00"
-    #["InceptionV3"]="08:00:00"
-    #["DenseNet121"]="07:00:00"
-    
-    # --- Heavyweight Models (Ex: 12-20 horas) ---
-    ["ResNet101"]="15:00:00"
-    #["InceptionV4"]="18:00:00"
-    #["Xception"]="16:00:00"
-    #["EfficientNetB7"]="20:00:00"
-)
+  case "$model" in
+    MobileNetV1|mobilenet_v1) time_limit="02:00:00" ;;
+    VGG16|vgg16)              time_limit="06:00:00" ;;
+    ResNet101|resnet101)      time_limit="15:00:00" ;;
+    *)                        time_limit="04:00:00" ;;
+  esac
 
-# Sementes aleatórias para as execuções independentes
-SEEDS=(10 20 30)
+  echo "Submetendo: $model seed $seed | tempo $time_limit"
+  sbatch --job-name="${model}_seed_${seed}" \
+         --time="$time_limit" \
+         run_pcad_test_venv.slurm "$model" "$seed"
+}
 
-# Loop para submeter um job para cada combinação de modelo e semente
-for model in "${!MODEL_EXECUTION_TIMES[@]}"; do
-    # Obtém o tempo de execução do mapa
-    execution_time=${MODEL_EXECUTION_TIMES[$model]}
+# Modelos e sementes (strings simples para compatibilidade POSIX)
+SEEDS="42 52 62"
+MODELS="MobileNetV1 VGG16 ResNet101"
 
-    for seed in "${SEEDS[@]}"; do
-        job_name="${model}_seed_${seed}"
-        echo "-> Submetendo job: ${job_name} | Tempo Limite: ${execution_time}"
-        
-        # Passa o tempo dinamicamente para o sbatch usando a flag --time
-        sbatch \
-            --job-name="${job_name}" \
-            --time="${execution_time}" \
-            run_experiment.slurm "${model}" "${seed}"
-        
-        sleep 1 # Evita sobrecarregar o escalonador
-    done
+for m in $MODELS; do
+  for s in $SEEDS; do
+    submit_model "$m" "$s"
+    sleep 1
+  done
 done
 
-echo "========================================================="
-echo "Todos os jobs foram submetidos com tempos de execução personalizados."
-echo "========================================================="
+echo "Todos os jobs submetidos."
