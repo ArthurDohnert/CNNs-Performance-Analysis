@@ -18,11 +18,11 @@ from ..utils import reproducibility
 def get_model(model_name: str, num_classes: int) -> torch.nn.Module:
 
     try:
-        module_path = f"src.models.{model_name.lower()}"
+        module_path = f"src.models.{model_name}"
         
         
         model_name_map = {
-            "mobilenet_v1": "MobileNetV1",
+            "mobilenet_V1": "MobileNetV1",
             "vgg16": "VGG16",
             "resnet34": "ResNet34",
             "resnet101": "ResNet101",
@@ -37,7 +37,7 @@ def get_model(model_name: str, num_classes: int) -> torch.nn.Module:
             # Adicione todos os outros mapeamentos aqui
         }
         
-        class_name = model_name_map.get(model_name.lower())
+        class_name = model_name_map.get(model_name)
         if not class_name:
              raise ValueError(f"Mapeamento para o modelo '{model_name}' não encontrado.")
 
