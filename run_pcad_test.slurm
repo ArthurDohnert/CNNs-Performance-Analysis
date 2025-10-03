@@ -6,7 +6,7 @@
 
 # --- Configurações do Job de Teste ---
 #SBATCH --job-name=pcad_sanity_test_scratch_venv
-#SBATCH --partition=shared
+#SBATCH --partition=tupi
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --gres=gpu:1
