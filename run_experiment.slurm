@@ -1,43 +1,76 @@
 #!/bin/bash
 
 # ==============================================================================
-# SCRIPT DE SUBMISSÃO SLURM GENÉRICO (TEMPO DEFINIDO NA CHAMADA)
+# SCRIPT DE TESTE OTIMIZADO PARA I/O USANDO $SCRATCH (VERSÃO COM VENV)
 # ==============================================================================
 
-# --- Configurações do Job (sem o tempo) ---
-#SBATCH --job-name=cnn_experiment     # Nome padrão, será sobrescrito
-#SBATCH --partition=tupi              # Fila para GPUs RTX 4090
+# --- Configurações do Job de Teste ---
+#SBATCH --job-name=pcad_sanity_test_scratch_venv
+#SBATCH --partition=tupi
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --gres=gpu:1
-#SBATCH --output=logs/%x_%j.out
-#SBATCH --error=logs/%x_%j.err
+#SBATCH --time=02:10:00
+#SBATCH --output=logs/test_job_scratch_venv_%j.out
+#SBATCH --error=logs/test_job_scratch_venv_%j.err
 
-# --- Ambiente e Execução ---
+set -euo pipefail
+
+# --- PREPARAÇÃO DO AMBIENTE PYTHON (VENV) ---
+
+#  Cria uma venv dentro do $SCRATCH (rápido e isolado por job)
+VENV_DIR="$SCRATCH/venv_cnn_perf"
+python3 -m venv "$VENV_DIR"
+source "$VENV_DIR/bin/activate"
+
+#  Atualiza pip e instala dependências do projeto
+python -m pip install --upgrade pip wheel setuptools
+
+pip install -r requirements.txt
+if [[ "${SLURM_JOB_PARTITION}" == "shared" ]]; then
+  echo "[INFO] Partição shared detectada -> instalando PyTorch CPU-only e desabilitando CUDA"
+  pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+  export CUDA_VISIBLE_DEVICES=""        # garante CPU-only
+else
+  echo "[INFO] Partição ${SLURM_JOB_PARTITION} -> instalando PyTorch cu118"
+  pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+fi
+
+#  Verifica CUDA
+python - <<'PY'
+import torch
+print(f"PyTorch: {torch.__version__}")
+print(f"CUDA disponível: {torch.cuda.is_available()}")
+print(f"GPU detectada: {torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'Nenhuma'}")
+PY
+
+# --- ETAPA 1: COPIAR DADOS PARA O DISCO LOCAL (STAGING) ---
 echo "========================================================="
-echo "INICIANDO JOB SLURM"
-echo "Job ID: $SLURM_JOB_ID | Job Name: $SLURM_JOB_NAME"
-echo "Nó alocado: $(hostname) | Data: $(date)"
-echo "Tempo requisitado: $SLURM_JOB_TIME_LIMIT"
+echo "Iniciando Staging: Copiando dataset para o $SCRATCH..."
+rsync -avP $HOME/datasets/tiny-imagenet-200 $SCRATCH/
+echo "Staging concluído."
 echo "========================================================="
 
-# Argumentos recebidos do 'sbatch'
-MODEL_NAME=$1
-SEED=$2 # Assumindo que você está usando a versão com semente
+# --- ETAPA 2: EXECUÇÃO USANDO DADOS LOCAIS ---
+echo "Iniciando Job de Teste..."
 
-# **AÇÃO NECESSÁRIA**: Ajuste os caminhos abaixo para os seus diretórios no PCAD
-DATASET_PATH_TRAIN="/home/user/ehdmenezes/datasets/tiny-imagenet-200/train"
-DATASET_PATH_VAL="/home/user/ehdmenezes/datasets/tiny-imagenet-200/val"
+DATASET_PATH_TRAIN="$SCRATCH/tiny-imagenet-200/train"
+DATASET_PATH_VAL="$SCRATCH/tiny-imagenet-200/val"
 
-# Comando principal
-guix shell -m manifest.scm -- \
-     python -m src.main \
-            --model_name "$MODEL_NAME" \
-            --config_path "configs/pcad_config.yaml" \
-            --train_data_path "$DATASET_PATH_TRAIN" \
-            --val_data_path "$DATASET_PATH_VAL" \
-            --seed "$SEED" # Não esqueça de passar a semente
+python -m src.main \
+       --model_name "$1" \
+       --config_path "configs/pcad_config.yaml" \
+       --train_data_path "$DATASET_PATH_TRAIN" \
+       --val_data_path "$DATASET_PATH_VAL" \
+       --seed "$2"
+
+# --- ETAPA 3: LIMPEZA OPCIONAL ---
+# Desativa a venv (opcional)
+deactivate || true
+
+# Resultados (logs e modelos) permanecem no diretório de submissão (HOME)
 
 echo "========================================================="
-echo "JOB CONCLUÍDO | Data: $(date)"
+echo "JOB DE TESTE CONCLUÍDO (VENV)"
 echo "========================================================="
+
