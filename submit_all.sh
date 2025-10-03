@@ -20,7 +20,7 @@ submit_model() {
   echo "Submetendo: $model seed $seed | tempo $time_limit"
   sbatch --job-name="${model}_seed_${seed}" \
          --time="$time_limit" \
-         run_pcad_test_venv.slurm "$model" "$seed"
+         run_all_experiment.slurm "$model" "$seed"
 }
 
 # Modelos e sementes (strings simples para compatibilidade POSIX)
