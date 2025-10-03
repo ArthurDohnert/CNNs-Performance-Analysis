@@ -5,15 +5,11 @@ Ponto de entrada principal para orquestrar os pipelines de treinamento e avalia�
 """
 
 import argparse
+from email import parser
 import os
 import torch
 import yaml
 from datetime import datetime
-
-parser.add_argument('--seed', type=int, default=42, help='Semente aleatória para reprodutibilidade.')
-from .utils import reproducibility
-reproducibility.set_seed(args.seed)
-
 
 # Importa os pipelines e utilitários do seu projeto
 from .pipelines import train_pipeline, inference_pipeline
@@ -27,7 +23,7 @@ def main():
     parser.add_argument('--config_path', type=str, required=True, help='Caminho para o arquivo de configuração (ex: configs/base_config.yaml).')
     parser.add_argument('--train_data_path', type=str, required=True, help='Caminho para o diretório de dados de treino.')
     parser.add_argument('--val_data_path', type=str, required=True, help='Caminho para o diretório de dados de validação/teste.')
-
+    parser.add_argument('--seed', type=int, default=42, help='Semente aleatória para reprodutibilidade da execução.')
     args = parser.parse_args()
 
     # --- 1. Carregar Configurações ---
@@ -71,7 +67,8 @@ def main():
             val_data_path=args.val_data_path,
             config=training_config,
             device=device,
-            logger=logger
+            logger=logger,
+            seed=args.seed
         )
         logger.info(f"Pipeline de treinamento concluído. Modelo salvo em: {trained_model_path}")
 

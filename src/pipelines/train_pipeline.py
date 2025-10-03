@@ -13,6 +13,7 @@ import os
 import logging
 from ..utils import data_loader, logging as custom_logging, performance
 from . import inference_pipeline # Para avaliação final
+from ..utils import reproducibility
 
 def get_model(model_name: str, num_classes: int) -> torch.nn.Module:
 
@@ -59,7 +60,8 @@ def run_training(
     val_data_path: str,
     config: dict,
     device: torch.device,
-    logger: logging.Logger
+    logger: logging.Logger,
+    seed: int
 ) -> str:
     """
     Executes the full training and validation cycle for a model.
@@ -75,6 +77,9 @@ def run_training(
     Returns:
         Path to the saved trained model.
     """
+    reproducibility.set_seed(seed)
+    logger.info(f"Semente aleatória para esta execução foi fixada em: {seed}")
+
     # Carrega os DataLoaders
     train_loader = data_loader.get_dataloader(train_data_path, config['batch_size'], shuffle=True)
     val_loader = data_loader.get_dataloader(val_data_path, config['batch_size'], shuffle=False)
