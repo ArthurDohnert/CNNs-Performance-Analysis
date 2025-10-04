@@ -25,7 +25,7 @@ submit_model() {
 
 # Modelos e sementes (strings simples para compatibilidade POSIX)
 SEEDS="42 52 62 72 82"
-MODELS="mobilenet_v1 resnet34 resnet101"
+MODELS="mobilenet_V1 resnet34 resnet101"
 
 for m in $MODELS; do
   for s in $SEEDS; do
