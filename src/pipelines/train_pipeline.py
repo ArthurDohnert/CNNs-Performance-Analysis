@@ -25,7 +25,7 @@ def get_model(model_name: str, num_classes: int) -> torch.nn.Module:
             "mobilenet_V1": "MobileNetV1",
             "vgg16": "VGG16",
             "resnet34": "ResNet34",
-            "resnet101": "ResNet101",
+            "resnet101": "ResNet",
             "xception": "Xception",
             "densenet121": "DenseNet121",
             "efficientnet_b0": "EfficientNetB0",
