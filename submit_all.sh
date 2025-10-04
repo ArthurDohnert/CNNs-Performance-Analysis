@@ -12,7 +12,7 @@ submit_model() {
 
   case "$model" in
     MobileNetV1|mobilenet_v1) time_limit="02:00:00" ;;
-    VGG16|vgg16)              time_limit="06:00:00" ;;
+    Resnet34|resnet34)        time_limit="07:00:00" ;;
     ResNet101|resnet101)      time_limit="15:00:00" ;;
     *)                        time_limit="04:00:00" ;;
   esac
@@ -25,7 +25,7 @@ submit_model() {
 
 # Modelos e sementes (strings simples para compatibilidade POSIX)
 SEEDS="42 52 62 72 82"
-MODELS="mobilenet_v1 vgg16 resnet101"
+MODELS="mobilenet_v1 resnet34 resnet101"
 
 for m in $MODELS; do
   for s in $SEEDS; do
