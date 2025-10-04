@@ -2,7 +2,7 @@
 
 # Script para submeter um único job de teste rápido para o MobileNetV1.
 
-MODEL_TO_TEST="mobilenet_v1"
+MODEL_TO_TEST="vgg16"
 TEST_SEED=42 # Uma semente aleatória para o teste
 
 echo "Submetendo job de teste para o modelo: ${MODEL_TO_TEST} com seed ${TEST_SEED}"
