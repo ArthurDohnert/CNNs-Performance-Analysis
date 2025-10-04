@@ -1,0 +1,50 @@
+/scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+2025-10-03 18:55:51,355 - INFO - ==================================================
+INFO:ResNet101_epochs_10_bs_64:==================================================
+2025-10-03 18:55:51,355 - INFO - EXPERIMENT CONFIGURATION
+INFO:ResNet101_epochs_10_bs_64:EXPERIMENT CONFIGURATION
+2025-10-03 18:55:51,356 - INFO - ==================================================
+INFO:ResNet101_epochs_10_bs_64:==================================================
+2025-10-03 18:55:51,356 - INFO - Model Name          : ResNet101
+INFO:ResNet101_epochs_10_bs_64:Model Name          : ResNet101
+2025-10-03 18:55:51,356 - INFO - Config File         : configs/pcad_config.yaml
+INFO:ResNet101_epochs_10_bs_64:Config File         : configs/pcad_config.yaml
+2025-10-03 18:55:51,356 - INFO - Train Data          : /scratch/ehdmenezes//tiny-imagenet-200/train
+INFO:ResNet101_epochs_10_bs_64:Train Data          : /scratch/ehdmenezes//tiny-imagenet-200/train
+2025-10-03 18:55:51,356 - INFO - Validation Data     : /scratch/ehdmenezes//tiny-imagenet-200/val
+INFO:ResNet101_epochs_10_bs_64:Validation Data     : /scratch/ehdmenezes//tiny-imagenet-200/val
+2025-10-03 18:55:51,356 - INFO - model_params        : {'num_classes': 200}
+INFO:ResNet101_epochs_10_bs_64:model_params        : {'num_classes': 200}
+2025-10-03 18:55:51,356 - INFO - train_params        : {'epochs': 10, 'batch_size': 64, 'learning_rate': 0.001}
+INFO:ResNet101_epochs_10_bs_64:train_params        : {'epochs': 10, 'batch_size': 64, 'learning_rate': 0.001}
+2025-10-03 18:55:51,356 - INFO - inference_params    : {'batch_size': 128}
+INFO:ResNet101_epochs_10_bs_64:inference_params    : {'batch_size': 128}
+2025-10-03 18:55:51,356 - INFO - ==================================================
+INFO:ResNet101_epochs_10_bs_64:==================================================
+2025-10-03 18:55:51,376 - INFO - Semente aleatória para esta execução foi fixada em: 62
+INFO:ResNet101_epochs_10_bs_64:Semente aleatória para esta execução foi fixada em: 62
+2025-10-03 18:55:51,675 - ERROR - Ocorreu um erro fatal durante a execução do projeto: Mapeamento para o modelo 'ResNet101' não encontrado.
+Traceback (most recent call last):
+  File "/home/users/ehdmenezes/CNNs-Performance-Analysis/src/main.py", line 64, in main
+    trained_model_path = train_pipeline.run_training(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/ehdmenezes/CNNs-Performance-Analysis/src/pipelines/train_pipeline.py", line 88, in run_training
+    model = get_model(model_name, config['num_classes']).to(device)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/ehdmenezes/CNNs-Performance-Analysis/src/pipelines/train_pipeline.py", line 42, in get_model
+    raise ValueError(f"Mapeamento para o modelo '{model_name}' não encontrado.")
+ValueError: Mapeamento para o modelo 'ResNet101' não encontrado.
+ERROR:ResNet101_epochs_10_bs_64:Ocorreu um erro fatal durante a execução do projeto: Mapeamento para o modelo 'ResNet101' não encontrado.
+Traceback (most recent call last):
+  File "/home/users/ehdmenezes/CNNs-Performance-Analysis/src/main.py", line 64, in main
+    trained_model_path = train_pipeline.run_training(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/ehdmenezes/CNNs-Performance-Analysis/src/pipelines/train_pipeline.py", line 88, in run_training
+    model = get_model(model_name, config['num_classes']).to(device)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/ehdmenezes/CNNs-Performance-Analysis/src/pipelines/train_pipeline.py", line 42, in get_model
+    raise ValueError(f"Mapeamento para o modelo '{model_name}' não encontrado.")
+ValueError: Mapeamento para o modelo 'ResNet101' não encontrado.
