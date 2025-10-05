@@ -14,6 +14,8 @@ submit_model() {
     MobileNetV1|mobilenet_v1) time_limit="02:00:00" ;;
     Resnet34|resnet34)        time_limit="07:00:00" ;;
     ResNet101|resnet101)      time_limit="15:00:00" ;;
+    EfficientNetB0|efficientnet_b0) time_limit="04:00:00" ;;
+    Squeezenet|squeezenet)   time_limit="04:00:00" ;;
     *)                        time_limit="04:00:00" ;;
   esac
 
@@ -25,7 +27,7 @@ submit_model() {
 
 # Modelos e sementes (strings simples para compatibilidade POSIX)
 SEEDS="42 52 62 72 82"
-MODELS="resnet101"
+MODELS="efficientnet_b0 squeezenet"
 
 for m in $MODELS; do
   for s in $SEEDS; do
