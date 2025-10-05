@@ -1,0 +1,71 @@
+Requirement already satisfied: pip in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (25.2)
+Requirement already satisfied: wheel in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (0.45.1)
+Requirement already satisfied: setuptools in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (80.9.0)
+Requirement already satisfied: psutil in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from -r requirements.txt (line 2)) (7.1.0)
+Requirement already satisfied: pynvml in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from -r requirements.txt (line 3)) (13.0.1)
+Requirement already satisfied: numpy<2.0 in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from -r requirements.txt (line 6)) (1.26.4)
+Requirement already satisfied: pandas in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from -r requirements.txt (line 7)) (2.3.3)
+Requirement already satisfied: scikit-learn in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from -r requirements.txt (line 8)) (1.7.2)
+Requirement already satisfied: matplotlib in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from -r requirements.txt (line 11)) (3.10.6)
+Requirement already satisfied: seaborn in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from -r requirements.txt (line 12)) (0.13.2)
+Requirement already satisfied: tqdm in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from -r requirements.txt (line 13)) (4.67.1)
+Requirement already satisfied: Pillow in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from -r requirements.txt (line 14)) (11.3.0)
+Requirement already satisfied: PyYAML in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from -r requirements.txt (line 15)) (6.0.3)
+Requirement already satisfied: tabulate in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from -r requirements.txt (line 16)) (0.9.0)
+Requirement already satisfied: nvidia-ml-py>=12.0.0 in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from pynvml->-r requirements.txt (line 3)) (13.580.82)
+Requirement already satisfied: python-dateutil>=2.8.2 in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from pandas->-r requirements.txt (line 7)) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from pandas->-r requirements.txt (line 7)) (2025.2)
+Requirement already satisfied: tzdata>=2022.7 in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from pandas->-r requirements.txt (line 7)) (2025.2)
+Requirement already satisfied: scipy>=1.8.0 in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from scikit-learn->-r requirements.txt (line 8)) (1.16.2)
+Requirement already satisfied: joblib>=1.2.0 in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from scikit-learn->-r requirements.txt (line 8)) (1.5.2)
+Requirement already satisfied: threadpoolctl>=3.1.0 in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from scikit-learn->-r requirements.txt (line 8)) (3.6.0)
+Requirement already satisfied: contourpy>=1.0.1 in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from matplotlib->-r requirements.txt (line 11)) (1.3.3)
+Requirement already satisfied: cycler>=0.10 in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from matplotlib->-r requirements.txt (line 11)) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from matplotlib->-r requirements.txt (line 11)) (4.60.1)
+Requirement already satisfied: kiwisolver>=1.3.1 in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from matplotlib->-r requirements.txt (line 11)) (1.4.9)
+Requirement already satisfied: packaging>=20.0 in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from matplotlib->-r requirements.txt (line 11)) (25.0)
+Requirement already satisfied: pyparsing>=2.3.1 in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from matplotlib->-r requirements.txt (line 11)) (3.2.5)
+Requirement already satisfied: six>=1.5 in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from python-dateutil>=2.8.2->pandas->-r requirements.txt (line 7)) (1.17.0)
+[INFO] Partição tupi -> instalando PyTorch cu118
+Looking in indexes: https://download.pytorch.org/whl/cu118
+Requirement already satisfied: torch in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (2.7.1+cu118)
+Requirement already satisfied: torchvision in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (0.22.1+cu118)
+Requirement already satisfied: torchaudio in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (2.7.1+cu118)
+Requirement already satisfied: filelock in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from torch) (3.13.1)
+Requirement already satisfied: typing-extensions>=4.10.0 in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from torch) (4.12.2)
+Requirement already satisfied: sympy>=1.13.3 in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from torch) (1.13.3)
+Requirement already satisfied: networkx in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from torch) (3.3)
+Requirement already satisfied: jinja2 in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from torch) (3.1.4)
+Requirement already satisfied: fsspec in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from torch) (2024.6.1)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu11==11.8.89 in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from torch) (11.8.89)
+Requirement already satisfied: nvidia-cuda-runtime-cu11==11.8.89 in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from torch) (11.8.89)
+Requirement already satisfied: nvidia-cuda-cupti-cu11==11.8.87 in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from torch) (11.8.87)
+Requirement already satisfied: nvidia-cudnn-cu11==9.1.0.70 in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from torch) (9.1.0.70)
+Requirement already satisfied: nvidia-cublas-cu11==11.11.3.6 in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from torch) (11.11.3.6)
+Requirement already satisfied: nvidia-cufft-cu11==10.9.0.58 in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from torch) (10.9.0.58)
+Requirement already satisfied: nvidia-curand-cu11==10.3.0.86 in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from torch) (10.3.0.86)
+Requirement already satisfied: nvidia-cusolver-cu11==11.4.1.48 in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from torch) (11.4.1.48)
+Requirement already satisfied: nvidia-cusparse-cu11==11.7.5.86 in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from torch) (11.7.5.86)
+Requirement already satisfied: nvidia-nccl-cu11==2.21.5 in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from torch) (2.21.5)
+Requirement already satisfied: nvidia-nvtx-cu11==11.8.86 in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from torch) (11.8.86)
+Requirement already satisfied: triton==3.3.1 in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from torch) (3.3.1)
+Requirement already satisfied: setuptools>=40.8.0 in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from triton==3.3.1->torch) (80.9.0)
+Requirement already satisfied: numpy in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from torchvision) (1.26.4)
+Requirement already satisfied: pillow!=8.3.*,>=5.3.0 in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from torchvision) (11.3.0)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from sympy>=1.13.3->torch) (1.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in /scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages (from jinja2->torch) (2.1.5)
+PyTorch: 2.7.1+cu118
+CUDA disponível: True
+GPU detectada: NVIDIA GeForce RTX 4090
+=========================================================
+Iniciando Staging: Copiando dataset para o /scratch/ehdmenezes/...
+sending incremental file list
+
+sent 2,061,725 bytes  received 834 bytes  458,346.44 bytes/sec
+total size is 239,648,330  speedup is 116.19
+Staging concluído.
+=========================================================
+Iniciando Job de Teste...
+=========================================================
+JOB DE TESTE CONCLUÍDO (VENV)
+=========================================================

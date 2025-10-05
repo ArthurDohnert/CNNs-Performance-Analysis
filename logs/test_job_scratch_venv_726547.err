@@ -1,0 +1,66 @@
+/scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+2025-10-03 02:29:21,223 - INFO - ==================================================
+INFO:mobilenet_v1_epochs_1_bs_8:==================================================
+2025-10-03 02:29:21,223 - INFO - EXPERIMENT CONFIGURATION
+INFO:mobilenet_v1_epochs_1_bs_8:EXPERIMENT CONFIGURATION
+2025-10-03 02:29:21,223 - INFO - ==================================================
+INFO:mobilenet_v1_epochs_1_bs_8:==================================================
+2025-10-03 02:29:21,223 - INFO - Model Name          : mobilenet_v1
+INFO:mobilenet_v1_epochs_1_bs_8:Model Name          : mobilenet_v1
+2025-10-03 02:29:21,223 - INFO - Config File         : configs/pcad_test_config.yaml
+INFO:mobilenet_v1_epochs_1_bs_8:Config File         : configs/pcad_test_config.yaml
+2025-10-03 02:29:21,223 - INFO - Train Data          : /scratch/ehdmenezes//tiny-imagenet-200/train
+INFO:mobilenet_v1_epochs_1_bs_8:Train Data          : /scratch/ehdmenezes//tiny-imagenet-200/train
+2025-10-03 02:29:21,223 - INFO - Validation Data     : /scratch/ehdmenezes//tiny-imagenet-200/val
+INFO:mobilenet_v1_epochs_1_bs_8:Validation Data     : /scratch/ehdmenezes//tiny-imagenet-200/val
+2025-10-03 02:29:21,223 - INFO - model_params        : {'num_classes': 200}
+INFO:mobilenet_v1_epochs_1_bs_8:model_params        : {'num_classes': 200}
+2025-10-03 02:29:21,224 - INFO - train_params        : {'epochs': 1, 'batch_size': 8, 'learning_rate': 0.001}
+INFO:mobilenet_v1_epochs_1_bs_8:train_params        : {'epochs': 1, 'batch_size': 8, 'learning_rate': 0.001}
+2025-10-03 02:29:21,224 - INFO - inference_params    : {'batch_size': 16}
+INFO:mobilenet_v1_epochs_1_bs_8:inference_params    : {'batch_size': 16}
+2025-10-03 02:29:21,224 - INFO - ==================================================
+INFO:mobilenet_v1_epochs_1_bs_8:==================================================
+2025-10-03 02:29:21,235 - INFO - Semente aleatória para esta execução foi fixada em: 42
+INFO:mobilenet_v1_epochs_1_bs_8:Semente aleatória para esta execução foi fixada em: 42
+2025-10-03 02:29:21,579 - ERROR - Ocorreu um erro fatal durante a execução do projeto: Modelo 'mobilenet_v1' não encontrado ou o módulo/classe está incorreto. Erro: No module named 'src.models.mobilenet_v1'
+Traceback (most recent call last):
+  File "/home/users/ehdmenezes/CNNs-Performance-Analysis/src/pipelines/train_pipeline.py", line 45, in get_model
+    model_module = __import__(module_path, fromlist=[class_name])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'src.models.mobilenet_v1'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/users/ehdmenezes/CNNs-Performance-Analysis/src/main.py", line 64, in main
+    trained_model_path = train_pipeline.run_training(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/ehdmenezes/CNNs-Performance-Analysis/src/pipelines/train_pipeline.py", line 88, in run_training
+    model = get_model(model_name, config['num_classes']).to(device)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/ehdmenezes/CNNs-Performance-Analysis/src/pipelines/train_pipeline.py", line 54, in get_model
+    raise ValueError(f"Modelo '{model_name}' não encontrado ou o módulo/classe está incorreto. Erro: {e}")
+ValueError: Modelo 'mobilenet_v1' não encontrado ou o módulo/classe está incorreto. Erro: No module named 'src.models.mobilenet_v1'
+ERROR:mobilenet_v1_epochs_1_bs_8:Ocorreu um erro fatal durante a execução do projeto: Modelo 'mobilenet_v1' não encontrado ou o módulo/classe está incorreto. Erro: No module named 'src.models.mobilenet_v1'
+Traceback (most recent call last):
+  File "/home/users/ehdmenezes/CNNs-Performance-Analysis/src/pipelines/train_pipeline.py", line 45, in get_model
+    model_module = __import__(module_path, fromlist=[class_name])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'src.models.mobilenet_v1'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/users/ehdmenezes/CNNs-Performance-Analysis/src/main.py", line 64, in main
+    trained_model_path = train_pipeline.run_training(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/ehdmenezes/CNNs-Performance-Analysis/src/pipelines/train_pipeline.py", line 88, in run_training
+    model = get_model(model_name, config['num_classes']).to(device)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/users/ehdmenezes/CNNs-Performance-Analysis/src/pipelines/train_pipeline.py", line 54, in get_model
+    raise ValueError(f"Modelo '{model_name}' não encontrado ou o módulo/classe está incorreto. Erro: {e}")
+ValueError: Modelo 'mobilenet_v1' não encontrado ou o módulo/classe está incorreto. Erro: No module named 'src.models.mobilenet_v1'
