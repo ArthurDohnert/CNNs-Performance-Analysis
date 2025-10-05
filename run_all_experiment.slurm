@@ -57,6 +57,8 @@ echo "Iniciando Job de Teste..."
 DATASET_PATH_TRAIN="$SCRATCH/tiny-imagenet-200/train"
 DATASET_PATH_VAL="$SCRATCH/tiny-imagenet-200/val"
 
+export PYTORCH_CUDA_ALLOC_CONF="expandable_segments:True,max_split_size_mb:128"  
+
 python -m src.main \
        --model_name "$1" \
        --config_path "configs/pcad_config.yaml" \
