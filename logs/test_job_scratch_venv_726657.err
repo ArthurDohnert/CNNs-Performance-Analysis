@@ -1,33 +1,0 @@
-/scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
-  import pynvml  # type: ignore[import]
-/scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
-  import pynvml  # type: ignore[import]
-2025-10-04 09:43:33,001 - INFO - ==================================================
-INFO:resnet101_epochs_1_bs_8:==================================================
-2025-10-04 09:43:33,001 - INFO - EXPERIMENT CONFIGURATION
-INFO:resnet101_epochs_1_bs_8:EXPERIMENT CONFIGURATION
-2025-10-04 09:43:33,001 - INFO - ==================================================
-INFO:resnet101_epochs_1_bs_8:==================================================
-2025-10-04 09:43:33,001 - INFO - Model Name          : resnet101
-INFO:resnet101_epochs_1_bs_8:Model Name          : resnet101
-2025-10-04 09:43:33,001 - INFO - Config File         : configs/pcad_test_config.yaml
-INFO:resnet101_epochs_1_bs_8:Config File         : configs/pcad_test_config.yaml
-2025-10-04 09:43:33,002 - INFO - Train Data          : /scratch/ehdmenezes//tiny-imagenet-200/train
-INFO:resnet101_epochs_1_bs_8:Train Data          : /scratch/ehdmenezes//tiny-imagenet-200/train
-2025-10-04 09:43:33,002 - INFO - Validation Data     : /scratch/ehdmenezes//tiny-imagenet-200/val
-INFO:resnet101_epochs_1_bs_8:Validation Data     : /scratch/ehdmenezes//tiny-imagenet-200/val
-2025-10-04 09:43:33,002 - INFO - model_params        : {'num_classes': 200}
-INFO:resnet101_epochs_1_bs_8:model_params        : {'num_classes': 200}
-2025-10-04 09:43:33,002 - INFO - train_params        : {'epochs': 1, 'batch_size': 8, 'learning_rate': 0.001}
-INFO:resnet101_epochs_1_bs_8:train_params        : {'epochs': 1, 'batch_size': 8, 'learning_rate': 0.001}
-2025-10-04 09:43:33,002 - INFO - inference_params    : {'batch_size': 16}
-INFO:resnet101_epochs_1_bs_8:inference_params    : {'batch_size': 16}
-2025-10-04 09:43:33,002 - INFO - ==================================================
-INFO:resnet101_epochs_1_bs_8:==================================================
-2025-10-04 09:43:33,013 - INFO - Semente aleatória para esta execução foi fixada em: 42
-INFO:resnet101_epochs_1_bs_8:Semente aleatória para esta execução foi fixada em: 42
-2025-10-04 09:43:34,806 - INFO - Iniciando treinamento do modelo resnet101 no dispositivo cpu.
-INFO:resnet101_epochs_1_bs_8:Iniciando treinamento do modelo resnet101 no dispositivo cpu.
-Epoch 1/1:   0%|          | 0/12500 [00:00<?, ?it/s]/scratch/ehdmenezes/venv_cnn_perf/lib/python3.11/site-packages/torch/utils/data/dataloader.py:665: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
-  warnings.warn(warn_msg)
-Epoch 1/1:   0%|          | 0/12500 [00:32<?, ?it/s, loss=5.5081]Epoch 1/1:   0%|          | 1/12500 [00:32<114:14:34, 32.90s/it, loss=5.5081]Epoch 1/1:   0%|          | 1/12500 [01:02<114:14:34, 32.90s/it, loss=6.8671]Epoch 1/1:   0%|          | 2/12500 [01:02<107:09:20, 30.87s/it, loss=6.8671]Epoch 1/1:   0%|          | 2/12500 [01:31<107:09:20, 30.87s/it, loss=6.3819]Epoch 1/1:   0%|          | 3/12500 [01:31<104:30:14, 30.10s/it, loss=6.3819]Epoch 1/1:   0%|          | 3/12500 [02:00<104:30:14, 30.10s/it, loss=7.0043]Epoch 1/1:   0%|          | 4/12500 [02:00<103:07:26, 29.71s/it, loss=7.0043]Epoch 1/1:   0%|          | 4/12500 [02:29<103:07:26, 29.71s/it, loss=6.5130]Epoch 1/1:   0%|          | 5/12500 [02:29<102:28:51, 29.53s/it, loss=6.5130]Epoch 1/1:   0%|          | 5/12500 [02:59<102:28:51, 29.53s/it, loss=5.8972]Epoch 1/1:   0%|          | 6/12500 [02:59<102:12:02, 29.45s/it, loss=5.8972]Epoch 1/1:   0%|          | 6/12500 [03:28<102:12:02, 29.45s/it, loss=5.4683]Epoch 1/1:   0%|          | 7/12500 [03:28<102:01:39, 29.40s/it, loss=5.4683]Epoch 1/1:   0%|          | 7/12500 [03:58<102:01:39, 29.40s/it, loss=5.5108]Epoch 1/1:   0%|          | 8/12500 [03:58<103:05:59, 29.71s/it, loss=5.5108]Epoch 1/1:   0%|          | 8/12500 [04:31<103:05:59, 29.71s/it, loss=5.2982]Epoch 1/1:   0%|          | 9/12500 [04:31<105:50:59, 30.51s/it, loss=5.2982]Epoch 1/1:   0%|          | 9/12500 [05:00<105:50:59, 30.51s/it, loss=5.1880]Epoch 1/1:   0%|          | 10/12500 [05:00<104:15:23, 30.05s/it, loss=5.1880]Epoch 1/1:   0%|          | 10/12500 [05:28<104:15:23, 30.05s/it, loss=6.0203]Epoch 1/1:   0%|          | 11/12500 [05:28<102:39:01, 29.59s/it, loss=6.0203]Epoch 1/1:   0%|          | 11/12500 [05:57<102:39:01, 29.59s/it, loss=5.9394]Epoch 1/1:   0%|          | 12/12500 [05:57<101:50:05, 29.36s/it, loss=5.9394]Epoch 1/1:   0%|          | 12/12500 [06:26<101:50:05, 29.36s/it, loss=5.8272]Epoch 1/1:   0%|          | 13/12500 [06:26<101:10:42, 29.17s/it, loss=5.8272]Epoch 1/1:   0%|          | 13/12500 [06:54<101:10:42, 29.17s/it, loss=6.7375]Epoch 1/1:   0%|          | 14/12500 [06:54<100:43:54, 29.04s/it, loss=6.7375]Epoch 1/1:   0%|          | 14/12500 [07:23<100:43:54, 29.04s/it, loss=6.2140]Epoch 1/1:   0%|          | 15/12500 [07:23<99:51:25, 28.79s/it, loss=6.2140] Epoch 1/1:   0%|          | 15/12500 [07:51<99:51:25, 28.79s/it, loss=6.3913]Epoch 1/1:   0%|          | 16/12500 [07:51<99:38:42, 28.73s/it, loss=6.3913]Epoch 1/1:   0%|          | 16/12500 [08:20<99:38:42, 28.73s/it, loss=5.9204]Epoch 1/1:   0%|          | 17/12500 [08:20<99:35:26, 28.72s/it, loss=5.9204]Epoch 1/1:   0%|          | 17/12500 [08:48<99:35:26, 28.72s/it, loss=5.9571]Epoch 1/1:   0%|          | 18/12500 [08:48<99:12:05, 28.61s/it, loss=5.9571]Epoch 1/1:   0%|          | 18/12500 [09:17<99:12:05, 28.61s/it, loss=6.9840]Epoch 1/1:   0%|          | 19/12500 [09:17<99:24:31, 28.67s/it, loss=6.9840]slurmstepd: error: *** JOB 726657 ON draco1 CANCELLED AT 2025-10-04T09:52:55 DUE TO TIME LIMIT ***
