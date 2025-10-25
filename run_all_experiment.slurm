@@ -61,7 +61,7 @@ export PYTORCH_CUDA_ALLOC_CONF="expandable_segments:True,max_split_size_mb:128"
 
 python -m src.main \
        --model_name "$1" \
-       --config_path "configs/pcad_config.yaml" \
+       --config_path "$3" \
        --train_data_path "$DATASET_PATH_TRAIN" \
        --val_data_path "$DATASET_PATH_VAL" \
        --seed "$2"

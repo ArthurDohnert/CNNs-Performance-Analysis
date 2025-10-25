@@ -1,39 +1,47 @@
 #!/bin/sh
-# Submete jobs via /bin/sh, definindo o tempo por modelo e passando para o sbatch.
+# submit_all_24h.sh - Submete todos os jobs de modelo com um tempo fixo de 24 horas.
 
 set -eu
-
 mkdir -p logs
 
-# Função para escolher tempo por modelo (HH:MM:SS)
+# Função para submeter um job com tempo fixo
 submit_model() {
   model="$1"
   seed="$2"
+  time_limit="24:00:00"  # Tempo fixo de 24 horas para todos os modelos
 
-  case "$model" in
-    MobileNetV1|mobilenet_v1) time_limit="02:00:00" ;;
-    Resnet34|resnet34)        time_limit="07:00:00" ;;
-    ResNet101|resnet101)      time_limit="15:00:00" ;;
-    EfficientNetB0|efficientnet_b0) time_limit="04:00:00" ;;
-    Squeezenet|squeezenet)   time_limit="04:00:00" ;;
-    *)                        time_limit="04:00:00" ;;
-  esac
+  echo "--> Submetendo job: $model (seed $seed) | Tempo Limite: $time_limit"
+  
+ 
+  config_path="configs/${model}_config.yaml"
 
-  echo "Submetendo: $model seed $seed | tempo $time_limit"
+  # Verifica se o arquivo de config existe
+  if [ ! -f "$config_path" ]; then
+    echo "ERRO: Arquivo de configuração não encontrado para o modelo $model em $config_path"
+    return 1
+  fi
+
   sbatch --job-name="${model}_seed_${seed}" \
          --time="$time_limit" \
-         run_all_experiment.slurm "$model" "$seed"
+         run_experiment.slurm "$model" "$seed" "$config_path"
+  
+  sleep 1 # Pausa para não sobrecarregar o escalonador do Slurm
 }
 
-# Modelos e sementes (strings simples para compatibilidade POSIX)
-SEEDS="42 52 62 72 82"
-MODELS="efficientnet_b0 squeezenet"
+# Lista completa de modelos 
+MODELS="efficientnet_b0 mobilenet_V1 shufflenet_v2 squeezenet"
+#densenet121 efficientnet_b0 efficientnet_b7 inception_v3 inception_v4 mobilenet_V1 resnet34 resnet101 shufflenet_v2 squeezenet vgg16 xception
+# Sementes para as execuções independentes
+SEEDS="42"
 
+# Loop para submeter um job para cada combinação de modelo e semente
 for m in $MODELS; do
   for s in $SEEDS; do
     submit_model "$m" "$s"
-    sleep 1
   done
 done
 
-echo "Todos os jobs submetidos."
+echo "========================================================="
+echo "Todos os jobs foram submetidos com um tempo limite de 24 horas."
+echo "========================================================="
+
