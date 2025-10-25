@@ -9,8 +9,9 @@ from torch.utils.data import DataLoader
 from tqdm import tqdm
 import logging
 from ..utils import metrics, performance, logging as custom_logging
+from torch.cuda.amp import autocast # <-- 1. IMPORTAR AUTOCAST
 
-logging.basicConfig(level=logging.INFO)
+# logging.basicConfig(level=logging.INFO) # Esta linha pode ser removida se o logger já é configurado no main.py
 
 def run_inference(
     model: torch.nn.Module, 
@@ -20,6 +21,7 @@ def run_inference(
 ) -> dict:
     """
     Runs inference on a given model and dataloader, and computes performance metrics.
+    Uses autocast for consistency with AMP training.
     """
     model.to(device)
     model.eval()
@@ -32,12 +34,15 @@ def run_inference(
     perf_monitor.start()
 
     with torch.no_grad():
-        for inputs, labels in tqdm(dataloader, desc="Inferindo"):
-            inputs, labels = inputs.to(device), labels.to(device)
-            outputs = model(inputs)
-            _, predicted = torch.max(outputs.data, 1)
-            all_predictions.extend(predicted.cpu().numpy())
-            all_labels.extend(labels.cpu().numpy())
+        # --- 2. USAR O CONTEXTO AUTOCAST ---
+        # Envolve o loop de inferência para garantir compatibilidade com AMP
+        with autocast(enabled=(device.type == 'cuda')):
+            for inputs, labels in tqdm(dataloader, desc="Inferindo"):
+                inputs, labels = inputs.to(device, non_blocking=True), labels.to(device, non_blocking=True)
+                outputs = model(inputs)
+                _, predicted = torch.max(outputs.data, 1)
+                all_predictions.extend(predicted.cpu().numpy())
+                all_labels.extend(labels.cpu().numpy())
 
     perf_metrics = perf_monitor.stop()
     

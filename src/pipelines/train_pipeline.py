@@ -14,6 +14,9 @@ import logging
 from ..utils import data_loader, logging as custom_logging, performance
 from . import inference_pipeline # Para avaliação final
 from ..utils import reproducibility
+from torch.cuda.amp import autocast, GradScaler
+
+
 
 def get_model(model_name: str, num_classes: int) -> torch.nn.Module:
 
@@ -34,7 +37,6 @@ def get_model(model_name: str, num_classes: int) -> torch.nn.Module:
             "inception_v4": "InceptionV4",
             "shufflenet_v2": "ShuffleNetV2",
             "squeezenet": "SqueezeNet",
-            # Adicione todos os outros mapeamentos aqui
         }
         
         class_name = model_name_map.get(model_name)
@@ -64,18 +66,7 @@ def run_training(
     seed: int
 ) -> str:
     """
-    Executes the full training and validation cycle for a model.
-    
-    Args:
-        model_name: Name of the model architecture.
-        train_data_path: Path to the training data.
-        val_data_path: Path to the validation data.
-        config: Dictionary with hyperparameters (learning_rate, epochs, batch_size).
-        device: The device to train on (CPU or CUDA).
-        logger: The logger object for tracking.
-        
-    Returns:
-        Path to the saved trained model.
+    Executa o ciclo completo de treinamento e validação para um modelo com AMP.
     """
     reproducibility.set_seed(seed)
     logger.info(f"Semente aleatória para esta execução foi fixada em: {seed}")
@@ -89,6 +80,12 @@ def run_training(
     optimizer = optim.Adam(model.parameters(), lr=config['learning_rate'])
     criterion = nn.CrossEntropyLoss()
 
+    # --- INICIALIZAÇÃO DO AMP ---
+    # Cria uma instância do GradScaler.
+    # O scaler só é ativado se o dispositivo for CUDA.
+    scaler = GradScaler(enabled=(device.type == 'cuda'))
+    logger.info(f"AMP (Automatic Mixed Precision) {'ativado' if scaler.is_enabled() else 'desativado'}.")
+
     logger.info(f"Iniciando treinamento do modelo {model_name} no dispositivo {device}.")
     perf_monitor = performance.PerformanceMonitor()
     perf_monitor.start()
@@ -99,13 +96,26 @@ def run_training(
         progress_bar = tqdm(train_loader, desc=f"Epoch {epoch+1}/{config['epochs']}", leave=False)
         
         for inputs, labels in progress_bar:
-            inputs, labels = inputs.to(device), labels.to(device)
+            inputs, labels = inputs.to(device, non_blocking=True), labels.to(device, non_blocking=True)
             
-            optimizer.zero_grad()
-            outputs = model(inputs)
-            loss = criterion(outputs, labels)
-            loss.backward()
-            optimizer.step()
+            optimizer.zero_grad(set_to_none=True) # set_to_none=True para melhor performance
+
+            # --- FORWARD PASS COM AUTOCAST ---
+            # O contexto autocast converte operações para FP16/BF16
+            with autocast(enabled=(device.type == 'cuda')):
+                outputs = model(inputs)
+                loss = criterion(outputs, labels)
+            
+            # --- BACKWARD PASS COM SCALER ---
+            # scaler.scale ajusta a loss para evitar underflow dos gradientes
+            scaler.scale(loss).backward()
+            
+            # --- ATUALIZAÇÃO DOS PESOS COM SCALER ---
+            # scaler.step desescala os gradientes e chama optimizer.step()
+            scaler.step(optimizer)
+            
+            # Atualiza a escala para a próxima iteração
+            scaler.update()
             
             epoch_loss += loss.item()
             progress_bar.set_postfix(loss=f"{loss.item():.4f}")
@@ -114,7 +124,10 @@ def run_training(
         logger.info(f"Época {epoch+1} concluída. Loss média: {avg_epoch_loss:.4f}")
 
         # Avaliação no final de cada época (opcional, mas recomendado)
-        inference_pipeline.run_inference(model, val_loader, device, logger)
+        # O autocast também deve ser usado na inferência para consistência
+        with torch.no_grad():
+             with autocast(enabled=(device.type == 'cuda')):
+                inference_pipeline.run_inference(model, val_loader, device, logger)
 
     training_perf_metrics = perf_monitor.stop()
     logger.info("Métricas de performance do treinamento:")
