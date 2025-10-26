@@ -23,7 +23,7 @@ submit_model() {
 
   sbatch --job-name="${model}_seed_${seed}" \
          --time="$time_limit" \
-         run_experiment.slurm "$model" "$seed" "$config_path"
+         run_all_experiment.slurm "$model" "$seed" "$config_path"
   
   sleep 1 # Pausa para não sobrecarregar o escalonador do Slurm
 }
