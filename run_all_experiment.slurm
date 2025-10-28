@@ -47,11 +47,26 @@ PY
 # --- ETAPA 1: COPIAR DADOS PARA O DISCO LOCAL (STAGING) ---
 echo "========================================================="
 echo "Iniciando Staging: Copiando dataset para o $SCRATCH..."
-rsync -avP $HOME/datasets/tiny-imagenet-200 $SCRATCH/
-if [ -d "$SCRATCH/tiny-imagenet-200/val/images" ]; then echo "ERRO: val/images encontrado"; exit 2; fi
-n_classes_val=$(find "$SCRATCH/tiny-imagenet-200/val" -mindepth 1 -maxdepth 1 -type d | wc -l); test "$n_classes_val" -eq 200 || { echo "ERRO: val com $n_classes_val dirs"; exit 3; }
+
+# 1) Sanidade no origem (HOME): precisa ter 200 classes no val e não ter val/images
+if [ -d "$HOME/datasets/tiny-imagenet-200/val/images" ]; then
+  echo "ERRO: Origem tem val/images (val está no formato original); reorganize no HOME antes."; exit 11
+fi
+n_val_home=$(find "$HOME/datasets/tiny-imagenet-200/val" -mindepth 1 -maxdepth 1 -type d | wc -l)
+[ "$n_val_home" -eq 200 ] || { echo "ERRO: Origem val tem $n_val_home dirs (esperado=200)."; exit 12; }
+
+# 2) Cópia limpa para o SCRATCH (trailing slash + --delete evita lixo remanescente)
+rm -rf "$SCRATCH/tiny-imagenet-200"
 rsync -a --delete "$HOME/datasets/tiny-imagenet-200/" "$SCRATCH/tiny-imagenet-200/"
-echo "Staging concluído."
+
+# 3) Sanidade no destino (SCRATCH): não pode existir val/images e deve haver 200 classes
+if [ -d "$SCRATCH/tiny-imagenet-200/val/images" ]; then
+  echo "ERRO: val/images encontrado no SCRATCH (dataset inválido para ImageFolder)."; exit 21
+fi
+n_val_scratch=$(find "$SCRATCH/tiny-imagenet-200/val" -mindepth 1 -maxdepth 1 -type d | wc -l)
+[ "$n_val_scratch" -eq 200 ] || { echo "ERRO: SCRATCH val tem $n_val_scratch dirs (esperado=200)."; exit 22; }
+
+echo "Staging concluído e validado."
 echo "========================================================="
 
 # --- ETAPA 2: EXECUÇÃO USANDO DADOS LOCAIS ---
