@@ -1,13 +1,17 @@
-# configs/pcad_test_config.yaml
-# Configuração para um teste rápido de sanidade no ambiente do PCAD.
-
+# Estrutura aninhada para compatibilidade com o pipeline atualizado
 model_params:
   num_classes: 200
 
 train_params:
-  epochs: 1          # Apenas 1 época para um teste rápido
-  batch_size: 8      # Batch size pequeno para não sobrecarregar a memória
-  learning_rate: 0.001
+  epochs: 5
+  batch_size: 128
+  learning_rate: 0.1
 
 inference_params:
-  batch_size: 16     # Batch size para a fase de inferência/validação
+  batch_size: 128
+
+scheduler_params:
+  type: 'StepLR'   # ou 'CosineAnnealingLR'
+  step_size: 20    # Parâmetro para StepLR
+  gamma: 0.1       # Parâmetro para StepLR
+  # T_max: 100       # Parâmetro para CosineAnnealingLR
