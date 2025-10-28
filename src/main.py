@@ -65,7 +65,7 @@ def main():
             model_name=args.model_name,
             train_data_path=args.train_data_path,
             val_data_path=args.val_data_path,
-            config=training_config,
+            config=config,
             device=device,
             logger=logger,
             seed=args.seed
@@ -78,7 +78,9 @@ def main():
         val_loader = data_loader.get_dataloader(
             args.val_data_path, 
             config['inference_params']['batch_size'], 
-            shuffle=False
+            shuffle=False,
+            is_train=False,  
+            num_workers=16
         )
         
         model = train_pipeline.get_model(args.model_name, config['model_params']['num_classes'])
