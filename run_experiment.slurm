@@ -1,10 +1,6 @@
 #!/bin/bash
+# TESTE COM VENV + STAGING EM $SCRATCH (partição tupi, CUDA 11.8)
 
-# ==============================================================================
-# SCRIPT DE TESTE OTIMIZADO PARA I/O USANDO $SCRATCH (VERSÃO COM VENV)
-# ==============================================================================
-
-# --- Configurações do Job de Teste ---
 #SBATCH --job-name=pcad_sanity_test_scratch_venv
 #SBATCH --partition=tupi
 #SBATCH --nodes=1
@@ -16,61 +12,53 @@
 
 set -euo pipefail
 
-# --- PREPARAÇÃO DO AMBIENTE PYTHON (VENV) ---
+# Garante diretório correto e logs
+cd "$SLURM_SUBMIT_DIR"
+mkdir -p logs
 
-#  Cria uma venv dentro do $SCRATCH (rápido e isolado por job)
+MODEL_NAME="${1:-mobilenet_v1}"
+SEED="${2:-42}"
+
+# 1) VENV no $SCRATCH
 VENV_DIR="$SCRATCH/venv_cnn_perf"
 python3 -m venv "$VENV_DIR"
-source "$VENV_DIR/bin/activate"
+. "$VENV_DIR/bin/activate"
 
-#  Atualiza pip e instala dependências do projeto
-python -m pip install --upgrade pip wheel setuptools
+python -m pip install -U pip wheel setuptools
 
 pip install -r requirements.txt
-if [[ "${SLURM_JOB_PARTITION}" == "shared" ]]; then
-  echo "[INFO] Partição shared detectada -> instalando PyTorch CPU-only e desabilitando CUDA"
-  pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
-  export CUDA_VISIBLE_DEVICES=""        # garante CPU-only
-else
-  echo "[INFO] Partição ${SLURM_JOB_PARTITION} -> instalando PyTorch cu118"
-  pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-fi
 
-#  Verifica CUDA
+# 3) PyTorch CUDA 11.8 para tupi
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+
+# Checagem
 python - <<'PY'
 import torch
-print(f"PyTorch: {torch.__version__}")
-print(f"CUDA disponível: {torch.cuda.is_available()}")
-print(f"GPU detectada: {torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'Nenhuma'}")
+print("PyTorch:", torch.__version__)
+print("CUDA disponível:", torch.cuda.is_available())
+print("GPU:", torch.cuda.get_device_name(0) if torch.cuda.is_available() else "Nenhuma")
 PY
 
-# --- ETAPA 1: COPIAR DADOS PARA O DISCO LOCAL (STAGING) ---
-echo "========================================================="
-echo "Iniciando Staging: Copiando dataset para o $SCRATCH..."
-rsync -avP $HOME/datasets/tiny-imagenet-200 $SCRATCH/
-echo "Staging concluído."
-echo "========================================================="
+# 4) Staging do dataset para $SCRATCH
+rsync -avP "$HOME/datasets/tiny-imagenet-200" "$SCRATCH/"
 
-# --- ETAPA 2: EXECUÇÃO USANDO DADOS LOCAIS ---
-echo "Iniciando Job de Teste..."
+TRAIN="$SCRATCH/tiny-imagenet-200/train"
+VAL="$SCRATCH/tiny-imagenet-200/val"
 
-DATASET_PATH_TRAIN="$SCRATCH/tiny-imagenet-200/train"
-DATASET_PATH_VAL="$SCRATCH/tiny-imagenet-200/val"
+# Caminho ABSOLUTO do YAML (evita 'arquivo não encontrado')
+CONFIG_PATH="$SLURM_SUBMIT_DIR/configs/pcad_config.yaml"
+if [ ! -f "$CONFIG_PATH" ]; then
+  echo "ERRO: Config não encontrada: $CONFIG_PATH" >&2
+  exit 1
+fi
 
+# 5) Execução principal
 python -m src.main \
-       --model_name "$1" \
-       --config_path "configs/pcad_config.yaml" \
-       --train_data_path "$DATASET_PATH_TRAIN" \
-       --val_data_path "$DATASET_PATH_VAL" \
-       --seed "$2"
+  --model_name "$MODEL_NAME" \
+  --config_path "$CONFIG_PATH" \
+  --train_data_path "$TRAIN" \
+  --val_data_path "$VAL" \
+  --seed "$SEED"
 
-# --- ETAPA 3: LIMPEZA OPCIONAL ---
-# Desativa a venv (opcional)
+# 6) Finalização
 deactivate || true
-
-# Resultados (logs e modelos) permanecem no diretório de submissão (HOME)
-
-echo "========================================================="
-echo "JOB DE TESTE CONCLUÍDO (VENV)"
-echo "========================================================="
-
