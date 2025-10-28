@@ -48,6 +48,9 @@ PY
 echo "========================================================="
 echo "Iniciando Staging: Copiando dataset para o $SCRATCH..."
 rsync -avP $HOME/datasets/tiny-imagenet-200 $SCRATCH/
+if [ -d "$SCRATCH/tiny-imagenet-200/val/images" ]; then echo "ERRO: val/images encontrado"; exit 2; fi
+n_classes_val=$(find "$SCRATCH/tiny-imagenet-200/val" -mindepth 1 -maxdepth 1 -type d | wc -l); test "$n_classes_val" -eq 200 || { echo "ERRO: val com $n_classes_val dirs"; exit 3; }
+rsync -a --delete "$HOME/datasets/tiny-imagenet-200/" "$SCRATCH/tiny-imagenet-200/"
 echo "Staging concluído."
 echo "========================================================="
 
