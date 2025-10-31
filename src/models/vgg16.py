@@ -82,6 +82,6 @@ class VGG16(nn.Module):
         x = torch.flatten(x, 1)  
         
         # Passa pelo classificador
-        x = self.classifier(x)
+        x = self.classifier(x.float())
         return x
 
