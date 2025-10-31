@@ -118,7 +118,8 @@ def run_training(
         logger.info("Nenhum scheduler de learning rate configurado. Treinando com LR constante.")
 
 
-    scaler = GradScaler(enabled=(device.type == 'cuda'))
+    use_amp = (device.type == 'cuda' and model_name.lower() != 'vgg16')
+    scaler = GradScaler(enabled=use_amp)
     logger.info(f"AMP (Automatic Mixed Precision) {'ativado' if scaler.is_enabled() else 'desativado'}.")
 
     logger.info(f"Iniciando treinamento do modelo {model_name} no dispositivo {device}.")
@@ -134,7 +135,7 @@ def run_training(
             inputs, labels = inputs.to(device, non_blocking=True), labels.to(device, non_blocking=True)
             optimizer.zero_grad(set_to_none=True)
 
-            with autocast(enabled=(device.type == 'cuda')):
+            with autocast(enabled=use_amp):
                 outputs = model(inputs)
                 loss = criterion(outputs, labels)
             
@@ -156,7 +157,7 @@ def run_training(
             logger.info(f"Taxa de aprendizado ajustada para: {current_lr:.6f}")
 
         with torch.no_grad():
-            with autocast(enabled=(device.type == 'cuda')):
+            with autocast(enabled=use_amp):
                 inference_pipeline.run_inference(model, val_loader, device, logger)
 
     training_perf_metrics = perf_monitor.stop()
