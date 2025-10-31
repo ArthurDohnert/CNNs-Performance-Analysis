@@ -23,13 +23,13 @@ submit_model() {
 
   sbatch --job-name="${model}_seed_${seed}" \
          --time="$time_limit" \
-         run_all_experiment.slurm "$model" "$seed" "$config_path"
+         run_all_guix.slurm "$model" "$seed" "$config_path"
   
   sleep 1 # Pausa para não sobrecarregar o escalonador do Slurm
 }
 
 # Lista completa de modelos 
-MODELS="vgg16"
+MODELS="shufflenet_v2"
 #densenet121 efficientnet_b0 efficientnet_b7 inception_v3 inception_v4 mobilenet_V1 resnet34 resnet101 shufflenet_v2 squeezenet vgg16 xception
 # Sementes para as execuções independentes
 SEEDS="42"

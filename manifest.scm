@@ -1,33 +1,34 @@
-;; manifest.scm
-(use-modules (guix)
-             (gnu packages python-xyz)
-             (gnu packages machine-learning)
-             (gnu packages data-science)
-             (gnu packages plotting)
-             (gnu packages cuda)
-             (gnu packages compression))
+;; manifest.scm — Ambiente Guix para PyTorch com GPU (CUDA 11.8)
+;; Requer canais não‑livres (ex.: guix-science-nonfree / guix-hpc-non-free / nonguix)
+;; para disponibilizar CUDA/cuDNN/NCCL; ajuste os nomes/versões conforme o canal. 
 
-;; Lista completa de pacotes para o projeto de análise de performance de CNNs
-(specification->manifest
-  '(;; Core
-    "python"
-    "python-psutil"
-    "python-pynvml"
-    
-    ;; PyTorch e CUDA
-    "pytorch-cudatoolkit"
-    "pytorch-cuda"
-    "python-torchvision"
-    
-    ;; Análise e Manipulação de Dados
-    "python-numpy"
-    "python-pandas"
-    "python-scikit-learn"
-    
-    ;; Visualização e Utilitários
-    "python-matplotlib"
-    "python-seaborn"
-    "python-tqdm"
-    "python-pillow"
-    "python-yaml"
-    "python-tabulate"))
+(use-modules (guix profiles))
+
+(specifications->manifest
+ '(
+   ;; Python base + utilitários
+   "python@3.10"
+   "python-pip"
+   "python-setuptools"
+   "python-wheel"
+   "coreutils"
+   "findutils"
+   "grep"
+   "which"
+   "rsync"
+   "git"
+
+   ;; BLAS/LAPACK para NumPy/Scikit-Learn (wheels podem usar, ou fallback)
+   "openblas"
+   "lapack"
+
+   ;; Dependências de imagem comuns ao torchvision/Pillow
+   "libjpeg-turbo"
+   "libpng"
+
+   ;; PILHAS GPU — dos canais não‑livres (ajuste nomes/versões conforme canal)
+   ;; Em muitos canais, "cuda-toolkit" permite @11.8; alguns usam "cuda" em vez de "cuda-toolkit".
+   "cuda-toolkit@11.8"
+   "cudnn"          ; geralmente cuDNN 8.x para CUDA 11.8
+   "nccl"           ; NCCL compatível com CUDA 11.x
+ ))
