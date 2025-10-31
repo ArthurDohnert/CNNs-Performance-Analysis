@@ -93,8 +93,19 @@ def run_training(
         weight_decay=5e-4
     )
     logger.info("Usando otimizador SGD com momento e weight decay.")
-    criterion = nn.CrossEntropyLoss()
+    criterion = nn.CrossEntropyLoss(label_smoothing=0.1)
 
+    def init_vgg(m):
+        if isinstance(m, nn.Conv2d):
+            nn.init.kaiming_normal_(m.weight, mode='fan_out', nonlinearity='relu')
+            if m.bias is not None:
+                nn.init.constant_(m.bias, 0)
+        elif isinstance(m, nn.Linear):
+            nn.init.normal_(m.weight, 0, 0.01)
+            nn.init.constant_(m.bias, 0)
+
+    if model_name.lower() == 'vgg16':
+        model.apply(init_vgg)
     # --- 2. CRIAÇÃO DINÂMICA DO SCHEDULER ---
     scheduler = None
     if 'scheduler_params' in config and config['scheduler_params']:
