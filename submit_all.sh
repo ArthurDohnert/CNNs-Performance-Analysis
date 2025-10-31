@@ -29,7 +29,7 @@ submit_model() {
 }
 
 # Lista completa de modelos 
-MODELS="densenet121 vgg16 efficientnet_b7 inception_v4 resnet101 xception"
+MODELS="vgg16 inception_v4 resnet101 xception"
 #densenet121 efficientnet_b0 efficientnet_b7 inception_v3 inception_v4 mobilenet_V1 resnet34 resnet101 shufflenet_v2 squeezenet vgg16 xception
 # Sementes para as execuções independentes
 SEEDS="42"
