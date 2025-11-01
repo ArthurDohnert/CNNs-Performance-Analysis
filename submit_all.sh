@@ -29,10 +29,10 @@ submit_model() {
 }
 
 # Lista completa de modelos 
-MODELS="shufflenet_v2"
+MODELS="shufflenet_v2 squeezenet mobilenet_V1 efficientnet_b0"
 #densenet121 efficientnet_b0 efficientnet_b7 inception_v3 inception_v4 mobilenet_V1 resnet34 resnet101 shufflenet_v2 squeezenet vgg16 xception
 # Sementes para as execuções independentes
-SEEDS="42"
+SEEDS="42 52 62 72 82"
 
 # Loop para submeter um job para cada combinação de modelo e semente
 for m in $MODELS; do
