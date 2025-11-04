@@ -59,11 +59,11 @@ data/tiny-imagenet-200/train/<wnid>/images/*.JPEG​
 
 data/tiny-imagenet-200/val/images/*.JPEG e val/val_annotations.txt (após script, val/<wnid>/images).​
 
-### Como rodar um experimento ###
+### Como rodar uma run de um modelo ###
 
 Execução local:
 
-​python -m src.main 
+​>>          python -m src.main 
 >>        --model_name 
 >>        --config_path 
 >>        --train_data_path 
@@ -81,6 +81,11 @@ Saídas esperadas:
 
 logs/<run_id>/ … arquivos .log, métricas por época, tempos, uso de memória.​
 
+### Como rodar os experimentos ###
+
+Definição dos modelos e das seeds no arquivo submit_all.sh
+
+>>       sh submit_all.sh
 
 ### Como gerar análises com o logs_processor ###
 
@@ -93,6 +98,7 @@ Rode as células na ordem.
 
 Convenções de configuração
 configs/<nome>.yaml define: modelo (ex.: vgg16, resnet18), dataset root, batch size, epochs, otimizador, LR schedule, augmentations e opções de logging.​
+
 
 
 
