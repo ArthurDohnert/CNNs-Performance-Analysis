@@ -37,21 +37,23 @@ scripts e raiz:
 
 Opção 1 — Guix:
 
-guix shell -m manifest.scm 
+>>      guix shell -m manifest.scm 
 
 Opção 2 — venv + pip:
 
-python -m venv venv​
+>>      python -m venv venv​
 
-source venv/bin/activate (Linux/macOS) ou venv\Scripts\activate (Windows)​
+>>      source venv/bin/activate (Linux/macOS) ou venv\Scripts\activate (Windows)​
 
-pip install -r requirements.txt​
+>>      pip install -r requirements.txt​
 
 
 ### Preparação do dataset Tiny ImageNet-200 ###
 Baixe o Tiny ImageNet-200 e extraia para data/tiny-imagenet-200/ mantendo a estrutura padrão (train, val, test).​
 
-Execute: python prepare_tiny_imagenet_val.py para criar a pasta val/class e o annotations.txt conforme esperado pelos loaders.​
+Execute: 
+>>      python prepare_tiny_imagenet_val.py
+para criar a pasta val/class e o annotations.txt conforme esperado pelos loaders.​
 
 Estrutura esperada:
 
@@ -63,7 +65,7 @@ data/tiny-imagenet-200/val/images/*.JPEG e val/val_annotations.txt (após script
 
 Execução local:
 
-​>>          python -m src.main 
+>>        python -m src.main 
 >>        --model_name 
 >>        --config_path 
 >>        --train_data_path 
@@ -73,9 +75,7 @@ Execução local:
 
 Via SLURM:
 
-sbatch run_experiment.slurm .​
-
-Para rodar vários modelos: sbatch run_all_experiment.slurm.​
+>>       sbatch run_experiment.slurm .​
 
 Saídas esperadas:
 
@@ -95,9 +95,9 @@ Abra logs_processor.ipynb.​
 Rode as células na ordem.
 
 
-
 Convenções de configuração
 configs/<nome>.yaml define: modelo (ex.: vgg16, resnet18), dataset root, batch size, epochs, otimizador, LR schedule, augmentations e opções de logging.​
+
 
 
 
