@@ -3,10 +3,11 @@
     (name 'guix)
     (url "https://git.savannah.gnu.org/git/guix.git")
     (branch "master")
-    (commit a729c88f6702478ab2405bc719cb74b14d13f387))
+    (commit "a729c88f6702478ab2405bc719cb74b14d13f387")
+    )
   (channel
     (name 'guix-science-nonfree)
-    (url "https://github.com/guix-science/guix-science-nonfree/")
+    (url "https://codeberg.org/guix-science/guix-science-nonfree.git")
     (introduction
       (make-channel-introduction
         "58661b110325fd5d9b40e6f0177cc486a615817e"
