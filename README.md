@@ -1,7 +1,7 @@
-### CNNs Performance Analysis###
+### CNNs Performance Analysis ###
 Repositório para executar e comparar modelos CNN em Tiny ImageNet-200, registrar métricas de treino/validação e gerar análises de desempenho (acurácia, tempo/latência e recursos).​
 
-### Estrutura do projeto###
+### Estrutura do projeto ###
 - configs/ — arquivos de configuração dos experimentos (hiperparâmetros, dataset, caminhos de saída).​
 
 - data/tiny-imagenet-200/ — dataset Tiny ImageNet-200 preparado para treino e validação.​
@@ -33,7 +33,7 @@ scripts e raiz:
 
 - manifest.scm — manifesto do GNU Guix para ambientes reprodutíveis.​
 
-### Instalação do ambiente###
+### Instalação do ambiente ###
 
 Opção 1 — Guix:
 
@@ -48,7 +48,7 @@ source venv/bin/activate (Linux/macOS) ou venv\Scripts\activate (Windows)​
 pip install -r requirements.txt​
 
 
-### Preparação do dataset Tiny ImageNet-200###
+### Preparação do dataset Tiny ImageNet-200 ###
 Baixe o Tiny ImageNet-200 e extraia para data/tiny-imagenet-200/ mantendo a estrutura padrão (train, val, test).​
 
 Execute: python prepare_tiny_imagenet_val.py para criar a pasta val/class e o annotations.txt conforme esperado pelos loaders.​
@@ -98,4 +98,5 @@ Rode as células na ordem.
 
 Convenções de configuração
 configs/<nome>.yaml define: modelo (ex.: vgg16, resnet18), dataset root, batch size, epochs, otimizador, LR schedule, augmentations e opções de logging.​
+
 
