@@ -76,6 +76,11 @@ Execução local:
 Via SLURM:
 
 >>       sbatch run_experiment.slurm .​
+>>         --model_name 
+>>        --config_path 
+>>        --train_data_path 
+>>        --val_data_path
+>>        --seed 
 
 Saídas esperadas:
 
@@ -97,6 +102,7 @@ Rode as células na ordem.
 
 Convenções de configuração
 configs/<nome>.yaml define: modelo (ex.: vgg16, resnet18), dataset root, batch size, epochs, otimizador, LR schedule, augmentations e opções de logging.​
+
 
 
 
