@@ -59,7 +59,7 @@ data/tiny-imagenet-200/train/<wnid>/images/*.JPEG​
 
 data/tiny-imagenet-200/val/images/*.JPEG e val/val_annotations.txt (após script, val/<wnid>/images).​
 
-### Como rodar um experimento###
+### Como rodar um experimento ###
 
 Execução local:
 
@@ -70,11 +70,6 @@ Execução local:
 >>        --val_data_path
 >>        --seed 
 
-Boas práticas:
-
-Defina um RUN_ID único por execução para separar logs e resultados.​
-
-Exporte CUDA_VISIBLE_DEVICES quando necessário, e seeds para reprodutibilidade.​
 
 Via SLURM:
 
@@ -87,7 +82,7 @@ Saídas esperadas:
 logs/<run_id>/ … arquivos .log, métricas por época, tempos, uso de memória.​
 
 
-### Como gerar análises com o logs_processor###
+### Como gerar análises com o logs_processor ###
 
 
 Abra logs_processor.ipynb.​
@@ -98,5 +93,6 @@ Rode as células na ordem.
 
 Convenções de configuração
 configs/<nome>.yaml define: modelo (ex.: vgg16, resnet18), dataset root, batch size, epochs, otimizador, LR schedule, augmentations e opções de logging.​
+
 
 
