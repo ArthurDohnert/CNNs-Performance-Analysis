@@ -2,26 +2,16 @@
 
 (specifications->manifest
  '(
-   ;; Python base + utilitários
+   ;; Python + ferramentas para instalar via pip no ambiente puro
    "python@3.10"
    "python-pip"
    "python-setuptools"
    "python-wheel"
-   "coreutils"
-   "findutils"
-   "grep"
-   "which"
-   "rsync"
-   "git"
 
+   ;; Utilitários usados no job
+   "coreutils" "findutils" "grep" "which" "rsync" "git"
 
-   "openblas"
-   "lapack"
-
-   "libjpeg-turbo"
-   "libpng"
-
-   "cuda-toolkit@11.8"
-   "cudnn"          ; geralmente cuDNN 8.x para CUDA 11.8
-   "nccl"           ; NCCL compatível com CUDA 11.x
+   ;; BLAS/LAPACK e libs de imagem úteis para NumPy/Pillow
+   "openblas" "lapack"
+   "libjpeg-turbo" "libpng"
  ))
