@@ -4,6 +4,7 @@
  '(
    ;; Python + ferramentas para instalar via pip no ambiente puro
    "bash-minimal"
+   "python"
    "python@3.10"
    "python-pip"
    "python-setuptools"
