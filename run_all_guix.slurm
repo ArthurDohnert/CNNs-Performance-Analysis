@@ -32,7 +32,6 @@ export SCRATCH="${SCRATCH_JOB}"
 
 if [ -f "./channels.scm" ]; then
   GUIX_SHELL=(guix time-machine -C ./channels.scm -- shell -m manifest.scm \
-    --pure \
     --preserve=^SLURM \
     --preserve=^SCRATCH$ \
     --preserve=^LD_LIBRARY_PATH$ \
@@ -41,7 +40,6 @@ if [ -f "./channels.scm" ]; then
     --preserve=^PIP_CACHE_DIR$)
 else
   GUIX_SHELL=(guix shell -m manifest.scm \
-    --pure \
     --preserve=^SLURM \
     --preserve=^SCRATCH$ \
     --preserve=^LD_LIBRARY_PATH$ \
