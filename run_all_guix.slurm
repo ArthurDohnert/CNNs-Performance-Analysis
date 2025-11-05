@@ -16,25 +16,36 @@
 
 set -euo pipefail
 
+# Fallbacks portáveis para área temporária/scratch
+JOB_ID="${SLURM_JOB_ID:-$$}"
+USER_NAME="${USER:-${LOGNAME:-user}}"
+
+# Base preferindo $SCRATCH, depois $TMPDIR, depois /scratch/$USER, depois $HOME/.scratch
+SCRATCH_BASE="${SCRATCH:-${TMPDIR:-/scratch/${USER_NAME}}}"
+[ -d "${SCRATCH_BASE}" ] || SCRATCH_BASE="${HOME}/.scratch"
+
+SCRATCH_JOB="${SCRATCH_BASE}/job_${JOB_ID}"
+mkdir -p -m 700 "${SCRATCH_JOB}"
+
+# Exporte e use só após definido
+export SCRATCH="${SCRATCH_JOB}"
+
+# Guix shell (puro) preservando SLURM e SCRATCH
 if [ -f "./channels.scm" ]; then
-  GUIX_SHELL=(guix time-machine -C ./channels.scm -- shell -m manifest.scm --pure --preserve=^SLURM)
+  GUIX_SHELL=(guix time-machine -C ./channels.scm -- shell -m manifest.scm --pure --preserve=^SLURM --preserve=^SCRATCH$)
 else
-  GUIX_SHELL=(guix shell -m manifest.scm --pure --preserve=^SLURM)
+  GUIX_SHELL=(guix shell -m manifest.scm --pure --preserve=^SLURM --preserve=^SCRATCH$)
 fi
 
-export PIP_CACHE_DIR="$SCRATCH/.pip-cache"
-export PYTHONUSERBASE="$SCRATCH/.pip-user"
-export PATH="$PYTHONUSERBASE/bin:$PATH"
-export PYTHONUSERBASE="$SCRATCH/.pip-user" 
+# Prefixos isolados por job dentro do SCRATCH
+export PIP_CACHE_DIR="${SCRATCH}/.pip-cache"
+export PYTHONUSERBASE="${SCRATCH}/.pip-user"
+export PATH="${PYTHONUSERBASE}/bin:${PATH}" 
 
 
 # 1) Checagem PyTorch/CUDA após instalar dependências
 "${GUIX_SHELL[@]}" -- bash -c '
-  set -euo pipefail
-  export PIP_CACHE_DIR="$SCRATCH/.pip-cache"
-  export PYTHONUSERBASE="$SCRATCH/.pip-user"
-  export PATH="$PYTHONUSERBASE/bin:$PATH"
-  export PYTHONUSERBASE="$SCRATCH/.pip-user"   
+  set -euo pipefail  
 
   python -m pip install --upgrade pip wheel setuptools
 
