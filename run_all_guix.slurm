@@ -30,11 +30,24 @@ mkdir -p -m 700 "${SCRATCH_JOB}"
 # Exporte e use só após definido
 export SCRATCH="${SCRATCH_JOB}"
 
-# Guix shell (puro) preservando SLURM e SCRATCH
 if [ -f "./channels.scm" ]; then
-  GUIX_SHELL=(guix time-machine -C ./channels.scm -- shell -m manifest.scm --pure --preserve=^SLURM --preserve=^SCRATCH$)
+  GUIX_SHELL=(guix time-machine -C ./channels.scm -- shell -m manifest.scm \
+    --pure \
+    --preserve=^SLURM \
+    --preserve=^SCRATCH$ \
+    --preserve=^LD_LIBRARY_PATH$ \
+    --preserve=^CUDA_VISIBLE_DEVICES$ \
+    --preserve=^PYTHONUSERBASE$ \
+    --preserve=^PIP_CACHE_DIR$)
 else
-  GUIX_SHELL=(guix shell -m manifest.scm --pure --preserve=^SLURM --preserve=^SCRATCH$)
+  GUIX_SHELL=(guix shell -m manifest.scm \
+    --pure \
+    --preserve=^SLURM \
+    --preserve=^SCRATCH$ \
+    --preserve=^LD_LIBRARY_PATH$ \
+    --preserve=^CUDA_VISIBLE_DEVICES$ \
+    --preserve=^PYTHONUSERBASE$ \
+    --preserve=^PIP_CACHE_DIR$)
 fi
 
 # Prefixos isolados por job dentro do SCRATCH
@@ -43,40 +56,38 @@ export PYTHONUSERBASE="${SCRATCH}/.pip-user"
 export PATH="${PYTHONUSERBASE}/bin:${PATH}" 
 
 
-# 1) Checagem PyTorch/CUDA após instalar dependências
+# 1 Checagem PyTorch/CUDA após instalar dependências
 "${GUIX_SHELL[@]}" -- bash -c '
-  set -euo pipefail  
+  set -euo pipefail
 
-  python -m pip install --upgrade pip wheel setuptools
+  python3 -m pip install --upgrade pip wheel setuptools
 
-  # Instala todos do requirements EXCETO torch/vision/audio para depois fixar cu118
-  pip install -r <(grep -viE "^(torch|torchvision|torchaudio)\b" requirements.txt) --user
+  # Instala todos do requirements EXCETO torch/vision/audio
+  python3 -m pip install -r <(grep -viE "^(torch|torchvision|torchaudio)\b" requirements.txt) --user
 
-  # PyTorch 2.2.1 + cu118 (wheels oficiais com runtime CUDA)
-  pip install --index-url https://download.pytorch.org/whl/cu118 \
+  # PyTorch 2.2.1 + cu118 (URL sem colchetes)
+  python3 -m pip install --index-url https://download.pytorch.org/whl/cu118 \
     torch==2.2.1 torchvision==0.17.1 torchaudio==2.2.1 --user
 
-  # Garante que o Python enxergue o user-site
-  export PYTHONPATH="$(python -m site --user-site):${PYTHONPATH:-}"
+  export PYTHONPATH="$(python3 -m site --user-site):${PYTHONPATH:-}"
 
- python - <<PY
+  python3 - <<PY
 import torch, ctypes, os
 print("torch:", torch.version)
 print("torch.version.cuda:", torch.version.cuda)
 print("built_with_cuda:", torch.backends.cuda.is_built())
 print("is_available:", torch.cuda.is_available())
-print("CUDA_VISIBLE_DEVICES:", os.environ.get("CUDA_VISIBLE_DEVICES")) 
+print("CUDA_VISIBLE_DEVICES:", os.environ.get("CUDA_VISIBLE_DEVICES"))
 try:
- ctypes.CDLL("libcuda.so.1"); print("libcuda: OK")
+    ctypes.CDLL("libcuda.so.1"); print("libcuda: OK")
 except OSError as e:
- print("libcuda: FAIL ->", e)
+    print("libcuda: FAIL ->", e)
 gpu = torch.cuda.get_device_name(0) if torch.cuda.is_available() else "Nenhuma"
 print(f"GPU: {gpu}")
-
 PY
 '
 
-# 2) Staging do dataset no SCRATCH
+# 2 Staging do dataset no SCRATCH
 echo "========================================================="
 echo "Iniciando Staging: Copiando dataset para o \$SCRATCH..."
 if [ -d "$HOME/datasets/tiny-imagenet-200/val/images" ]; then
@@ -96,22 +107,18 @@ n_val_scratch=$(find "$SCRATCH/tiny-imagenet-200/val" -mindepth 1 -maxdepth 1 -t
 echo "Staging concluído e validado."
 echo "========================================================="
 
-# 3) Execução dentro do guix shell com user-site ativo
+# 3 Execução dentro do guix shell com user-site ativo
 DATASET_PATH_TRAIN="$SCRATCH/tiny-imagenet-200/train"
 DATASET_PATH_VAL="$SCRATCH/tiny-imagenet-200/val"
 export PYTORCH_CUDA_ALLOC_CONF="backend:cudaMallocAsync"
 
-"${GUIX_SHELL[@]}" -- bash -c "
-  set -euo pipefail
-  export PYTHONUSERBASE='$PYTHONUSERBASE'
-  export PYTHONPATH=\"\$(python -m site --user-site):\${PYTHONPATH:-}\"
-  python -m src.main \
-    --model_name \"$1\" \
-    --config_path \"$3\" \
-    --train_data_path \"$DATASET_PATH_TRAIN\" \
-    --val_data_path \"$DATASET_PATH_VAL\" \
-    --seed \"$2\"
+"${GUIX_SHELL[@]}" -- python3 -m src.main \
+  --model_name "$1" \
+  --config_path "$3" \
+  --train_data_path "$DATASET_PATH_TRAIN" \
+  --val_data_path "$DATASET_PATH_VAL" \
+  --seed "$2"
 "
 echo "========================================================="
-echo "JOB DE TESTE CONCLUÍDO (GUIX GPU‑only, sem venv)"
+echo "JOB DE TESTE CONCLUÍDO "
 echo "========================================================="
