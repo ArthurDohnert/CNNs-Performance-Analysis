@@ -30,15 +30,6 @@ mkdir -p -m 700 "${SCRATCH_JOB}"
 # Exporte e use só após definido
 export SCRATCH="${SCRATCH_JOB}"
 
-if [ -z "${LD_LIBRARY_PATH:-}" ]; then
-  for d in /usr/lib64 /usr/lib/x86_64-linux-gnu /usr/lib /lib64 /lib; do
-    if [ -e "$d/libcuda.so.1" ]; then
-      export LD_LIBRARY_PATH="$d${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
-      break
-    fi
-  done
-fi
-
 if [ -f "./channels.scm" ]; then
   GUIX_SHELL=(guix time-machine -C ./channels.scm -- shell -m manifest.scm \
     --pure \
@@ -65,27 +56,22 @@ export PYTHONUSERBASE="${SCRATCH}/.pip-user"
 export PATH="${PYTHONUSERBASE}/bin:${PATH}" 
 
 
-SETUP_SH="$SCRATCH/guix_setup.sh"
-cat > "$SETUP_SH" <<'BASH'
-set -euo pipefail
+# 1 Checagem PyTorch/CUDA após instalar dependências
+"${GUIX_SHELL[@]}" -- bash -c '
+  set -euo pipefail
 
-# 1) Upgrade básicos do pip
-python3 -m pip install --upgrade pip wheel setuptools
+  python3 -m pip install --upgrade pip wheel setuptools
 
-# 2) Filtra requirements sem torch/vision/audio sem usar <( )
-REQ_NO_TORCH="$SCRATCH/requirements-no-torch.txt"
-grep -viE '^(torch|torchvision|torchaudio)\b' requirements.txt > "$REQ_NO_TORCH"
-python3 -m pip install -r "$REQ_NO_TORCH" --user
+  # Instala todos do requirements EXCETO torch/vision/audio
+  python3 -m pip install -r <(grep -viE "^(torch|torchvision|torchaudio)\b" requirements.txt) --user
 
-# 3) PyTorch 2.2.1 + cu118 com URL correta (sem Markdown)
-python3 -m pip install --index-url https://download.pytorch.org/whl/cu118 \
-  torch==2.2.1 torchvision==0.17.1 torchaudio==2.2.1 --user
+  # PyTorch 2.2.1 + cu118 (URL sem colchetes)
+  python3 -m pip install --index-url https://download.pytorch.org/whl/cu118 \
+    torch==2.2.1 torchvision==0.17.1 torchaudio==2.2.1 --user
 
-# 4) Garante visibilidade do user-site
-export PYTHONPATH="$(python3 -m site --user-site):${PYTHONPATH:-}"
+  export PYTHONPATH="$(python3 -m site --user-site):${PYTHONPATH:-}"
 
-# 5) Diagnóstico CUDA/driver
-python3 - <<'PY'
+  python3 - <<PY
 import torch, ctypes, os
 print("torch:", torch.version)
 print("torch.version.cuda:", torch.version.cuda)
@@ -96,13 +82,10 @@ try:
     ctypes.CDLL("libcuda.so.1"); print("libcuda: OK")
 except OSError as e:
     print("libcuda: FAIL ->", e)
-print("GPU:", torch.cuda.get_device_name(0) if torch.cuda.is_available() else "Nenhuma")
+gpu = torch.cuda.get_device_name(0) if torch.cuda.is_available() else "Nenhuma"
+print(f"GPU: {gpu}")
 PY
-BASH
-chmod +x "$SETUP_SH"
-
-# Executa com guix shell preservando variáveis críticas
-"${GUIX_SHELL[@]}" --preserve=^LD_LIBRARY_PATH$ --preserve=^CUDA_VISIBLE_DEVICES$ -- "$SETUP_SH"
+'
 
 # 2 Staging do dataset no SCRATCH
 echo "========================================================="
