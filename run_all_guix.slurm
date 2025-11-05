@@ -25,10 +25,16 @@ fi
 export PIP_CACHE_DIR="$SCRATCH/.pip-cache"
 export PYTHONUSERBASE="$SCRATCH/.pip-user"
 export PATH="$PYTHONUSERBASE/bin:$PATH"
+export PYTHONUSERBASE="$SCRATCH/.pip-user" 
+
 
 # 1) Checagem PyTorch/CUDA após instalar dependências
 "${GUIX_SHELL[@]}" -- bash -c '
   set -euo pipefail
+  export PIP_CACHE_DIR="$SCRATCH/.pip-cache"
+  export PYTHONUSERBASE="$SCRATCH/.pip-user"
+  export PATH="$PYTHONUSERBASE/bin:$PATH"
+  export PYTHONUSERBASE="$SCRATCH/.pip-user"   
 
   python -m pip install --upgrade pip wheel setuptools
 
@@ -42,11 +48,18 @@ export PATH="$PYTHONUSERBASE/bin:$PATH"
   # Garante que o Python enxergue o user-site
   export PYTHONPATH="$(python -m site --user-site):${PYTHONPATH:-}"
 
-  python - <<PY
-import torch
-print(f"PyTorch: {torch.__version__}")
-print(f"CUDA disponível: {torch.cuda.is_available()}")
-print(f"GPU: {torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'Nenhuma'}")
+python - <<PY
+import torch, ctypes, os
+print("torch:", torch.version)
+print("torch.version.cuda:", torch.version.cuda)
+print("built_with_cuda:", torch.backends.cuda.is_built())
+print("is_available:", torch.cuda.is_available())
+print("CUDA_VISIBLE_DEVICES:", os.environ.get("CUDA_VISIBLE_DEVICES"))
+try:
+ctypes.CDLL("libcuda.so.1"); print("libcuda: OK")
+except OSError as e:
+print("libcuda: FAIL ->", e)
+print(f"GPU: {torch.cuda.get_device_name(0) if torch.cuda.is_available() else "Nenhuma"}")
 PY
 '
 
