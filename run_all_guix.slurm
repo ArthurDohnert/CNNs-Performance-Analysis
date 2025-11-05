@@ -60,17 +60,17 @@ export PATH="${PYTHONUSERBASE}/bin:${PATH}"
   export PYTHONPATH="$(python -m site --user-site):${PYTHONPATH:-}"
 
  python - <<PY
- import torch, ctypes, os
- print("torch:", torch.version)
- print("torch.version.cuda:", torch.version.cuda)
- print("built_with_cuda:", torch.backends.cuda.is_built())
- print("is_available:", torch.cuda.is_available())
- print("CUDA_VISIBLE_DEVICES:", os.environ.get("CUDA_VISIBLE_DEVICES")) 
- try:
- ctypes.CDLL("libcuda.so.1"); print("libcuda: OK")
- except OSError as e:
- print("libcuda: FAIL ->", e)
- print(f"GPU: {torch.cuda.get_device_name(0) if torch.cuda.is_available() else "Nenhuma"}")
+import torch, ctypes, os
+print("torch:", torch.version)
+print("torch.version.cuda:", torch.version.cuda)
+print("built_with_cuda:", torch.backends.cuda.is_built())
+print("is_available:", torch.cuda.is_available())
+print("CUDA_VISIBLE_DEVICES:", os.environ.get("CUDA_VISIBLE_DEVICES")) 
+try:
+ctypes.CDLL("libcuda.so.1"); print("libcuda: OK")
+except OSError as e:
+print("libcuda: FAIL ->", e)
+print(f"GPU: {torch.cuda.get_device_name(0) if torch.cuda.is_available() else "Nenhuma"}")
 PY
 '
 
