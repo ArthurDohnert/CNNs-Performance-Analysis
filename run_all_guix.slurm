@@ -16,7 +16,6 @@
 
 set -euo pipefail
 
-# Pinnar canais para reprodutibilidade se channels.scm existir
 if [ -f "./channels.scm" ]; then
   GUIX_SHELL=(guix time-machine -C ./channels.scm -- shell -m manifest.scm --pure --preserve=^SLURM)
 else
@@ -28,7 +27,7 @@ export PYTHONUSERBASE="$SCRATCH/.pip-user"
 export PATH="$PYTHONUSERBASE/bin:$PATH"
 
 # 1) Checagem PyTorch/CUDA após instalar dependências
-"${GUIX_SHELL[@]}" -- bash -lc '
+"${GUIX_SHELL[@]}" -- bash -c '
   set -euo pipefail
 
   python -m pip install --upgrade pip wheel setuptools
@@ -76,7 +75,7 @@ DATASET_PATH_TRAIN="$SCRATCH/tiny-imagenet-200/train"
 DATASET_PATH_VAL="$SCRATCH/tiny-imagenet-200/val"
 export PYTORCH_CUDA_ALLOC_CONF="backend:cudaMallocAsync"
 
-"${GUIX_SHELL[@]}" -- bash -lc "
+"${GUIX_SHELL[@]}" -- bash -c "
   set -euo pipefail
   export PYTHONUSERBASE='$PYTHONUSERBASE'
   export PYTHONPATH=\"\$(python -m site --user-site):\${PYTHONPATH:-}\"
