@@ -30,13 +30,12 @@ mkdir -p -m 700 "${SCRATCH_JOB}"
 # Exporte e use só após definido
 export SCRATCH="${SCRATCH_JOB}"
 
-LIBCUDA_DIR="$(ldconfig -p | awk '/libcuda\.so\.1/{print $NF; exit}' | xargs dirname || true)"
-if [ -n "$LIBCUDA_DIR" ]; then
-  export LD_LIBRARY_PATH="${LIBCUDA_DIR}:${LD_LIBRARY_PATH:-}"
-else
-  # Tentativas padrão (Debian/Ubuntu e RHEL/CentOS)
-  for d in /usr/lib/x86_64-linux-gnu /usr/lib64 /lib64; do
-    [ -e "$d/libcuda.so.1" ] && export LD_LIBRARY_PATH="$d:${LD_LIBRARY_PATH:-}"
+if [ -z "${LD_LIBRARY_PATH:-}" ]; then
+  for d in /usr/lib64 /usr/lib/x86_64-linux-gnu /usr/lib /lib64 /lib; do
+    if [ -e "$d/libcuda.so.1" ]; then
+      export LD_LIBRARY_PATH="$d${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+      break
+    fi
   done
 fi
 
