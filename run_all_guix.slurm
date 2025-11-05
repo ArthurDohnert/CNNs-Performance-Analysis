@@ -16,8 +16,6 @@
 
 set -euo pipefail
 
-export LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu:${LD_LIBRARY_PATH:-}"
-
 # Fallbacks portáveis para área temporária/scratch
 JOB_ID="${SLURM_JOB_ID:-$$}"
 USER_NAME="${USER:-${LOGNAME:-user}}"
@@ -32,22 +30,21 @@ mkdir -p -m 700 "${SCRATCH_JOB}"
 # Exporte e use só após definido
 export SCRATCH="${SCRATCH_JOB}"
 
+HOST_NVIDIA_LIBS="/usr/lib/x86_64-linux-gnu"
+
+# Definir flags comuns do Guix
+GUIX_FLAGS=(shell -m manifest.scm \
+  --preserve=^SLURM \
+  --preserve=^SCRATCH$ \
+  --preserve=^CUDA_VISIBLE_DEVICES$ \
+  --preserve=^PYTHONUSERBASE$ \
+  --preserve=^PIP_CACHE_DIR$ \
+  --expose="$HOST_NVIDIA_LIBS") # <-- ESTA É A MUDANÇA PRINCIPAL
+
 if [ -f "./channels.scm" ]; then
-  GUIX_SHELL=(guix time-machine -C ./channels.scm -- shell -m manifest.scm \
-    --preserve=^SLURM \
-    --preserve=^SCRATCH$ \
-    --preserve=^LD_LIBRARY_PATH$ \
-    --preserve=^CUDA_VISIBLE_DEVICES$ \
-    --preserve=^PYTHONUSERBASE$ \
-    --preserve=^PIP_CACHE_DIR$)
+  GUIX_SHELL=(guix time-machine -C ./channels.scm -- "${GUIX_FLAGS[@]}")
 else
-  GUIX_SHELL=(guix shell -m manifest.scm \
-    --preserve=^SLURM \
-    --preserve=^SCRATCH$ \
-    --preserve=^LD_LIBRARY_PATH$ \
-    --preserve=^CUDA_VISIBLE_DEVICES$ \
-    --preserve=^PYTHONUSERBASE$ \
-    --preserve=^PIP_CACHE_DIR$)
+  GUIX_SHELL=(guix "${GUIX_FLAGS[@]}")
 fi
 
 # Prefixos isolados por job dentro do SCRATCH
@@ -59,7 +56,7 @@ export PATH="${PYTHONUSERBASE}/bin:${PATH}"
 # 1 Checagem PyTorch/CUDA após instalar dependências
 "${GUIX_SHELL[@]}" -- bash -c '
   set -euo pipefail
-
+  export PYTHONPATH="$(python3 -m site --user-site):${PYTHONPATH:-}"  
   python3 -m pip install --upgrade pip wheel setuptools
 
   # Instala todos do requirements EXCETO torch/vision/audio
@@ -69,7 +66,6 @@ export PATH="${PYTHONUSERBASE}/bin:${PATH}"
   python3 -m pip install --index-url https://download.pytorch.org/whl/cu118 \
     torch==2.2.1 torchvision==0.17.1 torchaudio==2.2.1 --user
 
-  export PYTHONPATH="$(python3 -m site --user-site):${PYTHONPATH:-}"
 
   python3 - <<PY
 import torch, ctypes, os
