@@ -70,7 +70,7 @@ try:
  ctypes.CDLL("libcuda.so.1"); print("libcuda: OK")
 except OSError as e:
  print("libcuda: FAIL ->", e)
-print(f"GPU: {torch.cuda.get_device_name(0) if torch.cuda.is_available() else "Nenhuma"}")
+print(f'GPU: {torch.cuda.get_device_name(0) if torch.cuda.is_available() else "Nenhuma"}')
 PY
 '
 
