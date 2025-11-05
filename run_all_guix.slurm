@@ -31,20 +31,18 @@ mkdir -p -m 700 "${SCRATCH_JOB}"
 export SCRATCH="${SCRATCH_JOB}"
 
 
-# --- CORREÇÃO 1: Definição do GUIX_SHELL ---
+# --- CORREÇÃO 1: Definição do GUIX_SHELL (Isto estava CORRETO e permanece) ---
 # 1. Definimos o caminho do driver do host que encontramos
 HOST_NVIDIA_LIBS="/usr/lib/x86_64-linux-gnu"
 
-# 2. Definimos flags comuns
-#    - REMOVEMOS --preserve=^LD_LIBRARY_PATH$ (causava 'stack smashing')
-#    - ADICIONAMOS --expose= para "montar" o driver do host de forma segura
+# 2. Definimos flags comuns (com --expose e SEM --preserve=LD_LIBRARY_PATH)
 GUIX_FLAGS=(shell -m manifest.scm \
   --preserve=^SLURM \
   --preserve=^SCRATCH$ \
   --preserve=^CUDA_VISIBLE_DEVICES$ \
   --preserve=^PYTHONUSERBASE$ \
   --preserve=^PIP_CACHE_DIR$ \
-  --expose="$HOST_NVIDIA_LIBS") # <-- FIM DA CORREÇÃO 1
+  --expose="$HOST_NVIDIA_LIBS")
 
 if [ -f "./channels.scm" ]; then
   GUIX_SHELL=(guix time-machine -C ./channels.scm -- "${GUIX_FLAGS[@]}")
@@ -61,10 +59,13 @@ export PATH="${PYTHONUSERBASE}/bin:${PATH}"
 
 
 # 1 Checagem PyTorch/CUDA após instalar dependências
-# --- CORREÇÃO 2: Use 'env' para injetar o LD_LIBRARY_PATH *dentro* do Guix ---
-"${GUIX_SHELL[@]}" -- env LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu:${LD_LIBRARY_PATH:-}" \
-bash -c '
+# --- CORREÇÃO 2: Injetar LD_LIBRARY_PATH *dentro* do bash ---
+"${GUIX_SHELL[@]}" -- bash -c '
   set -euo pipefail
+
+  # Anexa o driver do host ao LD_LIBRARY_PATH INTERNO do Guix
+  # A variável ${LD_LIBRARY_PATH} aqui é a do *Guix*, preservando a glibc
+  export LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu:${LD_LIBRARY_PATH}"
 
   python3 -m pip install --upgrade pip wheel setuptools
 
@@ -77,6 +78,7 @@ bash -c '
 
   export PYTHONPATH="$(python3 -m site --user-site):${PYTHONPATH:-}"
 
+  # O LD_LIBRARY_PATH já está pronto; o python o herdará
   python3 - <<PY
 import torch, ctypes, os
 print("torch:", torch.version)
@@ -121,14 +123,26 @@ DATASET_PATH_TRAIN="$SCRATCH/tiny-imagenet-200/train"
 DATASET_PATH_VAL="$SCRATCH/tiny-imagenet-200/val"
 export PYTORCH_CUDA_ALLOC_CONF="backend:cudaMallocAsync"
 
-# --- CORREÇÃO 3: Use 'env' novamente para o script principal ---
-"${GUIX_SHELL[@]}" -- env LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu:${LD_LIBRARY_PATH:-}" \
-python3 -m src.main \
-  --model_name "$1" \
-  --config_path "$3" \
-  --train_data_path "$DATASET_PATH_TRAIN" \
-  --val_data_path "$DATASET_PATH_VAL" \
-  --seed "$2"
+# --- CORREÇÃO 3: Usar o mesmo wrapper 'bash -c' para o script principal ---
+# Isso garante que a glibc do Guix seja usada E que o libcuda.so.1 seja encontrado.
+# Note o uso de aspas "..." no bash -c para permitir a expansão das vars $1, $2, etc.
+"${GUIX_SHELL[@]}" -- bash -c "
+  set -euo pipefail
+
+  # Anexa o driver do host ao LD_LIBRARY_PATH INTERNO do Guix
+  export LD_LIBRARY_PATH=\"/usr/lib/x86_64-linux-gnu:\${LD_LIBRARY_PATH}\"
+
+  # Adiciona o PYTHONUSERBASE ao PYTHONPATH
+  export PYTHONPATH=\"\$(python3 -m site --user-site):\${PYTHONPATH:-}\"
+
+  # Executa o script principal. As variáveis $1, $2, etc. são passadas
+  # para este script bash e usadas aqui.
+  python3 -m src.main \
+    --model_name \"$1\" \
+    --config_path \"$3\" \
+    --train_data_path \"$DATASET_PATH_TRAIN\" \
+    --val_data_path \"$DATASET_PATH_VAL\" \
+    --seed \"$2\"
 "
 # --- Fim do Bloco de Correção 3 ---
 
