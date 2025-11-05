@@ -63,9 +63,8 @@ export PATH="${PYTHONUSERBASE}/bin:${PATH}"
 "${GUIX_SHELL[@]}" -- bash -c '
   set -euo pipefail
 
-  # Anexa o driver do host ao LD_LIBRARY_PATH INTERNO do Guix
-  # A variável ${LD_LIBRARY_PATH} aqui é a do *Guix*, preservando a glibc
-  export LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu:${LD_LIBRARY_PATH}"
+  # --- CORREÇÃO 4: Adicionado ":-" para evitar erro "unbound variable" ---
+  export LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu:${LD_LIBRARY_PATH:-}"
 
   python3 -m pip install --upgrade pip wheel setuptools
 
@@ -124,13 +123,11 @@ DATASET_PATH_VAL="$SCRATCH/tiny-imagenet-200/val"
 export PYTORCH_CUDA_ALLOC_CONF="backend:cudaMallocAsync"
 
 # --- CORREÇÃO 3: Usar o mesmo wrapper 'bash -c' para o script principal ---
-# Isso garante que a glibc do Guix seja usada E que o libcuda.so.1 seja encontrado.
-# Note o uso de aspas "..." no bash -c para permitir a expansão das vars $1, $2, etc.
 "${GUIX_SHELL[@]}" -- bash -c "
   set -euo pipefail
 
-  # Anexa o driver do host ao LD_LIBRARY_PATH INTERNO do Guix
-  export LD_LIBRARY_PATH=\"/usr/lib/x86_64-linux-gnu:\${LD_LIBRARY_PATH}\"
+  # --- CORREÇÃO 4: Adicionado ":-" para evitar erro "unbound variable" ---
+  export LD_LIBRARY_PATH=\"/usr/lib/x86_64-linux-gnu:\${LD_LIBRARY_PATH:-}\"
 
   # Adiciona o PYTHONUSERBASE ao PYTHONPATH
   export PYTHONPATH=\"\$(python3 -m site --user-site):\${PYTHONPATH:-}\"
