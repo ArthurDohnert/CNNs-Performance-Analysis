@@ -16,46 +16,7 @@
 
 set -euo pipefail
 
-CUDA_DRIVER_PATH=""
-
-# 1. Tenta encontrar o caminho via ldconfig (método preferido)
-# Ignora erros caso ldconfig não esteja disponível
-CUDA_DRIVER_PATH=$(ldconfig -p 2>/dev/null | grep -om1 '.*libcuda\.so\.1$' | xargs -r dirname)
-
-# 2. Fallback: se ldconfig falhar, usa 'find' em caminhos comuns
-if [ -z "$CUDA_DRIVER_PATH" ]; then
-    echo "ldconfig falhou ou não encontrou. Usando 'find' em caminhos comuns..."
-    COMMON_PATHS=("/usr/lib64" "/usr/lib" "/usr/lib/x86_64-linux-gnu" "/run/opengl-driver/lib")
-    
-    for path in "${COMMON_PATHS[@]}"; do
-        if [ -f "$path/libcuda.so.1" ]; then
-            CUDA_DRIVER_PATH="$path"
-            echo "Encontrado em (busca comum): $CUDA_DRIVER_PATH"
-            break
-        fi
-    done
-fi
-
-# 3. Fallback final: busca ampla (pode ser lenta)
-if [ -z "$CUDA_DRIVER_PATH" ]; then
-    echo "Busca comum falhou. Usando busca ampla (pode demorar)..."
-    CUDA_DRIVER_PATH=$(find / -name libcuda.so.1 -exec dirname {} \; 2>/dev/null | head -n 1)
-fi
-
-# 4. Exporta a variável se o caminho foi encontrado
-if [ -n "$CUDA_DRIVER_PATH" ]; then
-    echo "--- Sucesso: libcuda.so.1 encontrado em: $CUDA_DRIVER_PATH"
-    # Adiciona o caminho ao LD_LIBRARY_PATH
-    # O guix shell irá preservar esta variável
-    export LD_LIBRARY_PATH="${CUDA_DRIVER_PATH}:${LD_LIBRARY_PATH:-}"
-    echo "--- LD_LIBRARY_PATH (antes do Guix): $LD_LIBRARY_PATH"
-else
-    echo "!!! ERRO CRÍTICO: Não foi possível encontrar libcuda.so.1 no host."
-    echo "!!! O PyTorch (torch.cuda.is_available()) irá falhar."
-    exit 1 # Falha o job se não encontrar o driver
-fi
-
-
+export LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu:${LD_LIBRARY_PATH:-}"
 
 # Fallbacks portáveis para área temporária/scratch
 JOB_ID="${SLURM_JOB_ID:-$$}"
