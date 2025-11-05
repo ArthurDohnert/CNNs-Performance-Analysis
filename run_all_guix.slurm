@@ -30,13 +30,19 @@ mkdir -p -m 700 "${SCRATCH_JOB}"
 # Exporte e use só após definido
 export SCRATCH="${SCRATCH_JOB}"
 
-LIBCUDA_DIR="$(ldconfig -p | awk '/libcuda\.so\.1/{print $NF}' | xargs -r dirname | head -n1)"
-if [ -z "$LIBCUDA_DIR" ]; then
-  # fallback lento; ajuste se necessário
-  LIBCUDA_DIR="$(/usr/bin/find /usr /lib /usr/local -type f -name 'libcuda.so.1' 2>/dev/null | xargs -r dirname | head -n1)"
-fi
-if [ -n "$LIBCUDA_DIR" ]; then
-  export LD_LIBRARY_PATH="$LIBCUDA_DIR:${LD_LIBRARY_PATH:-}"
+CUDA_LIBDIR=""
+for CAND in \
+  /usr/lib64/nvidia /usr/lib/x86_64-linux-gnu /usr/lib64 \
+  /usr/local/cuda*/compat /usr/local/nvidia/lib64 /lib64 /usr/lib; do
+  if [ -e "$CAND/libcuda.so.1" ]; then CUDA_LIBDIR="$CAND"; break; fi
+done
+
+# Fallback com 'find' se necessário (custa I/O)
+[ -z "$CUDA_LIBDIR" ] && CUDA_LIBDIR="$(find /usr -maxdepth 4 -name 'libcuda.so.1' 2>/dev/null | head -n1 | xargs -r dirname)"
+
+# Exporta se achou; preserve no guix shell
+if [ -n "$CUDA_LIBDIR" ]; then
+  export LD_LIBRARY_PATH="$CUDA_LIBDIR:${LD_LIBRARY_PATH:-}"
 fi
 
 
