@@ -16,6 +16,47 @@
 
 set -euo pipefail
 
+CUDA_DRIVER_PATH=""
+
+# 1. Tenta encontrar o caminho via ldconfig (método preferido)
+# Ignora erros caso ldconfig não esteja disponível
+CUDA_DRIVER_PATH=$(ldconfig -p 2>/dev/null | grep -om1 '.*libcuda\.so\.1$' | xargs -r dirname)
+
+# 2. Fallback: se ldconfig falhar, usa 'find' em caminhos comuns
+if [ -z "$CUDA_DRIVER_PATH" ]; then
+    echo "ldconfig falhou ou não encontrou. Usando 'find' em caminhos comuns..."
+    COMMON_PATHS=("/usr/lib64" "/usr/lib" "/usr/lib/x86_64-linux-gnu" "/run/opengl-driver/lib")
+    
+    for path in "${COMMON_PATHS[@]}"; do
+        if [ -f "$path/libcuda.so.1" ]; then
+            CUDA_DRIVER_PATH="$path"
+            echo "Encontrado em (busca comum): $CUDA_DRIVER_PATH"
+            break
+        fi
+    done
+fi
+
+# 3. Fallback final: busca ampla (pode ser lenta)
+if [ -z "$CUDA_DRIVER_PATH" ]; then
+    echo "Busca comum falhou. Usando busca ampla (pode demorar)..."
+    CUDA_DRIVER_PATH=$(find / -name libcuda.so.1 -exec dirname {} \; 2>/dev/null | head -n 1)
+fi
+
+# 4. Exporta a variável se o caminho foi encontrado
+if [ -n "$CUDA_DRIVER_PATH" ]; then
+    echo "--- Sucesso: libcuda.so.1 encontrado em: $CUDA_DRIVER_PATH"
+    # Adiciona o caminho ao LD_LIBRARY_PATH
+    # O guix shell irá preservar esta variável
+    export LD_LIBRARY_PATH="${CUDA_DRIVER_PATH}:${LD_LIBRARY_PATH:-}"
+    echo "--- LD_LIBRARY_PATH (antes do Guix): $LD_LIBRARY_PATH"
+else
+    echo "!!! ERRO CRÍTICO: Não foi possível encontrar libcuda.so.1 no host."
+    echo "!!! O PyTorch (torch.cuda.is_available()) irá falhar."
+    exit 1 # Falha o job se não encontrar o driver
+fi
+
+
+
 # Fallbacks portáveis para área temporária/scratch
 JOB_ID="${SLURM_JOB_ID:-$$}"
 USER_NAME="${USER:-${LOGNAME:-user}}"
@@ -29,22 +70,6 @@ mkdir -p -m 700 "${SCRATCH_JOB}"
 
 # Exporte e use só após definido
 export SCRATCH="${SCRATCH_JOB}"
-
-CUDA_LIBDIR=""
-for CAND in \
-  /usr/lib64/nvidia /usr/lib/x86_64-linux-gnu /usr/lib64 \
-  /usr/local/cuda*/compat /usr/local/nvidia/lib64 /lib64 /usr/lib; do
-  if [ -e "$CAND/libcuda.so.1" ]; then CUDA_LIBDIR="$CAND"; break; fi
-done
-
-# Fallback com 'find' se necessário (custa I/O)
-[ -z "$CUDA_LIBDIR" ] && CUDA_LIBDIR="$(find /usr -maxdepth 4 -name 'libcuda.so.1' 2>/dev/null | head -n1 | xargs -r dirname)"
-
-# Exporta se achou; preserve no guix shell
-if [ -n "$CUDA_LIBDIR" ]; then
-  export LD_LIBRARY_PATH="$CUDA_LIBDIR:${LD_LIBRARY_PATH:-}"
-fi
-
 
 if [ -f "./channels.scm" ]; then
   GUIX_SHELL=(guix time-machine -C ./channels.scm -- shell -m manifest.scm \
