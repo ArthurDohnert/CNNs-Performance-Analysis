@@ -30,22 +30,29 @@ mkdir -p -m 700 "${SCRATCH_JOB}"
 # Exporte e use só após definido
 export SCRATCH="${SCRATCH_JOB}"
 
+
+# --- CORREÇÃO 1: Definição do GUIX_SHELL ---
+# 1. Definimos o caminho do driver do host que encontramos
 HOST_NVIDIA_LIBS="/usr/lib/x86_64-linux-gnu"
 
-# Definir flags comuns do Guix
+# 2. Definimos flags comuns
+#    - REMOVEMOS --preserve=^LD_LIBRARY_PATH$ (causava 'stack smashing')
+#    - ADICIONAMOS --expose= para "montar" o driver do host de forma segura
 GUIX_FLAGS=(shell -m manifest.scm \
   --preserve=^SLURM \
   --preserve=^SCRATCH$ \
   --preserve=^CUDA_VISIBLE_DEVICES$ \
   --preserve=^PYTHONUSERBASE$ \
   --preserve=^PIP_CACHE_DIR$ \
-  --expose="$HOST_NVIDIA_LIBS") # <-- ESTA É A MUDANÇA PRINCIPAL
+  --expose="$HOST_NVIDIA_LIBS") # <-- FIM DA CORREÇÃO 1
 
 if [ -f "./channels.scm" ]; then
   GUIX_SHELL=(guix time-machine -C ./channels.scm -- "${GUIX_FLAGS[@]}")
 else
   GUIX_SHELL=(guix "${GUIX_FLAGS[@]}")
 fi
+# --- Fim do Bloco de Correção 1 ---
+
 
 # Prefixos isolados por job dentro do SCRATCH
 export PIP_CACHE_DIR="${SCRATCH}/.pip-cache"
@@ -54,9 +61,11 @@ export PATH="${PYTHONUSERBASE}/bin:${PATH}"
 
 
 # 1 Checagem PyTorch/CUDA após instalar dependências
-"${GUIX_SHELL[@]}" -- bash -c '
+# --- CORREÇÃO 2: Use 'env' para injetar o LD_LIBRARY_PATH *dentro* do Guix ---
+"${GUIX_SHELL[@]}" -- env LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu:${LD_LIBRARY_PATH:-}" \
+bash -c '
   set -euo pipefail
-  export PYTHONPATH="$(python3 -m site --user-site):${PYTHONPATH:-}"  
+
   python3 -m pip install --upgrade pip wheel setuptools
 
   # Instala todos do requirements EXCETO torch/vision/audio
@@ -66,6 +75,7 @@ export PATH="${PYTHONUSERBASE}/bin:${PATH}"
   python3 -m pip install --index-url https://download.pytorch.org/whl/cu118 \
     torch==2.2.1 torchvision==0.17.1 torchaudio==2.2.1 --user
 
+  export PYTHONPATH="$(python3 -m site --user-site):${PYTHONPATH:-}"
 
   python3 - <<PY
 import torch, ctypes, os
@@ -82,6 +92,8 @@ gpu = torch.cuda.get_device_name(0) if torch.cuda.is_available() else "Nenhuma"
 print(f"GPU: {gpu}")
 PY
 '
+# --- Fim do Bloco de Correção 2 ---
+
 
 # 2 Staging do dataset no SCRATCH
 echo "========================================================="
@@ -103,18 +115,23 @@ n_val_scratch=$(find "$SCRATCH/tiny-imagenet-200/val" -mindepth 1 -maxdepth 1 -t
 echo "Staging concluído e validado."
 echo "========================================================="
 
+
 # 3 Execução dentro do guix shell com user-site ativo
 DATASET_PATH_TRAIN="$SCRATCH/tiny-imagenet-200/train"
 DATASET_PATH_VAL="$SCRATCH/tiny-imagenet-200/val"
 export PYTORCH_CUDA_ALLOC_CONF="backend:cudaMallocAsync"
 
-"${GUIX_SHELL[@]}" -- python3 -m src.main \
+# --- CORREÇÃO 3: Use 'env' novamente para o script principal ---
+"${GUIX_SHELL[@]}" -- env LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu:${LD_LIBRARY_PATH:-}" \
+python3 -m src.main \
   --model_name "$1" \
   --config_path "$3" \
   --train_data_path "$DATASET_PATH_TRAIN" \
   --val_data_path "$DATASET_PATH_VAL" \
   --seed "$2"
 "
+# --- Fim do Bloco de Correção 3 ---
+
 echo "========================================================="
 echo "JOB DE TESTE CONCLUÍDO "
 echo "========================================================="
