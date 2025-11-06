@@ -12,13 +12,14 @@
              (gnu packages machine-learning)
              (gnu packages maths)
              (nonguix gnu packages cuda)
+             (pynvml)
              (timm))
 
 (specifications->manifest
   (list
    "python"
    "python-psutil"
-   "python-nvidia-ml-py"
+   "python-pynvml"
    "python-pytorch-with-cuda11"
    "python-timm"
    "python-numpy"
