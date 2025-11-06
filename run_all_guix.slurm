@@ -22,7 +22,7 @@ echo "Preparando ambiente Guix..."
 
 # 1. Defina os caminhos para seus manifestos e pacotes locais
 #    (Assumindo que eles estão no mesmo diretório do script sbatch)
-cd $HOME/CNNs-PERFORMANCE-ANALYSIS
+cd $HOME/CNNs-Performance-Analysis
 
 SCRIPT_DIR=$( (cd "$(dirname "$0")" && pwd) )
 MANIFEST_CPU_PATH="manifest-cpu.scm"
