@@ -22,12 +22,10 @@ echo "Preparando ambiente Guix..."
 
 # 1. Defina os caminhos para seus manifestos e pacotes locais
 #    (Assumindo que eles estão no mesmo diretório do script sbatch)
-cd $HOME/CNNs-Performance-Analysis
-
-SCRIPT_DIR=$( (cd "$(dirname "$0")" && pwd) )
-MANIFEST_CPU_PATH="manifest-cpu.scm"
-MANIFEST_GPU_PATH="manifest-gpu.scm"
-LOCAL_PACKAGE_PATH="$SCRIPT_DIR/packages" # Diretório contendo timm.scm
+PROJECT_DIR="$HOME/CNNs-Performance-Analysis"
+MANIFEST_CPU_PATH="$PROJECT_DIR/manifest-cpu.scm"
+MANIFEST_GPU_PATH="$PROJECT_DIR/manifest-gpu.scm"
+LOCAL_PACKAGE_PATH="$PROJECT_DIR/packages"
 
 # 2. Lógica condicional para selecionar o ambiente
 #    Isso replica a lógica original do venv, mas seleciona um manifesto.
