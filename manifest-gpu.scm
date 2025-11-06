@@ -7,7 +7,6 @@
   (gnu packages graphics)
   (gnu packages machine-learning)
   (gnu packages maths)
-  (gnu packages text-utils)
   (my-local-packages timm))
 
 (specifications->manifest
