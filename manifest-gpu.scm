@@ -11,7 +11,7 @@
              (gnu packages graphics)
              (gnu packages machine-learning)
              (gnu packages maths)
-             (my-local-packages timm))
+             (timm))
 
 (specifications->manifest
   (list
