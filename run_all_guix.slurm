@@ -96,7 +96,7 @@ export PYTORCH_CUDA_ALLOC_CONF="backend:cudaMallocAsync"
 # - --: Separa as opções do Guix do comando a ser executado.
 # - bash -c "...": Executa um sub-shell com o ambiente Guix,
 #   permitindo-nos replicar a lógica de 'verificação' do script original.
-guix shell --load-path="$LOCAL_PACKAGE_PATH" \
+guix shell --load-path="$HOME/CNNs-Performance-Analysis/packages" \
            -m "$SELECTED_MANIFEST" \
            --preserve='^SLURM_' \
            --preserve='^CUDA_' \
