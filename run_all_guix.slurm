@@ -29,7 +29,7 @@ LOCAL_PACKAGE_PATH="$SCRIPT_DIR/packages" # Diretório contendo timm.scm
 
 # 2. Lógica condicional para selecionar o ambiente
 #    Isso replica a lógica original do venv, mas seleciona um manifesto.
-if; then
+if[ "${SLURM_JOB_PARTITION:-}" = "shared" ]; then
   echo "[INFO] Partição 'shared' detectada -> usando manifesto CPU-only."
   SELECTED_MANIFEST="$MANIFEST_CPU_PATH"
 else
@@ -38,10 +38,10 @@ else
 fi
 
 # Validação rápida de que os arquivos existem
-if; then
+if [ ! -f "$SELECTED_MANIFEST" ]; then
   echo "ERRO: Arquivo de manifesto não encontrado: $SELECTED_MANIFEST"; exit 1
 fi
-if; then
+if [ ! -d "$LOCAL_PACKAGE_PATH" ]; then
   echo "ERRO: Diretório de pacote local não encontrado: $LOCAL_PACKAGE_PATH"; exit 1
 fi
 echo "Manifesto selecionado: $SELECTED_MANIFEST"
@@ -57,22 +57,24 @@ if [ -d "$HOME/datasets/tiny-imagenet-200/val/images" ]; then
   echo "ERRO: Origem tem val/images (val está no formato original); reorganize no HOME antes."; exit 11
 fi
 n_val_home=$(find "$HOME/datasets/tiny-imagenet-200/val" -mindepth 1 -maxdepth 1 -type d | wc -l)
-[ "$n_val_home" -eq 200 ] |
+if [ "$n_val_home" -ne 200 ]; then
+  echo "ERRO: Origem val tem $n_val_home dirs (esperado=200)."; exit 12
+fi
 
-| { echo "ERRO: Origem val tem $n_val_home dirs (esperado=200)."; exit 12; }
 
 # 2) Cópia limpa para o SCRATCH
 rm -rf "$SCRATCH/tiny-imagenet-200"
 rsync -a --delete "$HOME/datasets/tiny-imagenet-200/" "$SCRATCH/tiny-imagenet-200/"
 
 # 3) Sanidade no destino (SCRATCH)
-if; then
+if [ -d "$SCRATCH/tiny-imagenet-200/val/images" ]; then
   echo "ERRO: val/images encontrado no SCRATCH (dataset inválido para ImageFolder)."; exit 21
 fi
-n_val_scratch=$(find "$SCRATCH/tiny-imagenet-200/val" -mindepth 1 -maxdepth 1 -type d | wc -l)
-[ "$n_val_scratch" -eq 200 ] |
 
-| { echo "ERRO: SCRATCH val tem $n_val_scratch dirs (esperado=200)."; exit 22; }
+n_val_scratch=$(find "$SCRATCH/tiny-imagenet-200/val" -mindepth 1 -maxdepth 1 -type d | wc -l)
+if [ "$n_val_scratch" -ne 200 ]; then
+  echo "ERRO: SCRATCH val tem $n_val_scratch dirs (esperado=200)."; exit 22
+fi
 
 echo "Staging concluído e validado."
 echo "========================================================="
