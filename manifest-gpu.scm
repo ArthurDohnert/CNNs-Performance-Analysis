@@ -1,4 +1,8 @@
 ;; --- manifest-gpu.scm ---
+
+(add-to-load-path "/home/users/ehdmenezes/CNNs-Performance-Analysis/packages")
+
+
 (use-modules (guix profiles)
              (guix packages)
              (gnu packages python)
