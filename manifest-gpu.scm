@@ -12,7 +12,8 @@
              (gnu packages machine-learning)
              (gnu packages maths)
              (pynvml)
-             (timm))
+             (timm)
+             (guix-science-nonfree packages cuda))
 
 (packages->manifest
  (list python
