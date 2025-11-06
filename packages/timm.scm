@@ -7,8 +7,10 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages image)
-  #:use-module (gnu packages machine-learning))
-
+  #:use-module (gnu packages machine-learning)
+  #:use-module (gnu packages python-pytorch)
+  #:use-module (gnu packages deep-learning))
+  
 (define-public python-timm
   (package
     (name "python-timm")
