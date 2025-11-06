@@ -13,7 +13,7 @@
              (gnu packages maths)
              (pynvml)
              (timm)
-             (guix-science-nonfree packages cuda))
+             (guix-science-nonfree packages machine-learning))
 
 (packages->manifest
  (list python
