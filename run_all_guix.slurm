@@ -29,7 +29,7 @@ LOCAL_PACKAGE_PATH="$SCRIPT_DIR/packages" # Diretório contendo timm.scm
 
 # 2. Lógica condicional para selecionar o ambiente
 #    Isso replica a lógica original do venv, mas seleciona um manifesto.
-if[ "${SLURM_JOB_PARTITION:-}" = "shared" ]; then
+if [ "${SLURM_JOB_PARTITION:-}" = "shared" ]; then
   echo "[INFO] Partição 'shared' detectada -> usando manifesto CPU-only."
   SELECTED_MANIFEST="$MANIFEST_CPU_PATH"
 else
