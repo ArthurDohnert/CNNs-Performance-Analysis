@@ -27,7 +27,7 @@ cd $HOME/CNNs-Performance-Analysis
 SCRIPT_DIR=$( (cd "$(dirname "$0")" && pwd) )
 MANIFEST_CPU_PATH="manifest-cpu.scm"
 MANIFEST_GPU_PATH="manifest-gpu.scm"
-LOCAL_PACKAGE_PATH="/packages" # Diretório contendo timm.scm
+LOCAL_PACKAGE_PATH="$SCRIPT_DIR/packages" # Diretório contendo timm.scm
 
 # 2. Lógica condicional para selecionar o ambiente
 #    Isso replica a lógica original do venv, mas seleciona um manifesto.
