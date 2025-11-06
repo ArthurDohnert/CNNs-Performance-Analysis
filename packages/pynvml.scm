@@ -1,4 +1,4 @@
-(define-module (my-local-packages pynvml)
+(define-module (pynvml)
   #:use-module (guix packages)
   #:use-module (guix download)
   #:use-module (guix build-system python)
