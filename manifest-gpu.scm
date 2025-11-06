@@ -17,7 +17,7 @@
   (list
    "python"
    "python-psutil"
-   "python-nvidia-ml-py"
+   "python-nvidia-ml-py3"
    "python-pytorch-with-cuda11"
    "python-timm"
    "python-numpy"
