@@ -11,7 +11,6 @@
              (gnu packages graphics)
              (gnu packages machine-learning)
              (gnu packages maths)
-             (nonguix gnu packages cuda)
              (pynvml)
              (timm))
 
