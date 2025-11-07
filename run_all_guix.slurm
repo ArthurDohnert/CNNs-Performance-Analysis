@@ -6,7 +6,7 @@
 
 # --- Configurações do Job de Teste ---
 #SBATCH --job-name=experiments_pcad_guix
-#SBATCH --partition=tupi
+#SBATCH --partition=shared
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --gres=gpu:1
