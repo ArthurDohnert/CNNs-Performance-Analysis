@@ -7,9 +7,8 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages image)
-  #:use-module (gnu packages machine-learning)
-  #:use-module (gnu packages python-pytorch)
-  #:use-module (gnu packages deep-learning))
+  #:use-module (guix-science-nonfree packages machine-learning)
+)
 
 (define-public python-timm
   (package
@@ -23,13 +22,13 @@
         (base32 "0bvhrdv95x27pppncmvx6x3w21hwlwmy4is6xgygim0vylmfhc93"))))
     (build-system python-build-system)
     (propagated-inputs
-     (list python-torch
-           python-numpy
-           python-pillow
-           python-requests))
+     (list 
+      python-pytorch-with-cuda11 
+      python-numpy
+      python-pillow
+      python-requests))
     (home-page "https://github.com/huggingface/pytorch-image-models")
-    (synopsis "PyTorch Image Models (timm)")
+    (synopsis "PyTorch Image Models (timm)") [4]
     (description
-     "Biblioteca de modelos e utilitários para redes neurais em PyTorch, incluindo implementações de arquiteturas modernas e pré-treinadas.")
+     "Biblioteca de modelos e utilitários para redes neurais em PyTorch, incluindo implementações de arquiteturas modernas e pré-treinadas.") [5]
     (license asl2.0)))
-
