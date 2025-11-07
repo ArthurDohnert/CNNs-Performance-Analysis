@@ -10,6 +10,7 @@
              (gnu packages maths)
              (pynvml)
              (timm)
+             (huggingface-hub)
              (guix-science-nonfree packages machine-learning))
 
 (packages->manifest
