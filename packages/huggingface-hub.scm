@@ -5,6 +5,7 @@
   #:use-module (guix build-system python)
   #:use-module (guix licenses)
   #:use-module (gnu packages python)
+  #:use-module (gnu packages python-build)
   #:use-module (gnu packages python-web)  ; Para python-httpx
   #:use-module (gnu packages python-xyz)) ; Para a maioria das dependências
 
