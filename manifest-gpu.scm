@@ -17,6 +17,7 @@
        python-psutil
        python-pynvml     ; símbolo exportado por (pynvml)
        python-pytorch-with-cuda11
+       python-timm
        python-numpy
        python-pandas
        python-scikit-learn
