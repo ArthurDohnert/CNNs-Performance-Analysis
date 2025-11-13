@@ -1,5 +1,5 @@
 ;; packages/huggingface-hub.scm — Pacote Python 'huggingface-hub' para Guix
-(define-module (packages huggingface-hub)
+(define-module (huggingface-hub)
   #:use-module (guix packages)
   #:use-module (guix download)
   #:use-module (guix build-system python)

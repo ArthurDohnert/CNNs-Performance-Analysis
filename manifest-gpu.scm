@@ -8,9 +8,9 @@
              (gnu packages graphics)
              (gnu packages machine-learning)
              (gnu packages maths)
-             (packages pynvml)
-             (packages timm)
-             (packages huggingface-hub)
+             (pynvml)
+             (timm)
+             (huggingface-hub)
              (guix-science-nonfree packages machine-learning))
 
 (packages->manifest

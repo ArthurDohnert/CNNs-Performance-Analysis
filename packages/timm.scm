@@ -1,5 +1,5 @@
 ;; packages/timm.scm — Pacote Python 'timm' 1.0.21 para Guix (Corrigido)
-(define-module (packages timm)
+(define-module (timm)
   #:use-module (guix packages)
   #:use-module (guix download)
   #:use-module (guix build-system python)

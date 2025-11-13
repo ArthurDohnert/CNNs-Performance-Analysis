@@ -1,5 +1,4 @@
-(define-module (packages pynvml)
-  #:export (python-pynvml)
+(define-module (pynvml)
   #:use-module (guix packages)
   #:use-module (guix download)
   #:use-module (guix build-system python)
@@ -21,5 +20,3 @@
     (synopsis "Python bindings for the NVIDIA Management Library (NVML)")
     (description "This package provides Python bindings for the NVIDIA Management Library (NVML), which provides access to GPU metrics such as temperature, power usage, and memory utilization.")
     (license asl2.0)))
-
-python-pynvml
