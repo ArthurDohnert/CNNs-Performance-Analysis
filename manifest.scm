@@ -9,7 +9,8 @@
              (gnu packages machine-learning)
              (gnu packages maths)
              (gnu packages bash)
-             (gnu packages package-management)) 
+             (gnu packages package-management)
+             (gnu packages python-build)) 
 
 (packages->manifest
  (list python
