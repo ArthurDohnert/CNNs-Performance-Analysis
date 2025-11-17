@@ -1,4 +1,5 @@
-;; --- manifest-cpu.scm ---
+;; --- manifest-pip.scm ---
+
 (use-modules (guix profiles)
              (guix packages)
              (gnu packages python)
@@ -7,14 +8,14 @@
              (gnu packages graphics)
              (gnu packages machine-learning)
              (gnu packages maths)
-             (timm)
-             (huggingface-hub))
+             (gnu packages bash)
+             (gnu packages package-management)) 
 
 (packages->manifest
  (list python
+       python-pip            
+       bash                 
        python-psutil
-       python-pytorch
-       python-timm
        python-numpy
        python-pandas
        python-scikit-learn
@@ -23,4 +24,5 @@
        python-tqdm
        python-pillow
        python-pyyaml
-       python-tabulate))
+       python-tabulate
+       ))
