@@ -15,7 +15,9 @@
 (packages->manifest
  (list python
        python-pip            
-       bash                 
+       bash              
+       coreutils
+       which   
        python-psutil
        python-numpy
        python-pandas
