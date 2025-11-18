@@ -22,24 +22,14 @@ echo "Preparando ambiente Guix..."
 
 # 1. Defina os caminhos para seus manifestos e pacotes locais
 PROJECT_DIR="$HOME/CNNs-Performance-Analysis"
-MANIFEST_CPU_PATH="$PROJECT_DIR/manifest-cpu.scm"
-MANIFEST_GPU_PATH="$PROJECT_DIR/manifest.scm"
-
-# 2. Lógica condicional para selecionar o ambiente
-if [ "${SLURM_JOB_PARTITION:-}" = "shared" ]; then
-  echo "[INFO] Partição 'shared' detectada -> usando manifesto CPU-only."
-  SELECTED_MANIFEST="$MANIFEST_CPU_PATH"
-else
-  echo "[INFO] Partição '${SLURM_JOB_PARTITION}' -> usando manifesto GPU (CUDA)."
-  SELECTED_MANIFEST="$MANIFEST_GPU_PATH"
-fi
+MANIFEST_PATH="$PROJECT_DIR/manifest.scm"
 
 # Validação rápida de que os arquivos existem
-if [ ! -f "$SELECTED_MANIFEST" ]; then
-  echo "ERRO: Arquivo de manifesto não encontrado: $SELECTED_MANIFEST"; exit 1
+if [ ! -f "$MANIFEST_PATH" ]; then
+  echo "ERRO: Arquivo de manifesto não encontrado: $MANIFEST_PATH "; exit 1
 fi
 
-echo "Manifesto selecionado: $SELECTED_MANIFEST"
+echo "Manifesto selecionado: $MANIFEST_PATH"
 echo "========================================================="
 
 # --- ETAPA 1: COPIAR DADOS PARA O DISCO LOCAL (STAGING) ---
@@ -81,25 +71,27 @@ DATASET_PATH_VAL="$SCRATCH/tiny-imagenet-200/val"
 
 export PYTORCH_CUDA_ALLOC_CONF="backend:cudaMallocAsync"
 
-guix shell -m "$SELECTED_MANIFEST" --pure \
-  --load-path="$HOME/CNNs-Performance-Analysis/packages" \
+guix shell -m "$MANIFEST_PATH" --pure \
   --preserve=^PATH \
   --preserve=^LD_LIBRARY_PATH \
   --preserve=^CUDA_HOME \
+  --preserve=^SLURM_ \
   -- bash -c "
 set -euo pipefail
-echo '--- Verificando Ambiente Guix ---'
-# A verificação Python original agora é executada dentro do ambiente Guix
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
+pip install timm pynvml huggingface-hub
+echo '--- Verificando Ambiente Guix + Pip ---'
 python - <<'PY'
 import torch
 import os
 print(f'PyTorch: {torch.__version__}')
 print(f'CUDA disponível: {torch.cuda.is_available()}')
 if torch.cuda.is_available():
-    print(f'GPU detectada: {torch.cuda.get_device_name(0)}')
+  print(f'GPU detectada: {torch.cuda.get_device_name(0)}')
 else:
-    print('GPU detectada: Nenhuma')
+  print('GPU detectada: Nenhuma')
 print(f'CUDA_VISIBLE_DEVICES: {os.environ.get("CUDA_VISIBLE_DEVICES", "N/A")}')
+print(f'CUDA_HOME (dentro do Guix): {os.environ.get("CUDA_HOME", "N/A")}')
 PY
 echo '---------------------------------'
 
