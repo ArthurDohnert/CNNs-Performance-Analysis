@@ -13,7 +13,7 @@
              (gnu packages python-build)) 
 
 (packages->manifest
- (list python
+ (list python-wrapper
        python-pip            
        bash              
        coreutils
