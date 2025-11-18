@@ -21,14 +21,11 @@ echo "========================================================="
 echo "Preparando ambiente Guix..."
 
 # 1. Defina os caminhos para seus manifestos e pacotes locais
-#    (Assumindo que eles estão no mesmo diretório do script sbatch)
 PROJECT_DIR="$HOME/CNNs-Performance-Analysis"
 MANIFEST_CPU_PATH="$PROJECT_DIR/manifest-cpu.scm"
-MANIFEST_GPU_PATH="$PROJECT_DIR/manifest-gpu.scm"
-LOCAL_PACKAGE_PATH="$PROJECT_DIR/packages"
+MANIFEST_GPU_PATH="$PROJECT_DIR/manifest.scm"
 
 # 2. Lógica condicional para selecionar o ambiente
-#    Isso replica a lógica original do venv, mas seleciona um manifesto.
 if [ "${SLURM_JOB_PARTITION:-}" = "shared" ]; then
   echo "[INFO] Partição 'shared' detectada -> usando manifesto CPU-only."
   SELECTED_MANIFEST="$MANIFEST_CPU_PATH"
@@ -41,14 +38,11 @@ fi
 if [ ! -f "$SELECTED_MANIFEST" ]; then
   echo "ERRO: Arquivo de manifesto não encontrado: $SELECTED_MANIFEST"; exit 1
 fi
-if [ ! -d "$LOCAL_PACKAGE_PATH" ]; then
-  echo "ERRO: Diretório de pacote local não encontrado: $LOCAL_PACKAGE_PATH"; exit 1
-fi
+
 echo "Manifesto selecionado: $SELECTED_MANIFEST"
 echo "========================================================="
 
 # --- ETAPA 1: COPIAR DADOS PARA O DISCO LOCAL (STAGING) ---
-# (Esta seção permanece inalterada, é uma excelente prática.)
 echo "========================================================="
 echo "Iniciando Staging: Copiando dataset para o $SCRATCH..."
 
@@ -87,21 +81,12 @@ DATASET_PATH_VAL="$SCRATCH/tiny-imagenet-200/val"
 
 export PYTORCH_CUDA_ALLOC_CONF="backend:cudaMallocAsync"
 
-# O 'guix shell' substitui 'source venv/bin/activate' e 'pip install'.
-#
-# - --load-path: Informa ao Guix onde encontrar o módulo 'timm.scm'.[37, 41]
-# - -m: Especifica o arquivo de manifesto a ser usado.[5]
-# - --preserve=: Crucial! Passa as variáveis do Slurm/CUDA
-#   para dentro do ambiente Guix.[2, 40]
-# - --: Separa as opções do Guix do comando a ser executado.
-# - bash -c "...": Executa um sub-shell com o ambiente Guix,
-#   permitindo-nos replicar a lógica de 'verificação' do script original.
-guix shell --load-path="$HOME/CNNs-Performance-Analysis/packages" \
-           -m "$SELECTED_MANIFEST" \
-           --preserve='^SLURM_' \
-           --preserve='^CUDA_' \
-           -- \
-           bash -c "
+guix shell -m "$SELECTED_MANIFEST" --pure \
+  --load-path="$HOME/CNNs-Performance-Analysis/packages" \
+  --preserve=^PATH \
+  --preserve=^LD_LIBRARY_PATH \
+  --preserve=^CUDA_HOME \
+  -- bash -c "
 set -euo pipefail
 echo '--- Verificando Ambiente Guix ---'
 # A verificação Python original agora é executada dentro do ambiente Guix
