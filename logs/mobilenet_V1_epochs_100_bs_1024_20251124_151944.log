@@ -1,0 +1,2666 @@
+2025-11-24 15:19:44,324 - INFO - ==================================================
+2025-11-24 15:19:44,324 - INFO - EXPERIMENT CONFIGURATION
+2025-11-24 15:19:44,324 - INFO - ==================================================
+2025-11-24 15:19:44,324 - INFO - Model Name          : mobilenet_V1
+2025-11-24 15:19:44,324 - INFO - Config File         : configs/mobilenet_V1_config.yaml
+2025-11-24 15:19:44,324 - INFO - Train Data          : /scratch/ehdmenezes//tiny-imagenet-200/train
+2025-11-24 15:19:44,324 - INFO - Validation Data     : /scratch/ehdmenezes//tiny-imagenet-200/val
+2025-11-24 15:19:44,324 - INFO - model_params        : {'num_classes': 200}
+2025-11-24 15:19:44,324 - INFO - train_params        : {'epochs': 100, 'batch_size': 1024, 'learning_rate': 0.1}
+2025-11-24 15:19:44,324 - INFO - inference_params    : {'batch_size': 1024}
+2025-11-24 15:19:44,324 - INFO - scheduler_params    : {'type': 'StepLR', 'step_size': 30, 'gamma': 0.1}
+2025-11-24 15:19:44,324 - INFO - ==================================================
+2025-11-24 15:19:44,348 - INFO - Semente aleatória para esta execução foi fixada em: 42
+2025-11-24 15:19:44,348 - INFO - Configuração de treinamento: {'model_params': {'num_classes': 200}, 'train_params': {'epochs': 100, 'batch_size': 1024, 'learning_rate': 0.1}, 'inference_params': {'batch_size': 1024}, 'scheduler_params': {'type': 'StepLR', 'step_size': 30, 'gamma': 0.1}}
+2025-11-24 15:19:44,650 - INFO - Usando otimizador SGD com momento e weight decay.
+2025-11-24 15:19:44,650 - INFO - Usando StepLR scheduler com step_size=30 e gamma=0.1.
+2025-11-24 15:19:44,650 - INFO - AMP (Automatic Mixed Precision) ativado.
+2025-11-24 15:19:44,650 - INFO - Iniciando treinamento do modelo mobilenet_V1 no dispositivo cuda.
+2025-11-24 15:20:26,862 - INFO - Época 1 concluída. Loss média: 5.1487
+2025-11-24 15:20:26,865 - INFO - Taxa de aprendizado ajustada para: 0.100000
+2025-11-24 15:20:26,866 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:20:29,872 - INFO - ==================================================
+2025-11-24 15:20:29,872 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:20:29,872 - INFO - ==================================================
+2025-11-24 15:20:29,872 - INFO - Elapsed Time Seconds     : 2.9838
+2025-11-24 15:20:29,872 - INFO - Cpu Usage Percent        : 2.3656
+2025-11-24 15:20:29,872 - INFO - Ram Peak Usage Bytes     : 32780185600.0000
+2025-11-24 15:20:29,872 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:20:29,873 - INFO - Disk Write Bytes         : 2793472.0000
+2025-11-24 15:20:29,873 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:20:29,873 - INFO - Gpu Power Watts Avg      : 143.3784
+2025-11-24 15:20:29,873 - INFO - Gpu Power Watts Peak     : 256.5110
+2025-11-24 15:20:29,873 - INFO - Gpu Temp Celsius Avg     : 51.8966
+2025-11-24 15:20:29,873 - INFO - Gpu Temp Celsius Peak    : 60.0000
+2025-11-24 15:20:29,873 - INFO - Gpu Utilization Percent Avg: 31.6552
+2025-11-24 15:20:29,873 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:20:29,873 - INFO - Gpu Mem Used Bytes Avg   : 23397072896.0000
+2025-11-24 15:20:29,873 - INFO - Gpu Mem Used Bytes Peak  : 23397072896.0000
+2025-11-24 15:20:29,873 - INFO - Gpu Vram Used Bytes      : 23397072896.0000
+2025-11-24 15:20:29,873 - INFO - Accuracy                 : 0.0327
+2025-11-24 15:20:29,873 - INFO - Precision                : 0.0235
+2025-11-24 15:20:29,873 - INFO - Recall                   : 0.0327
+2025-11-24 15:20:29,873 - INFO - F1 Score                 : 0.0147
+2025-11-24 15:20:29,873 - INFO - ==================================================
+2025-11-24 15:21:07,428 - INFO - Época 2 concluída. Loss média: 4.7206
+2025-11-24 15:21:07,429 - INFO - Taxa de aprendizado ajustada para: 0.100000
+2025-11-24 15:21:07,430 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:21:10,234 - INFO - ==================================================
+2025-11-24 15:21:10,234 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:21:10,234 - INFO - ==================================================
+2025-11-24 15:21:10,234 - INFO - Elapsed Time Seconds     : 2.7818
+2025-11-24 15:21:10,235 - INFO - Cpu Usage Percent        : 2.5938
+2025-11-24 15:21:10,235 - INFO - Ram Peak Usage Bytes     : 32782028800.0000
+2025-11-24 15:21:10,235 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:21:10,235 - INFO - Disk Write Bytes         : 0.0000
+2025-11-24 15:21:10,235 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:21:10,235 - INFO - Gpu Power Watts Avg      : 125.7493
+2025-11-24 15:21:10,235 - INFO - Gpu Power Watts Peak     : 263.2310
+2025-11-24 15:21:10,235 - INFO - Gpu Temp Celsius Avg     : 50.5185
+2025-11-24 15:21:10,235 - INFO - Gpu Temp Celsius Peak    : 57.0000
+2025-11-24 15:21:10,235 - INFO - Gpu Utilization Percent Avg: 28.3704
+2025-11-24 15:21:10,235 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:21:10,235 - INFO - Gpu Mem Used Bytes Avg   : 23464181760.0000
+2025-11-24 15:21:10,235 - INFO - Gpu Mem Used Bytes Peak  : 23464181760.0000
+2025-11-24 15:21:10,235 - INFO - Gpu Vram Used Bytes      : 23464181760.0000
+2025-11-24 15:21:10,235 - INFO - Accuracy                 : 0.0719
+2025-11-24 15:21:10,235 - INFO - Precision                : 0.0860
+2025-11-24 15:21:10,235 - INFO - Recall                   : 0.0719
+2025-11-24 15:21:10,235 - INFO - F1 Score                 : 0.0522
+2025-11-24 15:21:10,235 - INFO - ==================================================
+2025-11-24 15:21:46,005 - INFO - Época 3 concluída. Loss média: 4.4468
+2025-11-24 15:21:46,007 - INFO - Taxa de aprendizado ajustada para: 0.100000
+2025-11-24 15:21:46,008 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:21:49,618 - INFO - ==================================================
+2025-11-24 15:21:49,618 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:21:49,618 - INFO - ==================================================
+2025-11-24 15:21:49,618 - INFO - Elapsed Time Seconds     : 3.5869
+2025-11-24 15:21:49,618 - INFO - Cpu Usage Percent        : 2.8750
+2025-11-24 15:21:49,618 - INFO - Ram Peak Usage Bytes     : 32782147584.0000
+2025-11-24 15:21:49,618 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:21:49,618 - INFO - Disk Write Bytes         : 286720.0000
+2025-11-24 15:21:49,618 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:21:49,618 - INFO - Gpu Power Watts Avg      : 127.0191
+2025-11-24 15:21:49,618 - INFO - Gpu Power Watts Peak     : 300.2080
+2025-11-24 15:21:49,618 - INFO - Gpu Temp Celsius Avg     : 50.8286
+2025-11-24 15:21:49,618 - INFO - Gpu Temp Celsius Peak    : 58.0000
+2025-11-24 15:21:49,618 - INFO - Gpu Utilization Percent Avg: 29.2286
+2025-11-24 15:21:49,618 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:21:49,618 - INFO - Gpu Mem Used Bytes Avg   : 23699062784.0000
+2025-11-24 15:21:49,618 - INFO - Gpu Mem Used Bytes Peak  : 23699062784.0000
+2025-11-24 15:21:49,618 - INFO - Gpu Vram Used Bytes      : 23699062784.0000
+2025-11-24 15:21:49,618 - INFO - Accuracy                 : 0.1283
+2025-11-24 15:21:49,618 - INFO - Precision                : 0.1205
+2025-11-24 15:21:49,618 - INFO - Recall                   : 0.1283
+2025-11-24 15:21:49,618 - INFO - F1 Score                 : 0.1016
+2025-11-24 15:21:49,618 - INFO - ==================================================
+2025-11-24 15:22:26,481 - INFO - Época 4 concluída. Loss média: 4.2522
+2025-11-24 15:22:26,481 - INFO - Taxa de aprendizado ajustada para: 0.100000
+2025-11-24 15:22:26,483 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:22:29,274 - INFO - ==================================================
+2025-11-24 15:22:29,274 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:22:29,274 - INFO - ==================================================
+2025-11-24 15:22:29,274 - INFO - Elapsed Time Seconds     : 2.7680
+2025-11-24 15:22:29,274 - INFO - Cpu Usage Percent        : 2.7531
+2025-11-24 15:22:29,274 - INFO - Ram Peak Usage Bytes     : 32782241792.0000
+2025-11-24 15:22:29,274 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:22:29,274 - INFO - Disk Write Bytes         : 0.0000
+2025-11-24 15:22:29,274 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:22:29,274 - INFO - Gpu Power Watts Avg      : 151.7883
+2025-11-24 15:22:29,274 - INFO - Gpu Power Watts Peak     : 300.7280
+2025-11-24 15:22:29,274 - INFO - Gpu Temp Celsius Avg     : 53.1481
+2025-11-24 15:22:29,274 - INFO - Gpu Temp Celsius Peak    : 61.0000
+2025-11-24 15:22:29,274 - INFO - Gpu Utilization Percent Avg: 40.7407
+2025-11-24 15:22:29,274 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:22:29,274 - INFO - Gpu Mem Used Bytes Avg   : 23732617216.0000
+2025-11-24 15:22:29,274 - INFO - Gpu Mem Used Bytes Peak  : 23732617216.0000
+2025-11-24 15:22:29,274 - INFO - Gpu Vram Used Bytes      : 23732617216.0000
+2025-11-24 15:22:29,274 - INFO - Accuracy                 : 0.1677
+2025-11-24 15:22:29,274 - INFO - Precision                : 0.1840
+2025-11-24 15:22:29,274 - INFO - Recall                   : 0.1677
+2025-11-24 15:22:29,274 - INFO - F1 Score                 : 0.1397
+2025-11-24 15:22:29,274 - INFO - ==================================================
+2025-11-24 15:23:04,854 - INFO - Época 5 concluída. Loss média: 4.0929
+2025-11-24 15:23:04,854 - INFO - Taxa de aprendizado ajustada para: 0.100000
+2025-11-24 15:23:04,855 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:23:08,720 - INFO - ==================================================
+2025-11-24 15:23:08,720 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:23:08,720 - INFO - ==================================================
+2025-11-24 15:23:08,720 - INFO - Elapsed Time Seconds     : 3.8416
+2025-11-24 15:23:08,720 - INFO - Cpu Usage Percent        : 2.6344
+2025-11-24 15:23:08,720 - INFO - Ram Peak Usage Bytes     : 32782340096.0000
+2025-11-24 15:23:08,720 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:23:08,720 - INFO - Disk Write Bytes         : 237568.0000
+2025-11-24 15:23:08,720 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:23:08,720 - INFO - Gpu Power Watts Avg      : 120.8800
+2025-11-24 15:23:08,720 - INFO - Gpu Power Watts Peak     : 299.4100
+2025-11-24 15:23:08,720 - INFO - Gpu Temp Celsius Avg     : 51.1053
+2025-11-24 15:23:08,720 - INFO - Gpu Temp Celsius Peak    : 59.0000
+2025-11-24 15:23:08,720 - INFO - Gpu Utilization Percent Avg: 27.9474
+2025-11-24 15:23:08,720 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:23:08,720 - INFO - Gpu Mem Used Bytes Avg   : 23732617216.0000
+2025-11-24 15:23:08,720 - INFO - Gpu Mem Used Bytes Peak  : 23732617216.0000
+2025-11-24 15:23:08,720 - INFO - Gpu Vram Used Bytes      : 23732617216.0000
+2025-11-24 15:23:08,720 - INFO - Accuracy                 : 0.1787
+2025-11-24 15:23:08,720 - INFO - Precision                : 0.2122
+2025-11-24 15:23:08,720 - INFO - Recall                   : 0.1787
+2025-11-24 15:23:08,720 - INFO - F1 Score                 : 0.1529
+2025-11-24 15:23:08,720 - INFO - ==================================================
+2025-11-24 15:23:45,426 - INFO - Época 6 concluída. Loss média: 3.9563
+2025-11-24 15:23:45,426 - INFO - Taxa de aprendizado ajustada para: 0.100000
+2025-11-24 15:23:45,428 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:23:48,497 - INFO - ==================================================
+2025-11-24 15:23:48,497 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:23:48,497 - INFO - ==================================================
+2025-11-24 15:23:48,497 - INFO - Elapsed Time Seconds     : 3.0467
+2025-11-24 15:23:48,497 - INFO - Cpu Usage Percent        : 2.3906
+2025-11-24 15:23:48,497 - INFO - Ram Peak Usage Bytes     : 32782413824.0000
+2025-11-24 15:23:48,497 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:23:48,497 - INFO - Disk Write Bytes         : 385024.0000
+2025-11-24 15:23:48,497 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:23:48,497 - INFO - Gpu Power Watts Avg      : 135.0713
+2025-11-24 15:23:48,497 - INFO - Gpu Power Watts Peak     : 297.6380
+2025-11-24 15:23:48,497 - INFO - Gpu Temp Celsius Avg     : 52.9000
+2025-11-24 15:23:48,497 - INFO - Gpu Temp Celsius Peak    : 61.0000
+2025-11-24 15:23:48,497 - INFO - Gpu Utilization Percent Avg: 33.8667
+2025-11-24 15:23:48,497 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:23:48,497 - INFO - Gpu Mem Used Bytes Avg   : 23732617216.0000
+2025-11-24 15:23:48,497 - INFO - Gpu Mem Used Bytes Peak  : 23732617216.0000
+2025-11-24 15:23:48,497 - INFO - Gpu Vram Used Bytes      : 23732617216.0000
+2025-11-24 15:23:48,497 - INFO - Accuracy                 : 0.2343
+2025-11-24 15:23:48,497 - INFO - Precision                : 0.2512
+2025-11-24 15:23:48,497 - INFO - Recall                   : 0.2343
+2025-11-24 15:23:48,497 - INFO - F1 Score                 : 0.2107
+2025-11-24 15:23:48,497 - INFO - ==================================================
+2025-11-24 15:24:24,207 - INFO - Época 7 concluída. Loss média: 3.8356
+2025-11-24 15:24:24,207 - INFO - Taxa de aprendizado ajustada para: 0.100000
+2025-11-24 15:24:24,209 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:24:27,293 - INFO - ==================================================
+2025-11-24 15:24:27,293 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:24:27,293 - INFO - ==================================================
+2025-11-24 15:24:27,293 - INFO - Elapsed Time Seconds     : 3.0613
+2025-11-24 15:24:27,293 - INFO - Cpu Usage Percent        : 2.3687
+2025-11-24 15:24:27,293 - INFO - Ram Peak Usage Bytes     : 32782532608.0000
+2025-11-24 15:24:27,293 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:24:27,293 - INFO - Disk Write Bytes         : 0.0000
+2025-11-24 15:24:27,293 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:24:27,293 - INFO - Gpu Power Watts Avg      : 139.2266
+2025-11-24 15:24:27,293 - INFO - Gpu Power Watts Peak     : 296.3800
+2025-11-24 15:24:27,293 - INFO - Gpu Temp Celsius Avg     : 53.2000
+2025-11-24 15:24:27,293 - INFO - Gpu Temp Celsius Peak    : 62.0000
+2025-11-24 15:24:27,293 - INFO - Gpu Utilization Percent Avg: 33.6667
+2025-11-24 15:24:27,293 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:24:27,293 - INFO - Gpu Mem Used Bytes Avg   : 23732617216.0000
+2025-11-24 15:24:27,293 - INFO - Gpu Mem Used Bytes Peak  : 23732617216.0000
+2025-11-24 15:24:27,293 - INFO - Gpu Vram Used Bytes      : 23732617216.0000
+2025-11-24 15:24:27,293 - INFO - Accuracy                 : 0.2314
+2025-11-24 15:24:27,293 - INFO - Precision                : 0.2833
+2025-11-24 15:24:27,293 - INFO - Recall                   : 0.2314
+2025-11-24 15:24:27,293 - INFO - F1 Score                 : 0.2171
+2025-11-24 15:24:27,293 - INFO - ==================================================
+2025-11-24 15:25:04,058 - INFO - Época 8 concluída. Loss média: 3.7290
+2025-11-24 15:25:04,059 - INFO - Taxa de aprendizado ajustada para: 0.100000
+2025-11-24 15:25:04,060 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:25:07,838 - INFO - ==================================================
+2025-11-24 15:25:07,838 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:25:07,838 - INFO - ==================================================
+2025-11-24 15:25:07,838 - INFO - Elapsed Time Seconds     : 3.7552
+2025-11-24 15:25:07,838 - INFO - Cpu Usage Percent        : 2.7281
+2025-11-24 15:25:07,838 - INFO - Ram Peak Usage Bytes     : 32786608128.0000
+2025-11-24 15:25:07,838 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:25:07,838 - INFO - Disk Write Bytes         : 135168.0000
+2025-11-24 15:25:07,838 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:25:07,838 - INFO - Gpu Power Watts Avg      : 126.3712
+2025-11-24 15:25:07,838 - INFO - Gpu Power Watts Peak     : 301.3850
+2025-11-24 15:25:07,838 - INFO - Gpu Temp Celsius Avg     : 52.1892
+2025-11-24 15:25:07,838 - INFO - Gpu Temp Celsius Peak    : 61.0000
+2025-11-24 15:25:07,838 - INFO - Gpu Utilization Percent Avg: 25.8378
+2025-11-24 15:25:07,838 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:25:07,838 - INFO - Gpu Mem Used Bytes Avg   : 23732617216.0000
+2025-11-24 15:25:07,838 - INFO - Gpu Mem Used Bytes Peak  : 23732617216.0000
+2025-11-24 15:25:07,838 - INFO - Gpu Vram Used Bytes      : 23732617216.0000
+2025-11-24 15:25:07,838 - INFO - Accuracy                 : 0.2888
+2025-11-24 15:25:07,838 - INFO - Precision                : 0.3248
+2025-11-24 15:25:07,838 - INFO - Recall                   : 0.2888
+2025-11-24 15:25:07,838 - INFO - F1 Score                 : 0.2704
+2025-11-24 15:25:07,838 - INFO - ==================================================
+2025-11-24 15:25:44,498 - INFO - Época 9 concluída. Loss média: 3.6262
+2025-11-24 15:25:44,498 - INFO - Taxa de aprendizado ajustada para: 0.100000
+2025-11-24 15:25:44,500 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:25:48,294 - INFO - ==================================================
+2025-11-24 15:25:48,295 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:25:48,295 - INFO - ==================================================
+2025-11-24 15:25:48,295 - INFO - Elapsed Time Seconds     : 3.7723
+2025-11-24 15:25:48,295 - INFO - Cpu Usage Percent        : 2.7000
+2025-11-24 15:25:48,295 - INFO - Ram Peak Usage Bytes     : 33873747968.0000
+2025-11-24 15:25:48,295 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:25:48,295 - INFO - Disk Write Bytes         : 126976.0000
+2025-11-24 15:25:48,295 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:25:48,295 - INFO - Gpu Power Watts Avg      : 121.1909
+2025-11-24 15:25:48,295 - INFO - Gpu Power Watts Peak     : 298.4670
+2025-11-24 15:25:48,295 - INFO - Gpu Temp Celsius Avg     : 52.0000
+2025-11-24 15:25:48,295 - INFO - Gpu Temp Celsius Peak    : 61.0000
+2025-11-24 15:25:48,295 - INFO - Gpu Utilization Percent Avg: 28.6486
+2025-11-24 15:25:48,295 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:25:48,295 - INFO - Gpu Mem Used Bytes Avg   : 23734714368.0000
+2025-11-24 15:25:48,295 - INFO - Gpu Mem Used Bytes Peak  : 23734714368.0000
+2025-11-24 15:25:48,295 - INFO - Gpu Vram Used Bytes      : 23734714368.0000
+2025-11-24 15:25:48,295 - INFO - Accuracy                 : 0.3042
+2025-11-24 15:25:48,295 - INFO - Precision                : 0.3382
+2025-11-24 15:25:48,295 - INFO - Recall                   : 0.3042
+2025-11-24 15:25:48,295 - INFO - F1 Score                 : 0.2840
+2025-11-24 15:25:48,295 - INFO - ==================================================
+2025-11-24 15:26:24,022 - INFO - Época 10 concluída. Loss média: 3.5405
+2025-11-24 15:26:24,022 - INFO - Taxa de aprendizado ajustada para: 0.100000
+2025-11-24 15:26:24,024 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:26:26,713 - INFO - ==================================================
+2025-11-24 15:26:26,714 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:26:26,714 - INFO - ==================================================
+2025-11-24 15:26:26,714 - INFO - Elapsed Time Seconds     : 2.6671
+2025-11-24 15:26:26,714 - INFO - Cpu Usage Percent        : 2.7406
+2025-11-24 15:26:26,714 - INFO - Ram Peak Usage Bytes     : 33884790784.0000
+2025-11-24 15:26:26,714 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:26:26,714 - INFO - Disk Write Bytes         : 229376.0000
+2025-11-24 15:26:26,714 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:26:26,714 - INFO - Gpu Power Watts Avg      : 153.3710
+2025-11-24 15:26:26,714 - INFO - Gpu Power Watts Peak     : 298.3860
+2025-11-24 15:26:26,714 - INFO - Gpu Temp Celsius Avg     : 53.0385
+2025-11-24 15:26:26,714 - INFO - Gpu Temp Celsius Peak    : 59.0000
+2025-11-24 15:26:26,714 - INFO - Gpu Utilization Percent Avg: 38.1923
+2025-11-24 15:26:26,714 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:26:26,714 - INFO - Gpu Mem Used Bytes Avg   : 23734714368.0000
+2025-11-24 15:26:26,714 - INFO - Gpu Mem Used Bytes Peak  : 23734714368.0000
+2025-11-24 15:26:26,714 - INFO - Gpu Vram Used Bytes      : 23734714368.0000
+2025-11-24 15:26:26,714 - INFO - Accuracy                 : 0.3349
+2025-11-24 15:26:26,714 - INFO - Precision                : 0.3631
+2025-11-24 15:26:26,714 - INFO - Recall                   : 0.3349
+2025-11-24 15:26:26,714 - INFO - F1 Score                 : 0.3163
+2025-11-24 15:26:26,714 - INFO - ==================================================
+2025-11-24 15:27:02,715 - INFO - Época 11 concluída. Loss média: 3.4632
+2025-11-24 15:27:02,715 - INFO - Taxa de aprendizado ajustada para: 0.100000
+2025-11-24 15:27:02,716 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:27:05,787 - INFO - ==================================================
+2025-11-24 15:27:05,787 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:27:05,787 - INFO - ==================================================
+2025-11-24 15:27:05,787 - INFO - Elapsed Time Seconds     : 3.0481
+2025-11-24 15:27:05,787 - INFO - Cpu Usage Percent        : 2.4188
+2025-11-24 15:27:05,787 - INFO - Ram Peak Usage Bytes     : 33889153024.0000
+2025-11-24 15:27:05,787 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:27:05,787 - INFO - Disk Write Bytes         : 69632.0000
+2025-11-24 15:27:05,787 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:27:05,787 - INFO - Gpu Power Watts Avg      : 131.6098
+2025-11-24 15:27:05,787 - INFO - Gpu Power Watts Peak     : 302.2820
+2025-11-24 15:27:05,787 - INFO - Gpu Temp Celsius Avg     : 52.5667
+2025-11-24 15:27:05,787 - INFO - Gpu Temp Celsius Peak    : 61.0000
+2025-11-24 15:27:05,787 - INFO - Gpu Utilization Percent Avg: 32.9667
+2025-11-24 15:27:05,787 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:27:05,787 - INFO - Gpu Mem Used Bytes Avg   : 23734714368.0000
+2025-11-24 15:27:05,787 - INFO - Gpu Mem Used Bytes Peak  : 23734714368.0000
+2025-11-24 15:27:05,787 - INFO - Gpu Vram Used Bytes      : 23734714368.0000
+2025-11-24 15:27:05,787 - INFO - Accuracy                 : 0.3505
+2025-11-24 15:27:05,787 - INFO - Precision                : 0.3855
+2025-11-24 15:27:05,787 - INFO - Recall                   : 0.3505
+2025-11-24 15:27:05,787 - INFO - F1 Score                 : 0.3375
+2025-11-24 15:27:05,788 - INFO - ==================================================
+2025-11-24 15:27:42,966 - INFO - Época 12 concluída. Loss média: 3.3948
+2025-11-24 15:27:42,966 - INFO - Taxa de aprendizado ajustada para: 0.100000
+2025-11-24 15:27:42,967 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:27:46,671 - INFO - ==================================================
+2025-11-24 15:27:46,671 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:27:46,671 - INFO - ==================================================
+2025-11-24 15:27:46,671 - INFO - Elapsed Time Seconds     : 3.6809
+2025-11-24 15:27:46,671 - INFO - Cpu Usage Percent        : 2.8281
+2025-11-24 15:27:46,671 - INFO - Ram Peak Usage Bytes     : 33902395392.0000
+2025-11-24 15:27:46,671 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:27:46,671 - INFO - Disk Write Bytes         : 0.0000
+2025-11-24 15:27:46,671 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:27:46,671 - INFO - Gpu Power Watts Avg      : 129.3737
+2025-11-24 15:27:46,671 - INFO - Gpu Power Watts Peak     : 298.3800
+2025-11-24 15:27:46,671 - INFO - Gpu Temp Celsius Avg     : 51.5278
+2025-11-24 15:27:46,671 - INFO - Gpu Temp Celsius Peak    : 58.0000
+2025-11-24 15:27:46,671 - INFO - Gpu Utilization Percent Avg: 28.3333
+2025-11-24 15:27:46,671 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:27:46,671 - INFO - Gpu Mem Used Bytes Avg   : 23768268800.0000
+2025-11-24 15:27:46,671 - INFO - Gpu Mem Used Bytes Peak  : 23768268800.0000
+2025-11-24 15:27:46,671 - INFO - Gpu Vram Used Bytes      : 23768268800.0000
+2025-11-24 15:27:46,671 - INFO - Accuracy                 : 0.3389
+2025-11-24 15:27:46,671 - INFO - Precision                : 0.4013
+2025-11-24 15:27:46,671 - INFO - Recall                   : 0.3389
+2025-11-24 15:27:46,671 - INFO - F1 Score                 : 0.3244
+2025-11-24 15:27:46,671 - INFO - ==================================================
+2025-11-24 15:28:22,299 - INFO - Época 13 concluída. Loss média: 3.3396
+2025-11-24 15:28:22,300 - INFO - Taxa de aprendizado ajustada para: 0.100000
+2025-11-24 15:28:22,301 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:28:25,288 - INFO - ==================================================
+2025-11-24 15:28:25,288 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:28:25,288 - INFO - ==================================================
+2025-11-24 15:28:25,288 - INFO - Elapsed Time Seconds     : 2.9646
+2025-11-24 15:28:25,288 - INFO - Cpu Usage Percent        : 2.4875
+2025-11-24 15:28:25,288 - INFO - Ram Peak Usage Bytes     : 33905262592.0000
+2025-11-24 15:28:25,288 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:28:25,288 - INFO - Disk Write Bytes         : 8192.0000
+2025-11-24 15:28:25,288 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:28:25,288 - INFO - Gpu Power Watts Avg      : 145.8717
+2025-11-24 15:28:25,288 - INFO - Gpu Power Watts Peak     : 300.9250
+2025-11-24 15:28:25,288 - INFO - Gpu Temp Celsius Avg     : 53.5517
+2025-11-24 15:28:25,289 - INFO - Gpu Temp Celsius Peak    : 62.0000
+2025-11-24 15:28:25,289 - INFO - Gpu Utilization Percent Avg: 34.8966
+2025-11-24 15:28:25,289 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:28:25,289 - INFO - Gpu Mem Used Bytes Avg   : 23768268800.0000
+2025-11-24 15:28:25,289 - INFO - Gpu Mem Used Bytes Peak  : 23768268800.0000
+2025-11-24 15:28:25,289 - INFO - Gpu Vram Used Bytes      : 23768268800.0000
+2025-11-24 15:28:25,289 - INFO - Accuracy                 : 0.3642
+2025-11-24 15:28:25,289 - INFO - Precision                : 0.4150
+2025-11-24 15:28:25,289 - INFO - Recall                   : 0.3642
+2025-11-24 15:28:25,289 - INFO - F1 Score                 : 0.3545
+2025-11-24 15:28:25,289 - INFO - ==================================================
+2025-11-24 15:29:02,620 - INFO - Época 14 concluída. Loss média: 3.2789
+2025-11-24 15:29:02,620 - INFO - Taxa de aprendizado ajustada para: 0.100000
+2025-11-24 15:29:02,621 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:29:05,597 - INFO - ==================================================
+2025-11-24 15:29:05,597 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:29:05,597 - INFO - ==================================================
+2025-11-24 15:29:05,597 - INFO - Elapsed Time Seconds     : 2.9531
+2025-11-24 15:29:05,597 - INFO - Cpu Usage Percent        : 2.5281
+2025-11-24 15:29:05,597 - INFO - Ram Peak Usage Bytes     : 33916243968.0000
+2025-11-24 15:29:05,597 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:29:05,597 - INFO - Disk Write Bytes         : 0.0000
+2025-11-24 15:29:05,597 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:29:05,598 - INFO - Gpu Power Watts Avg      : 143.2372
+2025-11-24 15:29:05,598 - INFO - Gpu Power Watts Peak     : 296.5500
+2025-11-24 15:29:05,598 - INFO - Gpu Temp Celsius Avg     : 53.2759
+2025-11-24 15:29:05,598 - INFO - Gpu Temp Celsius Peak    : 61.0000
+2025-11-24 15:29:05,598 - INFO - Gpu Utilization Percent Avg: 34.2069
+2025-11-24 15:29:05,598 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:29:05,598 - INFO - Gpu Mem Used Bytes Avg   : 23768268800.0000
+2025-11-24 15:29:05,598 - INFO - Gpu Mem Used Bytes Peak  : 23768268800.0000
+2025-11-24 15:29:05,598 - INFO - Gpu Vram Used Bytes      : 23768268800.0000
+2025-11-24 15:29:05,598 - INFO - Accuracy                 : 0.3484
+2025-11-24 15:29:05,598 - INFO - Precision                : 0.4171
+2025-11-24 15:29:05,598 - INFO - Recall                   : 0.3484
+2025-11-24 15:29:05,598 - INFO - F1 Score                 : 0.3355
+2025-11-24 15:29:05,598 - INFO - ==================================================
+2025-11-24 15:29:43,070 - INFO - Época 15 concluída. Loss média: 3.2325
+2025-11-24 15:29:43,070 - INFO - Taxa de aprendizado ajustada para: 0.100000
+2025-11-24 15:29:43,072 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:29:46,248 - INFO - ==================================================
+2025-11-24 15:29:46,248 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:29:46,248 - INFO - ==================================================
+2025-11-24 15:29:46,248 - INFO - Elapsed Time Seconds     : 3.1535
+2025-11-24 15:29:46,248 - INFO - Cpu Usage Percent        : 2.3000
+2025-11-24 15:29:46,248 - INFO - Ram Peak Usage Bytes     : 33919807488.0000
+2025-11-24 15:29:46,248 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:29:46,248 - INFO - Disk Write Bytes         : 0.0000
+2025-11-24 15:29:46,248 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:29:46,248 - INFO - Gpu Power Watts Avg      : 166.8966
+2025-11-24 15:29:46,248 - INFO - Gpu Power Watts Peak     : 301.4950
+2025-11-24 15:29:46,248 - INFO - Gpu Temp Celsius Avg     : 53.4516
+2025-11-24 15:29:46,248 - INFO - Gpu Temp Celsius Peak    : 61.0000
+2025-11-24 15:29:46,248 - INFO - Gpu Utilization Percent Avg: 37.5161
+2025-11-24 15:29:46,248 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:29:46,248 - INFO - Gpu Mem Used Bytes Avg   : 23768268800.0000
+2025-11-24 15:29:46,248 - INFO - Gpu Mem Used Bytes Peak  : 23768268800.0000
+2025-11-24 15:29:46,248 - INFO - Gpu Vram Used Bytes      : 23768268800.0000
+2025-11-24 15:29:46,248 - INFO - Accuracy                 : 0.3863
+2025-11-24 15:29:46,248 - INFO - Precision                : 0.4499
+2025-11-24 15:29:46,248 - INFO - Recall                   : 0.3863
+2025-11-24 15:29:46,248 - INFO - F1 Score                 : 0.3790
+2025-11-24 15:29:46,248 - INFO - ==================================================
+2025-11-24 15:30:21,823 - INFO - Época 16 concluída. Loss média: 3.1796
+2025-11-24 15:30:21,823 - INFO - Taxa de aprendizado ajustada para: 0.100000
+2025-11-24 15:30:21,825 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:30:24,822 - INFO - ==================================================
+2025-11-24 15:30:24,823 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:30:24,823 - INFO - ==================================================
+2025-11-24 15:30:24,823 - INFO - Elapsed Time Seconds     : 2.9751
+2025-11-24 15:30:24,823 - INFO - Cpu Usage Percent        : 2.4469
+2025-11-24 15:30:24,823 - INFO - Ram Peak Usage Bytes     : 33923604480.0000
+2025-11-24 15:30:24,823 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:30:24,823 - INFO - Disk Write Bytes         : 143360.0000
+2025-11-24 15:30:24,823 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:30:24,823 - INFO - Gpu Power Watts Avg      : 141.6614
+2025-11-24 15:30:24,823 - INFO - Gpu Power Watts Peak     : 300.8200
+2025-11-24 15:30:24,823 - INFO - Gpu Temp Celsius Avg     : 53.3793
+2025-11-24 15:30:24,823 - INFO - Gpu Temp Celsius Peak    : 61.0000
+2025-11-24 15:30:24,823 - INFO - Gpu Utilization Percent Avg: 35.1034
+2025-11-24 15:30:24,823 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:30:24,823 - INFO - Gpu Mem Used Bytes Avg   : 23768268800.0000
+2025-11-24 15:30:24,823 - INFO - Gpu Mem Used Bytes Peak  : 23768268800.0000
+2025-11-24 15:30:24,823 - INFO - Gpu Vram Used Bytes      : 23768268800.0000
+2025-11-24 15:30:24,823 - INFO - Accuracy                 : 0.4055
+2025-11-24 15:30:24,823 - INFO - Precision                : 0.4559
+2025-11-24 15:30:24,823 - INFO - Recall                   : 0.4055
+2025-11-24 15:30:24,823 - INFO - F1 Score                 : 0.4025
+2025-11-24 15:30:24,823 - INFO - ==================================================
+2025-11-24 15:30:59,597 - INFO - Época 17 concluída. Loss média: 3.1428
+2025-11-24 15:30:59,597 - INFO - Taxa de aprendizado ajustada para: 0.100000
+2025-11-24 15:30:59,599 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:31:02,208 - INFO - ==================================================
+2025-11-24 15:31:02,208 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:31:02,208 - INFO - ==================================================
+2025-11-24 15:31:02,208 - INFO - Elapsed Time Seconds     : 2.5867
+2025-11-24 15:31:02,208 - INFO - Cpu Usage Percent        : 2.9594
+2025-11-24 15:31:02,208 - INFO - Ram Peak Usage Bytes     : 33924931584.0000
+2025-11-24 15:31:02,208 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:31:02,208 - INFO - Disk Write Bytes         : 0.0000
+2025-11-24 15:31:02,208 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:31:02,208 - INFO - Gpu Power Watts Avg      : 149.9201
+2025-11-24 15:31:02,208 - INFO - Gpu Power Watts Peak     : 299.5470
+2025-11-24 15:31:02,208 - INFO - Gpu Temp Celsius Avg     : 52.6400
+2025-11-24 15:31:02,208 - INFO - Gpu Temp Celsius Peak    : 58.0000
+2025-11-24 15:31:02,208 - INFO - Gpu Utilization Percent Avg: 40.6400
+2025-11-24 15:31:02,208 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:31:02,208 - INFO - Gpu Mem Used Bytes Avg   : 23768268800.0000
+2025-11-24 15:31:02,208 - INFO - Gpu Mem Used Bytes Peak  : 23768268800.0000
+2025-11-24 15:31:02,208 - INFO - Gpu Vram Used Bytes      : 23768268800.0000
+2025-11-24 15:31:02,208 - INFO - Accuracy                 : 0.4110
+2025-11-24 15:31:02,208 - INFO - Precision                : 0.4567
+2025-11-24 15:31:02,208 - INFO - Recall                   : 0.4110
+2025-11-24 15:31:02,208 - INFO - F1 Score                 : 0.3992
+2025-11-24 15:31:02,209 - INFO - ==================================================
+2025-11-24 15:31:38,000 - INFO - Época 18 concluída. Loss média: 3.1050
+2025-11-24 15:31:38,000 - INFO - Taxa de aprendizado ajustada para: 0.100000
+2025-11-24 15:31:38,002 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:31:40,778 - INFO - ==================================================
+2025-11-24 15:31:40,778 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:31:40,778 - INFO - ==================================================
+2025-11-24 15:31:40,778 - INFO - Elapsed Time Seconds     : 2.7540
+2025-11-24 15:31:40,778 - INFO - Cpu Usage Percent        : 2.5750
+2025-11-24 15:31:40,778 - INFO - Ram Peak Usage Bytes     : 33929953280.0000
+2025-11-24 15:31:40,778 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:31:40,778 - INFO - Disk Write Bytes         : 0.0000
+2025-11-24 15:31:40,778 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:31:40,778 - INFO - Gpu Power Watts Avg      : 157.2366
+2025-11-24 15:31:40,779 - INFO - Gpu Power Watts Peak     : 301.5680
+2025-11-24 15:31:40,779 - INFO - Gpu Temp Celsius Avg     : 53.8148
+2025-11-24 15:31:40,779 - INFO - Gpu Temp Celsius Peak    : 62.0000
+2025-11-24 15:31:40,779 - INFO - Gpu Utilization Percent Avg: 37.7778
+2025-11-24 15:31:40,779 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:31:40,779 - INFO - Gpu Mem Used Bytes Avg   : 23768268800.0000
+2025-11-24 15:31:40,779 - INFO - Gpu Mem Used Bytes Peak  : 23768268800.0000
+2025-11-24 15:31:40,779 - INFO - Gpu Vram Used Bytes      : 23768268800.0000
+2025-11-24 15:31:40,779 - INFO - Accuracy                 : 0.3935
+2025-11-24 15:31:40,779 - INFO - Precision                : 0.4587
+2025-11-24 15:31:40,779 - INFO - Recall                   : 0.3935
+2025-11-24 15:31:40,779 - INFO - F1 Score                 : 0.3931
+2025-11-24 15:31:40,779 - INFO - ==================================================
+2025-11-24 15:32:16,868 - INFO - Época 19 concluída. Loss média: 3.0732
+2025-11-24 15:32:16,868 - INFO - Taxa de aprendizado ajustada para: 0.100000
+2025-11-24 15:32:16,870 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:32:19,731 - INFO - ==================================================
+2025-11-24 15:32:19,731 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:32:19,731 - INFO - ==================================================
+2025-11-24 15:32:19,731 - INFO - Elapsed Time Seconds     : 2.8389
+2025-11-24 15:32:19,731 - INFO - Cpu Usage Percent        : 2.5312
+2025-11-24 15:32:19,731 - INFO - Ram Peak Usage Bytes     : 33931063296.0000
+2025-11-24 15:32:19,731 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:32:19,731 - INFO - Disk Write Bytes         : 0.0000
+2025-11-24 15:32:19,731 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:32:19,731 - INFO - Gpu Power Watts Avg      : 142.8766
+2025-11-24 15:32:19,731 - INFO - Gpu Power Watts Peak     : 299.4350
+2025-11-24 15:32:19,731 - INFO - Gpu Temp Celsius Avg     : 53.6071
+2025-11-24 15:32:19,731 - INFO - Gpu Temp Celsius Peak    : 61.0000
+2025-11-24 15:32:19,731 - INFO - Gpu Utilization Percent Avg: 36.0000
+2025-11-24 15:32:19,731 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:32:19,731 - INFO - Gpu Mem Used Bytes Avg   : 23768268800.0000
+2025-11-24 15:32:19,731 - INFO - Gpu Mem Used Bytes Peak  : 23768268800.0000
+2025-11-24 15:32:19,731 - INFO - Gpu Vram Used Bytes      : 23768268800.0000
+2025-11-24 15:32:19,731 - INFO - Accuracy                 : 0.4276
+2025-11-24 15:32:19,731 - INFO - Precision                : 0.4786
+2025-11-24 15:32:19,731 - INFO - Recall                   : 0.4276
+2025-11-24 15:32:19,731 - INFO - F1 Score                 : 0.4223
+2025-11-24 15:32:19,731 - INFO - ==================================================
+2025-11-24 15:32:56,811 - INFO - Época 20 concluída. Loss média: 3.0350
+2025-11-24 15:32:56,811 - INFO - Taxa de aprendizado ajustada para: 0.100000
+2025-11-24 15:32:56,812 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:32:59,678 - INFO - ==================================================
+2025-11-24 15:32:59,678 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:32:59,679 - INFO - ==================================================
+2025-11-24 15:32:59,679 - INFO - Elapsed Time Seconds     : 2.8523
+2025-11-24 15:32:59,679 - INFO - Cpu Usage Percent        : 2.5531
+2025-11-24 15:32:59,679 - INFO - Ram Peak Usage Bytes     : 33931104256.0000
+2025-11-24 15:32:59,679 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:32:59,679 - INFO - Disk Write Bytes         : 20480.0000
+2025-11-24 15:32:59,679 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:32:59,679 - INFO - Gpu Power Watts Avg      : 141.6685
+2025-11-24 15:32:59,679 - INFO - Gpu Power Watts Peak     : 301.7400
+2025-11-24 15:32:59,679 - INFO - Gpu Temp Celsius Avg     : 52.7500
+2025-11-24 15:32:59,679 - INFO - Gpu Temp Celsius Peak    : 60.0000
+2025-11-24 15:32:59,679 - INFO - Gpu Utilization Percent Avg: 35.3214
+2025-11-24 15:32:59,679 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:32:59,679 - INFO - Gpu Mem Used Bytes Avg   : 23768268800.0000
+2025-11-24 15:32:59,679 - INFO - Gpu Mem Used Bytes Peak  : 23768268800.0000
+2025-11-24 15:32:59,679 - INFO - Gpu Vram Used Bytes      : 23768268800.0000
+2025-11-24 15:32:59,679 - INFO - Accuracy                 : 0.4102
+2025-11-24 15:32:59,679 - INFO - Precision                : 0.4698
+2025-11-24 15:32:59,679 - INFO - Recall                   : 0.4102
+2025-11-24 15:32:59,679 - INFO - F1 Score                 : 0.4079
+2025-11-24 15:32:59,679 - INFO - ==================================================
+2025-11-24 15:33:35,218 - INFO - Época 21 concluída. Loss média: 3.0059
+2025-11-24 15:33:35,219 - INFO - Taxa de aprendizado ajustada para: 0.100000
+2025-11-24 15:33:35,220 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:33:38,820 - INFO - ==================================================
+2025-11-24 15:33:38,820 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:33:38,820 - INFO - ==================================================
+2025-11-24 15:33:38,820 - INFO - Elapsed Time Seconds     : 3.5773
+2025-11-24 15:33:38,820 - INFO - Cpu Usage Percent        : 2.8219
+2025-11-24 15:33:38,820 - INFO - Ram Peak Usage Bytes     : 33931149312.0000
+2025-11-24 15:33:38,820 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:33:38,820 - INFO - Disk Write Bytes         : 0.0000
+2025-11-24 15:33:38,820 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:33:38,820 - INFO - Gpu Power Watts Avg      : 135.9305
+2025-11-24 15:33:38,820 - INFO - Gpu Power Watts Peak     : 288.4640
+2025-11-24 15:33:38,820 - INFO - Gpu Temp Celsius Avg     : 51.9714
+2025-11-24 15:33:38,820 - INFO - Gpu Temp Celsius Peak    : 60.0000
+2025-11-24 15:33:38,821 - INFO - Gpu Utilization Percent Avg: 28.0000
+2025-11-24 15:33:38,821 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:33:38,821 - INFO - Gpu Mem Used Bytes Avg   : 23768268800.0000
+2025-11-24 15:33:38,821 - INFO - Gpu Mem Used Bytes Peak  : 23768268800.0000
+2025-11-24 15:33:38,821 - INFO - Gpu Vram Used Bytes      : 23768268800.0000
+2025-11-24 15:33:38,821 - INFO - Accuracy                 : 0.4471
+2025-11-24 15:33:38,821 - INFO - Precision                : 0.4857
+2025-11-24 15:33:38,821 - INFO - Recall                   : 0.4471
+2025-11-24 15:33:38,821 - INFO - F1 Score                 : 0.4411
+2025-11-24 15:33:38,821 - INFO - ==================================================
+2025-11-24 15:34:13,863 - INFO - Época 22 concluída. Loss média: 2.9752
+2025-11-24 15:34:13,864 - INFO - Taxa de aprendizado ajustada para: 0.100000
+2025-11-24 15:34:13,865 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:34:16,856 - INFO - ==================================================
+2025-11-24 15:34:16,856 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:34:16,856 - INFO - ==================================================
+2025-11-24 15:34:16,856 - INFO - Elapsed Time Seconds     : 2.9682
+2025-11-24 15:34:16,856 - INFO - Cpu Usage Percent        : 2.4531
+2025-11-24 15:34:16,856 - INFO - Ram Peak Usage Bytes     : 33931194368.0000
+2025-11-24 15:34:16,856 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:34:16,856 - INFO - Disk Write Bytes         : 237568.0000
+2025-11-24 15:34:16,856 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:34:16,856 - INFO - Gpu Power Watts Avg      : 150.2693
+2025-11-24 15:34:16,856 - INFO - Gpu Power Watts Peak     : 301.6300
+2025-11-24 15:34:16,856 - INFO - Gpu Temp Celsius Avg     : 53.0690
+2025-11-24 15:34:16,856 - INFO - Gpu Temp Celsius Peak    : 59.0000
+2025-11-24 15:34:16,856 - INFO - Gpu Utilization Percent Avg: 38.4828
+2025-11-24 15:34:16,856 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:34:16,856 - INFO - Gpu Mem Used Bytes Avg   : 23768268800.0000
+2025-11-24 15:34:16,856 - INFO - Gpu Mem Used Bytes Peak  : 23768268800.0000
+2025-11-24 15:34:16,856 - INFO - Gpu Vram Used Bytes      : 23768268800.0000
+2025-11-24 15:34:16,856 - INFO - Accuracy                 : 0.4249
+2025-11-24 15:34:16,856 - INFO - Precision                : 0.4997
+2025-11-24 15:34:16,856 - INFO - Recall                   : 0.4249
+2025-11-24 15:34:16,856 - INFO - F1 Score                 : 0.4208
+2025-11-24 15:34:16,856 - INFO - ==================================================
+2025-11-24 15:34:54,266 - INFO - Época 23 concluída. Loss média: 2.9501
+2025-11-24 15:34:54,266 - INFO - Taxa de aprendizado ajustada para: 0.100000
+2025-11-24 15:34:54,269 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:34:57,973 - INFO - ==================================================
+2025-11-24 15:34:57,973 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:34:57,973 - INFO - ==================================================
+2025-11-24 15:34:57,973 - INFO - Elapsed Time Seconds     : 3.6814
+2025-11-24 15:34:57,973 - INFO - Cpu Usage Percent        : 2.8188
+2025-11-24 15:34:57,973 - INFO - Ram Peak Usage Bytes     : 33931194368.0000
+2025-11-24 15:34:57,973 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:34:57,973 - INFO - Disk Write Bytes         : 233472.0000
+2025-11-24 15:34:57,973 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:34:57,973 - INFO - Gpu Power Watts Avg      : 121.9844
+2025-11-24 15:34:57,973 - INFO - Gpu Power Watts Peak     : 303.4860
+2025-11-24 15:34:57,973 - INFO - Gpu Temp Celsius Avg     : 51.1111
+2025-11-24 15:34:57,973 - INFO - Gpu Temp Celsius Peak    : 57.0000
+2025-11-24 15:34:57,973 - INFO - Gpu Utilization Percent Avg: 25.3333
+2025-11-24 15:34:57,973 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:34:57,973 - INFO - Gpu Mem Used Bytes Avg   : 23768268800.0000
+2025-11-24 15:34:57,973 - INFO - Gpu Mem Used Bytes Peak  : 23768268800.0000
+2025-11-24 15:34:57,973 - INFO - Gpu Vram Used Bytes      : 23768268800.0000
+2025-11-24 15:34:57,973 - INFO - Accuracy                 : 0.4507
+2025-11-24 15:34:57,973 - INFO - Precision                : 0.4923
+2025-11-24 15:34:57,973 - INFO - Recall                   : 0.4507
+2025-11-24 15:34:57,973 - INFO - F1 Score                 : 0.4447
+2025-11-24 15:34:57,973 - INFO - ==================================================
+2025-11-24 15:35:34,516 - INFO - Época 24 concluída. Loss média: 2.9281
+2025-11-24 15:35:34,517 - INFO - Taxa de aprendizado ajustada para: 0.100000
+2025-11-24 15:35:34,518 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:35:37,613 - INFO - ==================================================
+2025-11-24 15:35:37,613 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:35:37,613 - INFO - ==================================================
+2025-11-24 15:35:37,613 - INFO - Elapsed Time Seconds     : 3.0727
+2025-11-24 15:35:37,613 - INFO - Cpu Usage Percent        : 2.3500
+2025-11-24 15:35:37,613 - INFO - Ram Peak Usage Bytes     : 33931214848.0000
+2025-11-24 15:35:37,614 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:35:37,614 - INFO - Disk Write Bytes         : 0.0000
+2025-11-24 15:35:37,614 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:35:37,614 - INFO - Gpu Power Watts Avg      : 138.8144
+2025-11-24 15:35:37,614 - INFO - Gpu Power Watts Peak     : 294.4800
+2025-11-24 15:35:37,614 - INFO - Gpu Temp Celsius Avg     : 53.4000
+2025-11-24 15:35:37,614 - INFO - Gpu Temp Celsius Peak    : 62.0000
+2025-11-24 15:35:37,614 - INFO - Gpu Utilization Percent Avg: 36.6000
+2025-11-24 15:35:37,614 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:35:37,614 - INFO - Gpu Mem Used Bytes Avg   : 23768268800.0000
+2025-11-24 15:35:37,614 - INFO - Gpu Mem Used Bytes Peak  : 23768268800.0000
+2025-11-24 15:35:37,614 - INFO - Gpu Vram Used Bytes      : 23768268800.0000
+2025-11-24 15:35:37,614 - INFO - Accuracy                 : 0.4400
+2025-11-24 15:35:37,614 - INFO - Precision                : 0.5113
+2025-11-24 15:35:37,614 - INFO - Recall                   : 0.4400
+2025-11-24 15:35:37,614 - INFO - F1 Score                 : 0.4400
+2025-11-24 15:35:37,614 - INFO - ==================================================
+2025-11-24 15:36:13,136 - INFO - Época 25 concluída. Loss média: 2.8987
+2025-11-24 15:36:13,136 - INFO - Taxa de aprendizado ajustada para: 0.100000
+2025-11-24 15:36:13,137 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:36:15,799 - INFO - ==================================================
+2025-11-24 15:36:15,799 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:36:15,799 - INFO - ==================================================
+2025-11-24 15:36:15,799 - INFO - Elapsed Time Seconds     : 2.6399
+2025-11-24 15:36:15,799 - INFO - Cpu Usage Percent        : 2.7687
+2025-11-24 15:36:15,799 - INFO - Ram Peak Usage Bytes     : 33931235328.0000
+2025-11-24 15:36:15,799 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:36:15,799 - INFO - Disk Write Bytes         : 0.0000
+2025-11-24 15:36:15,799 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:36:15,799 - INFO - Gpu Power Watts Avg      : 162.7070
+2025-11-24 15:36:15,799 - INFO - Gpu Power Watts Peak     : 303.8460
+2025-11-24 15:36:15,799 - INFO - Gpu Temp Celsius Avg     : 53.5000
+2025-11-24 15:36:15,799 - INFO - Gpu Temp Celsius Peak    : 60.0000
+2025-11-24 15:36:15,799 - INFO - Gpu Utilization Percent Avg: 37.7308
+2025-11-24 15:36:15,799 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:36:15,799 - INFO - Gpu Mem Used Bytes Avg   : 23768268800.0000
+2025-11-24 15:36:15,799 - INFO - Gpu Mem Used Bytes Peak  : 23768268800.0000
+2025-11-24 15:36:15,799 - INFO - Gpu Vram Used Bytes      : 23768268800.0000
+2025-11-24 15:36:15,799 - INFO - Accuracy                 : 0.4540
+2025-11-24 15:36:15,799 - INFO - Precision                : 0.5002
+2025-11-24 15:36:15,799 - INFO - Recall                   : 0.4540
+2025-11-24 15:36:15,799 - INFO - F1 Score                 : 0.4480
+2025-11-24 15:36:15,799 - INFO - ==================================================
+2025-11-24 15:36:52,086 - INFO - Época 26 concluída. Loss média: 2.8866
+2025-11-24 15:36:52,086 - INFO - Taxa de aprendizado ajustada para: 0.100000
+2025-11-24 15:36:52,087 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:36:54,843 - INFO - ==================================================
+2025-11-24 15:36:54,843 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:36:54,843 - INFO - ==================================================
+2025-11-24 15:36:54,843 - INFO - Elapsed Time Seconds     : 2.7341
+2025-11-24 15:36:54,843 - INFO - Cpu Usage Percent        : 2.6844
+2025-11-24 15:36:54,843 - INFO - Ram Peak Usage Bytes     : 33931218944.0000
+2025-11-24 15:36:54,843 - INFO - Disk Read Bytes          : 94208.0000
+2025-11-24 15:36:54,843 - INFO - Disk Write Bytes         : 135168.0000
+2025-11-24 15:36:54,843 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:36:54,843 - INFO - Gpu Power Watts Avg      : 153.4565
+2025-11-24 15:36:54,843 - INFO - Gpu Power Watts Peak     : 300.0030
+2025-11-24 15:36:54,843 - INFO - Gpu Temp Celsius Avg     : 54.0370
+2025-11-24 15:36:54,843 - INFO - Gpu Temp Celsius Peak    : 63.0000
+2025-11-24 15:36:54,843 - INFO - Gpu Utilization Percent Avg: 37.4074
+2025-11-24 15:36:54,843 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:36:54,843 - INFO - Gpu Mem Used Bytes Avg   : 23768268800.0000
+2025-11-24 15:36:54,844 - INFO - Gpu Mem Used Bytes Peak  : 23768268800.0000
+2025-11-24 15:36:54,844 - INFO - Gpu Vram Used Bytes      : 23768268800.0000
+2025-11-24 15:36:54,844 - INFO - Accuracy                 : 0.4670
+2025-11-24 15:36:54,844 - INFO - Precision                : 0.5056
+2025-11-24 15:36:54,844 - INFO - Recall                   : 0.4670
+2025-11-24 15:36:54,844 - INFO - F1 Score                 : 0.4608
+2025-11-24 15:36:54,844 - INFO - ==================================================
+2025-11-24 15:37:31,876 - INFO - Época 27 concluída. Loss média: 2.8604
+2025-11-24 15:37:31,876 - INFO - Taxa de aprendizado ajustada para: 0.100000
+2025-11-24 15:37:31,878 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:37:34,852 - INFO - ==================================================
+2025-11-24 15:37:34,852 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:37:34,852 - INFO - ==================================================
+2025-11-24 15:37:34,852 - INFO - Elapsed Time Seconds     : 2.9516
+2025-11-24 15:37:34,852 - INFO - Cpu Usage Percent        : 2.4344
+2025-11-24 15:37:34,852 - INFO - Ram Peak Usage Bytes     : 33931223040.0000
+2025-11-24 15:37:34,852 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:37:34,852 - INFO - Disk Write Bytes         : 229376.0000
+2025-11-24 15:37:34,852 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:37:34,852 - INFO - Gpu Power Watts Avg      : 138.7963
+2025-11-24 15:37:34,852 - INFO - Gpu Power Watts Peak     : 298.8500
+2025-11-24 15:37:34,852 - INFO - Gpu Temp Celsius Avg     : 53.5517
+2025-11-24 15:37:34,852 - INFO - Gpu Temp Celsius Peak    : 62.0000
+2025-11-24 15:37:34,853 - INFO - Gpu Utilization Percent Avg: 34.4828
+2025-11-24 15:37:34,853 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:37:34,853 - INFO - Gpu Mem Used Bytes Avg   : 23768268800.0000
+2025-11-24 15:37:34,853 - INFO - Gpu Mem Used Bytes Peak  : 23768268800.0000
+2025-11-24 15:37:34,853 - INFO - Gpu Vram Used Bytes      : 23768268800.0000
+2025-11-24 15:37:34,853 - INFO - Accuracy                 : 0.4668
+2025-11-24 15:37:34,853 - INFO - Precision                : 0.5030
+2025-11-24 15:37:34,853 - INFO - Recall                   : 0.4668
+2025-11-24 15:37:34,853 - INFO - F1 Score                 : 0.4601
+2025-11-24 15:37:34,853 - INFO - ==================================================
+2025-11-24 15:38:10,558 - INFO - Época 28 concluída. Loss média: 2.8466
+2025-11-24 15:38:10,558 - INFO - Taxa de aprendizado ajustada para: 0.100000
+2025-11-24 15:38:10,560 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:38:13,882 - INFO - ==================================================
+2025-11-24 15:38:13,882 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:38:13,882 - INFO - ==================================================
+2025-11-24 15:38:13,882 - INFO - Elapsed Time Seconds     : 3.2997
+2025-11-24 15:38:13,882 - INFO - Cpu Usage Percent        : 3.1063
+2025-11-24 15:38:13,882 - INFO - Ram Peak Usage Bytes     : 33931386880.0000
+2025-11-24 15:38:13,882 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:38:13,882 - INFO - Disk Write Bytes         : 126976.0000
+2025-11-24 15:38:13,882 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:38:13,882 - INFO - Gpu Power Watts Avg      : 133.4545
+2025-11-24 15:38:13,882 - INFO - Gpu Power Watts Peak     : 296.7420
+2025-11-24 15:38:13,882 - INFO - Gpu Temp Celsius Avg     : 51.8750
+2025-11-24 15:38:13,882 - INFO - Gpu Temp Celsius Peak    : 58.0000
+2025-11-24 15:38:13,882 - INFO - Gpu Utilization Percent Avg: 31.0000
+2025-11-24 15:38:13,882 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:38:13,882 - INFO - Gpu Mem Used Bytes Avg   : 23768268800.0000
+2025-11-24 15:38:13,882 - INFO - Gpu Mem Used Bytes Peak  : 23768268800.0000
+2025-11-24 15:38:13,882 - INFO - Gpu Vram Used Bytes      : 23768268800.0000
+2025-11-24 15:38:13,882 - INFO - Accuracy                 : 0.4758
+2025-11-24 15:38:13,882 - INFO - Precision                : 0.5249
+2025-11-24 15:38:13,882 - INFO - Recall                   : 0.4758
+2025-11-24 15:38:13,882 - INFO - F1 Score                 : 0.4744
+2025-11-24 15:38:13,882 - INFO - ==================================================
+2025-11-24 15:38:48,952 - INFO - Época 29 concluída. Loss média: 2.8256
+2025-11-24 15:38:48,952 - INFO - Taxa de aprendizado ajustada para: 0.100000
+2025-11-24 15:38:48,954 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:38:52,730 - INFO - ==================================================
+2025-11-24 15:38:52,730 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:38:52,730 - INFO - ==================================================
+2025-11-24 15:38:52,730 - INFO - Elapsed Time Seconds     : 3.7533
+2025-11-24 15:38:52,730 - INFO - Cpu Usage Percent        : 2.7219
+2025-11-24 15:38:52,730 - INFO - Ram Peak Usage Bytes     : 33931378688.0000
+2025-11-24 15:38:52,730 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:38:52,730 - INFO - Disk Write Bytes         : 434176.0000
+2025-11-24 15:38:52,730 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:38:52,730 - INFO - Gpu Power Watts Avg      : 123.3769
+2025-11-24 15:38:52,730 - INFO - Gpu Power Watts Peak     : 297.7210
+2025-11-24 15:38:52,730 - INFO - Gpu Temp Celsius Avg     : 51.8919
+2025-11-24 15:38:52,730 - INFO - Gpu Temp Celsius Peak    : 61.0000
+2025-11-24 15:38:52,730 - INFO - Gpu Utilization Percent Avg: 26.2162
+2025-11-24 15:38:52,730 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:38:52,730 - INFO - Gpu Mem Used Bytes Avg   : 23768268800.0000
+2025-11-24 15:38:52,730 - INFO - Gpu Mem Used Bytes Peak  : 23768268800.0000
+2025-11-24 15:38:52,730 - INFO - Gpu Vram Used Bytes      : 23768268800.0000
+2025-11-24 15:38:52,730 - INFO - Accuracy                 : 0.4784
+2025-11-24 15:38:52,730 - INFO - Precision                : 0.5276
+2025-11-24 15:38:52,730 - INFO - Recall                   : 0.4784
+2025-11-24 15:38:52,730 - INFO - F1 Score                 : 0.4778
+2025-11-24 15:38:52,730 - INFO - ==================================================
+2025-11-24 15:39:28,987 - INFO - Época 30 concluída. Loss média: 2.8111
+2025-11-24 15:39:28,987 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-24 15:39:28,988 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:39:32,172 - INFO - ==================================================
+2025-11-24 15:39:32,172 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:39:32,172 - INFO - ==================================================
+2025-11-24 15:39:32,172 - INFO - Elapsed Time Seconds     : 3.1611
+2025-11-24 15:39:32,172 - INFO - Cpu Usage Percent        : 2.2844
+2025-11-24 15:39:32,172 - INFO - Ram Peak Usage Bytes     : 33931382784.0000
+2025-11-24 15:39:32,172 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:39:32,172 - INFO - Disk Write Bytes         : 4096.0000
+2025-11-24 15:39:32,172 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:39:32,172 - INFO - Gpu Power Watts Avg      : 135.8187
+2025-11-24 15:39:32,172 - INFO - Gpu Power Watts Peak     : 304.0060
+2025-11-24 15:39:32,172 - INFO - Gpu Temp Celsius Avg     : 53.2581
+2025-11-24 15:39:32,172 - INFO - Gpu Temp Celsius Peak    : 62.0000
+2025-11-24 15:39:32,172 - INFO - Gpu Utilization Percent Avg: 32.0645
+2025-11-24 15:39:32,172 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:39:32,172 - INFO - Gpu Mem Used Bytes Avg   : 23835377664.0000
+2025-11-24 15:39:32,172 - INFO - Gpu Mem Used Bytes Peak  : 23835377664.0000
+2025-11-24 15:39:32,172 - INFO - Gpu Vram Used Bytes      : 23835377664.0000
+2025-11-24 15:39:32,172 - INFO - Accuracy                 : 0.4838
+2025-11-24 15:39:32,172 - INFO - Precision                : 0.5273
+2025-11-24 15:39:32,172 - INFO - Recall                   : 0.4838
+2025-11-24 15:39:32,172 - INFO - F1 Score                 : 0.4830
+2025-11-24 15:39:32,172 - INFO - ==================================================
+2025-11-24 15:40:07,928 - INFO - Época 31 concluída. Loss média: 2.6197
+2025-11-24 15:40:07,928 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-24 15:40:07,930 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:40:10,805 - INFO - ==================================================
+2025-11-24 15:40:10,805 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:40:10,805 - INFO - ==================================================
+2025-11-24 15:40:10,805 - INFO - Elapsed Time Seconds     : 2.8533
+2025-11-24 15:40:10,805 - INFO - Cpu Usage Percent        : 2.5281
+2025-11-24 15:40:10,805 - INFO - Ram Peak Usage Bytes     : 33931423744.0000
+2025-11-24 15:40:10,805 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:40:10,805 - INFO - Disk Write Bytes         : 0.0000
+2025-11-24 15:40:10,805 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:40:10,805 - INFO - Gpu Power Watts Avg      : 143.0978
+2025-11-24 15:40:10,805 - INFO - Gpu Power Watts Peak     : 300.7250
+2025-11-24 15:40:10,805 - INFO - Gpu Temp Celsius Avg     : 53.9286
+2025-11-24 15:40:10,805 - INFO - Gpu Temp Celsius Peak    : 62.0000
+2025-11-24 15:40:10,805 - INFO - Gpu Utilization Percent Avg: 36.5000
+2025-11-24 15:40:10,805 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:40:10,805 - INFO - Gpu Mem Used Bytes Avg   : 23835377664.0000
+2025-11-24 15:40:10,805 - INFO - Gpu Mem Used Bytes Peak  : 23835377664.0000
+2025-11-24 15:40:10,805 - INFO - Gpu Vram Used Bytes      : 23835377664.0000
+2025-11-24 15:40:10,806 - INFO - Accuracy                 : 0.5710
+2025-11-24 15:40:10,806 - INFO - Precision                : 0.5694
+2025-11-24 15:40:10,806 - INFO - Recall                   : 0.5710
+2025-11-24 15:40:10,806 - INFO - F1 Score                 : 0.5660
+2025-11-24 15:40:10,806 - INFO - ==================================================
+2025-11-24 15:40:47,644 - INFO - Época 32 concluída. Loss média: 2.5371
+2025-11-24 15:40:47,644 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-24 15:40:47,646 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:40:50,549 - INFO - ==================================================
+2025-11-24 15:40:50,549 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:40:50,549 - INFO - ==================================================
+2025-11-24 15:40:50,549 - INFO - Elapsed Time Seconds     : 2.8810
+2025-11-24 15:40:50,549 - INFO - Cpu Usage Percent        : 2.5500
+2025-11-24 15:40:50,549 - INFO - Ram Peak Usage Bytes     : 33931407360.0000
+2025-11-24 15:40:50,549 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:40:50,549 - INFO - Disk Write Bytes         : 143360.0000
+2025-11-24 15:40:50,549 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:40:50,549 - INFO - Gpu Power Watts Avg      : 141.4882
+2025-11-24 15:40:50,549 - INFO - Gpu Power Watts Peak     : 301.9070
+2025-11-24 15:40:50,549 - INFO - Gpu Temp Celsius Avg     : 53.0714
+2025-11-24 15:40:50,549 - INFO - Gpu Temp Celsius Peak    : 60.0000
+2025-11-24 15:40:50,549 - INFO - Gpu Utilization Percent Avg: 33.3214
+2025-11-24 15:40:50,549 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:40:50,549 - INFO - Gpu Mem Used Bytes Avg   : 23835377664.0000
+2025-11-24 15:40:50,549 - INFO - Gpu Mem Used Bytes Peak  : 23835377664.0000
+2025-11-24 15:40:50,549 - INFO - Gpu Vram Used Bytes      : 23835377664.0000
+2025-11-24 15:40:50,549 - INFO - Accuracy                 : 0.5730
+2025-11-24 15:40:50,549 - INFO - Precision                : 0.5751
+2025-11-24 15:40:50,549 - INFO - Recall                   : 0.5730
+2025-11-24 15:40:50,549 - INFO - F1 Score                 : 0.5699
+2025-11-24 15:40:50,549 - INFO - ==================================================
+2025-11-24 15:41:27,905 - INFO - Época 33 concluída. Loss média: 2.5058
+2025-11-24 15:41:27,905 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-24 15:41:27,907 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:41:30,822 - INFO - ==================================================
+2025-11-24 15:41:30,822 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:41:30,822 - INFO - ==================================================
+2025-11-24 15:41:30,822 - INFO - Elapsed Time Seconds     : 2.8935
+2025-11-24 15:41:30,822 - INFO - Cpu Usage Percent        : 2.5906
+2025-11-24 15:41:30,822 - INFO - Ram Peak Usage Bytes     : 33931411456.0000
+2025-11-24 15:41:30,822 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:41:30,822 - INFO - Disk Write Bytes         : 0.0000
+2025-11-24 15:41:30,822 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:41:30,822 - INFO - Gpu Power Watts Avg      : 137.9860
+2025-11-24 15:41:30,822 - INFO - Gpu Power Watts Peak     : 301.1250
+2025-11-24 15:41:30,822 - INFO - Gpu Temp Celsius Avg     : 53.7857
+2025-11-24 15:41:30,822 - INFO - Gpu Temp Celsius Peak    : 62.0000
+2025-11-24 15:41:30,822 - INFO - Gpu Utilization Percent Avg: 37.2143
+2025-11-24 15:41:30,822 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:41:30,822 - INFO - Gpu Mem Used Bytes Avg   : 23835377664.0000
+2025-11-24 15:41:30,822 - INFO - Gpu Mem Used Bytes Peak  : 23835377664.0000
+2025-11-24 15:41:30,822 - INFO - Gpu Vram Used Bytes      : 23835377664.0000
+2025-11-24 15:41:30,822 - INFO - Accuracy                 : 0.5754
+2025-11-24 15:41:30,823 - INFO - Precision                : 0.5770
+2025-11-24 15:41:30,823 - INFO - Recall                   : 0.5754
+2025-11-24 15:41:30,823 - INFO - F1 Score                 : 0.5720
+2025-11-24 15:41:30,823 - INFO - ==================================================
+2025-11-24 15:42:07,319 - INFO - Época 34 concluída. Loss média: 2.4858
+2025-11-24 15:42:07,319 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-24 15:42:07,321 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:42:10,011 - INFO - ==================================================
+2025-11-24 15:42:10,012 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:42:10,012 - INFO - ==================================================
+2025-11-24 15:42:10,012 - INFO - Elapsed Time Seconds     : 2.6684
+2025-11-24 15:42:10,012 - INFO - Cpu Usage Percent        : 2.7156
+2025-11-24 15:42:10,012 - INFO - Ram Peak Usage Bytes     : 33931440128.0000
+2025-11-24 15:42:10,012 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:42:10,012 - INFO - Disk Write Bytes         : 0.0000
+2025-11-24 15:42:10,012 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:42:10,012 - INFO - Gpu Power Watts Avg      : 144.4379
+2025-11-24 15:42:10,012 - INFO - Gpu Power Watts Peak     : 299.5740
+2025-11-24 15:42:10,012 - INFO - Gpu Temp Celsius Avg     : 52.9615
+2025-11-24 15:42:10,012 - INFO - Gpu Temp Celsius Peak    : 60.0000
+2025-11-24 15:42:10,012 - INFO - Gpu Utilization Percent Avg: 38.6923
+2025-11-24 15:42:10,012 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:42:10,012 - INFO - Gpu Mem Used Bytes Avg   : 23835377664.0000
+2025-11-24 15:42:10,012 - INFO - Gpu Mem Used Bytes Peak  : 23835377664.0000
+2025-11-24 15:42:10,012 - INFO - Gpu Vram Used Bytes      : 23835377664.0000
+2025-11-24 15:42:10,012 - INFO - Accuracy                 : 0.5787
+2025-11-24 15:42:10,012 - INFO - Precision                : 0.5785
+2025-11-24 15:42:10,012 - INFO - Recall                   : 0.5787
+2025-11-24 15:42:10,012 - INFO - F1 Score                 : 0.5747
+2025-11-24 15:42:10,012 - INFO - ==================================================
+2025-11-24 15:42:47,591 - INFO - Época 35 concluída. Loss média: 2.4739
+2025-11-24 15:42:47,591 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-24 15:42:47,593 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:42:50,667 - INFO - ==================================================
+2025-11-24 15:42:50,667 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:42:50,667 - INFO - ==================================================
+2025-11-24 15:42:50,667 - INFO - Elapsed Time Seconds     : 3.0605
+2025-11-24 15:42:50,667 - INFO - Cpu Usage Percent        : 2.3594
+2025-11-24 15:42:50,667 - INFO - Ram Peak Usage Bytes     : 33931591680.0000
+2025-11-24 15:42:50,667 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:42:50,667 - INFO - Disk Write Bytes         : 122880.0000
+2025-11-24 15:42:50,667 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:42:50,667 - INFO - Gpu Power Watts Avg      : 141.2115
+2025-11-24 15:42:50,667 - INFO - Gpu Power Watts Peak     : 302.3300
+2025-11-24 15:42:50,667 - INFO - Gpu Temp Celsius Avg     : 53.6000
+2025-11-24 15:42:50,667 - INFO - Gpu Temp Celsius Peak    : 62.0000
+2025-11-24 15:42:50,667 - INFO - Gpu Utilization Percent Avg: 35.3667
+2025-11-24 15:42:50,667 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:42:50,667 - INFO - Gpu Mem Used Bytes Avg   : 23835377664.0000
+2025-11-24 15:42:50,667 - INFO - Gpu Mem Used Bytes Peak  : 23835377664.0000
+2025-11-24 15:42:50,667 - INFO - Gpu Vram Used Bytes      : 23835377664.0000
+2025-11-24 15:42:50,667 - INFO - Accuracy                 : 0.5791
+2025-11-24 15:42:50,667 - INFO - Precision                : 0.5816
+2025-11-24 15:42:50,667 - INFO - Recall                   : 0.5791
+2025-11-24 15:42:50,667 - INFO - F1 Score                 : 0.5753
+2025-11-24 15:42:50,667 - INFO - ==================================================
+2025-11-24 15:43:26,008 - INFO - Época 36 concluída. Loss média: 2.4547
+2025-11-24 15:43:26,008 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-24 15:43:26,010 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:43:28,813 - INFO - ==================================================
+2025-11-24 15:43:28,813 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:43:28,813 - INFO - ==================================================
+2025-11-24 15:43:28,813 - INFO - Elapsed Time Seconds     : 2.7811
+2025-11-24 15:43:28,813 - INFO - Cpu Usage Percent        : 2.6187
+2025-11-24 15:43:28,813 - INFO - Ram Peak Usage Bytes     : 33931612160.0000
+2025-11-24 15:43:28,813 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:43:28,813 - INFO - Disk Write Bytes         : 8192.0000
+2025-11-24 15:43:28,813 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:43:28,813 - INFO - Gpu Power Watts Avg      : 157.6178
+2025-11-24 15:43:28,813 - INFO - Gpu Power Watts Peak     : 304.0740
+2025-11-24 15:43:28,813 - INFO - Gpu Temp Celsius Avg     : 54.1852
+2025-11-24 15:43:28,814 - INFO - Gpu Temp Celsius Peak    : 61.0000
+2025-11-24 15:43:28,814 - INFO - Gpu Utilization Percent Avg: 37.9259
+2025-11-24 15:43:28,814 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:43:28,814 - INFO - Gpu Mem Used Bytes Avg   : 23835377664.0000
+2025-11-24 15:43:28,814 - INFO - Gpu Mem Used Bytes Peak  : 23835377664.0000
+2025-11-24 15:43:28,814 - INFO - Gpu Vram Used Bytes      : 23835377664.0000
+2025-11-24 15:43:28,814 - INFO - Accuracy                 : 0.5843
+2025-11-24 15:43:28,814 - INFO - Precision                : 0.5841
+2025-11-24 15:43:28,814 - INFO - Recall                   : 0.5843
+2025-11-24 15:43:28,814 - INFO - F1 Score                 : 0.5804
+2025-11-24 15:43:28,814 - INFO - ==================================================
+2025-11-24 15:44:04,552 - INFO - Época 37 concluída. Loss média: 2.4366
+2025-11-24 15:44:04,552 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-24 15:44:04,554 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:44:07,526 - INFO - ==================================================
+2025-11-24 15:44:07,526 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:44:07,526 - INFO - ==================================================
+2025-11-24 15:44:07,526 - INFO - Elapsed Time Seconds     : 2.9498
+2025-11-24 15:44:07,526 - INFO - Cpu Usage Percent        : 2.5938
+2025-11-24 15:44:07,526 - INFO - Ram Peak Usage Bytes     : 33931620352.0000
+2025-11-24 15:44:07,526 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:44:07,526 - INFO - Disk Write Bytes         : 233472.0000
+2025-11-24 15:44:07,526 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:44:07,526 - INFO - Gpu Power Watts Avg      : 143.8092
+2025-11-24 15:44:07,526 - INFO - Gpu Power Watts Peak     : 301.1730
+2025-11-24 15:44:07,526 - INFO - Gpu Temp Celsius Avg     : 53.5172
+2025-11-24 15:44:07,526 - INFO - Gpu Temp Celsius Peak    : 60.0000
+2025-11-24 15:44:07,526 - INFO - Gpu Utilization Percent Avg: 33.6552
+2025-11-24 15:44:07,526 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:44:07,526 - INFO - Gpu Mem Used Bytes Avg   : 23835377664.0000
+2025-11-24 15:44:07,526 - INFO - Gpu Mem Used Bytes Peak  : 23835377664.0000
+2025-11-24 15:44:07,526 - INFO - Gpu Vram Used Bytes      : 23835377664.0000
+2025-11-24 15:44:07,526 - INFO - Accuracy                 : 0.5814
+2025-11-24 15:44:07,526 - INFO - Precision                : 0.5860
+2025-11-24 15:44:07,526 - INFO - Recall                   : 0.5814
+2025-11-24 15:44:07,526 - INFO - F1 Score                 : 0.5795
+2025-11-24 15:44:07,526 - INFO - ==================================================
+2025-11-24 15:44:44,125 - INFO - Época 38 concluída. Loss média: 2.4283
+2025-11-24 15:44:44,125 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-24 15:44:44,127 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:44:46,911 - INFO - ==================================================
+2025-11-24 15:44:46,912 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:44:46,912 - INFO - ==================================================
+2025-11-24 15:44:46,912 - INFO - Elapsed Time Seconds     : 2.7623
+2025-11-24 15:44:46,912 - INFO - Cpu Usage Percent        : 2.6125
+2025-11-24 15:44:46,912 - INFO - Ram Peak Usage Bytes     : 33931640832.0000
+2025-11-24 15:44:46,912 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:44:46,912 - INFO - Disk Write Bytes         : 204800.0000
+2025-11-24 15:44:46,912 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:44:46,912 - INFO - Gpu Power Watts Avg      : 150.9997
+2025-11-24 15:44:46,912 - INFO - Gpu Power Watts Peak     : 296.9480
+2025-11-24 15:44:46,912 - INFO - Gpu Temp Celsius Avg     : 53.6296
+2025-11-24 15:44:46,912 - INFO - Gpu Temp Celsius Peak    : 62.0000
+2025-11-24 15:44:46,912 - INFO - Gpu Utilization Percent Avg: 37.5556
+2025-11-24 15:44:46,912 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:44:46,912 - INFO - Gpu Mem Used Bytes Avg   : 23835377664.0000
+2025-11-24 15:44:46,912 - INFO - Gpu Mem Used Bytes Peak  : 23835377664.0000
+2025-11-24 15:44:46,912 - INFO - Gpu Vram Used Bytes      : 23835377664.0000
+2025-11-24 15:44:46,912 - INFO - Accuracy                 : 0.5784
+2025-11-24 15:44:46,912 - INFO - Precision                : 0.5821
+2025-11-24 15:44:46,912 - INFO - Recall                   : 0.5784
+2025-11-24 15:44:46,912 - INFO - F1 Score                 : 0.5754
+2025-11-24 15:44:46,912 - INFO - ==================================================
+2025-11-24 15:45:23,467 - INFO - Época 39 concluída. Loss média: 2.4148
+2025-11-24 15:45:23,467 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-24 15:45:23,468 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:45:26,374 - INFO - ==================================================
+2025-11-24 15:45:26,374 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:45:26,374 - INFO - ==================================================
+2025-11-24 15:45:26,374 - INFO - Elapsed Time Seconds     : 2.8834
+2025-11-24 15:45:26,374 - INFO - Cpu Usage Percent        : 2.5562
+2025-11-24 15:45:26,374 - INFO - Ram Peak Usage Bytes     : 33931632640.0000
+2025-11-24 15:45:26,374 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:45:26,374 - INFO - Disk Write Bytes         : 0.0000
+2025-11-24 15:45:26,374 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:45:26,374 - INFO - Gpu Power Watts Avg      : 161.5042
+2025-11-24 15:45:26,374 - INFO - Gpu Power Watts Peak     : 299.4350
+2025-11-24 15:45:26,374 - INFO - Gpu Temp Celsius Avg     : 54.0714
+2025-11-24 15:45:26,374 - INFO - Gpu Temp Celsius Peak    : 61.0000
+2025-11-24 15:45:26,374 - INFO - Gpu Utilization Percent Avg: 38.9286
+2025-11-24 15:45:26,374 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:45:26,374 - INFO - Gpu Mem Used Bytes Avg   : 23835377664.0000
+2025-11-24 15:45:26,374 - INFO - Gpu Mem Used Bytes Peak  : 23835377664.0000
+2025-11-24 15:45:26,374 - INFO - Gpu Vram Used Bytes      : 23835377664.0000
+2025-11-24 15:45:26,374 - INFO - Accuracy                 : 0.5841
+2025-11-24 15:45:26,374 - INFO - Precision                : 0.5868
+2025-11-24 15:45:26,374 - INFO - Recall                   : 0.5841
+2025-11-24 15:45:26,374 - INFO - F1 Score                 : 0.5812
+2025-11-24 15:45:26,374 - INFO - ==================================================
+2025-11-24 15:46:01,583 - INFO - Época 40 concluída. Loss média: 2.4037
+2025-11-24 15:46:01,584 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-24 15:46:01,585 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:46:04,267 - INFO - ==================================================
+2025-11-24 15:46:04,267 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:46:04,267 - INFO - ==================================================
+2025-11-24 15:46:04,267 - INFO - Elapsed Time Seconds     : 2.6592
+2025-11-24 15:46:04,267 - INFO - Cpu Usage Percent        : 2.7375
+2025-11-24 15:46:04,267 - INFO - Ram Peak Usage Bytes     : 33931640832.0000
+2025-11-24 15:46:04,267 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:46:04,267 - INFO - Disk Write Bytes         : 0.0000
+2025-11-24 15:46:04,267 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:46:04,267 - INFO - Gpu Power Watts Avg      : 154.0785
+2025-11-24 15:46:04,267 - INFO - Gpu Power Watts Peak     : 292.3490
+2025-11-24 15:46:04,267 - INFO - Gpu Temp Celsius Avg     : 54.2308
+2025-11-24 15:46:04,267 - INFO - Gpu Temp Celsius Peak    : 62.0000
+2025-11-24 15:46:04,267 - INFO - Gpu Utilization Percent Avg: 39.0769
+2025-11-24 15:46:04,267 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:46:04,267 - INFO - Gpu Mem Used Bytes Avg   : 23835377664.0000
+2025-11-24 15:46:04,267 - INFO - Gpu Mem Used Bytes Peak  : 23835377664.0000
+2025-11-24 15:46:04,267 - INFO - Gpu Vram Used Bytes      : 23835377664.0000
+2025-11-24 15:46:04,267 - INFO - Accuracy                 : 0.5811
+2025-11-24 15:46:04,267 - INFO - Precision                : 0.5824
+2025-11-24 15:46:04,267 - INFO - Recall                   : 0.5811
+2025-11-24 15:46:04,267 - INFO - F1 Score                 : 0.5765
+2025-11-24 15:46:04,267 - INFO - ==================================================
+2025-11-24 15:46:40,248 - INFO - Época 41 concluída. Loss média: 2.3903
+2025-11-24 15:46:40,248 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-24 15:46:40,250 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:46:43,028 - INFO - ==================================================
+2025-11-24 15:46:43,028 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:46:43,028 - INFO - ==================================================
+2025-11-24 15:46:43,028 - INFO - Elapsed Time Seconds     : 2.7559
+2025-11-24 15:46:43,028 - INFO - Cpu Usage Percent        : 2.6531
+2025-11-24 15:46:43,028 - INFO - Ram Peak Usage Bytes     : 33931665408.0000
+2025-11-24 15:46:43,028 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:46:43,028 - INFO - Disk Write Bytes         : 0.0000
+2025-11-24 15:46:43,028 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:46:43,028 - INFO - Gpu Power Watts Avg      : 149.1043
+2025-11-24 15:46:43,028 - INFO - Gpu Power Watts Peak     : 303.6680
+2025-11-24 15:46:43,028 - INFO - Gpu Temp Celsius Avg     : 54.1481
+2025-11-24 15:46:43,028 - INFO - Gpu Temp Celsius Peak    : 62.0000
+2025-11-24 15:46:43,028 - INFO - Gpu Utilization Percent Avg: 37.6296
+2025-11-24 15:46:43,028 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:46:43,028 - INFO - Gpu Mem Used Bytes Avg   : 23835377664.0000
+2025-11-24 15:46:43,028 - INFO - Gpu Mem Used Bytes Peak  : 23835377664.0000
+2025-11-24 15:46:43,028 - INFO - Gpu Vram Used Bytes      : 23835377664.0000
+2025-11-24 15:46:43,028 - INFO - Accuracy                 : 0.5846
+2025-11-24 15:46:43,028 - INFO - Precision                : 0.5858
+2025-11-24 15:46:43,028 - INFO - Recall                   : 0.5846
+2025-11-24 15:46:43,029 - INFO - F1 Score                 : 0.5809
+2025-11-24 15:46:43,029 - INFO - ==================================================
+2025-11-24 15:47:19,116 - INFO - Época 42 concluída. Loss média: 2.3832
+2025-11-24 15:47:19,116 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-24 15:47:19,118 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:47:21,807 - INFO - ==================================================
+2025-11-24 15:47:21,807 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:47:21,807 - INFO - ==================================================
+2025-11-24 15:47:21,807 - INFO - Elapsed Time Seconds     : 2.6751
+2025-11-24 15:47:21,807 - INFO - Cpu Usage Percent        : 2.7687
+2025-11-24 15:47:21,807 - INFO - Ram Peak Usage Bytes     : 33931689984.0000
+2025-11-24 15:47:21,807 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:47:21,807 - INFO - Disk Write Bytes         : 159744.0000
+2025-11-24 15:47:21,807 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:47:21,807 - INFO - Gpu Power Watts Avg      : 154.3389
+2025-11-24 15:47:21,807 - INFO - Gpu Power Watts Peak     : 303.2900
+2025-11-24 15:47:21,807 - INFO - Gpu Temp Celsius Avg     : 53.3462
+2025-11-24 15:47:21,807 - INFO - Gpu Temp Celsius Peak    : 60.0000
+2025-11-24 15:47:21,807 - INFO - Gpu Utilization Percent Avg: 37.6154
+2025-11-24 15:47:21,807 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:47:21,807 - INFO - Gpu Mem Used Bytes Avg   : 23835377664.0000
+2025-11-24 15:47:21,807 - INFO - Gpu Mem Used Bytes Peak  : 23835377664.0000
+2025-11-24 15:47:21,807 - INFO - Gpu Vram Used Bytes      : 23835377664.0000
+2025-11-24 15:47:21,807 - INFO - Accuracy                 : 0.5822
+2025-11-24 15:47:21,807 - INFO - Precision                : 0.5870
+2025-11-24 15:47:21,807 - INFO - Recall                   : 0.5822
+2025-11-24 15:47:21,807 - INFO - F1 Score                 : 0.5796
+2025-11-24 15:47:21,807 - INFO - ==================================================
+2025-11-24 15:47:58,277 - INFO - Época 43 concluída. Loss média: 2.3730
+2025-11-24 15:47:58,277 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-24 15:47:58,279 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:48:01,251 - INFO - ==================================================
+2025-11-24 15:48:01,251 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:48:01,251 - INFO - ==================================================
+2025-11-24 15:48:01,251 - INFO - Elapsed Time Seconds     : 2.9504
+2025-11-24 15:48:01,251 - INFO - Cpu Usage Percent        : 2.4875
+2025-11-24 15:48:01,251 - INFO - Ram Peak Usage Bytes     : 33931710464.0000
+2025-11-24 15:48:01,251 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:48:01,251 - INFO - Disk Write Bytes         : 417792.0000
+2025-11-24 15:48:01,251 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:48:01,251 - INFO - Gpu Power Watts Avg      : 130.3814
+2025-11-24 15:48:01,251 - INFO - Gpu Power Watts Peak     : 278.7880
+2025-11-24 15:48:01,251 - INFO - Gpu Temp Celsius Avg     : 52.9655
+2025-11-24 15:48:01,251 - INFO - Gpu Temp Celsius Peak    : 62.0000
+2025-11-24 15:48:01,251 - INFO - Gpu Utilization Percent Avg: 30.8966
+2025-11-24 15:48:01,251 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:48:01,251 - INFO - Gpu Mem Used Bytes Avg   : 23835377664.0000
+2025-11-24 15:48:01,251 - INFO - Gpu Mem Used Bytes Peak  : 23835377664.0000
+2025-11-24 15:48:01,251 - INFO - Gpu Vram Used Bytes      : 23835377664.0000
+2025-11-24 15:48:01,252 - INFO - Accuracy                 : 0.5844
+2025-11-24 15:48:01,252 - INFO - Precision                : 0.5902
+2025-11-24 15:48:01,252 - INFO - Recall                   : 0.5844
+2025-11-24 15:48:01,252 - INFO - F1 Score                 : 0.5820
+2025-11-24 15:48:01,252 - INFO - ==================================================
+2025-11-24 15:48:38,204 - INFO - Época 44 concluída. Loss média: 2.3621
+2025-11-24 15:48:38,204 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-24 15:48:38,206 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:48:41,805 - INFO - ==================================================
+2025-11-24 15:48:41,805 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:48:41,805 - INFO - ==================================================
+2025-11-24 15:48:41,805 - INFO - Elapsed Time Seconds     : 3.5773
+2025-11-24 15:48:41,805 - INFO - Cpu Usage Percent        : 2.8469
+2025-11-24 15:48:41,805 - INFO - Ram Peak Usage Bytes     : 33931890688.0000
+2025-11-24 15:48:41,805 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:48:41,805 - INFO - Disk Write Bytes         : 143360.0000
+2025-11-24 15:48:41,805 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:48:41,805 - INFO - Gpu Power Watts Avg      : 118.5817
+2025-11-24 15:48:41,805 - INFO - Gpu Power Watts Peak     : 285.8820
+2025-11-24 15:48:41,805 - INFO - Gpu Temp Celsius Avg     : 51.2000
+2025-11-24 15:48:41,805 - INFO - Gpu Temp Celsius Peak    : 58.0000
+2025-11-24 15:48:41,805 - INFO - Gpu Utilization Percent Avg: 24.7714
+2025-11-24 15:48:41,805 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:48:41,805 - INFO - Gpu Mem Used Bytes Avg   : 23835377664.0000
+2025-11-24 15:48:41,805 - INFO - Gpu Mem Used Bytes Peak  : 23835377664.0000
+2025-11-24 15:48:41,805 - INFO - Gpu Vram Used Bytes      : 23835377664.0000
+2025-11-24 15:48:41,805 - INFO - Accuracy                 : 0.5848
+2025-11-24 15:48:41,805 - INFO - Precision                : 0.5872
+2025-11-24 15:48:41,805 - INFO - Recall                   : 0.5848
+2025-11-24 15:48:41,805 - INFO - F1 Score                 : 0.5811
+2025-11-24 15:48:41,805 - INFO - ==================================================
+2025-11-24 15:49:17,180 - INFO - Época 45 concluída. Loss média: 2.3533
+2025-11-24 15:49:17,180 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-24 15:49:17,181 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:49:19,857 - INFO - ==================================================
+2025-11-24 15:49:19,857 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:49:19,857 - INFO - ==================================================
+2025-11-24 15:49:19,857 - INFO - Elapsed Time Seconds     : 2.6535
+2025-11-24 15:49:19,857 - INFO - Cpu Usage Percent        : 2.7313
+2025-11-24 15:49:19,857 - INFO - Ram Peak Usage Bytes     : 33931915264.0000
+2025-11-24 15:49:19,857 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:49:19,857 - INFO - Disk Write Bytes         : 0.0000
+2025-11-24 15:49:19,857 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:49:19,857 - INFO - Gpu Power Watts Avg      : 162.5851
+2025-11-24 15:49:19,857 - INFO - Gpu Power Watts Peak     : 302.6200
+2025-11-24 15:49:19,857 - INFO - Gpu Temp Celsius Avg     : 54.1154
+2025-11-24 15:49:19,857 - INFO - Gpu Temp Celsius Peak    : 62.0000
+2025-11-24 15:49:19,857 - INFO - Gpu Utilization Percent Avg: 40.6154
+2025-11-24 15:49:19,857 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:49:19,857 - INFO - Gpu Mem Used Bytes Avg   : 23835377664.0000
+2025-11-24 15:49:19,857 - INFO - Gpu Mem Used Bytes Peak  : 23835377664.0000
+2025-11-24 15:49:19,857 - INFO - Gpu Vram Used Bytes      : 23835377664.0000
+2025-11-24 15:49:19,857 - INFO - Accuracy                 : 0.5882
+2025-11-24 15:49:19,857 - INFO - Precision                : 0.5912
+2025-11-24 15:49:19,857 - INFO - Recall                   : 0.5882
+2025-11-24 15:49:19,857 - INFO - F1 Score                 : 0.5854
+2025-11-24 15:49:19,858 - INFO - ==================================================
+2025-11-24 15:49:56,288 - INFO - Época 46 concluída. Loss média: 2.3479
+2025-11-24 15:49:56,288 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-24 15:49:56,290 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:49:59,364 - INFO - ==================================================
+2025-11-24 15:49:59,365 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:49:59,365 - INFO - ==================================================
+2025-11-24 15:49:59,365 - INFO - Elapsed Time Seconds     : 3.0529
+2025-11-24 15:49:59,365 - INFO - Cpu Usage Percent        : 2.3531
+2025-11-24 15:49:59,365 - INFO - Ram Peak Usage Bytes     : 33931943936.0000
+2025-11-24 15:49:59,365 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:49:59,365 - INFO - Disk Write Bytes         : 12288.0000
+2025-11-24 15:49:59,365 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:49:59,365 - INFO - Gpu Power Watts Avg      : 100.3098
+2025-11-24 15:49:59,365 - INFO - Gpu Power Watts Peak     : 234.9040
+2025-11-24 15:49:59,365 - INFO - Gpu Temp Celsius Avg     : 52.1667
+2025-11-24 15:49:59,365 - INFO - Gpu Temp Celsius Peak    : 61.0000
+2025-11-24 15:49:59,365 - INFO - Gpu Utilization Percent Avg: 28.8000
+2025-11-24 15:49:59,365 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:49:59,365 - INFO - Gpu Mem Used Bytes Avg   : 23835377664.0000
+2025-11-24 15:49:59,365 - INFO - Gpu Mem Used Bytes Peak  : 23835377664.0000
+2025-11-24 15:49:59,365 - INFO - Gpu Vram Used Bytes      : 23835377664.0000
+2025-11-24 15:49:59,365 - INFO - Accuracy                 : 0.5859
+2025-11-24 15:49:59,365 - INFO - Precision                : 0.5895
+2025-11-24 15:49:59,365 - INFO - Recall                   : 0.5859
+2025-11-24 15:49:59,365 - INFO - F1 Score                 : 0.5838
+2025-11-24 15:49:59,365 - INFO - ==================================================
+2025-11-24 15:50:36,394 - INFO - Época 47 concluída. Loss média: 2.3357
+2025-11-24 15:50:36,394 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-24 15:50:36,396 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:50:39,484 - INFO - ==================================================
+2025-11-24 15:50:39,484 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:50:39,484 - INFO - ==================================================
+2025-11-24 15:50:39,484 - INFO - Elapsed Time Seconds     : 3.0737
+2025-11-24 15:50:39,484 - INFO - Cpu Usage Percent        : 2.4500
+2025-11-24 15:50:39,484 - INFO - Ram Peak Usage Bytes     : 33931984896.0000
+2025-11-24 15:50:39,484 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:50:39,484 - INFO - Disk Write Bytes         : 401408.0000
+2025-11-24 15:50:39,484 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:50:39,484 - INFO - Gpu Power Watts Avg      : 137.6923
+2025-11-24 15:50:39,484 - INFO - Gpu Power Watts Peak     : 289.5440
+2025-11-24 15:50:39,484 - INFO - Gpu Temp Celsius Avg     : 52.6000
+2025-11-24 15:50:39,484 - INFO - Gpu Temp Celsius Peak    : 62.0000
+2025-11-24 15:50:39,484 - INFO - Gpu Utilization Percent Avg: 31.6667
+2025-11-24 15:50:39,484 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:50:39,484 - INFO - Gpu Mem Used Bytes Avg   : 23835377664.0000
+2025-11-24 15:50:39,484 - INFO - Gpu Mem Used Bytes Peak  : 23835377664.0000
+2025-11-24 15:50:39,484 - INFO - Gpu Vram Used Bytes      : 23835377664.0000
+2025-11-24 15:50:39,484 - INFO - Accuracy                 : 0.5853
+2025-11-24 15:50:39,484 - INFO - Precision                : 0.5895
+2025-11-24 15:50:39,484 - INFO - Recall                   : 0.5853
+2025-11-24 15:50:39,484 - INFO - F1 Score                 : 0.5828
+2025-11-24 15:50:39,484 - INFO - ==================================================
+2025-11-24 15:51:14,747 - INFO - Época 48 concluída. Loss média: 2.3293
+2025-11-24 15:51:14,747 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-24 15:51:14,749 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:51:17,350 - INFO - ==================================================
+2025-11-24 15:51:17,350 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:51:17,350 - INFO - ==================================================
+2025-11-24 15:51:17,350 - INFO - Elapsed Time Seconds     : 2.5867
+2025-11-24 15:51:17,350 - INFO - Cpu Usage Percent        : 2.8156
+2025-11-24 15:51:17,350 - INFO - Ram Peak Usage Bytes     : 33932021760.0000
+2025-11-24 15:51:17,350 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:51:17,350 - INFO - Disk Write Bytes         : 245760.0000
+2025-11-24 15:51:17,350 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:51:17,350 - INFO - Gpu Power Watts Avg      : 153.7364
+2025-11-24 15:51:17,350 - INFO - Gpu Power Watts Peak     : 302.5490
+2025-11-24 15:51:17,350 - INFO - Gpu Temp Celsius Avg     : 54.0400
+2025-11-24 15:51:17,350 - INFO - Gpu Temp Celsius Peak    : 61.0000
+2025-11-24 15:51:17,350 - INFO - Gpu Utilization Percent Avg: 38.0800
+2025-11-24 15:51:17,350 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:51:17,350 - INFO - Gpu Mem Used Bytes Avg   : 23835377664.0000
+2025-11-24 15:51:17,350 - INFO - Gpu Mem Used Bytes Peak  : 23835377664.0000
+2025-11-24 15:51:17,350 - INFO - Gpu Vram Used Bytes      : 23835377664.0000
+2025-11-24 15:51:17,350 - INFO - Accuracy                 : 0.5865
+2025-11-24 15:51:17,350 - INFO - Precision                : 0.5877
+2025-11-24 15:51:17,350 - INFO - Recall                   : 0.5865
+2025-11-24 15:51:17,350 - INFO - F1 Score                 : 0.5825
+2025-11-24 15:51:17,350 - INFO - ==================================================
+2025-11-24 15:51:54,600 - INFO - Época 49 concluída. Loss média: 2.3180
+2025-11-24 15:51:54,601 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-24 15:51:54,602 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:51:58,368 - INFO - ==================================================
+2025-11-24 15:51:58,368 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:51:58,368 - INFO - ==================================================
+2025-11-24 15:51:58,368 - INFO - Elapsed Time Seconds     : 3.7437
+2025-11-24 15:51:58,368 - INFO - Cpu Usage Percent        : 2.7281
+2025-11-24 15:51:58,368 - INFO - Ram Peak Usage Bytes     : 33932066816.0000
+2025-11-24 15:51:58,368 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:51:58,368 - INFO - Disk Write Bytes         : 405504.0000
+2025-11-24 15:51:58,368 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:51:58,368 - INFO - Gpu Power Watts Avg      : 124.0591
+2025-11-24 15:51:58,368 - INFO - Gpu Power Watts Peak     : 300.3930
+2025-11-24 15:51:58,368 - INFO - Gpu Temp Celsius Avg     : 50.8378
+2025-11-24 15:51:58,368 - INFO - Gpu Temp Celsius Peak    : 57.0000
+2025-11-24 15:51:58,368 - INFO - Gpu Utilization Percent Avg: 25.7838
+2025-11-24 15:51:58,368 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:51:58,369 - INFO - Gpu Mem Used Bytes Avg   : 23835377664.0000
+2025-11-24 15:51:58,369 - INFO - Gpu Mem Used Bytes Peak  : 23835377664.0000
+2025-11-24 15:51:58,369 - INFO - Gpu Vram Used Bytes      : 23835377664.0000
+2025-11-24 15:51:58,369 - INFO - Accuracy                 : 0.5860
+2025-11-24 15:51:58,369 - INFO - Precision                : 0.5908
+2025-11-24 15:51:58,369 - INFO - Recall                   : 0.5860
+2025-11-24 15:51:58,369 - INFO - F1 Score                 : 0.5844
+2025-11-24 15:51:58,369 - INFO - ==================================================
+2025-11-24 15:52:33,824 - INFO - Época 50 concluída. Loss média: 2.3134
+2025-11-24 15:52:33,824 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-24 15:52:33,826 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:52:36,800 - INFO - ==================================================
+2025-11-24 15:52:36,800 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:52:36,800 - INFO - ==================================================
+2025-11-24 15:52:36,800 - INFO - Elapsed Time Seconds     : 2.9521
+2025-11-24 15:52:36,800 - INFO - Cpu Usage Percent        : 2.4656
+2025-11-24 15:52:36,800 - INFO - Ram Peak Usage Bytes     : 33932075008.0000
+2025-11-24 15:52:36,800 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:52:36,800 - INFO - Disk Write Bytes         : 372736.0000
+2025-11-24 15:52:36,800 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:52:36,800 - INFO - Gpu Power Watts Avg      : 149.1204
+2025-11-24 15:52:36,801 - INFO - Gpu Power Watts Peak     : 302.6410
+2025-11-24 15:52:36,801 - INFO - Gpu Temp Celsius Avg     : 53.4828
+2025-11-24 15:52:36,801 - INFO - Gpu Temp Celsius Peak    : 61.0000
+2025-11-24 15:52:36,801 - INFO - Gpu Utilization Percent Avg: 38.1379
+2025-11-24 15:52:36,801 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:52:36,801 - INFO - Gpu Mem Used Bytes Avg   : 23835377664.0000
+2025-11-24 15:52:36,801 - INFO - Gpu Mem Used Bytes Peak  : 23835377664.0000
+2025-11-24 15:52:36,801 - INFO - Gpu Vram Used Bytes      : 23835377664.0000
+2025-11-24 15:52:36,801 - INFO - Accuracy                 : 0.5875
+2025-11-24 15:52:36,801 - INFO - Precision                : 0.5922
+2025-11-24 15:52:36,801 - INFO - Recall                   : 0.5875
+2025-11-24 15:52:36,801 - INFO - F1 Score                 : 0.5837
+2025-11-24 15:52:36,801 - INFO - ==================================================
+2025-11-24 15:53:13,793 - INFO - Época 51 concluída. Loss média: 2.2981
+2025-11-24 15:53:13,793 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-24 15:53:13,795 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:53:16,995 - INFO - ==================================================
+2025-11-24 15:53:16,996 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:53:16,996 - INFO - ==================================================
+2025-11-24 15:53:16,996 - INFO - Elapsed Time Seconds     : 3.1788
+2025-11-24 15:53:16,996 - INFO - Cpu Usage Percent        : 2.3000
+2025-11-24 15:53:16,996 - INFO - Ram Peak Usage Bytes     : 33932115968.0000
+2025-11-24 15:53:16,996 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:53:16,996 - INFO - Disk Write Bytes         : 401408.0000
+2025-11-24 15:53:16,996 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:53:16,996 - INFO - Gpu Power Watts Avg      : 136.8087
+2025-11-24 15:53:16,996 - INFO - Gpu Power Watts Peak     : 296.2270
+2025-11-24 15:53:16,996 - INFO - Gpu Temp Celsius Avg     : 52.0323
+2025-11-24 15:53:16,996 - INFO - Gpu Temp Celsius Peak    : 59.0000
+2025-11-24 15:53:16,996 - INFO - Gpu Utilization Percent Avg: 33.5161
+2025-11-24 15:53:16,996 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:53:16,996 - INFO - Gpu Mem Used Bytes Avg   : 23835377664.0000
+2025-11-24 15:53:16,996 - INFO - Gpu Mem Used Bytes Peak  : 23835377664.0000
+2025-11-24 15:53:16,996 - INFO - Gpu Vram Used Bytes      : 23835377664.0000
+2025-11-24 15:53:16,996 - INFO - Accuracy                 : 0.5843
+2025-11-24 15:53:16,996 - INFO - Precision                : 0.5897
+2025-11-24 15:53:16,996 - INFO - Recall                   : 0.5843
+2025-11-24 15:53:16,996 - INFO - F1 Score                 : 0.5824
+2025-11-24 15:53:16,996 - INFO - ==================================================
+2025-11-24 15:53:53,298 - INFO - Época 52 concluída. Loss média: 2.2971
+2025-11-24 15:53:53,298 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-24 15:53:53,300 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:53:55,973 - INFO - ==================================================
+2025-11-24 15:53:55,973 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:53:55,973 - INFO - ==================================================
+2025-11-24 15:53:55,973 - INFO - Elapsed Time Seconds     : 2.6512
+2025-11-24 15:53:55,973 - INFO - Cpu Usage Percent        : 2.7000
+2025-11-24 15:53:55,973 - INFO - Ram Peak Usage Bytes     : 33932136448.0000
+2025-11-24 15:53:55,973 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:53:55,973 - INFO - Disk Write Bytes         : 290816.0000
+2025-11-24 15:53:55,973 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:53:55,973 - INFO - Gpu Power Watts Avg      : 151.5198
+2025-11-24 15:53:55,973 - INFO - Gpu Power Watts Peak     : 303.6570
+2025-11-24 15:53:55,973 - INFO - Gpu Temp Celsius Avg     : 52.9231
+2025-11-24 15:53:55,973 - INFO - Gpu Temp Celsius Peak    : 60.0000
+2025-11-24 15:53:55,973 - INFO - Gpu Utilization Percent Avg: 39.7692
+2025-11-24 15:53:55,973 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:53:55,973 - INFO - Gpu Mem Used Bytes Avg   : 23835377664.0000
+2025-11-24 15:53:55,973 - INFO - Gpu Mem Used Bytes Peak  : 23835377664.0000
+2025-11-24 15:53:55,973 - INFO - Gpu Vram Used Bytes      : 23835377664.0000
+2025-11-24 15:53:55,973 - INFO - Accuracy                 : 0.5837
+2025-11-24 15:53:55,973 - INFO - Precision                : 0.5906
+2025-11-24 15:53:55,973 - INFO - Recall                   : 0.5837
+2025-11-24 15:53:55,973 - INFO - F1 Score                 : 0.5820
+2025-11-24 15:53:55,973 - INFO - ==================================================
+2025-11-24 15:54:31,154 - INFO - Época 53 concluída. Loss média: 2.2873
+2025-11-24 15:54:31,154 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-24 15:54:31,156 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:54:34,048 - INFO - ==================================================
+2025-11-24 15:54:34,048 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:54:34,048 - INFO - ==================================================
+2025-11-24 15:54:34,048 - INFO - Elapsed Time Seconds     : 2.8698
+2025-11-24 15:54:34,048 - INFO - Cpu Usage Percent        : 2.5250
+2025-11-24 15:54:34,048 - INFO - Ram Peak Usage Bytes     : 33932161024.0000
+2025-11-24 15:54:34,048 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:54:34,048 - INFO - Disk Write Bytes         : 8192.0000
+2025-11-24 15:54:34,048 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:54:34,048 - INFO - Gpu Power Watts Avg      : 138.6307
+2025-11-24 15:54:34,048 - INFO - Gpu Power Watts Peak     : 300.8900
+2025-11-24 15:54:34,048 - INFO - Gpu Temp Celsius Avg     : 51.8571
+2025-11-24 15:54:34,048 - INFO - Gpu Temp Celsius Peak    : 57.0000
+2025-11-24 15:54:34,048 - INFO - Gpu Utilization Percent Avg: 33.2857
+2025-11-24 15:54:34,048 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:54:34,048 - INFO - Gpu Mem Used Bytes Avg   : 23835377664.0000
+2025-11-24 15:54:34,048 - INFO - Gpu Mem Used Bytes Peak  : 23835377664.0000
+2025-11-24 15:54:34,048 - INFO - Gpu Vram Used Bytes      : 23835377664.0000
+2025-11-24 15:54:34,048 - INFO - Accuracy                 : 0.5869
+2025-11-24 15:54:34,048 - INFO - Precision                : 0.5931
+2025-11-24 15:54:34,048 - INFO - Recall                   : 0.5869
+2025-11-24 15:54:34,048 - INFO - F1 Score                 : 0.5852
+2025-11-24 15:54:34,048 - INFO - ==================================================
+2025-11-24 15:55:10,267 - INFO - Época 54 concluída. Loss média: 2.2752
+2025-11-24 15:55:10,267 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-24 15:55:10,269 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:55:13,084 - INFO - ==================================================
+2025-11-24 15:55:13,084 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:55:13,084 - INFO - ==================================================
+2025-11-24 15:55:13,084 - INFO - Elapsed Time Seconds     : 2.7934
+2025-11-24 15:55:13,084 - INFO - Cpu Usage Percent        : 2.5625
+2025-11-24 15:55:13,085 - INFO - Ram Peak Usage Bytes     : 33932206080.0000
+2025-11-24 15:55:13,085 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:55:13,085 - INFO - Disk Write Bytes         : 290816.0000
+2025-11-24 15:55:13,085 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:55:13,085 - INFO - Gpu Power Watts Avg      : 141.1702
+2025-11-24 15:55:13,085 - INFO - Gpu Power Watts Peak     : 302.5660
+2025-11-24 15:55:13,085 - INFO - Gpu Temp Celsius Avg     : 53.1852
+2025-11-24 15:55:13,085 - INFO - Gpu Temp Celsius Peak    : 60.0000
+2025-11-24 15:55:13,085 - INFO - Gpu Utilization Percent Avg: 34.5926
+2025-11-24 15:55:13,085 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:55:13,085 - INFO - Gpu Mem Used Bytes Avg   : 23835377664.0000
+2025-11-24 15:55:13,085 - INFO - Gpu Mem Used Bytes Peak  : 23835377664.0000
+2025-11-24 15:55:13,085 - INFO - Gpu Vram Used Bytes      : 23835377664.0000
+2025-11-24 15:55:13,085 - INFO - Accuracy                 : 0.5880
+2025-11-24 15:55:13,085 - INFO - Precision                : 0.5910
+2025-11-24 15:55:13,085 - INFO - Recall                   : 0.5880
+2025-11-24 15:55:13,085 - INFO - F1 Score                 : 0.5852
+2025-11-24 15:55:13,085 - INFO - ==================================================
+2025-11-24 15:55:49,791 - INFO - Época 55 concluída. Loss média: 2.2678
+2025-11-24 15:55:49,791 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-24 15:55:49,793 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:55:52,673 - INFO - ==================================================
+2025-11-24 15:55:52,674 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:55:52,674 - INFO - ==================================================
+2025-11-24 15:55:52,674 - INFO - Elapsed Time Seconds     : 2.8583
+2025-11-24 15:55:52,674 - INFO - Cpu Usage Percent        : 2.5812
+2025-11-24 15:55:52,674 - INFO - Ram Peak Usage Bytes     : 33932218368.0000
+2025-11-24 15:55:52,674 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:55:52,674 - INFO - Disk Write Bytes         : 0.0000
+2025-11-24 15:55:52,674 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:55:52,674 - INFO - Gpu Power Watts Avg      : 140.2874
+2025-11-24 15:55:52,674 - INFO - Gpu Power Watts Peak     : 298.5190
+2025-11-24 15:55:52,674 - INFO - Gpu Temp Celsius Avg     : 52.7857
+2025-11-24 15:55:52,674 - INFO - Gpu Temp Celsius Peak    : 60.0000
+2025-11-24 15:55:52,674 - INFO - Gpu Utilization Percent Avg: 34.1429
+2025-11-24 15:55:52,674 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:55:52,674 - INFO - Gpu Mem Used Bytes Avg   : 23835377664.0000
+2025-11-24 15:55:52,674 - INFO - Gpu Mem Used Bytes Peak  : 23835377664.0000
+2025-11-24 15:55:52,674 - INFO - Gpu Vram Used Bytes      : 23835377664.0000
+2025-11-24 15:55:52,674 - INFO - Accuracy                 : 0.5899
+2025-11-24 15:55:52,674 - INFO - Precision                : 0.5912
+2025-11-24 15:55:52,674 - INFO - Recall                   : 0.5899
+2025-11-24 15:55:52,674 - INFO - F1 Score                 : 0.5863
+2025-11-24 15:55:52,674 - INFO - ==================================================
+2025-11-24 15:56:28,073 - INFO - Época 56 concluída. Loss média: 2.2571
+2025-11-24 15:56:28,073 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-24 15:56:28,075 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:56:30,857 - INFO - ==================================================
+2025-11-24 15:56:30,857 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:56:30,857 - INFO - ==================================================
+2025-11-24 15:56:30,857 - INFO - Elapsed Time Seconds     : 2.7600
+2025-11-24 15:56:30,857 - INFO - Cpu Usage Percent        : 2.6500
+2025-11-24 15:56:30,857 - INFO - Ram Peak Usage Bytes     : 33932419072.0000
+2025-11-24 15:56:30,857 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:56:30,857 - INFO - Disk Write Bytes         : 139264.0000
+2025-11-24 15:56:30,857 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:56:30,857 - INFO - Gpu Power Watts Avg      : 150.3284
+2025-11-24 15:56:30,857 - INFO - Gpu Power Watts Peak     : 302.6300
+2025-11-24 15:56:30,857 - INFO - Gpu Temp Celsius Avg     : 52.6296
+2025-11-24 15:56:30,857 - INFO - Gpu Temp Celsius Peak    : 58.0000
+2025-11-24 15:56:30,857 - INFO - Gpu Utilization Percent Avg: 38.5185
+2025-11-24 15:56:30,857 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:56:30,857 - INFO - Gpu Mem Used Bytes Avg   : 23835377664.0000
+2025-11-24 15:56:30,857 - INFO - Gpu Mem Used Bytes Peak  : 23835377664.0000
+2025-11-24 15:56:30,857 - INFO - Gpu Vram Used Bytes      : 23835377664.0000
+2025-11-24 15:56:30,857 - INFO - Accuracy                 : 0.5875
+2025-11-24 15:56:30,857 - INFO - Precision                : 0.5925
+2025-11-24 15:56:30,857 - INFO - Recall                   : 0.5875
+2025-11-24 15:56:30,857 - INFO - F1 Score                 : 0.5849
+2025-11-24 15:56:30,857 - INFO - ==================================================
+2025-11-24 15:57:07,280 - INFO - Época 57 concluída. Loss média: 2.2573
+2025-11-24 15:57:07,281 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-24 15:57:07,282 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:57:10,043 - INFO - ==================================================
+2025-11-24 15:57:10,043 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:57:10,043 - INFO - ==================================================
+2025-11-24 15:57:10,043 - INFO - Elapsed Time Seconds     : 2.7386
+2025-11-24 15:57:10,043 - INFO - Cpu Usage Percent        : 2.6344
+2025-11-24 15:57:10,043 - INFO - Ram Peak Usage Bytes     : 33932447744.0000
+2025-11-24 15:57:10,043 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:57:10,043 - INFO - Disk Write Bytes         : 245760.0000
+2025-11-24 15:57:10,043 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:57:10,043 - INFO - Gpu Power Watts Avg      : 151.3561
+2025-11-24 15:57:10,043 - INFO - Gpu Power Watts Peak     : 294.8890
+2025-11-24 15:57:10,043 - INFO - Gpu Temp Celsius Avg     : 53.9259
+2025-11-24 15:57:10,043 - INFO - Gpu Temp Celsius Peak    : 62.0000
+2025-11-24 15:57:10,043 - INFO - Gpu Utilization Percent Avg: 38.5185
+2025-11-24 15:57:10,043 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:57:10,043 - INFO - Gpu Mem Used Bytes Avg   : 23835377664.0000
+2025-11-24 15:57:10,043 - INFO - Gpu Mem Used Bytes Peak  : 23835377664.0000
+2025-11-24 15:57:10,043 - INFO - Gpu Vram Used Bytes      : 23835377664.0000
+2025-11-24 15:57:10,044 - INFO - Accuracy                 : 0.5808
+2025-11-24 15:57:10,044 - INFO - Precision                : 0.5922
+2025-11-24 15:57:10,044 - INFO - Recall                   : 0.5808
+2025-11-24 15:57:10,044 - INFO - F1 Score                 : 0.5808
+2025-11-24 15:57:10,044 - INFO - ==================================================
+2025-11-24 15:57:46,558 - INFO - Época 58 concluída. Loss média: 2.2514
+2025-11-24 15:57:46,558 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-24 15:57:46,560 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:57:50,273 - INFO - ==================================================
+2025-11-24 15:57:50,273 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:57:50,273 - INFO - ==================================================
+2025-11-24 15:57:50,273 - INFO - Elapsed Time Seconds     : 3.6906
+2025-11-24 15:57:50,273 - INFO - Cpu Usage Percent        : 2.7594
+2025-11-24 15:57:50,273 - INFO - Ram Peak Usage Bytes     : 33932476416.0000
+2025-11-24 15:57:50,273 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:57:50,273 - INFO - Disk Write Bytes         : 487424.0000
+2025-11-24 15:57:50,273 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:57:50,273 - INFO - Gpu Power Watts Avg      : 128.7946
+2025-11-24 15:57:50,273 - INFO - Gpu Power Watts Peak     : 303.4780
+2025-11-24 15:57:50,273 - INFO - Gpu Temp Celsius Avg     : 52.6389
+2025-11-24 15:57:50,273 - INFO - Gpu Temp Celsius Peak    : 62.0000
+2025-11-24 15:57:50,273 - INFO - Gpu Utilization Percent Avg: 26.2222
+2025-11-24 15:57:50,273 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:57:50,273 - INFO - Gpu Mem Used Bytes Avg   : 23835377664.0000
+2025-11-24 15:57:50,273 - INFO - Gpu Mem Used Bytes Peak  : 23835377664.0000
+2025-11-24 15:57:50,273 - INFO - Gpu Vram Used Bytes      : 23835377664.0000
+2025-11-24 15:57:50,273 - INFO - Accuracy                 : 0.5867
+2025-11-24 15:57:50,273 - INFO - Precision                : 0.5936
+2025-11-24 15:57:50,273 - INFO - Recall                   : 0.5867
+2025-11-24 15:57:50,273 - INFO - F1 Score                 : 0.5851
+2025-11-24 15:57:50,273 - INFO - ==================================================
+2025-11-24 15:58:26,587 - INFO - Época 59 concluída. Loss média: 2.2423
+2025-11-24 15:58:26,587 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-24 15:58:26,589 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:58:29,791 - INFO - ==================================================
+2025-11-24 15:58:29,791 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:58:29,791 - INFO - ==================================================
+2025-11-24 15:58:29,791 - INFO - Elapsed Time Seconds     : 3.1797
+2025-11-24 15:58:29,791 - INFO - Cpu Usage Percent        : 2.3000
+2025-11-24 15:58:29,791 - INFO - Ram Peak Usage Bytes     : 33932541952.0000
+2025-11-24 15:58:29,791 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:58:29,791 - INFO - Disk Write Bytes         : 118784.0000
+2025-11-24 15:58:29,791 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:58:29,791 - INFO - Gpu Power Watts Avg      : 138.1860
+2025-11-24 15:58:29,791 - INFO - Gpu Power Watts Peak     : 300.0310
+2025-11-24 15:58:29,791 - INFO - Gpu Temp Celsius Avg     : 52.9032
+2025-11-24 15:58:29,791 - INFO - Gpu Temp Celsius Peak    : 61.0000
+2025-11-24 15:58:29,791 - INFO - Gpu Utilization Percent Avg: 37.2903
+2025-11-24 15:58:29,791 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:58:29,791 - INFO - Gpu Mem Used Bytes Avg   : 23835377664.0000
+2025-11-24 15:58:29,791 - INFO - Gpu Mem Used Bytes Peak  : 23835377664.0000
+2025-11-24 15:58:29,791 - INFO - Gpu Vram Used Bytes      : 23835377664.0000
+2025-11-24 15:58:29,791 - INFO - Accuracy                 : 0.5872
+2025-11-24 15:58:29,791 - INFO - Precision                : 0.5922
+2025-11-24 15:58:29,791 - INFO - Recall                   : 0.5872
+2025-11-24 15:58:29,791 - INFO - F1 Score                 : 0.5845
+2025-11-24 15:58:29,791 - INFO - ==================================================
+2025-11-24 15:59:05,392 - INFO - Época 60 concluída. Loss média: 2.2395
+2025-11-24 15:59:05,393 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-24 15:59:05,394 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:59:08,384 - INFO - ==================================================
+2025-11-24 15:59:08,384 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:59:08,384 - INFO - ==================================================
+2025-11-24 15:59:08,384 - INFO - Elapsed Time Seconds     : 2.9680
+2025-11-24 15:59:08,384 - INFO - Cpu Usage Percent        : 2.4312
+2025-11-24 15:59:08,384 - INFO - Ram Peak Usage Bytes     : 33933053952.0000
+2025-11-24 15:59:08,384 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:59:08,384 - INFO - Disk Write Bytes         : 147456.0000
+2025-11-24 15:59:08,385 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:59:08,385 - INFO - Gpu Power Watts Avg      : 138.5809
+2025-11-24 15:59:08,385 - INFO - Gpu Power Watts Peak     : 290.2370
+2025-11-24 15:59:08,385 - INFO - Gpu Temp Celsius Avg     : 52.1724
+2025-11-24 15:59:08,385 - INFO - Gpu Temp Celsius Peak    : 59.0000
+2025-11-24 15:59:08,385 - INFO - Gpu Utilization Percent Avg: 33.3103
+2025-11-24 15:59:08,385 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:59:08,385 - INFO - Gpu Mem Used Bytes Avg   : 23835377664.0000
+2025-11-24 15:59:08,385 - INFO - Gpu Mem Used Bytes Peak  : 23835377664.0000
+2025-11-24 15:59:08,385 - INFO - Gpu Vram Used Bytes      : 23835377664.0000
+2025-11-24 15:59:08,385 - INFO - Accuracy                 : 0.5895
+2025-11-24 15:59:08,385 - INFO - Precision                : 0.5974
+2025-11-24 15:59:08,385 - INFO - Recall                   : 0.5895
+2025-11-24 15:59:08,385 - INFO - F1 Score                 : 0.5884
+2025-11-24 15:59:08,385 - INFO - ==================================================
+2025-11-24 15:59:45,062 - INFO - Época 61 concluída. Loss média: 2.1900
+2025-11-24 15:59:45,062 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-24 15:59:45,064 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 15:59:48,209 - INFO - ==================================================
+2025-11-24 15:59:48,209 - INFO - EXPERIMENT RESULTS
+2025-11-24 15:59:48,210 - INFO - ==================================================
+2025-11-24 15:59:48,210 - INFO - Elapsed Time Seconds     : 3.1315
+2025-11-24 15:59:48,210 - INFO - Cpu Usage Percent        : 2.3156
+2025-11-24 15:59:48,210 - INFO - Ram Peak Usage Bytes     : 33933066240.0000
+2025-11-24 15:59:48,210 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 15:59:48,210 - INFO - Disk Write Bytes         : 217088.0000
+2025-11-24 15:59:48,210 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 15:59:48,210 - INFO - Gpu Power Watts Avg      : 138.2794
+2025-11-24 15:59:48,210 - INFO - Gpu Power Watts Peak     : 300.4840
+2025-11-24 15:59:48,210 - INFO - Gpu Temp Celsius Avg     : 52.7742
+2025-11-24 15:59:48,210 - INFO - Gpu Temp Celsius Peak    : 60.0000
+2025-11-24 15:59:48,210 - INFO - Gpu Utilization Percent Avg: 32.0645
+2025-11-24 15:59:48,210 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 15:59:48,210 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 15:59:48,210 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 15:59:48,210 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 15:59:48,210 - INFO - Accuracy                 : 0.5986
+2025-11-24 15:59:48,210 - INFO - Precision                : 0.6008
+2025-11-24 15:59:48,210 - INFO - Recall                   : 0.5986
+2025-11-24 15:59:48,210 - INFO - F1 Score                 : 0.5968
+2025-11-24 15:59:48,210 - INFO - ==================================================
+2025-11-24 16:00:22,901 - INFO - Época 62 concluída. Loss média: 2.1742
+2025-11-24 16:00:22,901 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-24 16:00:22,903 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:00:25,875 - INFO - ==================================================
+2025-11-24 16:00:25,875 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:00:25,876 - INFO - ==================================================
+2025-11-24 16:00:25,876 - INFO - Elapsed Time Seconds     : 2.9505
+2025-11-24 16:00:25,876 - INFO - Cpu Usage Percent        : 2.4562
+2025-11-24 16:00:25,876 - INFO - Ram Peak Usage Bytes     : 33933082624.0000
+2025-11-24 16:00:25,876 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:00:25,876 - INFO - Disk Write Bytes         : 393216.0000
+2025-11-24 16:00:25,876 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:00:25,876 - INFO - Gpu Power Watts Avg      : 139.3972
+2025-11-24 16:00:25,876 - INFO - Gpu Power Watts Peak     : 301.9700
+2025-11-24 16:00:25,876 - INFO - Gpu Temp Celsius Avg     : 53.6552
+2025-11-24 16:00:25,876 - INFO - Gpu Temp Celsius Peak    : 62.0000
+2025-11-24 16:00:25,876 - INFO - Gpu Utilization Percent Avg: 35.3793
+2025-11-24 16:00:25,876 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:00:25,876 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:00:25,876 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:00:25,876 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:00:25,876 - INFO - Accuracy                 : 0.5982
+2025-11-24 16:00:25,876 - INFO - Precision                : 0.6002
+2025-11-24 16:00:25,876 - INFO - Recall                   : 0.5982
+2025-11-24 16:00:25,876 - INFO - F1 Score                 : 0.5965
+2025-11-24 16:00:25,876 - INFO - ==================================================
+2025-11-24 16:01:03,436 - INFO - Época 63 concluída. Loss média: 2.1655
+2025-11-24 16:01:03,436 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-24 16:01:03,438 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:01:06,540 - INFO - ==================================================
+2025-11-24 16:01:06,540 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:01:06,540 - INFO - ==================================================
+2025-11-24 16:01:06,540 - INFO - Elapsed Time Seconds     : 3.0796
+2025-11-24 16:01:06,540 - INFO - Cpu Usage Percent        : 2.3344
+2025-11-24 16:01:06,540 - INFO - Ram Peak Usage Bytes     : 33933271040.0000
+2025-11-24 16:01:06,540 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:01:06,540 - INFO - Disk Write Bytes         : 159744.0000
+2025-11-24 16:01:06,540 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:01:06,540 - INFO - Gpu Power Watts Avg      : 133.2999
+2025-11-24 16:01:06,540 - INFO - Gpu Power Watts Peak     : 298.6880
+2025-11-24 16:01:06,540 - INFO - Gpu Temp Celsius Avg     : 51.8000
+2025-11-24 16:01:06,540 - INFO - Gpu Temp Celsius Peak    : 58.0000
+2025-11-24 16:01:06,540 - INFO - Gpu Utilization Percent Avg: 34.0667
+2025-11-24 16:01:06,540 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:01:06,540 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:01:06,540 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:01:06,540 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:01:06,540 - INFO - Accuracy                 : 0.5984
+2025-11-24 16:01:06,540 - INFO - Precision                : 0.6003
+2025-11-24 16:01:06,540 - INFO - Recall                   : 0.5984
+2025-11-24 16:01:06,540 - INFO - F1 Score                 : 0.5965
+2025-11-24 16:01:06,540 - INFO - ==================================================
+2025-11-24 16:01:43,808 - INFO - Época 64 concluída. Loss média: 2.1632
+2025-11-24 16:01:43,808 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-24 16:01:43,809 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:01:47,585 - INFO - ==================================================
+2025-11-24 16:01:47,585 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:01:47,585 - INFO - ==================================================
+2025-11-24 16:01:47,585 - INFO - Elapsed Time Seconds     : 3.7537
+2025-11-24 16:01:47,585 - INFO - Cpu Usage Percent        : 2.7469
+2025-11-24 16:01:47,585 - INFO - Ram Peak Usage Bytes     : 33933275136.0000
+2025-11-24 16:01:47,585 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:01:47,585 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-24 16:01:47,585 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:01:47,585 - INFO - Gpu Power Watts Avg      : 123.6558
+2025-11-24 16:01:47,585 - INFO - Gpu Power Watts Peak     : 297.6170
+2025-11-24 16:01:47,586 - INFO - Gpu Temp Celsius Avg     : 51.7838
+2025-11-24 16:01:47,586 - INFO - Gpu Temp Celsius Peak    : 60.0000
+2025-11-24 16:01:47,586 - INFO - Gpu Utilization Percent Avg: 26.3243
+2025-11-24 16:01:47,586 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:01:47,586 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:01:47,586 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:01:47,586 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:01:47,586 - INFO - Accuracy                 : 0.5992
+2025-11-24 16:01:47,586 - INFO - Precision                : 0.6011
+2025-11-24 16:01:47,586 - INFO - Recall                   : 0.5992
+2025-11-24 16:01:47,586 - INFO - F1 Score                 : 0.5973
+2025-11-24 16:01:47,586 - INFO - ==================================================
+2025-11-24 16:02:24,174 - INFO - Época 65 concluída. Loss média: 2.1615
+2025-11-24 16:02:24,174 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-24 16:02:24,176 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:02:27,545 - INFO - ==================================================
+2025-11-24 16:02:27,545 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:02:27,545 - INFO - ==================================================
+2025-11-24 16:02:27,545 - INFO - Elapsed Time Seconds     : 3.3469
+2025-11-24 16:02:27,545 - INFO - Cpu Usage Percent        : 3.0812
+2025-11-24 16:02:27,545 - INFO - Ram Peak Usage Bytes     : 33933279232.0000
+2025-11-24 16:02:27,545 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:02:27,545 - INFO - Disk Write Bytes         : 143360.0000
+2025-11-24 16:02:27,545 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:02:27,545 - INFO - Gpu Power Watts Avg      : 134.0446
+2025-11-24 16:02:27,545 - INFO - Gpu Power Watts Peak     : 289.0070
+2025-11-24 16:02:27,545 - INFO - Gpu Temp Celsius Avg     : 52.8788
+2025-11-24 16:02:27,545 - INFO - Gpu Temp Celsius Peak    : 61.0000
+2025-11-24 16:02:27,545 - INFO - Gpu Utilization Percent Avg: 29.6970
+2025-11-24 16:02:27,545 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:02:27,545 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:02:27,545 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:02:27,545 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:02:27,545 - INFO - Accuracy                 : 0.6009
+2025-11-24 16:02:27,545 - INFO - Precision                : 0.6024
+2025-11-24 16:02:27,545 - INFO - Recall                   : 0.6009
+2025-11-24 16:02:27,545 - INFO - F1 Score                 : 0.5988
+2025-11-24 16:02:27,545 - INFO - ==================================================
+2025-11-24 16:03:04,925 - INFO - Época 66 concluída. Loss média: 2.1559
+2025-11-24 16:03:04,925 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-24 16:03:04,927 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:03:07,908 - INFO - ==================================================
+2025-11-24 16:03:07,908 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:03:07,908 - INFO - ==================================================
+2025-11-24 16:03:07,908 - INFO - Elapsed Time Seconds     : 2.9588
+2025-11-24 16:03:07,908 - INFO - Cpu Usage Percent        : 2.4937
+2025-11-24 16:03:07,908 - INFO - Ram Peak Usage Bytes     : 33933287424.0000
+2025-11-24 16:03:07,908 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:03:07,908 - INFO - Disk Write Bytes         : 135168.0000
+2025-11-24 16:03:07,908 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:03:07,908 - INFO - Gpu Power Watts Avg      : 136.7901
+2025-11-24 16:03:07,908 - INFO - Gpu Power Watts Peak     : 303.4900
+2025-11-24 16:03:07,908 - INFO - Gpu Temp Celsius Avg     : 53.4138
+2025-11-24 16:03:07,908 - INFO - Gpu Temp Celsius Peak    : 62.0000
+2025-11-24 16:03:07,908 - INFO - Gpu Utilization Percent Avg: 36.8966
+2025-11-24 16:03:07,908 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:03:07,908 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:03:07,908 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:03:07,908 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:03:07,908 - INFO - Accuracy                 : 0.5998
+2025-11-24 16:03:07,908 - INFO - Precision                : 0.6014
+2025-11-24 16:03:07,908 - INFO - Recall                   : 0.5998
+2025-11-24 16:03:07,908 - INFO - F1 Score                 : 0.5975
+2025-11-24 16:03:07,908 - INFO - ==================================================
+2025-11-24 16:03:45,594 - INFO - Época 67 concluída. Loss média: 2.1538
+2025-11-24 16:03:45,594 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-24 16:03:45,596 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:03:49,286 - INFO - ==================================================
+2025-11-24 16:03:49,286 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:03:49,287 - INFO - ==================================================
+2025-11-24 16:03:49,287 - INFO - Elapsed Time Seconds     : 3.6684
+2025-11-24 16:03:49,287 - INFO - Cpu Usage Percent        : 2.7594
+2025-11-24 16:03:49,287 - INFO - Ram Peak Usage Bytes     : 33933299712.0000
+2025-11-24 16:03:49,287 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:03:49,287 - INFO - Disk Write Bytes         : 16384.0000
+2025-11-24 16:03:49,287 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:03:49,287 - INFO - Gpu Power Watts Avg      : 134.4933
+2025-11-24 16:03:49,287 - INFO - Gpu Power Watts Peak     : 299.9240
+2025-11-24 16:03:49,287 - INFO - Gpu Temp Celsius Avg     : 52.5556
+2025-11-24 16:03:49,287 - INFO - Gpu Temp Celsius Peak    : 61.0000
+2025-11-24 16:03:49,287 - INFO - Gpu Utilization Percent Avg: 30.3889
+2025-11-24 16:03:49,287 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:03:49,287 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:03:49,287 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:03:49,287 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:03:49,287 - INFO - Accuracy                 : 0.5995
+2025-11-24 16:03:49,287 - INFO - Precision                : 0.6013
+2025-11-24 16:03:49,287 - INFO - Recall                   : 0.5995
+2025-11-24 16:03:49,287 - INFO - F1 Score                 : 0.5976
+2025-11-24 16:03:49,287 - INFO - ==================================================
+2025-11-24 16:04:24,860 - INFO - Época 68 concluída. Loss média: 2.1576
+2025-11-24 16:04:24,860 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-24 16:04:24,861 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:04:28,524 - INFO - ==================================================
+2025-11-24 16:04:28,524 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:04:28,524 - INFO - ==================================================
+2025-11-24 16:04:28,524 - INFO - Elapsed Time Seconds     : 3.6410
+2025-11-24 16:04:28,524 - INFO - Cpu Usage Percent        : 2.7375
+2025-11-24 16:04:28,524 - INFO - Ram Peak Usage Bytes     : 33933299712.0000
+2025-11-24 16:04:28,524 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:04:28,524 - INFO - Disk Write Bytes         : 372736.0000
+2025-11-24 16:04:28,524 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:04:28,524 - INFO - Gpu Power Watts Avg      : 142.8909
+2025-11-24 16:04:28,524 - INFO - Gpu Power Watts Peak     : 298.6740
+2025-11-24 16:04:28,524 - INFO - Gpu Temp Celsius Avg     : 52.9722
+2025-11-24 16:04:28,524 - INFO - Gpu Temp Celsius Peak    : 61.0000
+2025-11-24 16:04:28,524 - INFO - Gpu Utilization Percent Avg: 28.3889
+2025-11-24 16:04:28,524 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:04:28,524 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:04:28,524 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:04:28,524 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:04:28,524 - INFO - Accuracy                 : 0.6002
+2025-11-24 16:04:28,524 - INFO - Precision                : 0.6018
+2025-11-24 16:04:28,524 - INFO - Recall                   : 0.6002
+2025-11-24 16:04:28,524 - INFO - F1 Score                 : 0.5982
+2025-11-24 16:04:28,524 - INFO - ==================================================
+2025-11-24 16:05:03,974 - INFO - Época 69 concluída. Loss média: 2.1510
+2025-11-24 16:05:03,974 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-24 16:05:03,976 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:05:06,782 - INFO - ==================================================
+2025-11-24 16:05:06,783 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:05:06,783 - INFO - ==================================================
+2025-11-24 16:05:06,783 - INFO - Elapsed Time Seconds     : 2.7849
+2025-11-24 16:05:06,783 - INFO - Cpu Usage Percent        : 2.5906
+2025-11-24 16:05:06,783 - INFO - Ram Peak Usage Bytes     : 33933299712.0000
+2025-11-24 16:05:06,783 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:05:06,783 - INFO - Disk Write Bytes         : 376832.0000
+2025-11-24 16:05:06,783 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:05:06,783 - INFO - Gpu Power Watts Avg      : 142.1061
+2025-11-24 16:05:06,783 - INFO - Gpu Power Watts Peak     : 302.0590
+2025-11-24 16:05:06,783 - INFO - Gpu Temp Celsius Avg     : 53.0741
+2025-11-24 16:05:06,783 - INFO - Gpu Temp Celsius Peak    : 61.0000
+2025-11-24 16:05:06,783 - INFO - Gpu Utilization Percent Avg: 35.0741
+2025-11-24 16:05:06,783 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:05:06,783 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:05:06,783 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:05:06,783 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:05:06,783 - INFO - Accuracy                 : 0.5988
+2025-11-24 16:05:06,783 - INFO - Precision                : 0.6009
+2025-11-24 16:05:06,783 - INFO - Recall                   : 0.5988
+2025-11-24 16:05:06,783 - INFO - F1 Score                 : 0.5970
+2025-11-24 16:05:06,783 - INFO - ==================================================
+2025-11-24 16:05:42,912 - INFO - Época 70 concluída. Loss média: 2.1535
+2025-11-24 16:05:42,912 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-24 16:05:42,914 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:05:46,290 - INFO - ==================================================
+2025-11-24 16:05:46,290 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:05:46,290 - INFO - ==================================================
+2025-11-24 16:05:46,290 - INFO - Elapsed Time Seconds     : 3.3545
+2025-11-24 16:05:46,290 - INFO - Cpu Usage Percent        : 3.0844
+2025-11-24 16:05:46,290 - INFO - Ram Peak Usage Bytes     : 33933303808.0000
+2025-11-24 16:05:46,291 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:05:46,291 - INFO - Disk Write Bytes         : 0.0000
+2025-11-24 16:05:46,291 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:05:46,291 - INFO - Gpu Power Watts Avg      : 136.3339
+2025-11-24 16:05:46,291 - INFO - Gpu Power Watts Peak     : 303.1150
+2025-11-24 16:05:46,291 - INFO - Gpu Temp Celsius Avg     : 52.4242
+2025-11-24 16:05:46,291 - INFO - Gpu Temp Celsius Peak    : 61.0000
+2025-11-24 16:05:46,291 - INFO - Gpu Utilization Percent Avg: 30.0000
+2025-11-24 16:05:46,291 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:05:46,291 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:05:46,291 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:05:46,291 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:05:46,291 - INFO - Accuracy                 : 0.5985
+2025-11-24 16:05:46,291 - INFO - Precision                : 0.6003
+2025-11-24 16:05:46,291 - INFO - Recall                   : 0.5985
+2025-11-24 16:05:46,291 - INFO - F1 Score                 : 0.5966
+2025-11-24 16:05:46,291 - INFO - ==================================================
+2025-11-24 16:06:23,052 - INFO - Época 71 concluída. Loss média: 2.1442
+2025-11-24 16:06:23,052 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-24 16:06:23,054 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:06:25,740 - INFO - ==================================================
+2025-11-24 16:06:25,740 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:06:25,740 - INFO - ==================================================
+2025-11-24 16:06:25,740 - INFO - Elapsed Time Seconds     : 2.6633
+2025-11-24 16:06:25,740 - INFO - Cpu Usage Percent        : 2.7094
+2025-11-24 16:06:25,740 - INFO - Ram Peak Usage Bytes     : 33933533184.0000
+2025-11-24 16:06:25,740 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:06:25,740 - INFO - Disk Write Bytes         : 131072.0000
+2025-11-24 16:06:25,740 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:06:25,740 - INFO - Gpu Power Watts Avg      : 140.2329
+2025-11-24 16:06:25,740 - INFO - Gpu Power Watts Peak     : 281.3480
+2025-11-24 16:06:25,740 - INFO - Gpu Temp Celsius Avg     : 52.5000
+2025-11-24 16:06:25,740 - INFO - Gpu Temp Celsius Peak    : 58.0000
+2025-11-24 16:06:25,740 - INFO - Gpu Utilization Percent Avg: 36.1538
+2025-11-24 16:06:25,740 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:06:25,740 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:06:25,740 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:06:25,740 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:06:25,740 - INFO - Accuracy                 : 0.5994
+2025-11-24 16:06:25,740 - INFO - Precision                : 0.6004
+2025-11-24 16:06:25,740 - INFO - Recall                   : 0.5994
+2025-11-24 16:06:25,740 - INFO - F1 Score                 : 0.5972
+2025-11-24 16:06:25,740 - INFO - ==================================================
+2025-11-24 16:07:04,043 - INFO - Época 72 concluída. Loss média: 2.1450
+2025-11-24 16:07:04,044 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-24 16:07:04,045 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:07:07,023 - INFO - ==================================================
+2025-11-24 16:07:07,023 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:07:07,023 - INFO - ==================================================
+2025-11-24 16:07:07,023 - INFO - Elapsed Time Seconds     : 2.9558
+2025-11-24 16:07:07,023 - INFO - Cpu Usage Percent        : 2.4844
+2025-11-24 16:07:07,023 - INFO - Ram Peak Usage Bytes     : 33933545472.0000
+2025-11-24 16:07:07,023 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:07:07,023 - INFO - Disk Write Bytes         : 155648.0000
+2025-11-24 16:07:07,023 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:07:07,023 - INFO - Gpu Power Watts Avg      : 143.3326
+2025-11-24 16:07:07,023 - INFO - Gpu Power Watts Peak     : 302.2650
+2025-11-24 16:07:07,023 - INFO - Gpu Temp Celsius Avg     : 53.7586
+2025-11-24 16:07:07,023 - INFO - Gpu Temp Celsius Peak    : 62.0000
+2025-11-24 16:07:07,023 - INFO - Gpu Utilization Percent Avg: 34.4138
+2025-11-24 16:07:07,023 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:07:07,023 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:07:07,024 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:07:07,024 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:07:07,024 - INFO - Accuracy                 : 0.6000
+2025-11-24 16:07:07,024 - INFO - Precision                : 0.6010
+2025-11-24 16:07:07,024 - INFO - Recall                   : 0.6000
+2025-11-24 16:07:07,024 - INFO - F1 Score                 : 0.5978
+2025-11-24 16:07:07,024 - INFO - ==================================================
+2025-11-24 16:07:42,290 - INFO - Época 73 concluída. Loss média: 2.1401
+2025-11-24 16:07:42,290 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-24 16:07:42,292 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:07:45,520 - INFO - ==================================================
+2025-11-24 16:07:45,520 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:07:45,520 - INFO - ==================================================
+2025-11-24 16:07:45,520 - INFO - Elapsed Time Seconds     : 3.2060
+2025-11-24 16:07:45,520 - INFO - Cpu Usage Percent        : 2.2906
+2025-11-24 16:07:45,520 - INFO - Ram Peak Usage Bytes     : 33933553664.0000
+2025-11-24 16:07:45,520 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:07:45,520 - INFO - Disk Write Bytes         : 57344.0000
+2025-11-24 16:07:45,520 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:07:45,520 - INFO - Gpu Power Watts Avg      : 139.4025
+2025-11-24 16:07:45,520 - INFO - Gpu Power Watts Peak     : 279.2710
+2025-11-24 16:07:45,520 - INFO - Gpu Temp Celsius Avg     : 52.3226
+2025-11-24 16:07:45,520 - INFO - Gpu Temp Celsius Peak    : 59.0000
+2025-11-24 16:07:45,520 - INFO - Gpu Utilization Percent Avg: 34.6129
+2025-11-24 16:07:45,520 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:07:45,520 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:07:45,520 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:07:45,520 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:07:45,520 - INFO - Accuracy                 : 0.6003
+2025-11-24 16:07:45,521 - INFO - Precision                : 0.6024
+2025-11-24 16:07:45,521 - INFO - Recall                   : 0.6003
+2025-11-24 16:07:45,521 - INFO - F1 Score                 : 0.5986
+2025-11-24 16:07:45,521 - INFO - ==================================================
+2025-11-24 16:08:22,401 - INFO - Época 74 concluída. Loss média: 2.1428
+2025-11-24 16:08:22,401 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-24 16:08:22,401 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:08:25,260 - INFO - ==================================================
+2025-11-24 16:08:25,260 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:08:25,260 - INFO - ==================================================
+2025-11-24 16:08:25,260 - INFO - Elapsed Time Seconds     : 2.8367
+2025-11-24 16:08:25,260 - INFO - Cpu Usage Percent        : 2.4688
+2025-11-24 16:08:25,260 - INFO - Ram Peak Usage Bytes     : 33933553664.0000
+2025-11-24 16:08:25,260 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:08:25,260 - INFO - Disk Write Bytes         : 8192.0000
+2025-11-24 16:08:25,260 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:08:25,260 - INFO - Gpu Power Watts Avg      : 143.7384
+2025-11-24 16:08:25,260 - INFO - Gpu Power Watts Peak     : 300.7510
+2025-11-24 16:08:25,260 - INFO - Gpu Temp Celsius Avg     : 53.2143
+2025-11-24 16:08:25,260 - INFO - Gpu Temp Celsius Peak    : 59.0000
+2025-11-24 16:08:25,260 - INFO - Gpu Utilization Percent Avg: 34.9286
+2025-11-24 16:08:25,261 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:08:25,261 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:08:25,261 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:08:25,261 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:08:25,261 - INFO - Accuracy                 : 0.6000
+2025-11-24 16:08:25,261 - INFO - Precision                : 0.6020
+2025-11-24 16:08:25,261 - INFO - Recall                   : 0.6000
+2025-11-24 16:08:25,261 - INFO - F1 Score                 : 0.5984
+2025-11-24 16:08:25,261 - INFO - ==================================================
+2025-11-24 16:09:00,937 - INFO - Época 75 concluída. Loss média: 2.1434
+2025-11-24 16:09:00,937 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-24 16:09:00,939 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:09:04,124 - INFO - ==================================================
+2025-11-24 16:09:04,124 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:09:04,124 - INFO - ==================================================
+2025-11-24 16:09:04,124 - INFO - Elapsed Time Seconds     : 3.1625
+2025-11-24 16:09:04,124 - INFO - Cpu Usage Percent        : 2.2719
+2025-11-24 16:09:04,124 - INFO - Ram Peak Usage Bytes     : 33933557760.0000
+2025-11-24 16:09:04,124 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:09:04,124 - INFO - Disk Write Bytes         : 225280.0000
+2025-11-24 16:09:04,124 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:09:04,124 - INFO - Gpu Power Watts Avg      : 141.8869
+2025-11-24 16:09:04,124 - INFO - Gpu Power Watts Peak     : 305.1120
+2025-11-24 16:09:04,124 - INFO - Gpu Temp Celsius Avg     : 53.5161
+2025-11-24 16:09:04,124 - INFO - Gpu Temp Celsius Peak    : 62.0000
+2025-11-24 16:09:04,124 - INFO - Gpu Utilization Percent Avg: 33.5161
+2025-11-24 16:09:04,124 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:09:04,124 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:09:04,124 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:09:04,124 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:09:04,124 - INFO - Accuracy                 : 0.5978
+2025-11-24 16:09:04,124 - INFO - Precision                : 0.5997
+2025-11-24 16:09:04,124 - INFO - Recall                   : 0.5978
+2025-11-24 16:09:04,124 - INFO - F1 Score                 : 0.5960
+2025-11-24 16:09:04,124 - INFO - ==================================================
+2025-11-24 16:09:40,690 - INFO - Época 76 concluída. Loss média: 2.1435
+2025-11-24 16:09:40,690 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-24 16:09:40,692 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:09:43,772 - INFO - ==================================================
+2025-11-24 16:09:43,772 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:09:43,772 - INFO - ==================================================
+2025-11-24 16:09:43,772 - INFO - Elapsed Time Seconds     : 3.0584
+2025-11-24 16:09:43,772 - INFO - Cpu Usage Percent        : 2.3406
+2025-11-24 16:09:43,772 - INFO - Ram Peak Usage Bytes     : 33933570048.0000
+2025-11-24 16:09:43,772 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:09:43,772 - INFO - Disk Write Bytes         : 0.0000
+2025-11-24 16:09:43,772 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:09:43,773 - INFO - Gpu Power Watts Avg      : 147.1226
+2025-11-24 16:09:43,773 - INFO - Gpu Power Watts Peak     : 301.0190
+2025-11-24 16:09:43,773 - INFO - Gpu Temp Celsius Avg     : 53.0000
+2025-11-24 16:09:43,773 - INFO - Gpu Temp Celsius Peak    : 60.0000
+2025-11-24 16:09:43,773 - INFO - Gpu Utilization Percent Avg: 34.3333
+2025-11-24 16:09:43,773 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:09:43,773 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:09:43,773 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:09:43,773 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:09:43,773 - INFO - Accuracy                 : 0.5997
+2025-11-24 16:09:43,773 - INFO - Precision                : 0.6018
+2025-11-24 16:09:43,773 - INFO - Recall                   : 0.5997
+2025-11-24 16:09:43,773 - INFO - F1 Score                 : 0.5979
+2025-11-24 16:09:43,773 - INFO - ==================================================
+2025-11-24 16:10:19,320 - INFO - Época 77 concluída. Loss média: 2.1341
+2025-11-24 16:10:19,320 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-24 16:10:19,322 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:10:22,014 - INFO - ==================================================
+2025-11-24 16:10:22,015 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:10:22,015 - INFO - ==================================================
+2025-11-24 16:10:22,015 - INFO - Elapsed Time Seconds     : 2.6707
+2025-11-24 16:10:22,015 - INFO - Cpu Usage Percent        : 2.6906
+2025-11-24 16:10:22,015 - INFO - Ram Peak Usage Bytes     : 33933578240.0000
+2025-11-24 16:10:22,015 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:10:22,015 - INFO - Disk Write Bytes         : 327680.0000
+2025-11-24 16:10:22,015 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:10:22,015 - INFO - Gpu Power Watts Avg      : 149.6893
+2025-11-24 16:10:22,015 - INFO - Gpu Power Watts Peak     : 302.7330
+2025-11-24 16:10:22,015 - INFO - Gpu Temp Celsius Avg     : 53.3846
+2025-11-24 16:10:22,015 - INFO - Gpu Temp Celsius Peak    : 60.0000
+2025-11-24 16:10:22,015 - INFO - Gpu Utilization Percent Avg: 37.0385
+2025-11-24 16:10:22,015 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:10:22,015 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:10:22,015 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:10:22,015 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:10:22,015 - INFO - Accuracy                 : 0.6009
+2025-11-24 16:10:22,015 - INFO - Precision                : 0.6030
+2025-11-24 16:10:22,015 - INFO - Recall                   : 0.6009
+2025-11-24 16:10:22,015 - INFO - F1 Score                 : 0.5992
+2025-11-24 16:10:22,015 - INFO - ==================================================
+2025-11-24 16:10:57,470 - INFO - Época 78 concluída. Loss média: 2.1381
+2025-11-24 16:10:57,470 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-24 16:10:57,472 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:11:00,259 - INFO - ==================================================
+2025-11-24 16:11:00,259 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:11:00,259 - INFO - ==================================================
+2025-11-24 16:11:00,259 - INFO - Elapsed Time Seconds     : 2.7648
+2025-11-24 16:11:00,259 - INFO - Cpu Usage Percent        : 2.6344
+2025-11-24 16:11:00,259 - INFO - Ram Peak Usage Bytes     : 33933582336.0000
+2025-11-24 16:11:00,259 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:11:00,259 - INFO - Disk Write Bytes         : 221184.0000
+2025-11-24 16:11:00,259 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:11:00,259 - INFO - Gpu Power Watts Avg      : 143.9556
+2025-11-24 16:11:00,259 - INFO - Gpu Power Watts Peak     : 301.3700
+2025-11-24 16:11:00,260 - INFO - Gpu Temp Celsius Avg     : 52.8889
+2025-11-24 16:11:00,260 - INFO - Gpu Temp Celsius Peak    : 59.0000
+2025-11-24 16:11:00,260 - INFO - Gpu Utilization Percent Avg: 38.0000
+2025-11-24 16:11:00,260 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:11:00,260 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:11:00,260 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:11:00,260 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:11:00,260 - INFO - Accuracy                 : 0.5994
+2025-11-24 16:11:00,260 - INFO - Precision                : 0.6014
+2025-11-24 16:11:00,260 - INFO - Recall                   : 0.5994
+2025-11-24 16:11:00,260 - INFO - F1 Score                 : 0.5976
+2025-11-24 16:11:00,260 - INFO - ==================================================
+2025-11-24 16:11:36,404 - INFO - Época 79 concluída. Loss média: 2.1301
+2025-11-24 16:11:36,404 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-24 16:11:36,405 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:11:39,884 - INFO - ==================================================
+2025-11-24 16:11:39,885 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:11:39,885 - INFO - ==================================================
+2025-11-24 16:11:39,885 - INFO - Elapsed Time Seconds     : 3.4568
+2025-11-24 16:11:39,885 - INFO - Cpu Usage Percent        : 2.9000
+2025-11-24 16:11:39,885 - INFO - Ram Peak Usage Bytes     : 33933615104.0000
+2025-11-24 16:11:39,885 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:11:39,885 - INFO - Disk Write Bytes         : 4096.0000
+2025-11-24 16:11:39,885 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:11:39,885 - INFO - Gpu Power Watts Avg      : 129.7397
+2025-11-24 16:11:39,885 - INFO - Gpu Power Watts Peak     : 302.7980
+2025-11-24 16:11:39,885 - INFO - Gpu Temp Celsius Avg     : 51.4118
+2025-11-24 16:11:39,885 - INFO - Gpu Temp Celsius Peak    : 57.0000
+2025-11-24 16:11:39,885 - INFO - Gpu Utilization Percent Avg: 27.6471
+2025-11-24 16:11:39,885 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:11:39,885 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:11:39,885 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:11:39,885 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:11:39,885 - INFO - Accuracy                 : 0.6005
+2025-11-24 16:11:39,885 - INFO - Precision                : 0.6026
+2025-11-24 16:11:39,885 - INFO - Recall                   : 0.6005
+2025-11-24 16:11:39,885 - INFO - F1 Score                 : 0.5990
+2025-11-24 16:11:39,885 - INFO - ==================================================
+2025-11-24 16:12:15,287 - INFO - Época 80 concluída. Loss média: 2.1306
+2025-11-24 16:12:15,287 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-24 16:12:15,289 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:12:18,175 - INFO - ==================================================
+2025-11-24 16:12:18,175 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:12:18,175 - INFO - ==================================================
+2025-11-24 16:12:18,175 - INFO - Elapsed Time Seconds     : 2.8635
+2025-11-24 16:12:18,175 - INFO - Cpu Usage Percent        : 2.6531
+2025-11-24 16:12:18,175 - INFO - Ram Peak Usage Bytes     : 33933623296.0000
+2025-11-24 16:12:18,175 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:12:18,175 - INFO - Disk Write Bytes         : 221184.0000
+2025-11-24 16:12:18,175 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:12:18,175 - INFO - Gpu Power Watts Avg      : 139.7559
+2025-11-24 16:12:18,175 - INFO - Gpu Power Watts Peak     : 300.1460
+2025-11-24 16:12:18,175 - INFO - Gpu Temp Celsius Avg     : 53.1071
+2025-11-24 16:12:18,175 - INFO - Gpu Temp Celsius Peak    : 61.0000
+2025-11-24 16:12:18,175 - INFO - Gpu Utilization Percent Avg: 34.2143
+2025-11-24 16:12:18,175 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:12:18,175 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:12:18,175 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:12:18,175 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:12:18,175 - INFO - Accuracy                 : 0.6001
+2025-11-24 16:12:18,175 - INFO - Precision                : 0.6014
+2025-11-24 16:12:18,175 - INFO - Recall                   : 0.6001
+2025-11-24 16:12:18,175 - INFO - F1 Score                 : 0.5980
+2025-11-24 16:12:18,175 - INFO - ==================================================
+2025-11-24 16:12:53,912 - INFO - Época 81 concluída. Loss média: 2.1289
+2025-11-24 16:12:53,912 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-24 16:12:53,913 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:12:56,570 - INFO - ==================================================
+2025-11-24 16:12:56,570 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:12:56,570 - INFO - ==================================================
+2025-11-24 16:12:56,570 - INFO - Elapsed Time Seconds     : 2.6348
+2025-11-24 16:12:56,570 - INFO - Cpu Usage Percent        : 2.6906
+2025-11-24 16:12:56,570 - INFO - Ram Peak Usage Bytes     : 33933643776.0000
+2025-11-24 16:12:56,570 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:12:56,570 - INFO - Disk Write Bytes         : 131072.0000
+2025-11-24 16:12:56,570 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:12:56,570 - INFO - Gpu Power Watts Avg      : 156.6393
+2025-11-24 16:12:56,570 - INFO - Gpu Power Watts Peak     : 299.7230
+2025-11-24 16:12:56,570 - INFO - Gpu Temp Celsius Avg     : 53.4615
+2025-11-24 16:12:56,570 - INFO - Gpu Temp Celsius Peak    : 59.0000
+2025-11-24 16:12:56,570 - INFO - Gpu Utilization Percent Avg: 37.3846
+2025-11-24 16:12:56,570 - INFO - Gpu Utilization Percent Peak: 99.0000
+2025-11-24 16:12:56,570 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:12:56,570 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:12:56,570 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:12:56,570 - INFO - Accuracy                 : 0.5984
+2025-11-24 16:12:56,570 - INFO - Precision                : 0.5998
+2025-11-24 16:12:56,570 - INFO - Recall                   : 0.5984
+2025-11-24 16:12:56,570 - INFO - F1 Score                 : 0.5966
+2025-11-24 16:12:56,570 - INFO - ==================================================
+2025-11-24 16:13:34,698 - INFO - Época 82 concluída. Loss média: 2.1316
+2025-11-24 16:13:34,698 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-24 16:13:34,700 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:13:37,663 - INFO - ==================================================
+2025-11-24 16:13:37,663 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:13:37,663 - INFO - ==================================================
+2025-11-24 16:13:37,663 - INFO - Elapsed Time Seconds     : 2.9406
+2025-11-24 16:13:37,663 - INFO - Cpu Usage Percent        : 2.6125
+2025-11-24 16:13:37,663 - INFO - Ram Peak Usage Bytes     : 33933668352.0000
+2025-11-24 16:13:37,663 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:13:37,663 - INFO - Disk Write Bytes         : 0.0000
+2025-11-24 16:13:37,663 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:13:37,663 - INFO - Gpu Power Watts Avg      : 142.0545
+2025-11-24 16:13:37,663 - INFO - Gpu Power Watts Peak     : 298.1120
+2025-11-24 16:13:37,663 - INFO - Gpu Temp Celsius Avg     : 52.1724
+2025-11-24 16:13:37,663 - INFO - Gpu Temp Celsius Peak    : 58.0000
+2025-11-24 16:13:37,663 - INFO - Gpu Utilization Percent Avg: 32.9655
+2025-11-24 16:13:37,663 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:13:37,663 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:13:37,663 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:13:37,663 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:13:37,663 - INFO - Accuracy                 : 0.6014
+2025-11-24 16:13:37,663 - INFO - Precision                : 0.6027
+2025-11-24 16:13:37,663 - INFO - Recall                   : 0.6014
+2025-11-24 16:13:37,663 - INFO - F1 Score                 : 0.5995
+2025-11-24 16:13:37,664 - INFO - ==================================================
+2025-11-24 16:14:14,652 - INFO - Época 83 concluída. Loss média: 2.1333
+2025-11-24 16:14:14,653 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-24 16:14:14,655 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:14:17,530 - INFO - ==================================================
+2025-11-24 16:14:17,530 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:14:17,530 - INFO - ==================================================
+2025-11-24 16:14:17,530 - INFO - Elapsed Time Seconds     : 2.8525
+2025-11-24 16:14:17,530 - INFO - Cpu Usage Percent        : 2.5844
+2025-11-24 16:14:17,530 - INFO - Ram Peak Usage Bytes     : 33933705216.0000
+2025-11-24 16:14:17,530 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:14:17,530 - INFO - Disk Write Bytes         : 372736.0000
+2025-11-24 16:14:17,530 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:14:17,530 - INFO - Gpu Power Watts Avg      : 147.4284
+2025-11-24 16:14:17,530 - INFO - Gpu Power Watts Peak     : 304.3250
+2025-11-24 16:14:17,530 - INFO - Gpu Temp Celsius Avg     : 53.3571
+2025-11-24 16:14:17,530 - INFO - Gpu Temp Celsius Peak    : 62.0000
+2025-11-24 16:14:17,530 - INFO - Gpu Utilization Percent Avg: 35.6786
+2025-11-24 16:14:17,530 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:14:17,530 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:14:17,530 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:14:17,530 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:14:17,530 - INFO - Accuracy                 : 0.6010
+2025-11-24 16:14:17,530 - INFO - Precision                : 0.6018
+2025-11-24 16:14:17,530 - INFO - Recall                   : 0.6010
+2025-11-24 16:14:17,530 - INFO - F1 Score                 : 0.5988
+2025-11-24 16:14:17,530 - INFO - ==================================================
+2025-11-24 16:14:52,872 - INFO - Época 84 concluída. Loss média: 2.1255
+2025-11-24 16:14:52,872 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-24 16:14:52,874 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:14:56,457 - INFO - ==================================================
+2025-11-24 16:14:56,457 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:14:56,457 - INFO - ==================================================
+2025-11-24 16:14:56,457 - INFO - Elapsed Time Seconds     : 3.5603
+2025-11-24 16:14:56,457 - INFO - Cpu Usage Percent        : 2.8781
+2025-11-24 16:14:56,457 - INFO - Ram Peak Usage Bytes     : 33933725696.0000
+2025-11-24 16:14:56,457 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:14:56,457 - INFO - Disk Write Bytes         : 0.0000
+2025-11-24 16:14:56,457 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:14:56,457 - INFO - Gpu Power Watts Avg      : 128.1695
+2025-11-24 16:14:56,457 - INFO - Gpu Power Watts Peak     : 285.3340
+2025-11-24 16:14:56,457 - INFO - Gpu Temp Celsius Avg     : 52.3429
+2025-11-24 16:14:56,457 - INFO - Gpu Temp Celsius Peak    : 61.0000
+2025-11-24 16:14:56,457 - INFO - Gpu Utilization Percent Avg: 27.1429
+2025-11-24 16:14:56,457 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:14:56,457 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:14:56,457 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:14:56,457 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:14:56,457 - INFO - Accuracy                 : 0.6007
+2025-11-24 16:14:56,457 - INFO - Precision                : 0.6025
+2025-11-24 16:14:56,457 - INFO - Recall                   : 0.6007
+2025-11-24 16:14:56,457 - INFO - F1 Score                 : 0.5991
+2025-11-24 16:14:56,457 - INFO - ==================================================
+2025-11-24 16:15:33,547 - INFO - Época 85 concluída. Loss média: 2.1215
+2025-11-24 16:15:33,548 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-24 16:15:33,549 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:15:36,445 - INFO - ==================================================
+2025-11-24 16:15:36,445 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:15:36,445 - INFO - ==================================================
+2025-11-24 16:15:36,446 - INFO - Elapsed Time Seconds     : 2.8739
+2025-11-24 16:15:36,446 - INFO - Cpu Usage Percent        : 2.4781
+2025-11-24 16:15:36,446 - INFO - Ram Peak Usage Bytes     : 33933746176.0000
+2025-11-24 16:15:36,446 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:15:36,446 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-24 16:15:36,446 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:15:36,446 - INFO - Gpu Power Watts Avg      : 155.9410
+2025-11-24 16:15:36,446 - INFO - Gpu Power Watts Peak     : 294.5960
+2025-11-24 16:15:36,446 - INFO - Gpu Temp Celsius Avg     : 53.0357
+2025-11-24 16:15:36,446 - INFO - Gpu Temp Celsius Peak    : 59.0000
+2025-11-24 16:15:36,446 - INFO - Gpu Utilization Percent Avg: 38.9286
+2025-11-24 16:15:36,446 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:15:36,446 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:15:36,446 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:15:36,446 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:15:36,446 - INFO - Accuracy                 : 0.6012
+2025-11-24 16:15:36,446 - INFO - Precision                : 0.6020
+2025-11-24 16:15:36,446 - INFO - Recall                   : 0.6012
+2025-11-24 16:15:36,446 - INFO - F1 Score                 : 0.5990
+2025-11-24 16:15:36,446 - INFO - ==================================================
+2025-11-24 16:16:12,566 - INFO - Época 86 concluída. Loss média: 2.1242
+2025-11-24 16:16:12,566 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-24 16:16:12,568 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:16:15,339 - INFO - ==================================================
+2025-11-24 16:16:15,339 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:16:15,339 - INFO - ==================================================
+2025-11-24 16:16:15,339 - INFO - Elapsed Time Seconds     : 2.7489
+2025-11-24 16:16:15,339 - INFO - Cpu Usage Percent        : 2.6156
+2025-11-24 16:16:15,339 - INFO - Ram Peak Usage Bytes     : 33933774848.0000
+2025-11-24 16:16:15,339 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:16:15,339 - INFO - Disk Write Bytes         : 196608.0000
+2025-11-24 16:16:15,339 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:16:15,339 - INFO - Gpu Power Watts Avg      : 144.4320
+2025-11-24 16:16:15,340 - INFO - Gpu Power Watts Peak     : 301.8860
+2025-11-24 16:16:15,340 - INFO - Gpu Temp Celsius Avg     : 52.8889
+2025-11-24 16:16:15,340 - INFO - Gpu Temp Celsius Peak    : 60.0000
+2025-11-24 16:16:15,340 - INFO - Gpu Utilization Percent Avg: 34.8148
+2025-11-24 16:16:15,340 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:16:15,340 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:16:15,340 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:16:15,340 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:16:15,340 - INFO - Accuracy                 : 0.5989
+2025-11-24 16:16:15,340 - INFO - Precision                : 0.6005
+2025-11-24 16:16:15,340 - INFO - Recall                   : 0.5989
+2025-11-24 16:16:15,340 - INFO - F1 Score                 : 0.5969
+2025-11-24 16:16:15,340 - INFO - ==================================================
+2025-11-24 16:16:51,237 - INFO - Época 87 concluída. Loss média: 2.1222
+2025-11-24 16:16:51,237 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-24 16:16:51,239 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:16:54,158 - INFO - ==================================================
+2025-11-24 16:16:54,159 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:16:54,159 - INFO - ==================================================
+2025-11-24 16:16:54,159 - INFO - Elapsed Time Seconds     : 2.8976
+2025-11-24 16:16:54,159 - INFO - Cpu Usage Percent        : 2.4594
+2025-11-24 16:16:54,159 - INFO - Ram Peak Usage Bytes     : 33933795328.0000
+2025-11-24 16:16:54,159 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:16:54,159 - INFO - Disk Write Bytes         : 0.0000
+2025-11-24 16:16:54,159 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:16:54,159 - INFO - Gpu Power Watts Avg      : 138.6986
+2025-11-24 16:16:54,159 - INFO - Gpu Power Watts Peak     : 295.4580
+2025-11-24 16:16:54,159 - INFO - Gpu Temp Celsius Avg     : 52.8929
+2025-11-24 16:16:54,159 - INFO - Gpu Temp Celsius Peak    : 60.0000
+2025-11-24 16:16:54,159 - INFO - Gpu Utilization Percent Avg: 35.8571
+2025-11-24 16:16:54,159 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:16:54,159 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:16:54,159 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:16:54,159 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:16:54,159 - INFO - Accuracy                 : 0.6004
+2025-11-24 16:16:54,159 - INFO - Precision                : 0.6032
+2025-11-24 16:16:54,159 - INFO - Recall                   : 0.6004
+2025-11-24 16:16:54,159 - INFO - F1 Score                 : 0.5992
+2025-11-24 16:16:54,159 - INFO - ==================================================
+2025-11-24 16:17:29,819 - INFO - Época 88 concluída. Loss média: 2.1168
+2025-11-24 16:17:29,819 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-24 16:17:29,821 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:17:32,848 - INFO - ==================================================
+2025-11-24 16:17:32,848 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:17:32,848 - INFO - ==================================================
+2025-11-24 16:17:32,848 - INFO - Elapsed Time Seconds     : 3.0047
+2025-11-24 16:17:32,848 - INFO - Cpu Usage Percent        : 2.4344
+2025-11-24 16:17:32,848 - INFO - Ram Peak Usage Bytes     : 33933828096.0000
+2025-11-24 16:17:32,848 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:17:32,848 - INFO - Disk Write Bytes         : 20480.0000
+2025-11-24 16:17:32,848 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:17:32,848 - INFO - Gpu Power Watts Avg      : 135.4900
+2025-11-24 16:17:32,848 - INFO - Gpu Power Watts Peak     : 298.1160
+2025-11-24 16:17:32,848 - INFO - Gpu Temp Celsius Avg     : 52.7241
+2025-11-24 16:17:32,848 - INFO - Gpu Temp Celsius Peak    : 61.0000
+2025-11-24 16:17:32,848 - INFO - Gpu Utilization Percent Avg: 35.0345
+2025-11-24 16:17:32,848 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:17:32,848 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:17:32,848 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:17:32,848 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:17:32,848 - INFO - Accuracy                 : 0.6011
+2025-11-24 16:17:32,848 - INFO - Precision                : 0.6034
+2025-11-24 16:17:32,848 - INFO - Recall                   : 0.6011
+2025-11-24 16:17:32,848 - INFO - F1 Score                 : 0.5997
+2025-11-24 16:17:32,848 - INFO - ==================================================
+2025-11-24 16:18:08,123 - INFO - Época 89 concluída. Loss média: 2.1166
+2025-11-24 16:18:08,123 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-24 16:18:08,125 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:18:11,201 - INFO - ==================================================
+2025-11-24 16:18:11,201 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:18:11,201 - INFO - ==================================================
+2025-11-24 16:18:11,201 - INFO - Elapsed Time Seconds     : 3.0540
+2025-11-24 16:18:11,201 - INFO - Cpu Usage Percent        : 2.3219
+2025-11-24 16:18:11,201 - INFO - Ram Peak Usage Bytes     : 33934049280.0000
+2025-11-24 16:18:11,201 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:18:11,201 - INFO - Disk Write Bytes         : 507904.0000
+2025-11-24 16:18:11,201 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:18:11,201 - INFO - Gpu Power Watts Avg      : 153.0753
+2025-11-24 16:18:11,201 - INFO - Gpu Power Watts Peak     : 299.4760
+2025-11-24 16:18:11,202 - INFO - Gpu Temp Celsius Avg     : 53.8000
+2025-11-24 16:18:11,202 - INFO - Gpu Temp Celsius Peak    : 62.0000
+2025-11-24 16:18:11,202 - INFO - Gpu Utilization Percent Avg: 38.5333
+2025-11-24 16:18:11,202 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:18:11,202 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:18:11,202 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:18:11,202 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:18:11,202 - INFO - Accuracy                 : 0.5991
+2025-11-24 16:18:11,202 - INFO - Precision                : 0.6010
+2025-11-24 16:18:11,202 - INFO - Recall                   : 0.5991
+2025-11-24 16:18:11,202 - INFO - F1 Score                 : 0.5976
+2025-11-24 16:18:11,202 - INFO - ==================================================
+2025-11-24 16:18:47,000 - INFO - Época 90 concluída. Loss média: 2.1183
+2025-11-24 16:18:47,000 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-24 16:18:47,002 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:18:49,989 - INFO - ==================================================
+2025-11-24 16:18:49,989 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:18:49,989 - INFO - ==================================================
+2025-11-24 16:18:49,989 - INFO - Elapsed Time Seconds     : 2.9653
+2025-11-24 16:18:49,989 - INFO - Cpu Usage Percent        : 2.4656
+2025-11-24 16:18:49,989 - INFO - Ram Peak Usage Bytes     : 33934069760.0000
+2025-11-24 16:18:49,989 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:18:49,989 - INFO - Disk Write Bytes         : 0.0000
+2025-11-24 16:18:49,989 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:18:49,989 - INFO - Gpu Power Watts Avg      : 147.5533
+2025-11-24 16:18:49,989 - INFO - Gpu Power Watts Peak     : 296.6290
+2025-11-24 16:18:49,989 - INFO - Gpu Temp Celsius Avg     : 53.6897
+2025-11-24 16:18:49,989 - INFO - Gpu Temp Celsius Peak    : 62.0000
+2025-11-24 16:18:49,989 - INFO - Gpu Utilization Percent Avg: 34.5517
+2025-11-24 16:18:49,989 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:18:49,990 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:18:49,990 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:18:49,990 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:18:49,990 - INFO - Accuracy                 : 0.5976
+2025-11-24 16:18:49,990 - INFO - Precision                : 0.5992
+2025-11-24 16:18:49,990 - INFO - Recall                   : 0.5976
+2025-11-24 16:18:49,990 - INFO - F1 Score                 : 0.5957
+2025-11-24 16:18:49,990 - INFO - ==================================================
+2025-11-24 16:19:24,815 - INFO - Época 91 concluída. Loss média: 2.1134
+2025-11-24 16:19:24,815 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-24 16:19:24,817 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:19:27,694 - INFO - ==================================================
+2025-11-24 16:19:27,694 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:19:27,694 - INFO - ==================================================
+2025-11-24 16:19:27,694 - INFO - Elapsed Time Seconds     : 2.8546
+2025-11-24 16:19:27,694 - INFO - Cpu Usage Percent        : 2.5625
+2025-11-24 16:19:27,694 - INFO - Ram Peak Usage Bytes     : 33934098432.0000
+2025-11-24 16:19:27,694 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:19:27,694 - INFO - Disk Write Bytes         : 237568.0000
+2025-11-24 16:19:27,694 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:19:27,694 - INFO - Gpu Power Watts Avg      : 150.7851
+2025-11-24 16:19:27,694 - INFO - Gpu Power Watts Peak     : 300.1360
+2025-11-24 16:19:27,694 - INFO - Gpu Temp Celsius Avg     : 53.8214
+2025-11-24 16:19:27,694 - INFO - Gpu Temp Celsius Peak    : 61.0000
+2025-11-24 16:19:27,694 - INFO - Gpu Utilization Percent Avg: 35.2857
+2025-11-24 16:19:27,694 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:19:27,694 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:19:27,694 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:19:27,694 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:19:27,694 - INFO - Accuracy                 : 0.5980
+2025-11-24 16:19:27,694 - INFO - Precision                : 0.6000
+2025-11-24 16:19:27,694 - INFO - Recall                   : 0.5980
+2025-11-24 16:19:27,694 - INFO - F1 Score                 : 0.5962
+2025-11-24 16:19:27,694 - INFO - ==================================================
+2025-11-24 16:20:03,766 - INFO - Época 92 concluída. Loss média: 2.1117
+2025-11-24 16:20:03,766 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-24 16:20:03,768 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:20:06,856 - INFO - ==================================================
+2025-11-24 16:20:06,856 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:20:06,856 - INFO - ==================================================
+2025-11-24 16:20:06,856 - INFO - Elapsed Time Seconds     : 3.0656
+2025-11-24 16:20:06,856 - INFO - Cpu Usage Percent        : 2.3844
+2025-11-24 16:20:06,856 - INFO - Ram Peak Usage Bytes     : 33934155776.0000
+2025-11-24 16:20:06,856 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:20:06,856 - INFO - Disk Write Bytes         : 98304.0000
+2025-11-24 16:20:06,856 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:20:06,856 - INFO - Gpu Power Watts Avg      : 142.2029
+2025-11-24 16:20:06,856 - INFO - Gpu Power Watts Peak     : 284.5790
+2025-11-24 16:20:06,856 - INFO - Gpu Temp Celsius Avg     : 53.1000
+2025-11-24 16:20:06,856 - INFO - Gpu Temp Celsius Peak    : 61.0000
+2025-11-24 16:20:06,856 - INFO - Gpu Utilization Percent Avg: 31.6667
+2025-11-24 16:20:06,856 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:20:06,856 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:20:06,856 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:20:06,856 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:20:06,856 - INFO - Accuracy                 : 0.5996
+2025-11-24 16:20:06,856 - INFO - Precision                : 0.6013
+2025-11-24 16:20:06,856 - INFO - Recall                   : 0.5996
+2025-11-24 16:20:06,856 - INFO - F1 Score                 : 0.5978
+2025-11-24 16:20:06,856 - INFO - ==================================================
+2025-11-24 16:20:44,290 - INFO - Época 93 concluída. Loss média: 2.1049
+2025-11-24 16:20:44,290 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-24 16:20:44,292 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:20:46,953 - INFO - ==================================================
+2025-11-24 16:20:46,953 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:20:46,953 - INFO - ==================================================
+2025-11-24 16:20:46,953 - INFO - Elapsed Time Seconds     : 2.6390
+2025-11-24 16:20:46,953 - INFO - Cpu Usage Percent        : 2.7719
+2025-11-24 16:20:46,953 - INFO - Ram Peak Usage Bytes     : 33934168064.0000
+2025-11-24 16:20:46,953 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:20:46,953 - INFO - Disk Write Bytes         : 122880.0000
+2025-11-24 16:20:46,953 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:20:46,953 - INFO - Gpu Power Watts Avg      : 148.3760
+2025-11-24 16:20:46,953 - INFO - Gpu Power Watts Peak     : 301.7870
+2025-11-24 16:20:46,953 - INFO - Gpu Temp Celsius Avg     : 53.3077
+2025-11-24 16:20:46,953 - INFO - Gpu Temp Celsius Peak    : 61.0000
+2025-11-24 16:20:46,953 - INFO - Gpu Utilization Percent Avg: 36.0769
+2025-11-24 16:20:46,953 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:20:46,953 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:20:46,954 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:20:46,954 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:20:46,954 - INFO - Accuracy                 : 0.5989
+2025-11-24 16:20:46,954 - INFO - Precision                : 0.6002
+2025-11-24 16:20:46,954 - INFO - Recall                   : 0.5989
+2025-11-24 16:20:46,954 - INFO - F1 Score                 : 0.5969
+2025-11-24 16:20:46,954 - INFO - ==================================================
+2025-11-24 16:21:23,052 - INFO - Época 94 concluída. Loss média: 2.1067
+2025-11-24 16:21:23,052 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-24 16:21:23,054 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:21:25,837 - INFO - ==================================================
+2025-11-24 16:21:25,837 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:21:25,837 - INFO - ==================================================
+2025-11-24 16:21:25,837 - INFO - Elapsed Time Seconds     : 2.7606
+2025-11-24 16:21:25,837 - INFO - Cpu Usage Percent        : 2.6719
+2025-11-24 16:21:25,837 - INFO - Ram Peak Usage Bytes     : 33934209024.0000
+2025-11-24 16:21:25,837 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:21:25,837 - INFO - Disk Write Bytes         : 339968.0000
+2025-11-24 16:21:25,837 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:21:25,837 - INFO - Gpu Power Watts Avg      : 151.8818
+2025-11-24 16:21:25,837 - INFO - Gpu Power Watts Peak     : 295.8190
+2025-11-24 16:21:25,837 - INFO - Gpu Temp Celsius Avg     : 53.7037
+2025-11-24 16:21:25,837 - INFO - Gpu Temp Celsius Peak    : 61.0000
+2025-11-24 16:21:25,837 - INFO - Gpu Utilization Percent Avg: 35.7037
+2025-11-24 16:21:25,837 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:21:25,837 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:21:25,837 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:21:25,837 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:21:25,837 - INFO - Accuracy                 : 0.5988
+2025-11-24 16:21:25,837 - INFO - Precision                : 0.6009
+2025-11-24 16:21:25,838 - INFO - Recall                   : 0.5988
+2025-11-24 16:21:25,838 - INFO - F1 Score                 : 0.5972
+2025-11-24 16:21:25,838 - INFO - ==================================================
+2025-11-24 16:22:01,582 - INFO - Época 95 concluída. Loss média: 2.1158
+2025-11-24 16:22:01,582 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-24 16:22:01,584 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:22:04,579 - INFO - ==================================================
+2025-11-24 16:22:04,579 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:22:04,579 - INFO - ==================================================
+2025-11-24 16:22:04,579 - INFO - Elapsed Time Seconds     : 2.9727
+2025-11-24 16:22:04,579 - INFO - Cpu Usage Percent        : 2.4594
+2025-11-24 16:22:04,579 - INFO - Ram Peak Usage Bytes     : 33934221312.0000
+2025-11-24 16:22:04,579 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:22:04,579 - INFO - Disk Write Bytes         : 0.0000
+2025-11-24 16:22:04,579 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:22:04,579 - INFO - Gpu Power Watts Avg      : 145.9148
+2025-11-24 16:22:04,579 - INFO - Gpu Power Watts Peak     : 303.2490
+2025-11-24 16:22:04,579 - INFO - Gpu Temp Celsius Avg     : 53.5862
+2025-11-24 16:22:04,579 - INFO - Gpu Temp Celsius Peak    : 61.0000
+2025-11-24 16:22:04,579 - INFO - Gpu Utilization Percent Avg: 34.1379
+2025-11-24 16:22:04,579 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:22:04,579 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:22:04,579 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:22:04,579 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:22:04,579 - INFO - Accuracy                 : 0.5994
+2025-11-24 16:22:04,579 - INFO - Precision                : 0.6006
+2025-11-24 16:22:04,579 - INFO - Recall                   : 0.5994
+2025-11-24 16:22:04,579 - INFO - F1 Score                 : 0.5975
+2025-11-24 16:22:04,579 - INFO - ==================================================
+2025-11-24 16:22:41,221 - INFO - Época 96 concluída. Loss média: 2.1047
+2025-11-24 16:22:41,221 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-24 16:22:41,222 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:22:43,779 - INFO - ==================================================
+2025-11-24 16:22:43,779 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:22:43,779 - INFO - ==================================================
+2025-11-24 16:22:43,779 - INFO - Elapsed Time Seconds     : 2.5349
+2025-11-24 16:22:43,779 - INFO - Cpu Usage Percent        : 2.7844
+2025-11-24 16:22:43,779 - INFO - Ram Peak Usage Bytes     : 33934266368.0000
+2025-11-24 16:22:43,779 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:22:43,779 - INFO - Disk Write Bytes         : 0.0000
+2025-11-24 16:22:43,779 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:22:43,779 - INFO - Gpu Power Watts Avg      : 160.1191
+2025-11-24 16:22:43,779 - INFO - Gpu Power Watts Peak     : 297.4110
+2025-11-24 16:22:43,779 - INFO - Gpu Temp Celsius Avg     : 53.8400
+2025-11-24 16:22:43,779 - INFO - Gpu Temp Celsius Peak    : 62.0000
+2025-11-24 16:22:43,779 - INFO - Gpu Utilization Percent Avg: 37.6800
+2025-11-24 16:22:43,779 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:22:43,779 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:22:43,779 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:22:43,779 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:22:43,779 - INFO - Accuracy                 : 0.6004
+2025-11-24 16:22:43,779 - INFO - Precision                : 0.6020
+2025-11-24 16:22:43,779 - INFO - Recall                   : 0.6004
+2025-11-24 16:22:43,779 - INFO - F1 Score                 : 0.5986
+2025-11-24 16:22:43,779 - INFO - ==================================================
+2025-11-24 16:23:20,418 - INFO - Época 97 concluída. Loss média: 2.1092
+2025-11-24 16:23:20,418 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-24 16:23:20,420 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:23:23,207 - INFO - ==================================================
+2025-11-24 16:23:23,207 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:23:23,207 - INFO - ==================================================
+2025-11-24 16:23:23,207 - INFO - Elapsed Time Seconds     : 2.7650
+2025-11-24 16:23:23,207 - INFO - Cpu Usage Percent        : 2.6219
+2025-11-24 16:23:23,207 - INFO - Ram Peak Usage Bytes     : 33934299136.0000
+2025-11-24 16:23:23,207 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:23:23,207 - INFO - Disk Write Bytes         : 73728.0000
+2025-11-24 16:23:23,207 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:23:23,208 - INFO - Gpu Power Watts Avg      : 156.9598
+2025-11-24 16:23:23,208 - INFO - Gpu Power Watts Peak     : 294.0110
+2025-11-24 16:23:23,208 - INFO - Gpu Temp Celsius Avg     : 54.0370
+2025-11-24 16:23:23,208 - INFO - Gpu Temp Celsius Peak    : 62.0000
+2025-11-24 16:23:23,208 - INFO - Gpu Utilization Percent Avg: 40.0000
+2025-11-24 16:23:23,208 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:23:23,208 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:23:23,208 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:23:23,208 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:23:23,208 - INFO - Accuracy                 : 0.6003
+2025-11-24 16:23:23,208 - INFO - Precision                : 0.6016
+2025-11-24 16:23:23,208 - INFO - Recall                   : 0.6003
+2025-11-24 16:23:23,208 - INFO - F1 Score                 : 0.5984
+2025-11-24 16:23:23,208 - INFO - ==================================================
+2025-11-24 16:23:59,621 - INFO - Época 98 concluída. Loss média: 2.1038
+2025-11-24 16:23:59,621 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-24 16:23:59,623 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:24:02,596 - INFO - ==================================================
+2025-11-24 16:24:02,596 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:24:02,596 - INFO - ==================================================
+2025-11-24 16:24:02,596 - INFO - Elapsed Time Seconds     : 2.9505
+2025-11-24 16:24:02,596 - INFO - Cpu Usage Percent        : 2.4469
+2025-11-24 16:24:02,596 - INFO - Ram Peak Usage Bytes     : 33934307328.0000
+2025-11-24 16:24:02,596 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:24:02,596 - INFO - Disk Write Bytes         : 114688.0000
+2025-11-24 16:24:02,596 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:24:02,596 - INFO - Gpu Power Watts Avg      : 140.6330
+2025-11-24 16:24:02,596 - INFO - Gpu Power Watts Peak     : 301.1800
+2025-11-24 16:24:02,596 - INFO - Gpu Temp Celsius Avg     : 53.6207
+2025-11-24 16:24:02,596 - INFO - Gpu Temp Celsius Peak    : 61.0000
+2025-11-24 16:24:02,596 - INFO - Gpu Utilization Percent Avg: 34.8966
+2025-11-24 16:24:02,597 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:24:02,597 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:24:02,597 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:24:02,597 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:24:02,597 - INFO - Accuracy                 : 0.6000
+2025-11-24 16:24:02,597 - INFO - Precision                : 0.6023
+2025-11-24 16:24:02,597 - INFO - Recall                   : 0.6000
+2025-11-24 16:24:02,597 - INFO - F1 Score                 : 0.5985
+2025-11-24 16:24:02,597 - INFO - ==================================================
+2025-11-24 16:24:38,086 - INFO - Época 99 concluída. Loss média: 2.1129
+2025-11-24 16:24:38,086 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-24 16:24:38,088 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:24:40,974 - INFO - ==================================================
+2025-11-24 16:24:40,974 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:24:40,974 - INFO - ==================================================
+2025-11-24 16:24:40,974 - INFO - Elapsed Time Seconds     : 2.8644
+2025-11-24 16:24:40,974 - INFO - Cpu Usage Percent        : 2.5750
+2025-11-24 16:24:40,974 - INFO - Ram Peak Usage Bytes     : 33934340096.0000
+2025-11-24 16:24:40,974 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:24:40,975 - INFO - Disk Write Bytes         : 253952.0000
+2025-11-24 16:24:40,975 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:24:40,975 - INFO - Gpu Power Watts Avg      : 149.8576
+2025-11-24 16:24:40,975 - INFO - Gpu Power Watts Peak     : 296.2650
+2025-11-24 16:24:40,975 - INFO - Gpu Temp Celsius Avg     : 53.1071
+2025-11-24 16:24:40,975 - INFO - Gpu Temp Celsius Peak    : 59.0000
+2025-11-24 16:24:40,975 - INFO - Gpu Utilization Percent Avg: 33.0714
+2025-11-24 16:24:40,975 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:24:40,975 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:24:40,975 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:24:40,975 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:24:40,975 - INFO - Accuracy                 : 0.6014
+2025-11-24 16:24:40,975 - INFO - Precision                : 0.6031
+2025-11-24 16:24:40,975 - INFO - Recall                   : 0.6014
+2025-11-24 16:24:40,975 - INFO - F1 Score                 : 0.5998
+2025-11-24 16:24:40,975 - INFO - ==================================================
+2025-11-24 16:25:17,878 - INFO - Época 100 concluída. Loss média: 2.1050
+2025-11-24 16:25:17,878 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-24 16:25:17,880 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:25:20,586 - INFO - ==================================================
+2025-11-24 16:25:20,587 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:25:20,587 - INFO - ==================================================
+2025-11-24 16:25:20,587 - INFO - Elapsed Time Seconds     : 2.6848
+2025-11-24 16:25:20,587 - INFO - Cpu Usage Percent        : 2.8625
+2025-11-24 16:25:20,587 - INFO - Ram Peak Usage Bytes     : 33935237120.0000
+2025-11-24 16:25:20,587 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:25:20,587 - INFO - Disk Write Bytes         : 12288.0000
+2025-11-24 16:25:20,587 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:25:20,587 - INFO - Gpu Power Watts Avg      : 163.5612
+2025-11-24 16:25:20,587 - INFO - Gpu Power Watts Peak     : 297.5670
+2025-11-24 16:25:20,587 - INFO - Gpu Temp Celsius Avg     : 54.3077
+2025-11-24 16:25:20,587 - INFO - Gpu Temp Celsius Peak    : 62.0000
+2025-11-24 16:25:20,587 - INFO - Gpu Utilization Percent Avg: 38.8462
+2025-11-24 16:25:20,587 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:25:20,587 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:25:20,587 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:25:20,587 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:25:20,587 - INFO - Accuracy                 : 0.5999
+2025-11-24 16:25:20,587 - INFO - Precision                : 0.6009
+2025-11-24 16:25:20,587 - INFO - Recall                   : 0.5999
+2025-11-24 16:25:20,587 - INFO - F1 Score                 : 0.5978
+2025-11-24 16:25:20,587 - INFO - ==================================================
+2025-11-24 16:25:20,689 - INFO - Métricas de performance do treinamento:
+2025-11-24 16:25:20,689 - INFO - ==================================================
+2025-11-24 16:25:20,689 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:25:20,689 - INFO - ==================================================
+2025-11-24 16:25:20,689 - INFO - Elapsed Time Seconds     : 3936.0352
+2025-11-24 16:25:20,689 - INFO - Cpu Usage Percent        : 4.1875
+2025-11-24 16:25:20,689 - INFO - Ram Peak Usage Bytes     : 33935151104.0000
+2025-11-24 16:25:20,689 - INFO - Disk Read Bytes          : 12251136.0000
+2025-11-24 16:25:20,689 - INFO - Disk Write Bytes         : 365998080.0000
+2025-11-24 16:25:20,689 - INFO - Vram Peak Usage Bytes    : 5197153108.0000
+2025-11-24 16:25:20,689 - INFO - Gpu Power Watts Avg      : 260.5788
+2025-11-24 16:25:20,689 - INFO - Gpu Power Watts Peak     : 305.1120
+2025-11-24 16:25:20,689 - INFO - Gpu Temp Celsius Avg     : 58.7513
+2025-11-24 16:25:20,689 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-24 16:25:20,689 - INFO - Gpu Utilization Percent Avg: 85.1994
+2025-11-24 16:25:20,689 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:25:20,689 - INFO - Gpu Mem Used Bytes Avg   : 23802278047.7320
+2025-11-24 16:25:20,689 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:25:20,689 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:25:20,689 - INFO - ==================================================
+2025-11-24 16:25:22,374 - INFO - Modelo salvo em: trained_models/mobilenet_V1_final.pth
+2025-11-24 16:25:22,384 - INFO - Pipeline de treinamento concluído. Modelo salvo em: trained_models/mobilenet_V1_final.pth
+2025-11-24 16:25:22,385 - INFO - Iniciando pipeline de inferência para avaliação final no conjunto de validação...
+2025-11-24 16:25:22,454 - INFO - Iniciando inferência com o modelo MobileNetV1...
+2025-11-24 16:25:26,476 - INFO - ==================================================
+2025-11-24 16:25:26,476 - INFO - EXPERIMENT RESULTS
+2025-11-24 16:25:26,476 - INFO - ==================================================
+2025-11-24 16:25:26,476 - INFO - Elapsed Time Seconds     : 4.0001
+2025-11-24 16:25:26,476 - INFO - Cpu Usage Percent        : 2.4906
+2025-11-24 16:25:26,476 - INFO - Ram Peak Usage Bytes     : 33939234816.0000
+2025-11-24 16:25:26,476 - INFO - Disk Read Bytes          : 0.0000
+2025-11-24 16:25:26,476 - INFO - Disk Write Bytes         : 212992.0000
+2025-11-24 16:25:26,476 - INFO - Vram Peak Usage Bytes    : 4764963848.0000
+2025-11-24 16:25:26,476 - INFO - Gpu Power Watts Avg      : 91.7539
+2025-11-24 16:25:26,476 - INFO - Gpu Power Watts Peak     : 211.2260
+2025-11-24 16:25:26,477 - INFO - Gpu Temp Celsius Avg     : 49.8718
+2025-11-24 16:25:26,477 - INFO - Gpu Temp Celsius Peak    : 60.0000
+2025-11-24 16:25:26,477 - INFO - Gpu Utilization Percent Avg: 25.2821
+2025-11-24 16:25:26,477 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-24 16:25:26,477 - INFO - Gpu Mem Used Bytes Avg   : 23902486528.0000
+2025-11-24 16:25:26,477 - INFO - Gpu Mem Used Bytes Peak  : 23902486528.0000
+2025-11-24 16:25:26,477 - INFO - Gpu Vram Used Bytes      : 23902486528.0000
+2025-11-24 16:25:26,477 - INFO - Accuracy                 : 0.5999
+2025-11-24 16:25:26,477 - INFO - Precision                : 0.6009
+2025-11-24 16:25:26,477 - INFO - Recall                   : 0.5999
+2025-11-24 16:25:26,477 - INFO - F1 Score                 : 0.5978
+2025-11-24 16:25:26,477 - INFO - ==================================================
+2025-11-24 16:25:26,477 - INFO - Projeto executado com sucesso!

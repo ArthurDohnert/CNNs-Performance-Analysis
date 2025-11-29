@@ -1,0 +1,2666 @@
+2025-11-29 00:51:38,680 - INFO - ==================================================
+2025-11-29 00:51:38,681 - INFO - EXPERIMENT CONFIGURATION
+2025-11-29 00:51:38,681 - INFO - ==================================================
+2025-11-29 00:51:38,681 - INFO - Model Name          : vgg16
+2025-11-29 00:51:38,681 - INFO - Config File         : configs/vgg16_config.yaml
+2025-11-29 00:51:38,681 - INFO - Train Data          : /scratch/ehdmenezes//tiny-imagenet-200/train
+2025-11-29 00:51:38,681 - INFO - Validation Data     : /scratch/ehdmenezes//tiny-imagenet-200/val
+2025-11-29 00:51:38,681 - INFO - model_params        : {'num_classes': 200}
+2025-11-29 00:51:38,681 - INFO - train_params        : {'epochs': 100, 'batch_size': 128, 'learning_rate': 0.01}
+2025-11-29 00:51:38,681 - INFO - inference_params    : {'batch_size': 128}
+2025-11-29 00:51:38,681 - INFO - scheduler_params    : {'type': 'StepLR', 'step_size': 30, 'gamma': 0.1}
+2025-11-29 00:51:38,681 - INFO - ==================================================
+2025-11-29 00:51:38,705 - INFO - Semente aleatória para esta execução foi fixada em: 62
+2025-11-29 00:51:38,705 - INFO - Configuração de treinamento: {'model_params': {'num_classes': 200}, 'train_params': {'epochs': 100, 'batch_size': 128, 'learning_rate': 0.01}, 'inference_params': {'batch_size': 128}, 'scheduler_params': {'type': 'StepLR', 'step_size': 30, 'gamma': 0.1}}
+2025-11-29 00:51:40,216 - INFO - Usando otimizador SGD com momento e weight decay.
+2025-11-29 00:51:40,227 - INFO - Usando StepLR scheduler com step_size=30 e gamma=0.1.
+2025-11-29 00:51:40,227 - INFO - AMP (Automatic Mixed Precision) desativado.
+2025-11-29 00:51:40,227 - INFO - Iniciando treinamento do modelo vgg16 no dispositivo cuda.
+2025-11-29 00:56:00,168 - INFO - Época 1 concluída. Loss média: 5.2487
+2025-11-29 00:56:00,169 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-29 00:56:00,170 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 00:56:05,737 - INFO - ==================================================
+2025-11-29 00:56:05,737 - INFO - EXPERIMENT RESULTS
+2025-11-29 00:56:05,737 - INFO - ==================================================
+2025-11-29 00:56:05,737 - INFO - Elapsed Time Seconds     : 5.5315
+2025-11-29 00:56:05,737 - INFO - Cpu Usage Percent        : 3.7844
+2025-11-29 00:56:05,737 - INFO - Ram Peak Usage Bytes     : 5893558272.0000
+2025-11-29 00:56:05,737 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 00:56:05,737 - INFO - Disk Write Bytes         : 2830336.0000
+2025-11-29 00:56:05,737 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 00:56:05,737 - INFO - Gpu Power Watts Avg      : 300.8416
+2025-11-29 00:56:05,737 - INFO - Gpu Power Watts Peak     : 347.7740
+2025-11-29 00:56:05,737 - INFO - Gpu Temp Celsius Avg     : 61.4444
+2025-11-29 00:56:05,737 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 00:56:05,737 - INFO - Gpu Utilization Percent Avg: 85.5185
+2025-11-29 00:56:05,737 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 00:56:05,737 - INFO - Gpu Mem Used Bytes Avg   : 22267756544.0000
+2025-11-29 00:56:05,738 - INFO - Gpu Mem Used Bytes Peak  : 22268805120.0000
+2025-11-29 00:56:05,738 - INFO - Gpu Vram Used Bytes      : 22268805120.0000
+2025-11-29 00:56:05,738 - INFO - Accuracy                 : 0.0141
+2025-11-29 00:56:05,738 - INFO - Precision                : 0.0018
+2025-11-29 00:56:05,738 - INFO - Recall                   : 0.0141
+2025-11-29 00:56:05,738 - INFO - F1 Score                 : 0.0022
+2025-11-29 00:56:05,738 - INFO - ==================================================
+2025-11-29 01:00:23,297 - INFO - Época 2 concluída. Loss média: 5.1948
+2025-11-29 01:00:23,297 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-29 01:00:23,299 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 01:00:29,237 - INFO - ==================================================
+2025-11-29 01:00:29,237 - INFO - EXPERIMENT RESULTS
+2025-11-29 01:00:29,237 - INFO - ==================================================
+2025-11-29 01:00:29,237 - INFO - Elapsed Time Seconds     : 5.9010
+2025-11-29 01:00:29,237 - INFO - Cpu Usage Percent        : 4.1781
+2025-11-29 01:00:29,237 - INFO - Ram Peak Usage Bytes     : 5907648512.0000
+2025-11-29 01:00:29,237 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 01:00:29,237 - INFO - Disk Write Bytes         : 155648.0000
+2025-11-29 01:00:29,238 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 01:00:29,238 - INFO - Gpu Power Watts Avg      : 284.8903
+2025-11-29 01:00:29,238 - INFO - Gpu Power Watts Peak     : 348.2340
+2025-11-29 01:00:29,238 - INFO - Gpu Temp Celsius Avg     : 60.3103
+2025-11-29 01:00:29,238 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 01:00:29,238 - INFO - Gpu Utilization Percent Avg: 78.3103
+2025-11-29 01:00:29,238 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 01:00:29,238 - INFO - Gpu Mem Used Bytes Avg   : 22268805120.0000
+2025-11-29 01:00:29,238 - INFO - Gpu Mem Used Bytes Peak  : 22268805120.0000
+2025-11-29 01:00:29,238 - INFO - Gpu Vram Used Bytes      : 22268805120.0000
+2025-11-29 01:00:29,238 - INFO - Accuracy                 : 0.0275
+2025-11-29 01:00:29,238 - INFO - Precision                : 0.0071
+2025-11-29 01:00:29,238 - INFO - Recall                   : 0.0275
+2025-11-29 01:00:29,238 - INFO - F1 Score                 : 0.0068
+2025-11-29 01:00:29,238 - INFO - ==================================================
+2025-11-29 01:04:47,213 - INFO - Época 3 concluída. Loss média: 5.0256
+2025-11-29 01:04:47,214 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-29 01:04:47,215 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 01:04:52,483 - INFO - ==================================================
+2025-11-29 01:04:52,483 - INFO - EXPERIMENT RESULTS
+2025-11-29 01:04:52,483 - INFO - ==================================================
+2025-11-29 01:04:52,483 - INFO - Elapsed Time Seconds     : 5.2416
+2025-11-29 01:04:52,483 - INFO - Cpu Usage Percent        : 3.9531
+2025-11-29 01:04:52,483 - INFO - Ram Peak Usage Bytes     : 5934239744.0000
+2025-11-29 01:04:52,483 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 01:04:52,483 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 01:04:52,483 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 01:04:52,483 - INFO - Gpu Power Watts Avg      : 308.8321
+2025-11-29 01:04:52,484 - INFO - Gpu Power Watts Peak     : 346.0210
+2025-11-29 01:04:52,484 - INFO - Gpu Temp Celsius Avg     : 61.7843
+2025-11-29 01:04:52,484 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 01:04:52,484 - INFO - Gpu Utilization Percent Avg: 89.1765
+2025-11-29 01:04:52,484 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 01:04:52,484 - INFO - Gpu Mem Used Bytes Avg   : 22268805120.0000
+2025-11-29 01:04:52,484 - INFO - Gpu Mem Used Bytes Peak  : 22268805120.0000
+2025-11-29 01:04:52,484 - INFO - Gpu Vram Used Bytes      : 22268805120.0000
+2025-11-29 01:04:52,484 - INFO - Accuracy                 : 0.0462
+2025-11-29 01:04:52,484 - INFO - Precision                : 0.0284
+2025-11-29 01:04:52,484 - INFO - Recall                   : 0.0462
+2025-11-29 01:04:52,484 - INFO - F1 Score                 : 0.0228
+2025-11-29 01:04:52,484 - INFO - ==================================================
+2025-11-29 01:09:10,137 - INFO - Época 4 concluída. Loss média: 4.8648
+2025-11-29 01:09:10,137 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-29 01:09:10,139 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 01:09:15,603 - INFO - ==================================================
+2025-11-29 01:09:15,604 - INFO - EXPERIMENT RESULTS
+2025-11-29 01:09:15,604 - INFO - ==================================================
+2025-11-29 01:09:15,604 - INFO - Elapsed Time Seconds     : 5.4263
+2025-11-29 01:09:15,604 - INFO - Cpu Usage Percent        : 3.8813
+2025-11-29 01:09:15,604 - INFO - Ram Peak Usage Bytes     : 5940084736.0000
+2025-11-29 01:09:15,604 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 01:09:15,604 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 01:09:15,604 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 01:09:15,604 - INFO - Gpu Power Watts Avg      : 301.2801
+2025-11-29 01:09:15,604 - INFO - Gpu Power Watts Peak     : 346.3070
+2025-11-29 01:09:15,604 - INFO - Gpu Temp Celsius Avg     : 61.0566
+2025-11-29 01:09:15,604 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 01:09:15,604 - INFO - Gpu Utilization Percent Avg: 86.3774
+2025-11-29 01:09:15,604 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 01:09:15,604 - INFO - Gpu Mem Used Bytes Avg   : 22268805120.0000
+2025-11-29 01:09:15,604 - INFO - Gpu Mem Used Bytes Peak  : 22268805120.0000
+2025-11-29 01:09:15,604 - INFO - Gpu Vram Used Bytes      : 22268805120.0000
+2025-11-29 01:09:15,604 - INFO - Accuracy                 : 0.0699
+2025-11-29 01:09:15,604 - INFO - Precision                : 0.0531
+2025-11-29 01:09:15,605 - INFO - Recall                   : 0.0699
+2025-11-29 01:09:15,605 - INFO - F1 Score                 : 0.0433
+2025-11-29 01:09:15,605 - INFO - ==================================================
+2025-11-29 01:13:33,127 - INFO - Época 5 concluída. Loss média: 4.7518
+2025-11-29 01:13:33,127 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-29 01:13:33,128 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 01:13:38,901 - INFO - ==================================================
+2025-11-29 01:13:38,901 - INFO - EXPERIMENT RESULTS
+2025-11-29 01:13:38,901 - INFO - ==================================================
+2025-11-29 01:13:38,901 - INFO - Elapsed Time Seconds     : 5.7358
+2025-11-29 01:13:38,901 - INFO - Cpu Usage Percent        : 3.9656
+2025-11-29 01:13:38,901 - INFO - Ram Peak Usage Bytes     : 5940686848.0000
+2025-11-29 01:13:38,901 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 01:13:38,901 - INFO - Disk Write Bytes         : 167936.0000
+2025-11-29 01:13:38,901 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 01:13:38,901 - INFO - Gpu Power Watts Avg      : 290.2192
+2025-11-29 01:13:38,901 - INFO - Gpu Power Watts Peak     : 347.1140
+2025-11-29 01:13:38,901 - INFO - Gpu Temp Celsius Avg     : 60.3393
+2025-11-29 01:13:38,901 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 01:13:38,902 - INFO - Gpu Utilization Percent Avg: 79.9107
+2025-11-29 01:13:38,902 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 01:13:38,902 - INFO - Gpu Mem Used Bytes Avg   : 22268805120.0000
+2025-11-29 01:13:38,902 - INFO - Gpu Mem Used Bytes Peak  : 22268805120.0000
+2025-11-29 01:13:38,902 - INFO - Gpu Vram Used Bytes      : 22268805120.0000
+2025-11-29 01:13:38,902 - INFO - Accuracy                 : 0.0892
+2025-11-29 01:13:38,902 - INFO - Precision                : 0.0675
+2025-11-29 01:13:38,902 - INFO - Recall                   : 0.0892
+2025-11-29 01:13:38,902 - INFO - F1 Score                 : 0.0564
+2025-11-29 01:13:38,902 - INFO - ==================================================
+2025-11-29 01:17:56,278 - INFO - Época 6 concluída. Loss média: 4.6465
+2025-11-29 01:17:56,279 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-29 01:17:56,280 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 01:18:01,885 - INFO - ==================================================
+2025-11-29 01:18:01,885 - INFO - EXPERIMENT RESULTS
+2025-11-29 01:18:01,885 - INFO - ==================================================
+2025-11-29 01:18:01,885 - INFO - Elapsed Time Seconds     : 5.5679
+2025-11-29 01:18:01,885 - INFO - Cpu Usage Percent        : 4.3094
+2025-11-29 01:18:01,885 - INFO - Ram Peak Usage Bytes     : 5940936704.0000
+2025-11-29 01:18:01,885 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 01:18:01,885 - INFO - Disk Write Bytes         : 167936.0000
+2025-11-29 01:18:01,885 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 01:18:01,885 - INFO - Gpu Power Watts Avg      : 296.5859
+2025-11-29 01:18:01,885 - INFO - Gpu Power Watts Peak     : 346.4620
+2025-11-29 01:18:01,885 - INFO - Gpu Temp Celsius Avg     : 60.9074
+2025-11-29 01:18:01,885 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 01:18:01,886 - INFO - Gpu Utilization Percent Avg: 83.9815
+2025-11-29 01:18:01,886 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 01:18:01,886 - INFO - Gpu Mem Used Bytes Avg   : 22403022848.0000
+2025-11-29 01:18:01,886 - INFO - Gpu Mem Used Bytes Peak  : 22403022848.0000
+2025-11-29 01:18:01,886 - INFO - Gpu Vram Used Bytes      : 22403022848.0000
+2025-11-29 01:18:01,886 - INFO - Accuracy                 : 0.1218
+2025-11-29 01:18:01,886 - INFO - Precision                : 0.1097
+2025-11-29 01:18:01,886 - INFO - Recall                   : 0.1218
+2025-11-29 01:18:01,886 - INFO - F1 Score                 : 0.0885
+2025-11-29 01:18:01,886 - INFO - ==================================================
+2025-11-29 01:22:19,486 - INFO - Época 7 concluída. Loss média: 4.5385
+2025-11-29 01:22:19,487 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-29 01:22:19,488 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 01:22:24,940 - INFO - ==================================================
+2025-11-29 01:22:24,940 - INFO - EXPERIMENT RESULTS
+2025-11-29 01:22:24,940 - INFO - ==================================================
+2025-11-29 01:22:24,940 - INFO - Elapsed Time Seconds     : 5.4158
+2025-11-29 01:22:24,941 - INFO - Cpu Usage Percent        : 4.2062
+2025-11-29 01:22:24,941 - INFO - Ram Peak Usage Bytes     : 5941153792.0000
+2025-11-29 01:22:24,941 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 01:22:24,941 - INFO - Disk Write Bytes         : 155648.0000
+2025-11-29 01:22:24,941 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 01:22:24,941 - INFO - Gpu Power Watts Avg      : 304.5762
+2025-11-29 01:22:24,941 - INFO - Gpu Power Watts Peak     : 346.7640
+2025-11-29 01:22:24,941 - INFO - Gpu Temp Celsius Avg     : 61.0000
+2025-11-29 01:22:24,941 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 01:22:24,941 - INFO - Gpu Utilization Percent Avg: 85.3019
+2025-11-29 01:22:24,941 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 01:22:24,941 - INFO - Gpu Mem Used Bytes Avg   : 22403022848.0000
+2025-11-29 01:22:24,941 - INFO - Gpu Mem Used Bytes Peak  : 22403022848.0000
+2025-11-29 01:22:24,941 - INFO - Gpu Vram Used Bytes      : 22403022848.0000
+2025-11-29 01:22:24,941 - INFO - Accuracy                 : 0.1463
+2025-11-29 01:22:24,941 - INFO - Precision                : 0.1498
+2025-11-29 01:22:24,941 - INFO - Recall                   : 0.1463
+2025-11-29 01:22:24,941 - INFO - F1 Score                 : 0.1173
+2025-11-29 01:22:24,941 - INFO - ==================================================
+2025-11-29 01:26:42,646 - INFO - Época 8 concluída. Loss média: 4.4183
+2025-11-29 01:26:42,647 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-29 01:26:42,648 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 01:26:48,012 - INFO - ==================================================
+2025-11-29 01:26:48,012 - INFO - EXPERIMENT RESULTS
+2025-11-29 01:26:48,013 - INFO - ==================================================
+2025-11-29 01:26:48,013 - INFO - Elapsed Time Seconds     : 5.3262
+2025-11-29 01:26:48,013 - INFO - Cpu Usage Percent        : 3.9000
+2025-11-29 01:26:48,013 - INFO - Ram Peak Usage Bytes     : 5941182464.0000
+2025-11-29 01:26:48,013 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 01:26:48,013 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 01:26:48,013 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 01:26:48,013 - INFO - Gpu Power Watts Avg      : 307.6847
+2025-11-29 01:26:48,013 - INFO - Gpu Power Watts Peak     : 346.3730
+2025-11-29 01:26:48,013 - INFO - Gpu Temp Celsius Avg     : 61.4038
+2025-11-29 01:26:48,013 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 01:26:48,013 - INFO - Gpu Utilization Percent Avg: 87.0769
+2025-11-29 01:26:48,013 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 01:26:48,013 - INFO - Gpu Mem Used Bytes Avg   : 22403022848.0000
+2025-11-29 01:26:48,013 - INFO - Gpu Mem Used Bytes Peak  : 22403022848.0000
+2025-11-29 01:26:48,013 - INFO - Gpu Vram Used Bytes      : 22403022848.0000
+2025-11-29 01:26:48,013 - INFO - Accuracy                 : 0.1642
+2025-11-29 01:26:48,013 - INFO - Precision                : 0.1529
+2025-11-29 01:26:48,013 - INFO - Recall                   : 0.1642
+2025-11-29 01:26:48,013 - INFO - F1 Score                 : 0.1296
+2025-11-29 01:26:48,013 - INFO - ==================================================
+2025-11-29 01:31:05,573 - INFO - Época 9 concluída. Loss média: 4.3061
+2025-11-29 01:31:05,574 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-29 01:31:05,575 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 01:31:10,996 - INFO - ==================================================
+2025-11-29 01:31:10,997 - INFO - EXPERIMENT RESULTS
+2025-11-29 01:31:10,997 - INFO - ==================================================
+2025-11-29 01:31:10,997 - INFO - Elapsed Time Seconds     : 5.3854
+2025-11-29 01:31:10,997 - INFO - Cpu Usage Percent        : 4.5250
+2025-11-29 01:31:10,997 - INFO - Ram Peak Usage Bytes     : 5941583872.0000
+2025-11-29 01:31:10,997 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 01:31:10,997 - INFO - Disk Write Bytes         : 192512.0000
+2025-11-29 01:31:10,997 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 01:31:10,997 - INFO - Gpu Power Watts Avg      : 300.9385
+2025-11-29 01:31:10,997 - INFO - Gpu Power Watts Peak     : 346.0940
+2025-11-29 01:31:10,997 - INFO - Gpu Temp Celsius Avg     : 61.1509
+2025-11-29 01:31:10,997 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 01:31:10,997 - INFO - Gpu Utilization Percent Avg: 86.6038
+2025-11-29 01:31:10,997 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 01:31:10,997 - INFO - Gpu Mem Used Bytes Avg   : 22403022848.0000
+2025-11-29 01:31:10,997 - INFO - Gpu Mem Used Bytes Peak  : 22403022848.0000
+2025-11-29 01:31:10,997 - INFO - Gpu Vram Used Bytes      : 22403022848.0000
+2025-11-29 01:31:10,997 - INFO - Accuracy                 : 0.1965
+2025-11-29 01:31:10,997 - INFO - Precision                : 0.2088
+2025-11-29 01:31:10,997 - INFO - Recall                   : 0.1965
+2025-11-29 01:31:10,997 - INFO - F1 Score                 : 0.1673
+2025-11-29 01:31:10,997 - INFO - ==================================================
+2025-11-29 01:35:28,812 - INFO - Época 10 concluída. Loss média: 4.2051
+2025-11-29 01:35:28,812 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-29 01:35:28,813 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 01:35:34,283 - INFO - ==================================================
+2025-11-29 01:35:34,283 - INFO - EXPERIMENT RESULTS
+2025-11-29 01:35:34,283 - INFO - ==================================================
+2025-11-29 01:35:34,283 - INFO - Elapsed Time Seconds     : 5.4328
+2025-11-29 01:35:34,283 - INFO - Cpu Usage Percent        : 4.0250
+2025-11-29 01:35:34,283 - INFO - Ram Peak Usage Bytes     : 5942038528.0000
+2025-11-29 01:35:34,283 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 01:35:34,283 - INFO - Disk Write Bytes         : 172032.0000
+2025-11-29 01:35:34,283 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 01:35:34,283 - INFO - Gpu Power Watts Avg      : 297.3594
+2025-11-29 01:35:34,283 - INFO - Gpu Power Watts Peak     : 346.0580
+2025-11-29 01:35:34,283 - INFO - Gpu Temp Celsius Avg     : 61.0189
+2025-11-29 01:35:34,283 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 01:35:34,283 - INFO - Gpu Utilization Percent Avg: 83.7547
+2025-11-29 01:35:34,283 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 01:35:34,284 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 01:35:34,284 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 01:35:34,284 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 01:35:34,284 - INFO - Accuracy                 : 0.2185
+2025-11-29 01:35:34,284 - INFO - Precision                : 0.2236
+2025-11-29 01:35:34,284 - INFO - Recall                   : 0.2185
+2025-11-29 01:35:34,284 - INFO - F1 Score                 : 0.1878
+2025-11-29 01:35:34,284 - INFO - ==================================================
+2025-11-29 01:39:51,803 - INFO - Época 11 concluída. Loss média: 4.1145
+2025-11-29 01:39:51,803 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-29 01:39:51,803 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 01:39:57,241 - INFO - ==================================================
+2025-11-29 01:39:57,241 - INFO - EXPERIMENT RESULTS
+2025-11-29 01:39:57,241 - INFO - ==================================================
+2025-11-29 01:39:57,241 - INFO - Elapsed Time Seconds     : 5.3990
+2025-11-29 01:39:57,241 - INFO - Cpu Usage Percent        : 3.8188
+2025-11-29 01:39:57,241 - INFO - Ram Peak Usage Bytes     : 5943140352.0000
+2025-11-29 01:39:57,241 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 01:39:57,241 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 01:39:57,241 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 01:39:57,241 - INFO - Gpu Power Watts Avg      : 302.6165
+2025-11-29 01:39:57,241 - INFO - Gpu Power Watts Peak     : 346.5690
+2025-11-29 01:39:57,241 - INFO - Gpu Temp Celsius Avg     : 60.8868
+2025-11-29 01:39:57,241 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 01:39:57,241 - INFO - Gpu Utilization Percent Avg: 87.2453
+2025-11-29 01:39:57,241 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 01:39:57,241 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 01:39:57,241 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 01:39:57,241 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 01:39:57,241 - INFO - Accuracy                 : 0.2317
+2025-11-29 01:39:57,242 - INFO - Precision                : 0.2535
+2025-11-29 01:39:57,242 - INFO - Recall                   : 0.2317
+2025-11-29 01:39:57,242 - INFO - F1 Score                 : 0.2039
+2025-11-29 01:39:57,242 - INFO - ==================================================
+2025-11-29 01:44:14,709 - INFO - Época 12 concluída. Loss média: 4.0346
+2025-11-29 01:44:14,710 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-29 01:44:14,711 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 01:44:20,336 - INFO - ==================================================
+2025-11-29 01:44:20,336 - INFO - EXPERIMENT RESULTS
+2025-11-29 01:44:20,336 - INFO - ==================================================
+2025-11-29 01:44:20,336 - INFO - Elapsed Time Seconds     : 5.5879
+2025-11-29 01:44:20,336 - INFO - Cpu Usage Percent        : 3.7750
+2025-11-29 01:44:20,336 - INFO - Ram Peak Usage Bytes     : 5943169024.0000
+2025-11-29 01:44:20,336 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 01:44:20,337 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 01:44:20,337 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 01:44:20,337 - INFO - Gpu Power Watts Avg      : 292.6537
+2025-11-29 01:44:20,337 - INFO - Gpu Power Watts Peak     : 346.6840
+2025-11-29 01:44:20,337 - INFO - Gpu Temp Celsius Avg     : 60.5818
+2025-11-29 01:44:20,337 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 01:44:20,337 - INFO - Gpu Utilization Percent Avg: 83.3818
+2025-11-29 01:44:20,337 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 01:44:20,337 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 01:44:20,337 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 01:44:20,337 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 01:44:20,337 - INFO - Accuracy                 : 0.2561
+2025-11-29 01:44:20,337 - INFO - Precision                : 0.2846
+2025-11-29 01:44:20,337 - INFO - Recall                   : 0.2561
+2025-11-29 01:44:20,337 - INFO - F1 Score                 : 0.2352
+2025-11-29 01:44:20,337 - INFO - ==================================================
+2025-11-29 01:48:38,252 - INFO - Época 13 concluída. Loss média: 3.9659
+2025-11-29 01:48:38,253 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-29 01:48:38,254 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 01:48:43,752 - INFO - ==================================================
+2025-11-29 01:48:43,752 - INFO - EXPERIMENT RESULTS
+2025-11-29 01:48:43,752 - INFO - ==================================================
+2025-11-29 01:48:43,752 - INFO - Elapsed Time Seconds     : 5.4729
+2025-11-29 01:48:43,752 - INFO - Cpu Usage Percent        : 4.1906
+2025-11-29 01:48:43,752 - INFO - Ram Peak Usage Bytes     : 5943185408.0000
+2025-11-29 01:48:43,752 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 01:48:43,752 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 01:48:43,752 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 01:48:43,752 - INFO - Gpu Power Watts Avg      : 300.1612
+2025-11-29 01:48:43,752 - INFO - Gpu Power Watts Peak     : 347.4000
+2025-11-29 01:48:43,752 - INFO - Gpu Temp Celsius Avg     : 61.1321
+2025-11-29 01:48:43,752 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 01:48:43,752 - INFO - Gpu Utilization Percent Avg: 85.7170
+2025-11-29 01:48:43,753 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 01:48:43,753 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 01:48:43,753 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 01:48:43,753 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 01:48:43,753 - INFO - Accuracy                 : 0.2608
+2025-11-29 01:48:43,753 - INFO - Precision                : 0.2801
+2025-11-29 01:48:43,753 - INFO - Recall                   : 0.2608
+2025-11-29 01:48:43,753 - INFO - F1 Score                 : 0.2322
+2025-11-29 01:48:43,753 - INFO - ==================================================
+2025-11-29 01:53:01,097 - INFO - Época 14 concluída. Loss média: 3.8944
+2025-11-29 01:53:01,097 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-29 01:53:01,098 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 01:53:06,794 - INFO - ==================================================
+2025-11-29 01:53:06,795 - INFO - EXPERIMENT RESULTS
+2025-11-29 01:53:06,795 - INFO - ==================================================
+2025-11-29 01:53:06,795 - INFO - Elapsed Time Seconds     : 5.6577
+2025-11-29 01:53:06,795 - INFO - Cpu Usage Percent        : 3.7344
+2025-11-29 01:53:06,795 - INFO - Ram Peak Usage Bytes     : 5943443456.0000
+2025-11-29 01:53:06,795 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 01:53:06,795 - INFO - Disk Write Bytes         : 409600.0000
+2025-11-29 01:53:06,795 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 01:53:06,795 - INFO - Gpu Power Watts Avg      : 295.6981
+2025-11-29 01:53:06,795 - INFO - Gpu Power Watts Peak     : 346.4010
+2025-11-29 01:53:06,795 - INFO - Gpu Temp Celsius Avg     : 60.4909
+2025-11-29 01:53:06,795 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 01:53:06,795 - INFO - Gpu Utilization Percent Avg: 82.9091
+2025-11-29 01:53:06,795 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 01:53:06,795 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 01:53:06,795 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 01:53:06,795 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 01:53:06,795 - INFO - Accuracy                 : 0.2940
+2025-11-29 01:53:06,795 - INFO - Precision                : 0.3068
+2025-11-29 01:53:06,795 - INFO - Recall                   : 0.2940
+2025-11-29 01:53:06,795 - INFO - F1 Score                 : 0.2706
+2025-11-29 01:53:06,795 - INFO - ==================================================
+2025-11-29 01:57:24,183 - INFO - Época 15 concluída. Loss média: 3.8247
+2025-11-29 01:57:24,184 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-29 01:57:24,185 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 01:57:29,833 - INFO - ==================================================
+2025-11-29 01:57:29,833 - INFO - EXPERIMENT RESULTS
+2025-11-29 01:57:29,833 - INFO - ==================================================
+2025-11-29 01:57:29,833 - INFO - Elapsed Time Seconds     : 5.6119
+2025-11-29 01:57:29,834 - INFO - Cpu Usage Percent        : 4.2031
+2025-11-29 01:57:29,834 - INFO - Ram Peak Usage Bytes     : 5943943168.0000
+2025-11-29 01:57:29,834 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 01:57:29,834 - INFO - Disk Write Bytes         : 147456.0000
+2025-11-29 01:57:29,834 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 01:57:29,834 - INFO - Gpu Power Watts Avg      : 292.6864
+2025-11-29 01:57:29,834 - INFO - Gpu Power Watts Peak     : 347.1210
+2025-11-29 01:57:29,834 - INFO - Gpu Temp Celsius Avg     : 60.4545
+2025-11-29 01:57:29,834 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 01:57:29,834 - INFO - Gpu Utilization Percent Avg: 81.5636
+2025-11-29 01:57:29,834 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 01:57:29,834 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 01:57:29,834 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 01:57:29,834 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 01:57:29,834 - INFO - Accuracy                 : 0.3138
+2025-11-29 01:57:29,834 - INFO - Precision                : 0.3280
+2025-11-29 01:57:29,834 - INFO - Recall                   : 0.3138
+2025-11-29 01:57:29,834 - INFO - F1 Score                 : 0.2926
+2025-11-29 01:57:29,834 - INFO - ==================================================
+2025-11-29 02:01:47,122 - INFO - Época 16 concluída. Loss média: 3.7670
+2025-11-29 02:01:47,122 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-29 02:01:47,123 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 02:01:52,929 - INFO - ==================================================
+2025-11-29 02:01:52,929 - INFO - EXPERIMENT RESULTS
+2025-11-29 02:01:52,929 - INFO - ==================================================
+2025-11-29 02:01:52,929 - INFO - Elapsed Time Seconds     : 5.7672
+2025-11-29 02:01:52,929 - INFO - Cpu Usage Percent        : 4.2375
+2025-11-29 02:01:52,929 - INFO - Ram Peak Usage Bytes     : 5944152064.0000
+2025-11-29 02:01:52,929 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 02:01:52,929 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 02:01:52,929 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 02:01:52,929 - INFO - Gpu Power Watts Avg      : 291.5137
+2025-11-29 02:01:52,929 - INFO - Gpu Power Watts Peak     : 347.4410
+2025-11-29 02:01:52,929 - INFO - Gpu Temp Celsius Avg     : 60.4286
+2025-11-29 02:01:52,929 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 02:01:52,929 - INFO - Gpu Utilization Percent Avg: 82.0893
+2025-11-29 02:01:52,930 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 02:01:52,930 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 02:01:52,930 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 02:01:52,930 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 02:01:52,930 - INFO - Accuracy                 : 0.3259
+2025-11-29 02:01:52,930 - INFO - Precision                : 0.3426
+2025-11-29 02:01:52,930 - INFO - Recall                   : 0.3259
+2025-11-29 02:01:52,930 - INFO - F1 Score                 : 0.3086
+2025-11-29 02:01:52,930 - INFO - ==================================================
+2025-11-29 02:06:10,302 - INFO - Época 17 concluída. Loss média: 3.7127
+2025-11-29 02:06:10,303 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-29 02:06:10,304 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 02:06:15,737 - INFO - ==================================================
+2025-11-29 02:06:15,737 - INFO - EXPERIMENT RESULTS
+2025-11-29 02:06:15,737 - INFO - ==================================================
+2025-11-29 02:06:15,737 - INFO - Elapsed Time Seconds     : 5.3934
+2025-11-29 02:06:15,737 - INFO - Cpu Usage Percent        : 4.5469
+2025-11-29 02:06:15,737 - INFO - Ram Peak Usage Bytes     : 5944336384.0000
+2025-11-29 02:06:15,737 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 02:06:15,737 - INFO - Disk Write Bytes         : 86016.0000
+2025-11-29 02:06:15,737 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 02:06:15,737 - INFO - Gpu Power Watts Avg      : 301.9868
+2025-11-29 02:06:15,737 - INFO - Gpu Power Watts Peak     : 347.6410
+2025-11-29 02:06:15,737 - INFO - Gpu Temp Celsius Avg     : 61.1698
+2025-11-29 02:06:15,737 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 02:06:15,737 - INFO - Gpu Utilization Percent Avg: 86.8302
+2025-11-29 02:06:15,737 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 02:06:15,737 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 02:06:15,737 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 02:06:15,737 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 02:06:15,738 - INFO - Accuracy                 : 0.3311
+2025-11-29 02:06:15,738 - INFO - Precision                : 0.3501
+2025-11-29 02:06:15,738 - INFO - Recall                   : 0.3311
+2025-11-29 02:06:15,738 - INFO - F1 Score                 : 0.3072
+2025-11-29 02:06:15,738 - INFO - ==================================================
+2025-11-29 02:10:33,116 - INFO - Época 18 concluída. Loss média: 3.6583
+2025-11-29 02:10:33,117 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-29 02:10:33,118 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 02:10:38,762 - INFO - ==================================================
+2025-11-29 02:10:38,762 - INFO - EXPERIMENT RESULTS
+2025-11-29 02:10:38,762 - INFO - ==================================================
+2025-11-29 02:10:38,762 - INFO - Elapsed Time Seconds     : 5.6064
+2025-11-29 02:10:38,762 - INFO - Cpu Usage Percent        : 3.7563
+2025-11-29 02:10:38,762 - INFO - Ram Peak Usage Bytes     : 5944934400.0000
+2025-11-29 02:10:38,762 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 02:10:38,762 - INFO - Disk Write Bytes         : 172032.0000
+2025-11-29 02:10:38,762 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 02:10:38,762 - INFO - Gpu Power Watts Avg      : 295.5096
+2025-11-29 02:10:38,762 - INFO - Gpu Power Watts Peak     : 348.1650
+2025-11-29 02:10:38,762 - INFO - Gpu Temp Celsius Avg     : 60.4545
+2025-11-29 02:10:38,762 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 02:10:38,762 - INFO - Gpu Utilization Percent Avg: 83.6545
+2025-11-29 02:10:38,762 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 02:10:38,763 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 02:10:38,763 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 02:10:38,763 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 02:10:38,763 - INFO - Accuracy                 : 0.3471
+2025-11-29 02:10:38,763 - INFO - Precision                : 0.3619
+2025-11-29 02:10:38,763 - INFO - Recall                   : 0.3471
+2025-11-29 02:10:38,763 - INFO - F1 Score                 : 0.3310
+2025-11-29 02:10:38,763 - INFO - ==================================================
+2025-11-29 02:14:56,037 - INFO - Época 19 concluída. Loss média: 3.6065
+2025-11-29 02:14:56,038 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-29 02:14:56,039 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 02:15:01,594 - INFO - ==================================================
+2025-11-29 02:15:01,594 - INFO - EXPERIMENT RESULTS
+2025-11-29 02:15:01,594 - INFO - ==================================================
+2025-11-29 02:15:01,594 - INFO - Elapsed Time Seconds     : 5.5172
+2025-11-29 02:15:01,594 - INFO - Cpu Usage Percent        : 3.7938
+2025-11-29 02:15:01,594 - INFO - Ram Peak Usage Bytes     : 5945229312.0000
+2025-11-29 02:15:01,594 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 02:15:01,594 - INFO - Disk Write Bytes         : 167936.0000
+2025-11-29 02:15:01,594 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 02:15:01,594 - INFO - Gpu Power Watts Avg      : 297.4581
+2025-11-29 02:15:01,594 - INFO - Gpu Power Watts Peak     : 347.4740
+2025-11-29 02:15:01,594 - INFO - Gpu Temp Celsius Avg     : 60.8148
+2025-11-29 02:15:01,594 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 02:15:01,594 - INFO - Gpu Utilization Percent Avg: 84.2778
+2025-11-29 02:15:01,594 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 02:15:01,594 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 02:15:01,594 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 02:15:01,594 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 02:15:01,594 - INFO - Accuracy                 : 0.3718
+2025-11-29 02:15:01,594 - INFO - Precision                : 0.3944
+2025-11-29 02:15:01,594 - INFO - Recall                   : 0.3718
+2025-11-29 02:15:01,595 - INFO - F1 Score                 : 0.3543
+2025-11-29 02:15:01,595 - INFO - ==================================================
+2025-11-29 02:19:19,148 - INFO - Época 20 concluída. Loss média: 3.5681
+2025-11-29 02:19:19,149 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-29 02:19:19,150 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 02:19:24,607 - INFO - ==================================================
+2025-11-29 02:19:24,607 - INFO - EXPERIMENT RESULTS
+2025-11-29 02:19:24,607 - INFO - ==================================================
+2025-11-29 02:19:24,607 - INFO - Elapsed Time Seconds     : 5.4319
+2025-11-29 02:19:24,607 - INFO - Cpu Usage Percent        : 3.8656
+2025-11-29 02:19:24,607 - INFO - Ram Peak Usage Bytes     : 5945249792.0000
+2025-11-29 02:19:24,607 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 02:19:24,607 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 02:19:24,607 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 02:19:24,607 - INFO - Gpu Power Watts Avg      : 301.0353
+2025-11-29 02:19:24,607 - INFO - Gpu Power Watts Peak     : 347.8790
+2025-11-29 02:19:24,607 - INFO - Gpu Temp Celsius Avg     : 61.3774
+2025-11-29 02:19:24,608 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 02:19:24,608 - INFO - Gpu Utilization Percent Avg: 85.0189
+2025-11-29 02:19:24,608 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 02:19:24,608 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 02:19:24,608 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 02:19:24,608 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 02:19:24,608 - INFO - Accuracy                 : 0.3777
+2025-11-29 02:19:24,608 - INFO - Precision                : 0.4028
+2025-11-29 02:19:24,608 - INFO - Recall                   : 0.3777
+2025-11-29 02:19:24,608 - INFO - F1 Score                 : 0.3625
+2025-11-29 02:19:24,608 - INFO - ==================================================
+2025-11-29 02:23:42,022 - INFO - Época 21 concluída. Loss média: 3.5271
+2025-11-29 02:23:42,023 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-29 02:23:42,024 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 02:23:47,387 - INFO - ==================================================
+2025-11-29 02:23:47,388 - INFO - EXPERIMENT RESULTS
+2025-11-29 02:23:47,388 - INFO - ==================================================
+2025-11-29 02:23:47,388 - INFO - Elapsed Time Seconds     : 5.3252
+2025-11-29 02:23:47,388 - INFO - Cpu Usage Percent        : 3.8906
+2025-11-29 02:23:47,388 - INFO - Ram Peak Usage Bytes     : 5945384960.0000
+2025-11-29 02:23:47,388 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 02:23:47,388 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 02:23:47,388 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 02:23:47,388 - INFO - Gpu Power Watts Avg      : 309.5182
+2025-11-29 02:23:47,388 - INFO - Gpu Power Watts Peak     : 346.4410
+2025-11-29 02:23:47,388 - INFO - Gpu Temp Celsius Avg     : 61.5962
+2025-11-29 02:23:47,388 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 02:23:47,388 - INFO - Gpu Utilization Percent Avg: 87.2500
+2025-11-29 02:23:47,388 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 02:23:47,388 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 02:23:47,388 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 02:23:47,388 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 02:23:47,388 - INFO - Accuracy                 : 0.3804
+2025-11-29 02:23:47,388 - INFO - Precision                : 0.4058
+2025-11-29 02:23:47,388 - INFO - Recall                   : 0.3804
+2025-11-29 02:23:47,389 - INFO - F1 Score                 : 0.3655
+2025-11-29 02:23:47,389 - INFO - ==================================================
+2025-11-29 02:28:04,757 - INFO - Época 22 concluída. Loss média: 3.4766
+2025-11-29 02:28:04,758 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-29 02:28:04,759 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 02:28:10,538 - INFO - ==================================================
+2025-11-29 02:28:10,539 - INFO - EXPERIMENT RESULTS
+2025-11-29 02:28:10,539 - INFO - ==================================================
+2025-11-29 02:28:10,539 - INFO - Elapsed Time Seconds     : 5.7406
+2025-11-29 02:28:10,539 - INFO - Cpu Usage Percent        : 4.2062
+2025-11-29 02:28:10,539 - INFO - Ram Peak Usage Bytes     : 5945573376.0000
+2025-11-29 02:28:10,539 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 02:28:10,539 - INFO - Disk Write Bytes         : 180224.0000
+2025-11-29 02:28:10,539 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 02:28:10,539 - INFO - Gpu Power Watts Avg      : 291.3873
+2025-11-29 02:28:10,539 - INFO - Gpu Power Watts Peak     : 346.2160
+2025-11-29 02:28:10,539 - INFO - Gpu Temp Celsius Avg     : 60.3214
+2025-11-29 02:28:10,539 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 02:28:10,539 - INFO - Gpu Utilization Percent Avg: 82.7143
+2025-11-29 02:28:10,539 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 02:28:10,539 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 02:28:10,539 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 02:28:10,539 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 02:28:10,539 - INFO - Accuracy                 : 0.3941
+2025-11-29 02:28:10,539 - INFO - Precision                : 0.4202
+2025-11-29 02:28:10,539 - INFO - Recall                   : 0.3941
+2025-11-29 02:28:10,540 - INFO - F1 Score                 : 0.3784
+2025-11-29 02:28:10,540 - INFO - ==================================================
+2025-11-29 02:32:28,135 - INFO - Época 23 concluída. Loss média: 3.4454
+2025-11-29 02:32:28,135 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-29 02:32:28,136 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 02:32:33,534 - INFO - ==================================================
+2025-11-29 02:32:33,534 - INFO - EXPERIMENT RESULTS
+2025-11-29 02:32:33,534 - INFO - ==================================================
+2025-11-29 02:32:33,534 - INFO - Elapsed Time Seconds     : 5.3735
+2025-11-29 02:32:33,534 - INFO - Cpu Usage Percent        : 3.8375
+2025-11-29 02:32:33,534 - INFO - Ram Peak Usage Bytes     : 5945753600.0000
+2025-11-29 02:32:33,534 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 02:32:33,535 - INFO - Disk Write Bytes         : 167936.0000
+2025-11-29 02:32:33,535 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 02:32:33,535 - INFO - Gpu Power Watts Avg      : 303.1766
+2025-11-29 02:32:33,535 - INFO - Gpu Power Watts Peak     : 347.3410
+2025-11-29 02:32:33,535 - INFO - Gpu Temp Celsius Avg     : 61.1887
+2025-11-29 02:32:33,535 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 02:32:33,535 - INFO - Gpu Utilization Percent Avg: 86.9245
+2025-11-29 02:32:33,535 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 02:32:33,535 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 02:32:33,535 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 02:32:33,535 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 02:32:33,535 - INFO - Accuracy                 : 0.3831
+2025-11-29 02:32:33,535 - INFO - Precision                : 0.4094
+2025-11-29 02:32:33,535 - INFO - Recall                   : 0.3831
+2025-11-29 02:32:33,535 - INFO - F1 Score                 : 0.3673
+2025-11-29 02:32:33,535 - INFO - ==================================================
+2025-11-29 02:36:51,008 - INFO - Época 24 concluída. Loss média: 3.4072
+2025-11-29 02:36:51,008 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-29 02:36:51,009 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 02:36:56,441 - INFO - ==================================================
+2025-11-29 02:36:56,441 - INFO - EXPERIMENT RESULTS
+2025-11-29 02:36:56,441 - INFO - ==================================================
+2025-11-29 02:36:56,441 - INFO - Elapsed Time Seconds     : 5.3938
+2025-11-29 02:36:56,441 - INFO - Cpu Usage Percent        : 3.8594
+2025-11-29 02:36:56,441 - INFO - Ram Peak Usage Bytes     : 5946445824.0000
+2025-11-29 02:36:56,441 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 02:36:56,441 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 02:36:56,441 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 02:36:56,441 - INFO - Gpu Power Watts Avg      : 301.5327
+2025-11-29 02:36:56,441 - INFO - Gpu Power Watts Peak     : 348.3890
+2025-11-29 02:36:56,441 - INFO - Gpu Temp Celsius Avg     : 61.1321
+2025-11-29 02:36:56,441 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 02:36:56,441 - INFO - Gpu Utilization Percent Avg: 85.1698
+2025-11-29 02:36:56,441 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 02:36:56,441 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 02:36:56,441 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 02:36:56,442 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 02:36:56,442 - INFO - Accuracy                 : 0.3925
+2025-11-29 02:36:56,442 - INFO - Precision                : 0.4251
+2025-11-29 02:36:56,442 - INFO - Recall                   : 0.3925
+2025-11-29 02:36:56,442 - INFO - F1 Score                 : 0.3765
+2025-11-29 02:36:56,442 - INFO - ==================================================
+2025-11-29 02:41:13,768 - INFO - Época 25 concluída. Loss média: 3.3768
+2025-11-29 02:41:13,768 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-29 02:41:13,769 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 02:41:19,372 - INFO - ==================================================
+2025-11-29 02:41:19,373 - INFO - EXPERIMENT RESULTS
+2025-11-29 02:41:19,373 - INFO - ==================================================
+2025-11-29 02:41:19,373 - INFO - Elapsed Time Seconds     : 5.5646
+2025-11-29 02:41:19,373 - INFO - Cpu Usage Percent        : 3.8625
+2025-11-29 02:41:19,373 - INFO - Ram Peak Usage Bytes     : 5946908672.0000
+2025-11-29 02:41:19,373 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 02:41:19,373 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 02:41:19,373 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 02:41:19,373 - INFO - Gpu Power Watts Avg      : 299.0954
+2025-11-29 02:41:19,373 - INFO - Gpu Power Watts Peak     : 347.3120
+2025-11-29 02:41:19,373 - INFO - Gpu Temp Celsius Avg     : 60.8148
+2025-11-29 02:41:19,373 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 02:41:19,373 - INFO - Gpu Utilization Percent Avg: 84.0926
+2025-11-29 02:41:19,373 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 02:41:19,373 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 02:41:19,373 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 02:41:19,373 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 02:41:19,373 - INFO - Accuracy                 : 0.4141
+2025-11-29 02:41:19,373 - INFO - Precision                : 0.4446
+2025-11-29 02:41:19,373 - INFO - Recall                   : 0.4141
+2025-11-29 02:41:19,373 - INFO - F1 Score                 : 0.4070
+2025-11-29 02:41:19,373 - INFO - ==================================================
+2025-11-29 02:45:37,223 - INFO - Época 26 concluída. Loss média: 3.3464
+2025-11-29 02:45:37,224 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-29 02:45:37,225 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 02:45:42,476 - INFO - ==================================================
+2025-11-29 02:45:42,477 - INFO - EXPERIMENT RESULTS
+2025-11-29 02:45:42,477 - INFO - ==================================================
+2025-11-29 02:45:42,477 - INFO - Elapsed Time Seconds     : 5.2135
+2025-11-29 02:45:42,477 - INFO - Cpu Usage Percent        : 3.9750
+2025-11-29 02:45:42,477 - INFO - Ram Peak Usage Bytes     : 5946929152.0000
+2025-11-29 02:45:42,477 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 02:45:42,477 - INFO - Disk Write Bytes         : 98304.0000
+2025-11-29 02:45:42,477 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 02:45:42,477 - INFO - Gpu Power Watts Avg      : 311.5981
+2025-11-29 02:45:42,477 - INFO - Gpu Power Watts Peak     : 347.9380
+2025-11-29 02:45:42,477 - INFO - Gpu Temp Celsius Avg     : 61.6275
+2025-11-29 02:45:42,477 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 02:45:42,477 - INFO - Gpu Utilization Percent Avg: 88.3333
+2025-11-29 02:45:42,477 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 02:45:42,477 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 02:45:42,477 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 02:45:42,477 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 02:45:42,477 - INFO - Accuracy                 : 0.4194
+2025-11-29 02:45:42,477 - INFO - Precision                : 0.4454
+2025-11-29 02:45:42,477 - INFO - Recall                   : 0.4194
+2025-11-29 02:45:42,477 - INFO - F1 Score                 : 0.4070
+2025-11-29 02:45:42,477 - INFO - ==================================================
+2025-11-29 02:49:59,992 - INFO - Época 27 concluída. Loss média: 3.3132
+2025-11-29 02:49:59,993 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-29 02:49:59,994 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 02:50:05,954 - INFO - ==================================================
+2025-11-29 02:50:05,954 - INFO - EXPERIMENT RESULTS
+2025-11-29 02:50:05,954 - INFO - ==================================================
+2025-11-29 02:50:05,954 - INFO - Elapsed Time Seconds     : 5.9230
+2025-11-29 02:50:05,955 - INFO - Cpu Usage Percent        : 4.1000
+2025-11-29 02:50:05,955 - INFO - Ram Peak Usage Bytes     : 5947576320.0000
+2025-11-29 02:50:05,955 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 02:50:05,955 - INFO - Disk Write Bytes         : 262144.0000
+2025-11-29 02:50:05,955 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 02:50:05,955 - INFO - Gpu Power Watts Avg      : 281.3091
+2025-11-29 02:50:05,955 - INFO - Gpu Power Watts Peak     : 346.7080
+2025-11-29 02:50:05,955 - INFO - Gpu Temp Celsius Avg     : 60.1034
+2025-11-29 02:50:05,955 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 02:50:05,955 - INFO - Gpu Utilization Percent Avg: 78.4828
+2025-11-29 02:50:05,955 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 02:50:05,955 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 02:50:05,955 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 02:50:05,955 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 02:50:05,955 - INFO - Accuracy                 : 0.4244
+2025-11-29 02:50:05,955 - INFO - Precision                : 0.4611
+2025-11-29 02:50:05,955 - INFO - Recall                   : 0.4244
+2025-11-29 02:50:05,955 - INFO - F1 Score                 : 0.4176
+2025-11-29 02:50:05,955 - INFO - ==================================================
+2025-11-29 02:54:23,390 - INFO - Época 28 concluída. Loss média: 3.2938
+2025-11-29 02:54:23,390 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-29 02:54:23,392 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 02:54:28,740 - INFO - ==================================================
+2025-11-29 02:54:28,740 - INFO - EXPERIMENT RESULTS
+2025-11-29 02:54:28,740 - INFO - ==================================================
+2025-11-29 02:54:28,740 - INFO - Elapsed Time Seconds     : 5.3083
+2025-11-29 02:54:28,740 - INFO - Cpu Usage Percent        : 3.9031
+2025-11-29 02:54:28,740 - INFO - Ram Peak Usage Bytes     : 5947760640.0000
+2025-11-29 02:54:28,740 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 02:54:28,740 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 02:54:28,740 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 02:54:28,740 - INFO - Gpu Power Watts Avg      : 310.2028
+2025-11-29 02:54:28,740 - INFO - Gpu Power Watts Peak     : 347.0720
+2025-11-29 02:54:28,741 - INFO - Gpu Temp Celsius Avg     : 61.5385
+2025-11-29 02:54:28,741 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 02:54:28,741 - INFO - Gpu Utilization Percent Avg: 87.8077
+2025-11-29 02:54:28,741 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 02:54:28,741 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 02:54:28,741 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 02:54:28,741 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 02:54:28,741 - INFO - Accuracy                 : 0.4398
+2025-11-29 02:54:28,741 - INFO - Precision                : 0.4586
+2025-11-29 02:54:28,741 - INFO - Recall                   : 0.4398
+2025-11-29 02:54:28,741 - INFO - F1 Score                 : 0.4276
+2025-11-29 02:54:28,741 - INFO - ==================================================
+2025-11-29 02:58:46,004 - INFO - Época 29 concluída. Loss média: 3.2663
+2025-11-29 02:58:46,005 - INFO - Taxa de aprendizado ajustada para: 0.010000
+2025-11-29 02:58:46,006 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 02:58:51,727 - INFO - ==================================================
+2025-11-29 02:58:51,727 - INFO - EXPERIMENT RESULTS
+2025-11-29 02:58:51,727 - INFO - ==================================================
+2025-11-29 02:58:51,727 - INFO - Elapsed Time Seconds     : 5.6839
+2025-11-29 02:58:51,727 - INFO - Cpu Usage Percent        : 4.0281
+2025-11-29 02:58:51,727 - INFO - Ram Peak Usage Bytes     : 5947985920.0000
+2025-11-29 02:58:51,727 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 02:58:51,727 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 02:58:51,727 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 02:58:51,728 - INFO - Gpu Power Watts Avg      : 290.6976
+2025-11-29 02:58:51,728 - INFO - Gpu Power Watts Peak     : 347.8540
+2025-11-29 02:58:51,728 - INFO - Gpu Temp Celsius Avg     : 60.3214
+2025-11-29 02:58:51,728 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 02:58:51,728 - INFO - Gpu Utilization Percent Avg: 81.0893
+2025-11-29 02:58:51,728 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 02:58:51,728 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 02:58:51,728 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 02:58:51,728 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 02:58:51,728 - INFO - Accuracy                 : 0.4351
+2025-11-29 02:58:51,728 - INFO - Precision                : 0.4638
+2025-11-29 02:58:51,728 - INFO - Recall                   : 0.4351
+2025-11-29 02:58:51,728 - INFO - F1 Score                 : 0.4271
+2025-11-29 02:58:51,728 - INFO - ==================================================
+2025-11-29 03:03:09,382 - INFO - Época 30 concluída. Loss média: 3.2352
+2025-11-29 03:03:09,383 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-29 03:03:09,384 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 03:03:15,065 - INFO - ==================================================
+2025-11-29 03:03:15,065 - INFO - EXPERIMENT RESULTS
+2025-11-29 03:03:15,065 - INFO - ==================================================
+2025-11-29 03:03:15,065 - INFO - Elapsed Time Seconds     : 5.6559
+2025-11-29 03:03:15,065 - INFO - Cpu Usage Percent        : 4.2219
+2025-11-29 03:03:15,065 - INFO - Ram Peak Usage Bytes     : 5948219392.0000
+2025-11-29 03:03:15,065 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 03:03:15,065 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 03:03:15,065 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 03:03:15,065 - INFO - Gpu Power Watts Avg      : 292.3515
+2025-11-29 03:03:15,065 - INFO - Gpu Power Watts Peak     : 348.5210
+2025-11-29 03:03:15,065 - INFO - Gpu Temp Celsius Avg     : 60.4727
+2025-11-29 03:03:15,065 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 03:03:15,066 - INFO - Gpu Utilization Percent Avg: 82.9818
+2025-11-29 03:03:15,066 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 03:03:15,066 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 03:03:15,066 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 03:03:15,066 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 03:03:15,066 - INFO - Accuracy                 : 0.4530
+2025-11-29 03:03:15,066 - INFO - Precision                : 0.4762
+2025-11-29 03:03:15,066 - INFO - Recall                   : 0.4530
+2025-11-29 03:03:15,066 - INFO - F1 Score                 : 0.4407
+2025-11-29 03:03:15,066 - INFO - ==================================================
+2025-11-29 03:07:32,779 - INFO - Época 31 concluída. Loss média: 2.9981
+2025-11-29 03:07:32,780 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-29 03:07:32,781 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 03:07:38,162 - INFO - ==================================================
+2025-11-29 03:07:38,162 - INFO - EXPERIMENT RESULTS
+2025-11-29 03:07:38,163 - INFO - ==================================================
+2025-11-29 03:07:38,163 - INFO - Elapsed Time Seconds     : 5.3438
+2025-11-29 03:07:38,163 - INFO - Cpu Usage Percent        : 3.9406
+2025-11-29 03:07:38,163 - INFO - Ram Peak Usage Bytes     : 5948674048.0000
+2025-11-29 03:07:38,163 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 03:07:38,163 - INFO - Disk Write Bytes         : 167936.0000
+2025-11-29 03:07:38,163 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 03:07:38,163 - INFO - Gpu Power Watts Avg      : 307.5408
+2025-11-29 03:07:38,163 - INFO - Gpu Power Watts Peak     : 348.9790
+2025-11-29 03:07:38,163 - INFO - Gpu Temp Celsius Avg     : 61.6154
+2025-11-29 03:07:38,163 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 03:07:38,163 - INFO - Gpu Utilization Percent Avg: 86.9423
+2025-11-29 03:07:38,163 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 03:07:38,163 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 03:07:38,163 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 03:07:38,163 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 03:07:38,163 - INFO - Accuracy                 : 0.5041
+2025-11-29 03:07:38,163 - INFO - Precision                : 0.4994
+2025-11-29 03:07:38,163 - INFO - Recall                   : 0.5041
+2025-11-29 03:07:38,163 - INFO - F1 Score                 : 0.4949
+2025-11-29 03:07:38,163 - INFO - ==================================================
+2025-11-29 03:11:55,462 - INFO - Época 32 concluída. Loss média: 2.9450
+2025-11-29 03:11:55,462 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-29 03:11:55,463 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 03:12:00,880 - INFO - ==================================================
+2025-11-29 03:12:00,881 - INFO - EXPERIMENT RESULTS
+2025-11-29 03:12:00,881 - INFO - ==================================================
+2025-11-29 03:12:00,881 - INFO - Elapsed Time Seconds     : 5.3808
+2025-11-29 03:12:00,881 - INFO - Cpu Usage Percent        : 3.7969
+2025-11-29 03:12:00,881 - INFO - Ram Peak Usage Bytes     : 5948665856.0000
+2025-11-29 03:12:00,881 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 03:12:00,881 - INFO - Disk Write Bytes         : 167936.0000
+2025-11-29 03:12:00,881 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 03:12:00,881 - INFO - Gpu Power Watts Avg      : 303.9428
+2025-11-29 03:12:00,881 - INFO - Gpu Power Watts Peak     : 348.4580
+2025-11-29 03:12:00,881 - INFO - Gpu Temp Celsius Avg     : 61.1698
+2025-11-29 03:12:00,881 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 03:12:00,881 - INFO - Gpu Utilization Percent Avg: 85.7925
+2025-11-29 03:12:00,881 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 03:12:00,881 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 03:12:00,881 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 03:12:00,881 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 03:12:00,881 - INFO - Accuracy                 : 0.5098
+2025-11-29 03:12:00,881 - INFO - Precision                : 0.5034
+2025-11-29 03:12:00,881 - INFO - Recall                   : 0.5098
+2025-11-29 03:12:00,881 - INFO - F1 Score                 : 0.5005
+2025-11-29 03:12:00,881 - INFO - ==================================================
+2025-11-29 03:16:18,385 - INFO - Época 33 concluída. Loss média: 2.9095
+2025-11-29 03:16:18,386 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-29 03:16:18,387 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 03:16:23,727 - INFO - ==================================================
+2025-11-29 03:16:23,727 - INFO - EXPERIMENT RESULTS
+2025-11-29 03:16:23,727 - INFO - ==================================================
+2025-11-29 03:16:23,727 - INFO - Elapsed Time Seconds     : 5.3019
+2025-11-29 03:16:23,727 - INFO - Cpu Usage Percent        : 3.9438
+2025-11-29 03:16:23,727 - INFO - Ram Peak Usage Bytes     : 5948772352.0000
+2025-11-29 03:16:23,727 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 03:16:23,727 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 03:16:23,727 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 03:16:23,727 - INFO - Gpu Power Watts Avg      : 309.0539
+2025-11-29 03:16:23,727 - INFO - Gpu Power Watts Peak     : 348.2620
+2025-11-29 03:16:23,727 - INFO - Gpu Temp Celsius Avg     : 61.3462
+2025-11-29 03:16:23,727 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 03:16:23,727 - INFO - Gpu Utilization Percent Avg: 89.0385
+2025-11-29 03:16:23,727 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 03:16:23,727 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 03:16:23,727 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 03:16:23,727 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 03:16:23,727 - INFO - Accuracy                 : 0.5150
+2025-11-29 03:16:23,728 - INFO - Precision                : 0.5096
+2025-11-29 03:16:23,728 - INFO - Recall                   : 0.5150
+2025-11-29 03:16:23,728 - INFO - F1 Score                 : 0.5055
+2025-11-29 03:16:23,728 - INFO - ==================================================
+2025-11-29 03:20:41,187 - INFO - Época 34 concluída. Loss média: 2.8837
+2025-11-29 03:20:41,188 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-29 03:20:41,189 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 03:20:46,743 - INFO - ==================================================
+2025-11-29 03:20:46,744 - INFO - EXPERIMENT RESULTS
+2025-11-29 03:20:46,744 - INFO - ==================================================
+2025-11-29 03:20:46,744 - INFO - Elapsed Time Seconds     : 5.5181
+2025-11-29 03:20:46,744 - INFO - Cpu Usage Percent        : 3.8344
+2025-11-29 03:20:46,744 - INFO - Ram Peak Usage Bytes     : 5948977152.0000
+2025-11-29 03:20:46,744 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 03:20:46,744 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 03:20:46,744 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 03:20:46,744 - INFO - Gpu Power Watts Avg      : 299.0057
+2025-11-29 03:20:46,744 - INFO - Gpu Power Watts Peak     : 348.1380
+2025-11-29 03:20:46,744 - INFO - Gpu Temp Celsius Avg     : 60.9630
+2025-11-29 03:20:46,744 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 03:20:46,744 - INFO - Gpu Utilization Percent Avg: 84.2037
+2025-11-29 03:20:46,744 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 03:20:46,744 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 03:20:46,744 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 03:20:46,744 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 03:20:46,744 - INFO - Accuracy                 : 0.5159
+2025-11-29 03:20:46,745 - INFO - Precision                : 0.5098
+2025-11-29 03:20:46,745 - INFO - Recall                   : 0.5159
+2025-11-29 03:20:46,745 - INFO - F1 Score                 : 0.5068
+2025-11-29 03:20:46,745 - INFO - ==================================================
+2025-11-29 03:25:04,332 - INFO - Época 35 concluída. Loss média: 2.8742
+2025-11-29 03:25:04,332 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-29 03:25:04,333 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 03:25:09,661 - INFO - ==================================================
+2025-11-29 03:25:09,662 - INFO - EXPERIMENT RESULTS
+2025-11-29 03:25:09,662 - INFO - ==================================================
+2025-11-29 03:25:09,662 - INFO - Elapsed Time Seconds     : 5.2893
+2025-11-29 03:25:09,662 - INFO - Cpu Usage Percent        : 3.9875
+2025-11-29 03:25:09,662 - INFO - Ram Peak Usage Bytes     : 5949874176.0000
+2025-11-29 03:25:09,662 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 03:25:09,662 - INFO - Disk Write Bytes         : 172032.0000
+2025-11-29 03:25:09,662 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 03:25:09,662 - INFO - Gpu Power Watts Avg      : 311.2636
+2025-11-29 03:25:09,662 - INFO - Gpu Power Watts Peak     : 348.5520
+2025-11-29 03:25:09,662 - INFO - Gpu Temp Celsius Avg     : 61.6923
+2025-11-29 03:25:09,662 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 03:25:09,662 - INFO - Gpu Utilization Percent Avg: 89.2308
+2025-11-29 03:25:09,662 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 03:25:09,662 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 03:25:09,662 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 03:25:09,662 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 03:25:09,662 - INFO - Accuracy                 : 0.5182
+2025-11-29 03:25:09,662 - INFO - Precision                : 0.5145
+2025-11-29 03:25:09,662 - INFO - Recall                   : 0.5182
+2025-11-29 03:25:09,662 - INFO - F1 Score                 : 0.5092
+2025-11-29 03:25:09,663 - INFO - ==================================================
+2025-11-29 03:29:26,952 - INFO - Época 36 concluída. Loss média: 2.8597
+2025-11-29 03:29:26,953 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-29 03:29:26,954 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 03:29:32,696 - INFO - ==================================================
+2025-11-29 03:29:32,696 - INFO - EXPERIMENT RESULTS
+2025-11-29 03:29:32,696 - INFO - ==================================================
+2025-11-29 03:29:32,696 - INFO - Elapsed Time Seconds     : 5.7040
+2025-11-29 03:29:32,696 - INFO - Cpu Usage Percent        : 4.1625
+2025-11-29 03:29:32,696 - INFO - Ram Peak Usage Bytes     : 5950058496.0000
+2025-11-29 03:29:32,696 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 03:29:32,696 - INFO - Disk Write Bytes         : 167936.0000
+2025-11-29 03:29:32,696 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 03:29:32,696 - INFO - Gpu Power Watts Avg      : 291.7225
+2025-11-29 03:29:32,696 - INFO - Gpu Power Watts Peak     : 349.4480
+2025-11-29 03:29:32,696 - INFO - Gpu Temp Celsius Avg     : 60.4464
+2025-11-29 03:29:32,696 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 03:29:32,696 - INFO - Gpu Utilization Percent Avg: 82.0357
+2025-11-29 03:29:32,696 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 03:29:32,696 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 03:29:32,696 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 03:29:32,696 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 03:29:32,697 - INFO - Accuracy                 : 0.5158
+2025-11-29 03:29:32,697 - INFO - Precision                : 0.5131
+2025-11-29 03:29:32,697 - INFO - Recall                   : 0.5158
+2025-11-29 03:29:32,697 - INFO - F1 Score                 : 0.5081
+2025-11-29 03:29:32,697 - INFO - ==================================================
+2025-11-29 03:33:50,293 - INFO - Época 37 concluída. Loss média: 2.8372
+2025-11-29 03:33:50,294 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-29 03:33:50,295 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 03:33:55,696 - INFO - ==================================================
+2025-11-29 03:33:55,696 - INFO - EXPERIMENT RESULTS
+2025-11-29 03:33:55,696 - INFO - ==================================================
+2025-11-29 03:33:55,696 - INFO - Elapsed Time Seconds     : 5.3764
+2025-11-29 03:33:55,696 - INFO - Cpu Usage Percent        : 4.5156
+2025-11-29 03:33:55,696 - INFO - Ram Peak Usage Bytes     : 5950529536.0000
+2025-11-29 03:33:55,696 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 03:33:55,696 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 03:33:55,696 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 03:33:55,696 - INFO - Gpu Power Watts Avg      : 303.8984
+2025-11-29 03:33:55,696 - INFO - Gpu Power Watts Peak     : 350.2180
+2025-11-29 03:33:55,696 - INFO - Gpu Temp Celsius Avg     : 61.2264
+2025-11-29 03:33:55,696 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 03:33:55,696 - INFO - Gpu Utilization Percent Avg: 84.9623
+2025-11-29 03:33:55,696 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 03:33:55,696 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 03:33:55,696 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 03:33:55,697 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 03:33:55,697 - INFO - Accuracy                 : 0.5189
+2025-11-29 03:33:55,697 - INFO - Precision                : 0.5140
+2025-11-29 03:33:55,697 - INFO - Recall                   : 0.5189
+2025-11-29 03:33:55,697 - INFO - F1 Score                 : 0.5113
+2025-11-29 03:33:55,697 - INFO - ==================================================
+2025-11-29 03:38:13,019 - INFO - Época 38 concluída. Loss média: 2.8364
+2025-11-29 03:38:13,020 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-29 03:38:13,021 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 03:38:18,592 - INFO - ==================================================
+2025-11-29 03:38:18,592 - INFO - EXPERIMENT RESULTS
+2025-11-29 03:38:18,592 - INFO - ==================================================
+2025-11-29 03:38:18,592 - INFO - Elapsed Time Seconds     : 5.5339
+2025-11-29 03:38:18,592 - INFO - Cpu Usage Percent        : 3.9969
+2025-11-29 03:38:18,592 - INFO - Ram Peak Usage Bytes     : 5950550016.0000
+2025-11-29 03:38:18,592 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 03:38:18,592 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 03:38:18,593 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 03:38:18,593 - INFO - Gpu Power Watts Avg      : 297.3619
+2025-11-29 03:38:18,593 - INFO - Gpu Power Watts Peak     : 350.2720
+2025-11-29 03:38:18,593 - INFO - Gpu Temp Celsius Avg     : 61.0000
+2025-11-29 03:38:18,593 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 03:38:18,593 - INFO - Gpu Utilization Percent Avg: 82.7593
+2025-11-29 03:38:18,593 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 03:38:18,593 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 03:38:18,593 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 03:38:18,593 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 03:38:18,593 - INFO - Accuracy                 : 0.5223
+2025-11-29 03:38:18,593 - INFO - Precision                : 0.5229
+2025-11-29 03:38:18,593 - INFO - Recall                   : 0.5223
+2025-11-29 03:38:18,593 - INFO - F1 Score                 : 0.5164
+2025-11-29 03:38:18,593 - INFO - ==================================================
+2025-11-29 03:42:36,012 - INFO - Época 39 concluída. Loss média: 2.8230
+2025-11-29 03:42:36,013 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-29 03:42:36,013 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 03:42:41,529 - INFO - ==================================================
+2025-11-29 03:42:41,529 - INFO - EXPERIMENT RESULTS
+2025-11-29 03:42:41,530 - INFO - ==================================================
+2025-11-29 03:42:41,530 - INFO - Elapsed Time Seconds     : 5.4782
+2025-11-29 03:42:41,530 - INFO - Cpu Usage Percent        : 4.3187
+2025-11-29 03:42:41,530 - INFO - Ram Peak Usage Bytes     : 5952262144.0000
+2025-11-29 03:42:41,530 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 03:42:41,530 - INFO - Disk Write Bytes         : 225280.0000
+2025-11-29 03:42:41,530 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 03:42:41,530 - INFO - Gpu Power Watts Avg      : 303.3561
+2025-11-29 03:42:41,530 - INFO - Gpu Power Watts Peak     : 349.8920
+2025-11-29 03:42:41,530 - INFO - Gpu Temp Celsius Avg     : 60.9259
+2025-11-29 03:42:41,530 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 03:42:41,530 - INFO - Gpu Utilization Percent Avg: 85.5370
+2025-11-29 03:42:41,530 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 03:42:41,530 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 03:42:41,530 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 03:42:41,530 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 03:42:41,530 - INFO - Accuracy                 : 0.5255
+2025-11-29 03:42:41,530 - INFO - Precision                : 0.5244
+2025-11-29 03:42:41,530 - INFO - Recall                   : 0.5255
+2025-11-29 03:42:41,530 - INFO - F1 Score                 : 0.5186
+2025-11-29 03:42:41,530 - INFO - ==================================================
+2025-11-29 03:46:58,765 - INFO - Época 40 concluída. Loss média: 2.8077
+2025-11-29 03:46:58,765 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-29 03:46:58,766 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 03:47:04,114 - INFO - ==================================================
+2025-11-29 03:47:04,114 - INFO - EXPERIMENT RESULTS
+2025-11-29 03:47:04,114 - INFO - ==================================================
+2025-11-29 03:47:04,114 - INFO - Elapsed Time Seconds     : 5.3076
+2025-11-29 03:47:04,114 - INFO - Cpu Usage Percent        : 3.8625
+2025-11-29 03:47:04,114 - INFO - Ram Peak Usage Bytes     : 5952483328.0000
+2025-11-29 03:47:04,114 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 03:47:04,114 - INFO - Disk Write Bytes         : 180224.0000
+2025-11-29 03:47:04,114 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 03:47:04,114 - INFO - Gpu Power Watts Avg      : 313.6644
+2025-11-29 03:47:04,114 - INFO - Gpu Power Watts Peak     : 349.9700
+2025-11-29 03:47:04,114 - INFO - Gpu Temp Celsius Avg     : 61.5962
+2025-11-29 03:47:04,114 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 03:47:04,114 - INFO - Gpu Utilization Percent Avg: 87.7500
+2025-11-29 03:47:04,114 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 03:47:04,114 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 03:47:04,114 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 03:47:04,114 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 03:47:04,115 - INFO - Accuracy                 : 0.5269
+2025-11-29 03:47:04,115 - INFO - Precision                : 0.5241
+2025-11-29 03:47:04,115 - INFO - Recall                   : 0.5269
+2025-11-29 03:47:04,115 - INFO - F1 Score                 : 0.5196
+2025-11-29 03:47:04,115 - INFO - ==================================================
+2025-11-29 03:51:21,645 - INFO - Época 41 concluída. Loss média: 2.7917
+2025-11-29 03:51:21,646 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-29 03:51:21,647 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 03:51:27,110 - INFO - ==================================================
+2025-11-29 03:51:27,111 - INFO - EXPERIMENT RESULTS
+2025-11-29 03:51:27,111 - INFO - ==================================================
+2025-11-29 03:51:27,111 - INFO - Elapsed Time Seconds     : 5.4267
+2025-11-29 03:51:27,111 - INFO - Cpu Usage Percent        : 3.8344
+2025-11-29 03:51:27,111 - INFO - Ram Peak Usage Bytes     : 5952688128.0000
+2025-11-29 03:51:27,111 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 03:51:27,111 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 03:51:27,111 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 03:51:27,111 - INFO - Gpu Power Watts Avg      : 303.7166
+2025-11-29 03:51:27,111 - INFO - Gpu Power Watts Peak     : 350.1440
+2025-11-29 03:51:27,111 - INFO - Gpu Temp Celsius Avg     : 61.4340
+2025-11-29 03:51:27,111 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 03:51:27,111 - INFO - Gpu Utilization Percent Avg: 85.3019
+2025-11-29 03:51:27,111 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 03:51:27,111 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 03:51:27,111 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 03:51:27,111 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 03:51:27,111 - INFO - Accuracy                 : 0.5295
+2025-11-29 03:51:27,111 - INFO - Precision                : 0.5262
+2025-11-29 03:51:27,112 - INFO - Recall                   : 0.5295
+2025-11-29 03:51:27,112 - INFO - F1 Score                 : 0.5221
+2025-11-29 03:51:27,112 - INFO - ==================================================
+2025-11-29 03:55:44,432 - INFO - Época 42 concluída. Loss média: 2.7869
+2025-11-29 03:55:44,433 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-29 03:55:44,434 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 03:55:49,964 - INFO - ==================================================
+2025-11-29 03:55:49,965 - INFO - EXPERIMENT RESULTS
+2025-11-29 03:55:49,965 - INFO - ==================================================
+2025-11-29 03:55:49,965 - INFO - Elapsed Time Seconds     : 5.4932
+2025-11-29 03:55:49,965 - INFO - Cpu Usage Percent        : 4.3906
+2025-11-29 03:55:49,965 - INFO - Ram Peak Usage Bytes     : 5952901120.0000
+2025-11-29 03:55:49,965 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 03:55:49,965 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 03:55:49,965 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 03:55:49,965 - INFO - Gpu Power Watts Avg      : 302.7752
+2025-11-29 03:55:49,965 - INFO - Gpu Power Watts Peak     : 349.5540
+2025-11-29 03:55:49,965 - INFO - Gpu Temp Celsius Avg     : 61.2778
+2025-11-29 03:55:49,965 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 03:55:49,965 - INFO - Gpu Utilization Percent Avg: 84.2593
+2025-11-29 03:55:49,965 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 03:55:49,965 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 03:55:49,965 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 03:55:49,965 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 03:55:49,965 - INFO - Accuracy                 : 0.5299
+2025-11-29 03:55:49,965 - INFO - Precision                : 0.5257
+2025-11-29 03:55:49,965 - INFO - Recall                   : 0.5299
+2025-11-29 03:55:49,965 - INFO - F1 Score                 : 0.5211
+2025-11-29 03:55:49,965 - INFO - ==================================================
+2025-11-29 04:00:07,472 - INFO - Época 43 concluída. Loss média: 2.7699
+2025-11-29 04:00:07,473 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-29 04:00:07,474 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 04:00:13,109 - INFO - ==================================================
+2025-11-29 04:00:13,109 - INFO - EXPERIMENT RESULTS
+2025-11-29 04:00:13,109 - INFO - ==================================================
+2025-11-29 04:00:13,110 - INFO - Elapsed Time Seconds     : 5.5978
+2025-11-29 04:00:13,110 - INFO - Cpu Usage Percent        : 3.7406
+2025-11-29 04:00:13,110 - INFO - Ram Peak Usage Bytes     : 5953105920.0000
+2025-11-29 04:00:13,110 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 04:00:13,110 - INFO - Disk Write Bytes         : 180224.0000
+2025-11-29 04:00:13,110 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 04:00:13,110 - INFO - Gpu Power Watts Avg      : 297.5401
+2025-11-29 04:00:13,110 - INFO - Gpu Power Watts Peak     : 350.0580
+2025-11-29 04:00:13,110 - INFO - Gpu Temp Celsius Avg     : 60.7091
+2025-11-29 04:00:13,110 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 04:00:13,110 - INFO - Gpu Utilization Percent Avg: 83.9636
+2025-11-29 04:00:13,110 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 04:00:13,110 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 04:00:13,110 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 04:00:13,110 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 04:00:13,110 - INFO - Accuracy                 : 0.5306
+2025-11-29 04:00:13,110 - INFO - Precision                : 0.5306
+2025-11-29 04:00:13,110 - INFO - Recall                   : 0.5306
+2025-11-29 04:00:13,110 - INFO - F1 Score                 : 0.5237
+2025-11-29 04:00:13,110 - INFO - ==================================================
+2025-11-29 04:04:31,028 - INFO - Época 44 concluída. Loss média: 2.7614
+2025-11-29 04:04:31,028 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-29 04:04:31,029 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 04:04:36,608 - INFO - ==================================================
+2025-11-29 04:04:36,608 - INFO - EXPERIMENT RESULTS
+2025-11-29 04:04:36,608 - INFO - ==================================================
+2025-11-29 04:04:36,608 - INFO - Elapsed Time Seconds     : 5.5406
+2025-11-29 04:04:36,608 - INFO - Cpu Usage Percent        : 3.8000
+2025-11-29 04:04:36,608 - INFO - Ram Peak Usage Bytes     : 5953417216.0000
+2025-11-29 04:04:36,608 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 04:04:36,608 - INFO - Disk Write Bytes         : 172032.0000
+2025-11-29 04:04:36,608 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 04:04:36,608 - INFO - Gpu Power Watts Avg      : 299.8443
+2025-11-29 04:04:36,608 - INFO - Gpu Power Watts Peak     : 350.8730
+2025-11-29 04:04:36,608 - INFO - Gpu Temp Celsius Avg     : 61.0370
+2025-11-29 04:04:36,608 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 04:04:36,608 - INFO - Gpu Utilization Percent Avg: 83.2593
+2025-11-29 04:04:36,608 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 04:04:36,608 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 04:04:36,609 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 04:04:36,609 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 04:04:36,609 - INFO - Accuracy                 : 0.5360
+2025-11-29 04:04:36,609 - INFO - Precision                : 0.5342
+2025-11-29 04:04:36,609 - INFO - Recall                   : 0.5360
+2025-11-29 04:04:36,609 - INFO - F1 Score                 : 0.5296
+2025-11-29 04:04:36,609 - INFO - ==================================================
+2025-11-29 04:08:54,502 - INFO - Época 45 concluída. Loss média: 2.7555
+2025-11-29 04:08:54,502 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-29 04:08:54,503 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 04:09:00,073 - INFO - ==================================================
+2025-11-29 04:09:00,073 - INFO - EXPERIMENT RESULTS
+2025-11-29 04:09:00,073 - INFO - ==================================================
+2025-11-29 04:09:00,073 - INFO - Elapsed Time Seconds     : 5.5329
+2025-11-29 04:09:00,073 - INFO - Cpu Usage Percent        : 3.7344
+2025-11-29 04:09:00,073 - INFO - Ram Peak Usage Bytes     : 5953449984.0000
+2025-11-29 04:09:00,073 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 04:09:00,073 - INFO - Disk Write Bytes         : 167936.0000
+2025-11-29 04:09:00,074 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 04:09:00,074 - INFO - Gpu Power Watts Avg      : 301.6321
+2025-11-29 04:09:00,074 - INFO - Gpu Power Watts Peak     : 350.4540
+2025-11-29 04:09:00,074 - INFO - Gpu Temp Celsius Avg     : 61.1481
+2025-11-29 04:09:00,074 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 04:09:00,074 - INFO - Gpu Utilization Percent Avg: 84.6481
+2025-11-29 04:09:00,074 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 04:09:00,074 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 04:09:00,074 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 04:09:00,074 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 04:09:00,074 - INFO - Accuracy                 : 0.5357
+2025-11-29 04:09:00,074 - INFO - Precision                : 0.5332
+2025-11-29 04:09:00,074 - INFO - Recall                   : 0.5357
+2025-11-29 04:09:00,074 - INFO - F1 Score                 : 0.5298
+2025-11-29 04:09:00,074 - INFO - ==================================================
+2025-11-29 04:13:17,611 - INFO - Época 46 concluída. Loss média: 2.7449
+2025-11-29 04:13:17,612 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-29 04:13:17,613 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 04:13:23,058 - INFO - ==================================================
+2025-11-29 04:13:23,058 - INFO - EXPERIMENT RESULTS
+2025-11-29 04:13:23,058 - INFO - ==================================================
+2025-11-29 04:13:23,058 - INFO - Elapsed Time Seconds     : 5.4079
+2025-11-29 04:13:23,058 - INFO - Cpu Usage Percent        : 3.8375
+2025-11-29 04:13:23,058 - INFO - Ram Peak Usage Bytes     : 5953613824.0000
+2025-11-29 04:13:23,058 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 04:13:23,058 - INFO - Disk Write Bytes         : 155648.0000
+2025-11-29 04:13:23,058 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 04:13:23,058 - INFO - Gpu Power Watts Avg      : 308.0438
+2025-11-29 04:13:23,058 - INFO - Gpu Power Watts Peak     : 349.5210
+2025-11-29 04:13:23,058 - INFO - Gpu Temp Celsius Avg     : 61.4906
+2025-11-29 04:13:23,058 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 04:13:23,058 - INFO - Gpu Utilization Percent Avg: 87.5283
+2025-11-29 04:13:23,058 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 04:13:23,058 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 04:13:23,058 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 04:13:23,059 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 04:13:23,059 - INFO - Accuracy                 : 0.5379
+2025-11-29 04:13:23,059 - INFO - Precision                : 0.5370
+2025-11-29 04:13:23,059 - INFO - Recall                   : 0.5379
+2025-11-29 04:13:23,059 - INFO - F1 Score                 : 0.5318
+2025-11-29 04:13:23,059 - INFO - ==================================================
+2025-11-29 04:17:40,285 - INFO - Época 47 concluída. Loss média: 2.7325
+2025-11-29 04:17:40,285 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-29 04:17:40,286 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 04:17:46,081 - INFO - ==================================================
+2025-11-29 04:17:46,081 - INFO - EXPERIMENT RESULTS
+2025-11-29 04:17:46,082 - INFO - ==================================================
+2025-11-29 04:17:46,082 - INFO - Elapsed Time Seconds     : 5.7585
+2025-11-29 04:17:46,082 - INFO - Cpu Usage Percent        : 4.1844
+2025-11-29 04:17:46,082 - INFO - Ram Peak Usage Bytes     : 5953785856.0000
+2025-11-29 04:17:46,082 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 04:17:46,082 - INFO - Disk Write Bytes         : 172032.0000
+2025-11-29 04:17:46,082 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 04:17:46,082 - INFO - Gpu Power Watts Avg      : 291.5877
+2025-11-29 04:17:46,082 - INFO - Gpu Power Watts Peak     : 349.6610
+2025-11-29 04:17:46,082 - INFO - Gpu Temp Celsius Avg     : 60.2679
+2025-11-29 04:17:46,082 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 04:17:46,082 - INFO - Gpu Utilization Percent Avg: 79.4821
+2025-11-29 04:17:46,082 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 04:17:46,082 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 04:17:46,082 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 04:17:46,082 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 04:17:46,082 - INFO - Accuracy                 : 0.5392
+2025-11-29 04:17:46,082 - INFO - Precision                : 0.5351
+2025-11-29 04:17:46,082 - INFO - Recall                   : 0.5392
+2025-11-29 04:17:46,082 - INFO - F1 Score                 : 0.5315
+2025-11-29 04:17:46,082 - INFO - ==================================================
+2025-11-29 04:22:03,804 - INFO - Época 48 concluída. Loss média: 2.7263
+2025-11-29 04:22:03,804 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-29 04:22:03,805 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 04:22:09,225 - INFO - ==================================================
+2025-11-29 04:22:09,225 - INFO - EXPERIMENT RESULTS
+2025-11-29 04:22:09,225 - INFO - ==================================================
+2025-11-29 04:22:09,225 - INFO - Elapsed Time Seconds     : 5.3820
+2025-11-29 04:22:09,225 - INFO - Cpu Usage Percent        : 3.8594
+2025-11-29 04:22:09,225 - INFO - Ram Peak Usage Bytes     : 5953949696.0000
+2025-11-29 04:22:09,225 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 04:22:09,225 - INFO - Disk Write Bytes         : 139264.0000
+2025-11-29 04:22:09,225 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 04:22:09,225 - INFO - Gpu Power Watts Avg      : 304.5145
+2025-11-29 04:22:09,225 - INFO - Gpu Power Watts Peak     : 349.5600
+2025-11-29 04:22:09,225 - INFO - Gpu Temp Celsius Avg     : 61.5283
+2025-11-29 04:22:09,225 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 04:22:09,225 - INFO - Gpu Utilization Percent Avg: 85.3208
+2025-11-29 04:22:09,225 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 04:22:09,225 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 04:22:09,225 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 04:22:09,225 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 04:22:09,225 - INFO - Accuracy                 : 0.5380
+2025-11-29 04:22:09,225 - INFO - Precision                : 0.5376
+2025-11-29 04:22:09,226 - INFO - Recall                   : 0.5380
+2025-11-29 04:22:09,226 - INFO - F1 Score                 : 0.5320
+2025-11-29 04:22:09,226 - INFO - ==================================================
+2025-11-29 04:26:26,822 - INFO - Época 49 concluída. Loss média: 2.7149
+2025-11-29 04:26:26,822 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-29 04:26:26,823 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 04:26:32,378 - INFO - ==================================================
+2025-11-29 04:26:32,378 - INFO - EXPERIMENT RESULTS
+2025-11-29 04:26:32,378 - INFO - ==================================================
+2025-11-29 04:26:32,379 - INFO - Elapsed Time Seconds     : 5.5187
+2025-11-29 04:26:32,379 - INFO - Cpu Usage Percent        : 3.8000
+2025-11-29 04:26:32,379 - INFO - Ram Peak Usage Bytes     : 5954822144.0000
+2025-11-29 04:26:32,379 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 04:26:32,379 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 04:26:32,379 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 04:26:32,379 - INFO - Gpu Power Watts Avg      : 296.3660
+2025-11-29 04:26:32,379 - INFO - Gpu Power Watts Peak     : 350.5520
+2025-11-29 04:26:32,379 - INFO - Gpu Temp Celsius Avg     : 61.0926
+2025-11-29 04:26:32,379 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 04:26:32,379 - INFO - Gpu Utilization Percent Avg: 82.1852
+2025-11-29 04:26:32,379 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 04:26:32,379 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 04:26:32,379 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 04:26:32,379 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 04:26:32,379 - INFO - Accuracy                 : 0.5406
+2025-11-29 04:26:32,379 - INFO - Precision                : 0.5424
+2025-11-29 04:26:32,379 - INFO - Recall                   : 0.5406
+2025-11-29 04:26:32,379 - INFO - F1 Score                 : 0.5354
+2025-11-29 04:26:32,379 - INFO - ==================================================
+2025-11-29 04:30:49,912 - INFO - Época 50 concluída. Loss média: 2.7014
+2025-11-29 04:30:49,913 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-29 04:30:49,914 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 04:30:55,637 - INFO - ==================================================
+2025-11-29 04:30:55,637 - INFO - EXPERIMENT RESULTS
+2025-11-29 04:30:55,637 - INFO - ==================================================
+2025-11-29 04:30:55,637 - INFO - Elapsed Time Seconds     : 5.6847
+2025-11-29 04:30:55,637 - INFO - Cpu Usage Percent        : 4.2531
+2025-11-29 04:30:55,637 - INFO - Ram Peak Usage Bytes     : 5955137536.0000
+2025-11-29 04:30:55,637 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 04:30:55,637 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 04:30:55,637 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 04:30:55,637 - INFO - Gpu Power Watts Avg      : 295.7246
+2025-11-29 04:30:55,637 - INFO - Gpu Power Watts Peak     : 350.4680
+2025-11-29 04:30:55,637 - INFO - Gpu Temp Celsius Avg     : 60.6071
+2025-11-29 04:30:55,637 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 04:30:55,637 - INFO - Gpu Utilization Percent Avg: 82.9286
+2025-11-29 04:30:55,637 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 04:30:55,637 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 04:30:55,637 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 04:30:55,637 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 04:30:55,637 - INFO - Accuracy                 : 0.5421
+2025-11-29 04:30:55,637 - INFO - Precision                : 0.5425
+2025-11-29 04:30:55,638 - INFO - Recall                   : 0.5421
+2025-11-29 04:30:55,638 - INFO - F1 Score                 : 0.5372
+2025-11-29 04:30:55,638 - INFO - ==================================================
+2025-11-29 04:35:13,073 - INFO - Época 51 concluída. Loss média: 2.6939
+2025-11-29 04:35:13,073 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-29 04:35:13,074 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 04:35:18,793 - INFO - ==================================================
+2025-11-29 04:35:18,793 - INFO - EXPERIMENT RESULTS
+2025-11-29 04:35:18,793 - INFO - ==================================================
+2025-11-29 04:35:18,793 - INFO - Elapsed Time Seconds     : 5.6812
+2025-11-29 04:35:18,793 - INFO - Cpu Usage Percent        : 3.6750
+2025-11-29 04:35:18,793 - INFO - Ram Peak Usage Bytes     : 5955227648.0000
+2025-11-29 04:35:18,793 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 04:35:18,793 - INFO - Disk Write Bytes         : 180224.0000
+2025-11-29 04:35:18,793 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 04:35:18,793 - INFO - Gpu Power Watts Avg      : 294.9755
+2025-11-29 04:35:18,793 - INFO - Gpu Power Watts Peak     : 350.3820
+2025-11-29 04:35:18,794 - INFO - Gpu Temp Celsius Avg     : 60.6607
+2025-11-29 04:35:18,794 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 04:35:18,794 - INFO - Gpu Utilization Percent Avg: 81.5357
+2025-11-29 04:35:18,794 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 04:35:18,794 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 04:35:18,794 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 04:35:18,794 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 04:35:18,794 - INFO - Accuracy                 : 0.5429
+2025-11-29 04:35:18,794 - INFO - Precision                : 0.5411
+2025-11-29 04:35:18,794 - INFO - Recall                   : 0.5429
+2025-11-29 04:35:18,794 - INFO - F1 Score                 : 0.5366
+2025-11-29 04:35:18,794 - INFO - ==================================================
+2025-11-29 04:39:36,352 - INFO - Época 52 concluída. Loss média: 2.6824
+2025-11-29 04:39:36,352 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-29 04:39:36,353 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 04:39:41,942 - INFO - ==================================================
+2025-11-29 04:39:41,942 - INFO - EXPERIMENT RESULTS
+2025-11-29 04:39:41,943 - INFO - ==================================================
+2025-11-29 04:39:41,943 - INFO - Elapsed Time Seconds     : 5.5515
+2025-11-29 04:39:41,943 - INFO - Cpu Usage Percent        : 3.7250
+2025-11-29 04:39:41,943 - INFO - Ram Peak Usage Bytes     : 5955399680.0000
+2025-11-29 04:39:41,943 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 04:39:41,943 - INFO - Disk Write Bytes         : 196608.0000
+2025-11-29 04:39:41,943 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 04:39:41,943 - INFO - Gpu Power Watts Avg      : 298.0877
+2025-11-29 04:39:41,943 - INFO - Gpu Power Watts Peak     : 349.9400
+2025-11-29 04:39:41,943 - INFO - Gpu Temp Celsius Avg     : 61.0926
+2025-11-29 04:39:41,943 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 04:39:41,943 - INFO - Gpu Utilization Percent Avg: 83.5370
+2025-11-29 04:39:41,943 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 04:39:41,943 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 04:39:41,943 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 04:39:41,943 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 04:39:41,943 - INFO - Accuracy                 : 0.5418
+2025-11-29 04:39:41,943 - INFO - Precision                : 0.5417
+2025-11-29 04:39:41,943 - INFO - Recall                   : 0.5418
+2025-11-29 04:39:41,943 - INFO - F1 Score                 : 0.5359
+2025-11-29 04:39:41,943 - INFO - ==================================================
+2025-11-29 04:43:59,317 - INFO - Época 53 concluída. Loss média: 2.6765
+2025-11-29 04:43:59,317 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-29 04:43:59,318 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 04:44:04,786 - INFO - ==================================================
+2025-11-29 04:44:04,786 - INFO - EXPERIMENT RESULTS
+2025-11-29 04:44:04,786 - INFO - ==================================================
+2025-11-29 04:44:04,786 - INFO - Elapsed Time Seconds     : 5.4316
+2025-11-29 04:44:04,786 - INFO - Cpu Usage Percent        : 3.8031
+2025-11-29 04:44:04,786 - INFO - Ram Peak Usage Bytes     : 5955600384.0000
+2025-11-29 04:44:04,786 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 04:44:04,786 - INFO - Disk Write Bytes         : 249856.0000
+2025-11-29 04:44:04,786 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 04:44:04,786 - INFO - Gpu Power Watts Avg      : 305.6224
+2025-11-29 04:44:04,786 - INFO - Gpu Power Watts Peak     : 350.8820
+2025-11-29 04:44:04,786 - INFO - Gpu Temp Celsius Avg     : 61.4906
+2025-11-29 04:44:04,786 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 04:44:04,786 - INFO - Gpu Utilization Percent Avg: 86.6792
+2025-11-29 04:44:04,786 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 04:44:04,786 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 04:44:04,786 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 04:44:04,786 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 04:44:04,786 - INFO - Accuracy                 : 0.5452
+2025-11-29 04:44:04,787 - INFO - Precision                : 0.5438
+2025-11-29 04:44:04,787 - INFO - Recall                   : 0.5452
+2025-11-29 04:44:04,787 - INFO - F1 Score                 : 0.5380
+2025-11-29 04:44:04,787 - INFO - ==================================================
+2025-11-29 04:48:22,165 - INFO - Época 54 concluída. Loss média: 2.6636
+2025-11-29 04:48:22,166 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-29 04:48:22,167 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 04:48:28,007 - INFO - ==================================================
+2025-11-29 04:48:28,007 - INFO - EXPERIMENT RESULTS
+2025-11-29 04:48:28,007 - INFO - ==================================================
+2025-11-29 04:48:28,007 - INFO - Elapsed Time Seconds     : 5.8031
+2025-11-29 04:48:28,007 - INFO - Cpu Usage Percent        : 4.1406
+2025-11-29 04:48:28,007 - INFO - Ram Peak Usage Bytes     : 5955784704.0000
+2025-11-29 04:48:28,007 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 04:48:28,007 - INFO - Disk Write Bytes         : 155648.0000
+2025-11-29 04:48:28,007 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 04:48:28,008 - INFO - Gpu Power Watts Avg      : 291.2962
+2025-11-29 04:48:28,008 - INFO - Gpu Power Watts Peak     : 351.1180
+2025-11-29 04:48:28,008 - INFO - Gpu Temp Celsius Avg     : 60.4561
+2025-11-29 04:48:28,008 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 04:48:28,008 - INFO - Gpu Utilization Percent Avg: 80.8070
+2025-11-29 04:48:28,008 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 04:48:28,008 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 04:48:28,008 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 04:48:28,008 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 04:48:28,008 - INFO - Accuracy                 : 0.5433
+2025-11-29 04:48:28,008 - INFO - Precision                : 0.5439
+2025-11-29 04:48:28,008 - INFO - Recall                   : 0.5433
+2025-11-29 04:48:28,008 - INFO - F1 Score                 : 0.5363
+2025-11-29 04:48:28,008 - INFO - ==================================================
+2025-11-29 04:52:46,015 - INFO - Época 55 concluída. Loss média: 2.6504
+2025-11-29 04:52:46,015 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-29 04:52:46,017 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 04:52:51,748 - INFO - ==================================================
+2025-11-29 04:52:51,749 - INFO - EXPERIMENT RESULTS
+2025-11-29 04:52:51,749 - INFO - ==================================================
+2025-11-29 04:52:51,749 - INFO - Elapsed Time Seconds     : 5.6921
+2025-11-29 04:52:51,749 - INFO - Cpu Usage Percent        : 4.2594
+2025-11-29 04:52:51,749 - INFO - Ram Peak Usage Bytes     : 5957132288.0000
+2025-11-29 04:52:51,749 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 04:52:51,749 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 04:52:51,749 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 04:52:51,749 - INFO - Gpu Power Watts Avg      : 294.1183
+2025-11-29 04:52:51,749 - INFO - Gpu Power Watts Peak     : 352.2360
+2025-11-29 04:52:51,749 - INFO - Gpu Temp Celsius Avg     : 60.7679
+2025-11-29 04:52:51,749 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 04:52:51,749 - INFO - Gpu Utilization Percent Avg: 81.0000
+2025-11-29 04:52:51,749 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 04:52:51,749 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 04:52:51,749 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 04:52:51,749 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 04:52:51,749 - INFO - Accuracy                 : 0.5463
+2025-11-29 04:52:51,750 - INFO - Precision                : 0.5462
+2025-11-29 04:52:51,750 - INFO - Recall                   : 0.5463
+2025-11-29 04:52:51,750 - INFO - F1 Score                 : 0.5412
+2025-11-29 04:52:51,750 - INFO - ==================================================
+2025-11-29 04:57:09,349 - INFO - Época 56 concluída. Loss média: 2.6456
+2025-11-29 04:57:09,350 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-29 04:57:09,351 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 04:57:14,871 - INFO - ==================================================
+2025-11-29 04:57:14,871 - INFO - EXPERIMENT RESULTS
+2025-11-29 04:57:14,871 - INFO - ==================================================
+2025-11-29 04:57:14,871 - INFO - Elapsed Time Seconds     : 5.4825
+2025-11-29 04:57:14,871 - INFO - Cpu Usage Percent        : 4.3875
+2025-11-29 04:57:14,871 - INFO - Ram Peak Usage Bytes     : 5957447680.0000
+2025-11-29 04:57:14,871 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 04:57:14,871 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 04:57:14,871 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 04:57:14,871 - INFO - Gpu Power Watts Avg      : 303.1549
+2025-11-29 04:57:14,871 - INFO - Gpu Power Watts Peak     : 351.0850
+2025-11-29 04:57:14,871 - INFO - Gpu Temp Celsius Avg     : 61.4074
+2025-11-29 04:57:14,871 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 04:57:14,871 - INFO - Gpu Utilization Percent Avg: 84.1852
+2025-11-29 04:57:14,871 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 04:57:14,871 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 04:57:14,871 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 04:57:14,872 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 04:57:14,872 - INFO - Accuracy                 : 0.5482
+2025-11-29 04:57:14,872 - INFO - Precision                : 0.5468
+2025-11-29 04:57:14,872 - INFO - Recall                   : 0.5482
+2025-11-29 04:57:14,872 - INFO - F1 Score                 : 0.5419
+2025-11-29 04:57:14,872 - INFO - ==================================================
+2025-11-29 05:01:32,574 - INFO - Época 57 concluída. Loss média: 2.6365
+2025-11-29 05:01:32,574 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-29 05:01:32,576 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 05:01:38,011 - INFO - ==================================================
+2025-11-29 05:01:38,012 - INFO - EXPERIMENT RESULTS
+2025-11-29 05:01:38,012 - INFO - ==================================================
+2025-11-29 05:01:38,012 - INFO - Elapsed Time Seconds     : 5.3977
+2025-11-29 05:01:38,012 - INFO - Cpu Usage Percent        : 3.9125
+2025-11-29 05:01:38,012 - INFO - Ram Peak Usage Bytes     : 5957500928.0000
+2025-11-29 05:01:38,012 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 05:01:38,012 - INFO - Disk Write Bytes         : 180224.0000
+2025-11-29 05:01:38,012 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 05:01:38,012 - INFO - Gpu Power Watts Avg      : 304.7787
+2025-11-29 05:01:38,012 - INFO - Gpu Power Watts Peak     : 350.5490
+2025-11-29 05:01:38,012 - INFO - Gpu Temp Celsius Avg     : 61.1698
+2025-11-29 05:01:38,012 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 05:01:38,012 - INFO - Gpu Utilization Percent Avg: 84.9434
+2025-11-29 05:01:38,012 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 05:01:38,012 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 05:01:38,012 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 05:01:38,012 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 05:01:38,012 - INFO - Accuracy                 : 0.5487
+2025-11-29 05:01:38,012 - INFO - Precision                : 0.5507
+2025-11-29 05:01:38,013 - INFO - Recall                   : 0.5487
+2025-11-29 05:01:38,013 - INFO - F1 Score                 : 0.5440
+2025-11-29 05:01:38,013 - INFO - ==================================================
+2025-11-29 05:05:55,535 - INFO - Época 58 concluída. Loss média: 2.6244
+2025-11-29 05:05:55,536 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-29 05:05:55,537 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 05:06:01,298 - INFO - ==================================================
+2025-11-29 05:06:01,298 - INFO - EXPERIMENT RESULTS
+2025-11-29 05:06:01,298 - INFO - ==================================================
+2025-11-29 05:06:01,298 - INFO - Elapsed Time Seconds     : 5.7233
+2025-11-29 05:06:01,298 - INFO - Cpu Usage Percent        : 3.9594
+2025-11-29 05:06:01,298 - INFO - Ram Peak Usage Bytes     : 5957685248.0000
+2025-11-29 05:06:01,298 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 05:06:01,298 - INFO - Disk Write Bytes         : 167936.0000
+2025-11-29 05:06:01,298 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 05:06:01,298 - INFO - Gpu Power Watts Avg      : 295.9113
+2025-11-29 05:06:01,298 - INFO - Gpu Power Watts Peak     : 351.2930
+2025-11-29 05:06:01,298 - INFO - Gpu Temp Celsius Avg     : 60.5000
+2025-11-29 05:06:01,299 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 05:06:01,299 - INFO - Gpu Utilization Percent Avg: 81.4464
+2025-11-29 05:06:01,299 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 05:06:01,299 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 05:06:01,299 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 05:06:01,299 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 05:06:01,299 - INFO - Accuracy                 : 0.5452
+2025-11-29 05:06:01,299 - INFO - Precision                : 0.5440
+2025-11-29 05:06:01,299 - INFO - Recall                   : 0.5452
+2025-11-29 05:06:01,299 - INFO - F1 Score                 : 0.5393
+2025-11-29 05:06:01,299 - INFO - ==================================================
+2025-11-29 05:10:18,890 - INFO - Época 59 concluída. Loss média: 2.6116
+2025-11-29 05:10:18,890 - INFO - Taxa de aprendizado ajustada para: 0.001000
+2025-11-29 05:10:18,891 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 05:10:24,464 - INFO - ==================================================
+2025-11-29 05:10:24,464 - INFO - EXPERIMENT RESULTS
+2025-11-29 05:10:24,464 - INFO - ==================================================
+2025-11-29 05:10:24,464 - INFO - Elapsed Time Seconds     : 5.5348
+2025-11-29 05:10:24,464 - INFO - Cpu Usage Percent        : 3.7375
+2025-11-29 05:10:24,465 - INFO - Ram Peak Usage Bytes     : 5957869568.0000
+2025-11-29 05:10:24,465 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 05:10:24,465 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 05:10:24,465 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 05:10:24,465 - INFO - Gpu Power Watts Avg      : 301.2493
+2025-11-29 05:10:24,465 - INFO - Gpu Power Watts Peak     : 351.7530
+2025-11-29 05:10:24,465 - INFO - Gpu Temp Celsius Avg     : 61.2963
+2025-11-29 05:10:24,465 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 05:10:24,465 - INFO - Gpu Utilization Percent Avg: 83.6296
+2025-11-29 05:10:24,465 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 05:10:24,465 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 05:10:24,465 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 05:10:24,465 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 05:10:24,465 - INFO - Accuracy                 : 0.5496
+2025-11-29 05:10:24,465 - INFO - Precision                : 0.5479
+2025-11-29 05:10:24,465 - INFO - Recall                   : 0.5496
+2025-11-29 05:10:24,465 - INFO - F1 Score                 : 0.5434
+2025-11-29 05:10:24,465 - INFO - ==================================================
+2025-11-29 05:14:42,082 - INFO - Época 60 concluída. Loss média: 2.5997
+2025-11-29 05:14:42,083 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-29 05:14:42,084 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 05:14:47,741 - INFO - ==================================================
+2025-11-29 05:14:47,741 - INFO - EXPERIMENT RESULTS
+2025-11-29 05:14:47,741 - INFO - ==================================================
+2025-11-29 05:14:47,741 - INFO - Elapsed Time Seconds     : 5.6202
+2025-11-29 05:14:47,741 - INFO - Cpu Usage Percent        : 4.2906
+2025-11-29 05:14:47,741 - INFO - Ram Peak Usage Bytes     : 5958053888.0000
+2025-11-29 05:14:47,741 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 05:14:47,741 - INFO - Disk Write Bytes         : 237568.0000
+2025-11-29 05:14:47,742 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 05:14:47,742 - INFO - Gpu Power Watts Avg      : 297.3536
+2025-11-29 05:14:47,742 - INFO - Gpu Power Watts Peak     : 351.8970
+2025-11-29 05:14:47,742 - INFO - Gpu Temp Celsius Avg     : 60.8000
+2025-11-29 05:14:47,742 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 05:14:47,742 - INFO - Gpu Utilization Percent Avg: 83.1636
+2025-11-29 05:14:47,742 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 05:14:47,742 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 05:14:47,742 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 05:14:47,742 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 05:14:47,742 - INFO - Accuracy                 : 0.5462
+2025-11-29 05:14:47,742 - INFO - Precision                : 0.5469
+2025-11-29 05:14:47,742 - INFO - Recall                   : 0.5462
+2025-11-29 05:14:47,742 - INFO - F1 Score                 : 0.5406
+2025-11-29 05:14:47,742 - INFO - ==================================================
+2025-11-29 05:19:05,294 - INFO - Época 61 concluída. Loss média: 2.5529
+2025-11-29 05:19:05,294 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-29 05:19:05,296 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 05:19:10,850 - INFO - ==================================================
+2025-11-29 05:19:10,850 - INFO - EXPERIMENT RESULTS
+2025-11-29 05:19:10,850 - INFO - ==================================================
+2025-11-29 05:19:10,850 - INFO - Elapsed Time Seconds     : 5.5185
+2025-11-29 05:19:10,850 - INFO - Cpu Usage Percent        : 4.4219
+2025-11-29 05:19:10,850 - INFO - Ram Peak Usage Bytes     : 5958258688.0000
+2025-11-29 05:19:10,850 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 05:19:10,851 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 05:19:10,851 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 05:19:10,851 - INFO - Gpu Power Watts Avg      : 301.4176
+2025-11-29 05:19:10,851 - INFO - Gpu Power Watts Peak     : 351.4490
+2025-11-29 05:19:10,851 - INFO - Gpu Temp Celsius Avg     : 60.8333
+2025-11-29 05:19:10,851 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 05:19:10,851 - INFO - Gpu Utilization Percent Avg: 84.9815
+2025-11-29 05:19:10,851 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 05:19:10,851 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 05:19:10,851 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 05:19:10,851 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 05:19:10,851 - INFO - Accuracy                 : 0.5562
+2025-11-29 05:19:10,851 - INFO - Precision                : 0.5517
+2025-11-29 05:19:10,851 - INFO - Recall                   : 0.5562
+2025-11-29 05:19:10,851 - INFO - F1 Score                 : 0.5503
+2025-11-29 05:19:10,851 - INFO - ==================================================
+2025-11-29 05:23:28,497 - INFO - Época 62 concluída. Loss média: 2.5413
+2025-11-29 05:23:28,498 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-29 05:23:28,499 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 05:23:34,035 - INFO - ==================================================
+2025-11-29 05:23:34,036 - INFO - EXPERIMENT RESULTS
+2025-11-29 05:23:34,036 - INFO - ==================================================
+2025-11-29 05:23:34,036 - INFO - Elapsed Time Seconds     : 5.5002
+2025-11-29 05:23:34,036 - INFO - Cpu Usage Percent        : 4.0844
+2025-11-29 05:23:34,036 - INFO - Ram Peak Usage Bytes     : 5958578176.0000
+2025-11-29 05:23:34,036 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 05:23:34,036 - INFO - Disk Write Bytes         : 167936.0000
+2025-11-29 05:23:34,036 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 05:23:34,036 - INFO - Gpu Power Watts Avg      : 303.3626
+2025-11-29 05:23:34,036 - INFO - Gpu Power Watts Peak     : 351.1950
+2025-11-29 05:23:34,036 - INFO - Gpu Temp Celsius Avg     : 61.0741
+2025-11-29 05:23:34,036 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 05:23:34,036 - INFO - Gpu Utilization Percent Avg: 82.8704
+2025-11-29 05:23:34,036 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 05:23:34,036 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 05:23:34,036 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 05:23:34,036 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 05:23:34,036 - INFO - Accuracy                 : 0.5567
+2025-11-29 05:23:34,036 - INFO - Precision                : 0.5529
+2025-11-29 05:23:34,037 - INFO - Recall                   : 0.5567
+2025-11-29 05:23:34,037 - INFO - F1 Score                 : 0.5511
+2025-11-29 05:23:34,037 - INFO - ==================================================
+2025-11-29 05:27:51,605 - INFO - Época 63 concluída. Loss média: 2.5370
+2025-11-29 05:27:51,605 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-29 05:27:51,607 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 05:27:57,119 - INFO - ==================================================
+2025-11-29 05:27:57,120 - INFO - EXPERIMENT RESULTS
+2025-11-29 05:27:57,120 - INFO - ==================================================
+2025-11-29 05:27:57,120 - INFO - Elapsed Time Seconds     : 5.4753
+2025-11-29 05:27:57,120 - INFO - Cpu Usage Percent        : 3.8344
+2025-11-29 05:27:57,120 - INFO - Ram Peak Usage Bytes     : 5958594560.0000
+2025-11-29 05:27:57,120 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 05:27:57,120 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 05:27:57,120 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 05:27:57,120 - INFO - Gpu Power Watts Avg      : 301.7881
+2025-11-29 05:27:57,120 - INFO - Gpu Power Watts Peak     : 351.0490
+2025-11-29 05:27:57,120 - INFO - Gpu Temp Celsius Avg     : 61.2593
+2025-11-29 05:27:57,120 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 05:27:57,120 - INFO - Gpu Utilization Percent Avg: 83.8148
+2025-11-29 05:27:57,120 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 05:27:57,120 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 05:27:57,120 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 05:27:57,120 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 05:27:57,120 - INFO - Accuracy                 : 0.5608
+2025-11-29 05:27:57,120 - INFO - Precision                : 0.5563
+2025-11-29 05:27:57,121 - INFO - Recall                   : 0.5608
+2025-11-29 05:27:57,121 - INFO - F1 Score                 : 0.5550
+2025-11-29 05:27:57,121 - INFO - ==================================================
+2025-11-29 05:32:14,538 - INFO - Época 64 concluída. Loss média: 2.5369
+2025-11-29 05:32:14,538 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-29 05:32:14,540 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 05:32:20,247 - INFO - ==================================================
+2025-11-29 05:32:20,247 - INFO - EXPERIMENT RESULTS
+2025-11-29 05:32:20,247 - INFO - ==================================================
+2025-11-29 05:32:20,247 - INFO - Elapsed Time Seconds     : 5.6822
+2025-11-29 05:32:20,248 - INFO - Cpu Usage Percent        : 3.9688
+2025-11-29 05:32:20,248 - INFO - Ram Peak Usage Bytes     : 5958758400.0000
+2025-11-29 05:32:20,248 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 05:32:20,248 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 05:32:20,248 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 05:32:20,248 - INFO - Gpu Power Watts Avg      : 294.8500
+2025-11-29 05:32:20,248 - INFO - Gpu Power Watts Peak     : 351.4890
+2025-11-29 05:32:20,248 - INFO - Gpu Temp Celsius Avg     : 60.5536
+2025-11-29 05:32:20,248 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 05:32:20,248 - INFO - Gpu Utilization Percent Avg: 81.2679
+2025-11-29 05:32:20,248 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 05:32:20,248 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 05:32:20,248 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 05:32:20,248 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 05:32:20,248 - INFO - Accuracy                 : 0.5579
+2025-11-29 05:32:20,248 - INFO - Precision                : 0.5545
+2025-11-29 05:32:20,248 - INFO - Recall                   : 0.5579
+2025-11-29 05:32:20,248 - INFO - F1 Score                 : 0.5528
+2025-11-29 05:32:20,248 - INFO - ==================================================
+2025-11-29 05:36:37,754 - INFO - Época 65 concluída. Loss média: 2.5289
+2025-11-29 05:36:37,754 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-29 05:36:37,755 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 05:36:43,226 - INFO - ==================================================
+2025-11-29 05:36:43,226 - INFO - EXPERIMENT RESULTS
+2025-11-29 05:36:43,226 - INFO - ==================================================
+2025-11-29 05:36:43,226 - INFO - Elapsed Time Seconds     : 5.4319
+2025-11-29 05:36:43,227 - INFO - Cpu Usage Percent        : 3.7969
+2025-11-29 05:36:43,227 - INFO - Ram Peak Usage Bytes     : 5959008256.0000
+2025-11-29 05:36:43,227 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 05:36:43,227 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 05:36:43,227 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 05:36:43,227 - INFO - Gpu Power Watts Avg      : 307.9252
+2025-11-29 05:36:43,227 - INFO - Gpu Power Watts Peak     : 352.2070
+2025-11-29 05:36:43,227 - INFO - Gpu Temp Celsius Avg     : 61.3585
+2025-11-29 05:36:43,227 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 05:36:43,227 - INFO - Gpu Utilization Percent Avg: 85.7736
+2025-11-29 05:36:43,227 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 05:36:43,227 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 05:36:43,227 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 05:36:43,227 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 05:36:43,227 - INFO - Accuracy                 : 0.5591
+2025-11-29 05:36:43,227 - INFO - Precision                : 0.5552
+2025-11-29 05:36:43,227 - INFO - Recall                   : 0.5591
+2025-11-29 05:36:43,227 - INFO - F1 Score                 : 0.5539
+2025-11-29 05:36:43,227 - INFO - ==================================================
+2025-11-29 05:41:00,570 - INFO - Época 66 concluída. Loss média: 2.5226
+2025-11-29 05:41:00,571 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-29 05:41:00,572 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 05:41:06,155 - INFO - ==================================================
+2025-11-29 05:41:06,155 - INFO - EXPERIMENT RESULTS
+2025-11-29 05:41:06,155 - INFO - ==================================================
+2025-11-29 05:41:06,155 - INFO - Elapsed Time Seconds     : 5.5583
+2025-11-29 05:41:06,155 - INFO - Cpu Usage Percent        : 3.9281
+2025-11-29 05:41:06,155 - INFO - Ram Peak Usage Bytes     : 5959188480.0000
+2025-11-29 05:41:06,155 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 05:41:06,155 - INFO - Disk Write Bytes         : 253952.0000
+2025-11-29 05:41:06,155 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 05:41:06,155 - INFO - Gpu Power Watts Avg      : 300.1129
+2025-11-29 05:41:06,155 - INFO - Gpu Power Watts Peak     : 353.2280
+2025-11-29 05:41:06,155 - INFO - Gpu Temp Celsius Avg     : 61.2037
+2025-11-29 05:41:06,155 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 05:41:06,155 - INFO - Gpu Utilization Percent Avg: 83.5370
+2025-11-29 05:41:06,155 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 05:41:06,155 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 05:41:06,155 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 05:41:06,155 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 05:41:06,155 - INFO - Accuracy                 : 0.5604
+2025-11-29 05:41:06,155 - INFO - Precision                : 0.5566
+2025-11-29 05:41:06,155 - INFO - Recall                   : 0.5604
+2025-11-29 05:41:06,155 - INFO - F1 Score                 : 0.5549
+2025-11-29 05:41:06,155 - INFO - ==================================================
+2025-11-29 05:45:23,634 - INFO - Época 67 concluída. Loss média: 2.5259
+2025-11-29 05:45:23,634 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-29 05:45:23,635 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 05:45:29,090 - INFO - ==================================================
+2025-11-29 05:45:29,091 - INFO - EXPERIMENT RESULTS
+2025-11-29 05:45:29,091 - INFO - ==================================================
+2025-11-29 05:45:29,091 - INFO - Elapsed Time Seconds     : 5.4167
+2025-11-29 05:45:29,091 - INFO - Cpu Usage Percent        : 4.2281
+2025-11-29 05:45:29,091 - INFO - Ram Peak Usage Bytes     : 5959352320.0000
+2025-11-29 05:45:29,091 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 05:45:29,091 - INFO - Disk Write Bytes         : 159744.0000
+2025-11-29 05:45:29,091 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 05:45:29,091 - INFO - Gpu Power Watts Avg      : 307.9334
+2025-11-29 05:45:29,091 - INFO - Gpu Power Watts Peak     : 352.6320
+2025-11-29 05:45:29,091 - INFO - Gpu Temp Celsius Avg     : 61.4906
+2025-11-29 05:45:29,091 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 05:45:29,091 - INFO - Gpu Utilization Percent Avg: 85.6792
+2025-11-29 05:45:29,091 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 05:45:29,091 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 05:45:29,091 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 05:45:29,091 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 05:45:29,091 - INFO - Accuracy                 : 0.5616
+2025-11-29 05:45:29,091 - INFO - Precision                : 0.5573
+2025-11-29 05:45:29,091 - INFO - Recall                   : 0.5616
+2025-11-29 05:45:29,091 - INFO - F1 Score                 : 0.5559
+2025-11-29 05:45:29,091 - INFO - ==================================================
+2025-11-29 05:49:46,385 - INFO - Época 68 concluída. Loss média: 2.5162
+2025-11-29 05:49:46,385 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-29 05:49:46,386 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 05:49:52,197 - INFO - ==================================================
+2025-11-29 05:49:52,197 - INFO - EXPERIMENT RESULTS
+2025-11-29 05:49:52,197 - INFO - ==================================================
+2025-11-29 05:49:52,197 - INFO - Elapsed Time Seconds     : 5.7725
+2025-11-29 05:49:52,197 - INFO - Cpu Usage Percent        : 4.2062
+2025-11-29 05:49:52,197 - INFO - Ram Peak Usage Bytes     : 5959696384.0000
+2025-11-29 05:49:52,197 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 05:49:52,197 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 05:49:52,197 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 05:49:52,197 - INFO - Gpu Power Watts Avg      : 292.4547
+2025-11-29 05:49:52,197 - INFO - Gpu Power Watts Peak     : 351.8550
+2025-11-29 05:49:52,197 - INFO - Gpu Temp Celsius Avg     : 60.3860
+2025-11-29 05:49:52,197 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 05:49:52,197 - INFO - Gpu Utilization Percent Avg: 80.2807
+2025-11-29 05:49:52,197 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 05:49:52,198 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 05:49:52,198 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 05:49:52,198 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 05:49:52,198 - INFO - Accuracy                 : 0.5610
+2025-11-29 05:49:52,198 - INFO - Precision                : 0.5563
+2025-11-29 05:49:52,198 - INFO - Recall                   : 0.5610
+2025-11-29 05:49:52,198 - INFO - F1 Score                 : 0.5551
+2025-11-29 05:49:52,198 - INFO - ==================================================
+2025-11-29 05:54:09,602 - INFO - Época 69 concluída. Loss média: 2.5197
+2025-11-29 05:54:09,602 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-29 05:54:09,604 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 05:54:14,884 - INFO - ==================================================
+2025-11-29 05:54:14,884 - INFO - EXPERIMENT RESULTS
+2025-11-29 05:54:14,884 - INFO - ==================================================
+2025-11-29 05:54:14,884 - INFO - Elapsed Time Seconds     : 5.2440
+2025-11-29 05:54:14,884 - INFO - Cpu Usage Percent        : 3.9688
+2025-11-29 05:54:14,884 - INFO - Ram Peak Usage Bytes     : 5959700480.0000
+2025-11-29 05:54:14,884 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 05:54:14,885 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 05:54:14,885 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 05:54:14,885 - INFO - Gpu Power Watts Avg      : 313.6535
+2025-11-29 05:54:14,885 - INFO - Gpu Power Watts Peak     : 351.4520
+2025-11-29 05:54:14,885 - INFO - Gpu Temp Celsius Avg     : 61.9216
+2025-11-29 05:54:14,885 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 05:54:14,885 - INFO - Gpu Utilization Percent Avg: 89.2549
+2025-11-29 05:54:14,885 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 05:54:14,885 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 05:54:14,885 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 05:54:14,885 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 05:54:14,885 - INFO - Accuracy                 : 0.5615
+2025-11-29 05:54:14,885 - INFO - Precision                : 0.5578
+2025-11-29 05:54:14,885 - INFO - Recall                   : 0.5615
+2025-11-29 05:54:14,885 - INFO - F1 Score                 : 0.5559
+2025-11-29 05:54:14,885 - INFO - ==================================================
+2025-11-29 05:58:32,322 - INFO - Época 70 concluída. Loss média: 2.5134
+2025-11-29 05:58:32,323 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-29 05:58:32,324 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 05:58:37,785 - INFO - ==================================================
+2025-11-29 05:58:37,785 - INFO - EXPERIMENT RESULTS
+2025-11-29 05:58:37,785 - INFO - ==================================================
+2025-11-29 05:58:37,785 - INFO - Elapsed Time Seconds     : 5.4238
+2025-11-29 05:58:37,785 - INFO - Cpu Usage Percent        : 3.7969
+2025-11-29 05:58:37,785 - INFO - Ram Peak Usage Bytes     : 5960712192.0000
+2025-11-29 05:58:37,785 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 05:58:37,786 - INFO - Disk Write Bytes         : 180224.0000
+2025-11-29 05:58:37,786 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 05:58:37,786 - INFO - Gpu Power Watts Avg      : 306.6990
+2025-11-29 05:58:37,786 - INFO - Gpu Power Watts Peak     : 351.6710
+2025-11-29 05:58:37,786 - INFO - Gpu Temp Celsius Avg     : 61.5283
+2025-11-29 05:58:37,786 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 05:58:37,786 - INFO - Gpu Utilization Percent Avg: 84.8113
+2025-11-29 05:58:37,786 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 05:58:37,786 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 05:58:37,786 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 05:58:37,786 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 05:58:37,786 - INFO - Accuracy                 : 0.5597
+2025-11-29 05:58:37,786 - INFO - Precision                : 0.5556
+2025-11-29 05:58:37,786 - INFO - Recall                   : 0.5597
+2025-11-29 05:58:37,786 - INFO - F1 Score                 : 0.5542
+2025-11-29 05:58:37,786 - INFO - ==================================================
+2025-11-29 06:02:55,262 - INFO - Época 71 concluída. Loss média: 2.5173
+2025-11-29 06:02:55,263 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-29 06:02:55,264 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 06:03:00,720 - INFO - ==================================================
+2025-11-29 06:03:00,720 - INFO - EXPERIMENT RESULTS
+2025-11-29 06:03:00,720 - INFO - ==================================================
+2025-11-29 06:03:00,720 - INFO - Elapsed Time Seconds     : 5.4196
+2025-11-29 06:03:00,720 - INFO - Cpu Usage Percent        : 3.9031
+2025-11-29 06:03:00,720 - INFO - Ram Peak Usage Bytes     : 5960916992.0000
+2025-11-29 06:03:00,721 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 06:03:00,721 - INFO - Disk Write Bytes         : 184320.0000
+2025-11-29 06:03:00,721 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 06:03:00,721 - INFO - Gpu Power Watts Avg      : 304.2602
+2025-11-29 06:03:00,721 - INFO - Gpu Power Watts Peak     : 352.0990
+2025-11-29 06:03:00,721 - INFO - Gpu Temp Celsius Avg     : 61.2264
+2025-11-29 06:03:00,721 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 06:03:00,721 - INFO - Gpu Utilization Percent Avg: 85.8491
+2025-11-29 06:03:00,721 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 06:03:00,721 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 06:03:00,721 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 06:03:00,721 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 06:03:00,721 - INFO - Accuracy                 : 0.5598
+2025-11-29 06:03:00,721 - INFO - Precision                : 0.5558
+2025-11-29 06:03:00,721 - INFO - Recall                   : 0.5598
+2025-11-29 06:03:00,721 - INFO - F1 Score                 : 0.5543
+2025-11-29 06:03:00,721 - INFO - ==================================================
+2025-11-29 06:07:18,077 - INFO - Época 72 concluída. Loss média: 2.5171
+2025-11-29 06:07:18,077 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-29 06:07:18,078 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 06:07:23,625 - INFO - ==================================================
+2025-11-29 06:07:23,625 - INFO - EXPERIMENT RESULTS
+2025-11-29 06:07:23,625 - INFO - ==================================================
+2025-11-29 06:07:23,625 - INFO - Elapsed Time Seconds     : 5.5092
+2025-11-29 06:07:23,625 - INFO - Cpu Usage Percent        : 4.3375
+2025-11-29 06:07:23,625 - INFO - Ram Peak Usage Bytes     : 5961101312.0000
+2025-11-29 06:07:23,625 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 06:07:23,625 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 06:07:23,625 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 06:07:23,625 - INFO - Gpu Power Watts Avg      : 302.5973
+2025-11-29 06:07:23,625 - INFO - Gpu Power Watts Peak     : 352.0910
+2025-11-29 06:07:23,625 - INFO - Gpu Temp Celsius Avg     : 60.7222
+2025-11-29 06:07:23,626 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 06:07:23,626 - INFO - Gpu Utilization Percent Avg: 83.3889
+2025-11-29 06:07:23,626 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 06:07:23,626 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 06:07:23,626 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 06:07:23,626 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 06:07:23,626 - INFO - Accuracy                 : 0.5629
+2025-11-29 06:07:23,626 - INFO - Precision                : 0.5588
+2025-11-29 06:07:23,626 - INFO - Recall                   : 0.5629
+2025-11-29 06:07:23,626 - INFO - F1 Score                 : 0.5573
+2025-11-29 06:07:23,626 - INFO - ==================================================
+2025-11-29 06:11:41,486 - INFO - Época 73 concluída. Loss média: 2.5044
+2025-11-29 06:11:41,486 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-29 06:11:41,487 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 06:11:47,036 - INFO - ==================================================
+2025-11-29 06:11:47,036 - INFO - EXPERIMENT RESULTS
+2025-11-29 06:11:47,036 - INFO - ==================================================
+2025-11-29 06:11:47,036 - INFO - Elapsed Time Seconds     : 5.5097
+2025-11-29 06:11:47,036 - INFO - Cpu Usage Percent        : 4.0094
+2025-11-29 06:11:47,036 - INFO - Ram Peak Usage Bytes     : 5961289728.0000
+2025-11-29 06:11:47,036 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 06:11:47,036 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 06:11:47,036 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 06:11:47,036 - INFO - Gpu Power Watts Avg      : 303.7233
+2025-11-29 06:11:47,036 - INFO - Gpu Power Watts Peak     : 352.9740
+2025-11-29 06:11:47,037 - INFO - Gpu Temp Celsius Avg     : 61.1852
+2025-11-29 06:11:47,037 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 06:11:47,037 - INFO - Gpu Utilization Percent Avg: 83.9630
+2025-11-29 06:11:47,037 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 06:11:47,037 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 06:11:47,037 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 06:11:47,037 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 06:11:47,037 - INFO - Accuracy                 : 0.5597
+2025-11-29 06:11:47,037 - INFO - Precision                : 0.5562
+2025-11-29 06:11:47,037 - INFO - Recall                   : 0.5597
+2025-11-29 06:11:47,037 - INFO - F1 Score                 : 0.5543
+2025-11-29 06:11:47,037 - INFO - ==================================================
+2025-11-29 06:16:04,615 - INFO - Época 74 concluída. Loss média: 2.5111
+2025-11-29 06:16:04,615 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-29 06:16:04,616 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 06:16:10,401 - INFO - ==================================================
+2025-11-29 06:16:10,402 - INFO - EXPERIMENT RESULTS
+2025-11-29 06:16:10,402 - INFO - ==================================================
+2025-11-29 06:16:10,402 - INFO - Elapsed Time Seconds     : 5.7473
+2025-11-29 06:16:10,402 - INFO - Cpu Usage Percent        : 4.2250
+2025-11-29 06:16:10,402 - INFO - Ram Peak Usage Bytes     : 5961474048.0000
+2025-11-29 06:16:10,402 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 06:16:10,402 - INFO - Disk Write Bytes         : 225280.0000
+2025-11-29 06:16:10,402 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 06:16:10,402 - INFO - Gpu Power Watts Avg      : 293.7798
+2025-11-29 06:16:10,402 - INFO - Gpu Power Watts Peak     : 352.3370
+2025-11-29 06:16:10,402 - INFO - Gpu Temp Celsius Avg     : 60.6429
+2025-11-29 06:16:10,402 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 06:16:10,402 - INFO - Gpu Utilization Percent Avg: 80.5893
+2025-11-29 06:16:10,402 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 06:16:10,402 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 06:16:10,402 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 06:16:10,402 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 06:16:10,402 - INFO - Accuracy                 : 0.5610
+2025-11-29 06:16:10,402 - INFO - Precision                : 0.5572
+2025-11-29 06:16:10,402 - INFO - Recall                   : 0.5610
+2025-11-29 06:16:10,402 - INFO - F1 Score                 : 0.5553
+2025-11-29 06:16:10,403 - INFO - ==================================================
+2025-11-29 06:20:27,975 - INFO - Época 75 concluída. Loss média: 2.5056
+2025-11-29 06:20:27,976 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-29 06:20:27,977 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 06:20:33,557 - INFO - ==================================================
+2025-11-29 06:20:33,558 - INFO - EXPERIMENT RESULTS
+2025-11-29 06:20:33,558 - INFO - ==================================================
+2025-11-29 06:20:33,558 - INFO - Elapsed Time Seconds     : 5.5434
+2025-11-29 06:20:33,558 - INFO - Cpu Usage Percent        : 3.7656
+2025-11-29 06:20:33,558 - INFO - Ram Peak Usage Bytes     : 5961707520.0000
+2025-11-29 06:20:33,558 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 06:20:33,558 - INFO - Disk Write Bytes         : 167936.0000
+2025-11-29 06:20:33,558 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 06:20:33,558 - INFO - Gpu Power Watts Avg      : 300.6383
+2025-11-29 06:20:33,558 - INFO - Gpu Power Watts Peak     : 352.0640
+2025-11-29 06:20:33,558 - INFO - Gpu Temp Celsius Avg     : 61.1481
+2025-11-29 06:20:33,558 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 06:20:33,558 - INFO - Gpu Utilization Percent Avg: 82.5370
+2025-11-29 06:20:33,558 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 06:20:33,558 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 06:20:33,558 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 06:20:33,558 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 06:20:33,558 - INFO - Accuracy                 : 0.5626
+2025-11-29 06:20:33,558 - INFO - Precision                : 0.5596
+2025-11-29 06:20:33,558 - INFO - Recall                   : 0.5626
+2025-11-29 06:20:33,558 - INFO - F1 Score                 : 0.5574
+2025-11-29 06:20:33,558 - INFO - ==================================================
+2025-11-29 06:24:51,302 - INFO - Época 76 concluída. Loss média: 2.5031
+2025-11-29 06:24:51,302 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-29 06:24:51,303 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 06:24:57,146 - INFO - ==================================================
+2025-11-29 06:24:57,147 - INFO - EXPERIMENT RESULTS
+2025-11-29 06:24:57,147 - INFO - ==================================================
+2025-11-29 06:24:57,147 - INFO - Elapsed Time Seconds     : 5.8061
+2025-11-29 06:24:57,147 - INFO - Cpu Usage Percent        : 3.9438
+2025-11-29 06:24:57,147 - INFO - Ram Peak Usage Bytes     : 5961875456.0000
+2025-11-29 06:24:57,147 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 06:24:57,147 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 06:24:57,147 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 06:24:57,147 - INFO - Gpu Power Watts Avg      : 289.8170
+2025-11-29 06:24:57,147 - INFO - Gpu Power Watts Peak     : 352.4730
+2025-11-29 06:24:57,147 - INFO - Gpu Temp Celsius Avg     : 60.3158
+2025-11-29 06:24:57,147 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 06:24:57,147 - INFO - Gpu Utilization Percent Avg: 79.1579
+2025-11-29 06:24:57,147 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 06:24:57,147 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 06:24:57,147 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 06:24:57,147 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 06:24:57,147 - INFO - Accuracy                 : 0.5636
+2025-11-29 06:24:57,147 - INFO - Precision                : 0.5599
+2025-11-29 06:24:57,148 - INFO - Recall                   : 0.5636
+2025-11-29 06:24:57,148 - INFO - F1 Score                 : 0.5580
+2025-11-29 06:24:57,148 - INFO - ==================================================
+2025-11-29 06:29:14,790 - INFO - Época 77 concluída. Loss média: 2.4991
+2025-11-29 06:29:14,791 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-29 06:29:14,792 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 06:29:20,175 - INFO - ==================================================
+2025-11-29 06:29:20,175 - INFO - EXPERIMENT RESULTS
+2025-11-29 06:29:20,175 - INFO - ==================================================
+2025-11-29 06:29:20,175 - INFO - Elapsed Time Seconds     : 5.3453
+2025-11-29 06:29:20,175 - INFO - Cpu Usage Percent        : 4.3781
+2025-11-29 06:29:20,175 - INFO - Ram Peak Usage Bytes     : 5962059776.0000
+2025-11-29 06:29:20,175 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 06:29:20,175 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 06:29:20,175 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 06:29:20,175 - INFO - Gpu Power Watts Avg      : 307.9744
+2025-11-29 06:29:20,175 - INFO - Gpu Power Watts Peak     : 353.1090
+2025-11-29 06:29:20,175 - INFO - Gpu Temp Celsius Avg     : 61.5192
+2025-11-29 06:29:20,175 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 06:29:20,176 - INFO - Gpu Utilization Percent Avg: 85.7885
+2025-11-29 06:29:20,176 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 06:29:20,176 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 06:29:20,176 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 06:29:20,176 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 06:29:20,176 - INFO - Accuracy                 : 0.5645
+2025-11-29 06:29:20,176 - INFO - Precision                : 0.5600
+2025-11-29 06:29:20,176 - INFO - Recall                   : 0.5645
+2025-11-29 06:29:20,176 - INFO - F1 Score                 : 0.5586
+2025-11-29 06:29:20,176 - INFO - ==================================================
+2025-11-29 06:33:37,869 - INFO - Época 78 concluída. Loss média: 2.5062
+2025-11-29 06:33:37,870 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-29 06:33:37,871 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 06:33:43,543 - INFO - ==================================================
+2025-11-29 06:33:43,543 - INFO - EXPERIMENT RESULTS
+2025-11-29 06:33:43,543 - INFO - ==================================================
+2025-11-29 06:33:43,543 - INFO - Elapsed Time Seconds     : 5.6349
+2025-11-29 06:33:43,544 - INFO - Cpu Usage Percent        : 4.2250
+2025-11-29 06:33:43,544 - INFO - Ram Peak Usage Bytes     : 5962244096.0000
+2025-11-29 06:33:43,544 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 06:33:43,544 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 06:33:43,544 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 06:33:43,544 - INFO - Gpu Power Watts Avg      : 300.1524
+2025-11-29 06:33:43,544 - INFO - Gpu Power Watts Peak     : 352.7590
+2025-11-29 06:33:43,544 - INFO - Gpu Temp Celsius Avg     : 60.8182
+2025-11-29 06:33:43,544 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 06:33:43,544 - INFO - Gpu Utilization Percent Avg: 81.5091
+2025-11-29 06:33:43,544 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 06:33:43,544 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 06:33:43,544 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 06:33:43,544 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 06:33:43,544 - INFO - Accuracy                 : 0.5624
+2025-11-29 06:33:43,544 - INFO - Precision                : 0.5587
+2025-11-29 06:33:43,544 - INFO - Recall                   : 0.5624
+2025-11-29 06:33:43,544 - INFO - F1 Score                 : 0.5569
+2025-11-29 06:33:43,544 - INFO - ==================================================
+2025-11-29 06:38:01,137 - INFO - Época 79 concluída. Loss média: 2.5039
+2025-11-29 06:38:01,138 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-29 06:38:01,139 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 06:38:06,693 - INFO - ==================================================
+2025-11-29 06:38:06,693 - INFO - EXPERIMENT RESULTS
+2025-11-29 06:38:06,693 - INFO - ==================================================
+2025-11-29 06:38:06,693 - INFO - Elapsed Time Seconds     : 5.5287
+2025-11-29 06:38:06,693 - INFO - Cpu Usage Percent        : 3.8219
+2025-11-29 06:38:06,693 - INFO - Ram Peak Usage Bytes     : 5962412032.0000
+2025-11-29 06:38:06,693 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 06:38:06,693 - INFO - Disk Write Bytes         : 266240.0000
+2025-11-29 06:38:06,693 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 06:38:06,693 - INFO - Gpu Power Watts Avg      : 301.8793
+2025-11-29 06:38:06,693 - INFO - Gpu Power Watts Peak     : 352.5530
+2025-11-29 06:38:06,693 - INFO - Gpu Temp Celsius Avg     : 61.3333
+2025-11-29 06:38:06,693 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 06:38:06,693 - INFO - Gpu Utilization Percent Avg: 84.0556
+2025-11-29 06:38:06,693 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 06:38:06,693 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 06:38:06,693 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 06:38:06,693 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 06:38:06,693 - INFO - Accuracy                 : 0.5641
+2025-11-29 06:38:06,693 - INFO - Precision                : 0.5604
+2025-11-29 06:38:06,693 - INFO - Recall                   : 0.5641
+2025-11-29 06:38:06,693 - INFO - F1 Score                 : 0.5583
+2025-11-29 06:38:06,693 - INFO - ==================================================
+2025-11-29 06:42:23,967 - INFO - Época 80 concluída. Loss média: 2.4950
+2025-11-29 06:42:23,968 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-29 06:42:23,969 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 06:42:29,808 - INFO - ==================================================
+2025-11-29 06:42:29,809 - INFO - EXPERIMENT RESULTS
+2025-11-29 06:42:29,809 - INFO - ==================================================
+2025-11-29 06:42:29,809 - INFO - Elapsed Time Seconds     : 5.8022
+2025-11-29 06:42:29,809 - INFO - Cpu Usage Percent        : 4.1469
+2025-11-29 06:42:29,809 - INFO - Ram Peak Usage Bytes     : 5962604544.0000
+2025-11-29 06:42:29,809 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 06:42:29,809 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 06:42:29,809 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 06:42:29,809 - INFO - Gpu Power Watts Avg      : 287.8119
+2025-11-29 06:42:29,809 - INFO - Gpu Power Watts Peak     : 351.2400
+2025-11-29 06:42:29,809 - INFO - Gpu Temp Celsius Avg     : 60.2456
+2025-11-29 06:42:29,809 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 06:42:29,809 - INFO - Gpu Utilization Percent Avg: 78.3860
+2025-11-29 06:42:29,809 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 06:42:29,809 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 06:42:29,809 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 06:42:29,809 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 06:42:29,809 - INFO - Accuracy                 : 0.5650
+2025-11-29 06:42:29,809 - INFO - Precision                : 0.5610
+2025-11-29 06:42:29,809 - INFO - Recall                   : 0.5650
+2025-11-29 06:42:29,809 - INFO - F1 Score                 : 0.5594
+2025-11-29 06:42:29,809 - INFO - ==================================================
+2025-11-29 06:46:47,569 - INFO - Época 81 concluída. Loss média: 2.4928
+2025-11-29 06:46:47,570 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-29 06:46:47,571 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 06:46:53,194 - INFO - ==================================================
+2025-11-29 06:46:53,194 - INFO - EXPERIMENT RESULTS
+2025-11-29 06:46:53,194 - INFO - ==================================================
+2025-11-29 06:46:53,194 - INFO - Elapsed Time Seconds     : 5.5848
+2025-11-29 06:46:53,194 - INFO - Cpu Usage Percent        : 3.7375
+2025-11-29 06:46:53,194 - INFO - Ram Peak Usage Bytes     : 5962788864.0000
+2025-11-29 06:46:53,194 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 06:46:53,194 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 06:46:53,194 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 06:46:53,194 - INFO - Gpu Power Watts Avg      : 298.7844
+2025-11-29 06:46:53,194 - INFO - Gpu Power Watts Peak     : 352.6490
+2025-11-29 06:46:53,194 - INFO - Gpu Temp Celsius Avg     : 60.9636
+2025-11-29 06:46:53,194 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 06:46:53,194 - INFO - Gpu Utilization Percent Avg: 83.7636
+2025-11-29 06:46:53,195 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 06:46:53,195 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 06:46:53,195 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 06:46:53,195 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 06:46:53,195 - INFO - Accuracy                 : 0.5646
+2025-11-29 06:46:53,195 - INFO - Precision                : 0.5612
+2025-11-29 06:46:53,195 - INFO - Recall                   : 0.5646
+2025-11-29 06:46:53,195 - INFO - F1 Score                 : 0.5594
+2025-11-29 06:46:53,195 - INFO - ==================================================
+2025-11-29 06:51:10,709 - INFO - Época 82 concluída. Loss média: 2.4876
+2025-11-29 06:51:10,709 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-29 06:51:10,710 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 06:51:16,146 - INFO - ==================================================
+2025-11-29 06:51:16,146 - INFO - EXPERIMENT RESULTS
+2025-11-29 06:51:16,147 - INFO - ==================================================
+2025-11-29 06:51:16,147 - INFO - Elapsed Time Seconds     : 5.3990
+2025-11-29 06:51:16,147 - INFO - Cpu Usage Percent        : 3.8250
+2025-11-29 06:51:16,147 - INFO - Ram Peak Usage Bytes     : 5962956800.0000
+2025-11-29 06:51:16,147 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 06:51:16,147 - INFO - Disk Write Bytes         : 167936.0000
+2025-11-29 06:51:16,147 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 06:51:16,147 - INFO - Gpu Power Watts Avg      : 305.5716
+2025-11-29 06:51:16,147 - INFO - Gpu Power Watts Peak     : 352.5880
+2025-11-29 06:51:16,147 - INFO - Gpu Temp Celsius Avg     : 61.6226
+2025-11-29 06:51:16,147 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 06:51:16,147 - INFO - Gpu Utilization Percent Avg: 85.9434
+2025-11-29 06:51:16,147 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 06:51:16,147 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 06:51:16,147 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 06:51:16,147 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 06:51:16,147 - INFO - Accuracy                 : 0.5652
+2025-11-29 06:51:16,147 - INFO - Precision                : 0.5619
+2025-11-29 06:51:16,147 - INFO - Recall                   : 0.5652
+2025-11-29 06:51:16,147 - INFO - F1 Score                 : 0.5600
+2025-11-29 06:51:16,147 - INFO - ==================================================
+2025-11-29 06:55:33,707 - INFO - Época 83 concluída. Loss média: 2.4928
+2025-11-29 06:55:33,707 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-29 06:55:33,708 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 06:55:39,149 - INFO - ==================================================
+2025-11-29 06:55:39,149 - INFO - EXPERIMENT RESULTS
+2025-11-29 06:55:39,150 - INFO - ==================================================
+2025-11-29 06:55:39,150 - INFO - Elapsed Time Seconds     : 5.4040
+2025-11-29 06:55:39,150 - INFO - Cpu Usage Percent        : 3.8281
+2025-11-29 06:55:39,150 - INFO - Ram Peak Usage Bytes     : 5963116544.0000
+2025-11-29 06:55:39,150 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 06:55:39,150 - INFO - Disk Write Bytes         : 204800.0000
+2025-11-29 06:55:39,150 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 06:55:39,150 - INFO - Gpu Power Watts Avg      : 308.8416
+2025-11-29 06:55:39,150 - INFO - Gpu Power Watts Peak     : 353.2430
+2025-11-29 06:55:39,150 - INFO - Gpu Temp Celsius Avg     : 61.6038
+2025-11-29 06:55:39,150 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 06:55:39,150 - INFO - Gpu Utilization Percent Avg: 85.6038
+2025-11-29 06:55:39,150 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 06:55:39,150 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 06:55:39,150 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 06:55:39,150 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 06:55:39,150 - INFO - Accuracy                 : 0.5621
+2025-11-29 06:55:39,150 - INFO - Precision                : 0.5583
+2025-11-29 06:55:39,150 - INFO - Recall                   : 0.5621
+2025-11-29 06:55:39,150 - INFO - F1 Score                 : 0.5563
+2025-11-29 06:55:39,150 - INFO - ==================================================
+2025-11-29 06:59:56,793 - INFO - Época 84 concluída. Loss média: 2.4908
+2025-11-29 06:59:56,793 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-29 06:59:56,795 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 07:00:02,222 - INFO - ==================================================
+2025-11-29 07:00:02,222 - INFO - EXPERIMENT RESULTS
+2025-11-29 07:00:02,222 - INFO - ==================================================
+2025-11-29 07:00:02,222 - INFO - Elapsed Time Seconds     : 5.3893
+2025-11-29 07:00:02,222 - INFO - Cpu Usage Percent        : 4.5156
+2025-11-29 07:00:02,222 - INFO - Ram Peak Usage Bytes     : 5963296768.0000
+2025-11-29 07:00:02,222 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 07:00:02,222 - INFO - Disk Write Bytes         : 176128.0000
+2025-11-29 07:00:02,222 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 07:00:02,222 - INFO - Gpu Power Watts Avg      : 308.0565
+2025-11-29 07:00:02,222 - INFO - Gpu Power Watts Peak     : 352.7010
+2025-11-29 07:00:02,222 - INFO - Gpu Temp Celsius Avg     : 61.4528
+2025-11-29 07:00:02,222 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 07:00:02,222 - INFO - Gpu Utilization Percent Avg: 85.7547
+2025-11-29 07:00:02,222 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 07:00:02,222 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 07:00:02,222 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 07:00:02,222 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 07:00:02,222 - INFO - Accuracy                 : 0.5603
+2025-11-29 07:00:02,222 - INFO - Precision                : 0.5562
+2025-11-29 07:00:02,223 - INFO - Recall                   : 0.5603
+2025-11-29 07:00:02,223 - INFO - F1 Score                 : 0.5544
+2025-11-29 07:00:02,223 - INFO - ==================================================
+2025-11-29 07:04:19,856 - INFO - Época 85 concluída. Loss média: 2.4982
+2025-11-29 07:04:19,857 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-29 07:04:19,858 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 07:04:25,403 - INFO - ==================================================
+2025-11-29 07:04:25,403 - INFO - EXPERIMENT RESULTS
+2025-11-29 07:04:25,403 - INFO - ==================================================
+2025-11-29 07:04:25,403 - INFO - Elapsed Time Seconds     : 5.5051
+2025-11-29 07:04:25,403 - INFO - Cpu Usage Percent        : 3.7344
+2025-11-29 07:04:25,403 - INFO - Ram Peak Usage Bytes     : 5963460608.0000
+2025-11-29 07:04:25,403 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 07:04:25,404 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 07:04:25,404 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 07:04:25,404 - INFO - Gpu Power Watts Avg      : 304.1884
+2025-11-29 07:04:25,404 - INFO - Gpu Power Watts Peak     : 352.5470
+2025-11-29 07:04:25,404 - INFO - Gpu Temp Celsius Avg     : 61.3333
+2025-11-29 07:04:25,404 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 07:04:25,404 - INFO - Gpu Utilization Percent Avg: 84.9815
+2025-11-29 07:04:25,404 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 07:04:25,404 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 07:04:25,404 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 07:04:25,404 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 07:04:25,404 - INFO - Accuracy                 : 0.5645
+2025-11-29 07:04:25,404 - INFO - Precision                : 0.5599
+2025-11-29 07:04:25,404 - INFO - Recall                   : 0.5645
+2025-11-29 07:04:25,404 - INFO - F1 Score                 : 0.5586
+2025-11-29 07:04:25,404 - INFO - ==================================================
+2025-11-29 07:08:42,894 - INFO - Época 86 concluída. Loss média: 2.4888
+2025-11-29 07:08:42,894 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-29 07:08:42,895 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 07:08:48,712 - INFO - ==================================================
+2025-11-29 07:08:48,712 - INFO - EXPERIMENT RESULTS
+2025-11-29 07:08:48,712 - INFO - ==================================================
+2025-11-29 07:08:48,712 - INFO - Elapsed Time Seconds     : 5.7771
+2025-11-29 07:08:48,712 - INFO - Cpu Usage Percent        : 4.2281
+2025-11-29 07:08:48,712 - INFO - Ram Peak Usage Bytes     : 5963624448.0000
+2025-11-29 07:08:48,712 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 07:08:48,712 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 07:08:48,712 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 07:08:48,712 - INFO - Gpu Power Watts Avg      : 293.8394
+2025-11-29 07:08:48,712 - INFO - Gpu Power Watts Peak     : 352.2740
+2025-11-29 07:08:48,712 - INFO - Gpu Temp Celsius Avg     : 60.8036
+2025-11-29 07:08:48,712 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 07:08:48,712 - INFO - Gpu Utilization Percent Avg: 81.4464
+2025-11-29 07:08:48,713 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 07:08:48,713 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 07:08:48,713 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 07:08:48,713 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 07:08:48,713 - INFO - Accuracy                 : 0.5647
+2025-11-29 07:08:48,713 - INFO - Precision                : 0.5614
+2025-11-29 07:08:48,713 - INFO - Recall                   : 0.5647
+2025-11-29 07:08:48,713 - INFO - F1 Score                 : 0.5592
+2025-11-29 07:08:48,713 - INFO - ==================================================
+2025-11-29 07:13:06,275 - INFO - Época 87 concluída. Loss média: 2.4867
+2025-11-29 07:13:06,276 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-29 07:13:06,277 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 07:13:11,870 - INFO - ==================================================
+2025-11-29 07:13:11,870 - INFO - EXPERIMENT RESULTS
+2025-11-29 07:13:11,870 - INFO - ==================================================
+2025-11-29 07:13:11,870 - INFO - Elapsed Time Seconds     : 5.5566
+2025-11-29 07:13:11,870 - INFO - Cpu Usage Percent        : 4.3812
+2025-11-29 07:13:11,870 - INFO - Ram Peak Usage Bytes     : 5963837440.0000
+2025-11-29 07:13:11,870 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 07:13:11,870 - INFO - Disk Write Bytes         : 180224.0000
+2025-11-29 07:13:11,870 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 07:13:11,870 - INFO - Gpu Power Watts Avg      : 298.3680
+2025-11-29 07:13:11,871 - INFO - Gpu Power Watts Peak     : 352.4600
+2025-11-29 07:13:11,871 - INFO - Gpu Temp Celsius Avg     : 61.1111
+2025-11-29 07:13:11,871 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 07:13:11,871 - INFO - Gpu Utilization Percent Avg: 83.4259
+2025-11-29 07:13:11,871 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 07:13:11,871 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 07:13:11,871 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 07:13:11,871 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 07:13:11,871 - INFO - Accuracy                 : 0.5645
+2025-11-29 07:13:11,871 - INFO - Precision                : 0.5600
+2025-11-29 07:13:11,871 - INFO - Recall                   : 0.5645
+2025-11-29 07:13:11,871 - INFO - F1 Score                 : 0.5585
+2025-11-29 07:13:11,871 - INFO - ==================================================
+2025-11-29 07:17:29,315 - INFO - Época 88 concluída. Loss média: 2.4889
+2025-11-29 07:17:29,316 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-29 07:17:29,317 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 07:17:35,193 - INFO - ==================================================
+2025-11-29 07:17:35,193 - INFO - EXPERIMENT RESULTS
+2025-11-29 07:17:35,193 - INFO - ==================================================
+2025-11-29 07:17:35,193 - INFO - Elapsed Time Seconds     : 5.8388
+2025-11-29 07:17:35,193 - INFO - Cpu Usage Percent        : 4.1437
+2025-11-29 07:17:35,193 - INFO - Ram Peak Usage Bytes     : 5967167488.0000
+2025-11-29 07:17:35,193 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 07:17:35,193 - INFO - Disk Write Bytes         : 393216.0000
+2025-11-29 07:17:35,193 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 07:17:35,193 - INFO - Gpu Power Watts Avg      : 287.2506
+2025-11-29 07:17:35,193 - INFO - Gpu Power Watts Peak     : 351.8560
+2025-11-29 07:17:35,193 - INFO - Gpu Temp Celsius Avg     : 60.3158
+2025-11-29 07:17:35,193 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 07:17:35,193 - INFO - Gpu Utilization Percent Avg: 78.3333
+2025-11-29 07:17:35,193 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 07:17:35,193 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 07:17:35,193 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 07:17:35,193 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 07:17:35,194 - INFO - Accuracy                 : 0.5647
+2025-11-29 07:17:35,194 - INFO - Precision                : 0.5610
+2025-11-29 07:17:35,194 - INFO - Recall                   : 0.5647
+2025-11-29 07:17:35,194 - INFO - F1 Score                 : 0.5590
+2025-11-29 07:17:35,194 - INFO - ==================================================
+2025-11-29 07:21:53,151 - INFO - Época 89 concluída. Loss média: 2.4832
+2025-11-29 07:21:53,151 - INFO - Taxa de aprendizado ajustada para: 0.000100
+2025-11-29 07:21:53,152 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 07:21:59,056 - INFO - ==================================================
+2025-11-29 07:21:59,057 - INFO - EXPERIMENT RESULTS
+2025-11-29 07:21:59,057 - INFO - ==================================================
+2025-11-29 07:21:59,057 - INFO - Elapsed Time Seconds     : 5.8675
+2025-11-29 07:21:59,057 - INFO - Cpu Usage Percent        : 4.0906
+2025-11-29 07:21:59,057 - INFO - Ram Peak Usage Bytes     : 5967384576.0000
+2025-11-29 07:21:59,057 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 07:21:59,057 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 07:21:59,057 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 07:21:59,057 - INFO - Gpu Power Watts Avg      : 292.0512
+2025-11-29 07:21:59,057 - INFO - Gpu Power Watts Peak     : 352.1740
+2025-11-29 07:21:59,057 - INFO - Gpu Temp Celsius Avg     : 60.7895
+2025-11-29 07:21:59,057 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 07:21:59,057 - INFO - Gpu Utilization Percent Avg: 81.7544
+2025-11-29 07:21:59,057 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 07:21:59,057 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 07:21:59,057 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 07:21:59,057 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 07:21:59,057 - INFO - Accuracy                 : 0.5647
+2025-11-29 07:21:59,057 - INFO - Precision                : 0.5608
+2025-11-29 07:21:59,057 - INFO - Recall                   : 0.5647
+2025-11-29 07:21:59,057 - INFO - F1 Score                 : 0.5591
+2025-11-29 07:21:59,057 - INFO - ==================================================
+2025-11-29 07:26:16,792 - INFO - Época 90 concluída. Loss média: 2.4809
+2025-11-29 07:26:16,793 - INFO - Taxa de aprendizado ajustada para: 0.000010
+2025-11-29 07:26:16,794 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 07:26:22,534 - INFO - ==================================================
+2025-11-29 07:26:22,534 - INFO - EXPERIMENT RESULTS
+2025-11-29 07:26:22,534 - INFO - ==================================================
+2025-11-29 07:26:22,534 - INFO - Elapsed Time Seconds     : 5.7029
+2025-11-29 07:26:22,534 - INFO - Cpu Usage Percent        : 4.2313
+2025-11-29 07:26:22,534 - INFO - Ram Peak Usage Bytes     : 5967609856.0000
+2025-11-29 07:26:22,534 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 07:26:22,534 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 07:26:22,534 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 07:26:22,534 - INFO - Gpu Power Watts Avg      : 291.9819
+2025-11-29 07:26:22,534 - INFO - Gpu Power Watts Peak     : 351.4600
+2025-11-29 07:26:22,534 - INFO - Gpu Temp Celsius Avg     : 60.7143
+2025-11-29 07:26:22,534 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 07:26:22,534 - INFO - Gpu Utilization Percent Avg: 80.2679
+2025-11-29 07:26:22,534 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 07:26:22,534 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 07:26:22,535 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 07:26:22,535 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 07:26:22,535 - INFO - Accuracy                 : 0.5646
+2025-11-29 07:26:22,535 - INFO - Precision                : 0.5608
+2025-11-29 07:26:22,535 - INFO - Recall                   : 0.5646
+2025-11-29 07:26:22,535 - INFO - F1 Score                 : 0.5590
+2025-11-29 07:26:22,535 - INFO - ==================================================
+2025-11-29 07:30:39,823 - INFO - Época 91 concluída. Loss média: 2.4679
+2025-11-29 07:30:39,824 - INFO - Taxa de aprendizado ajustada para: 0.000010
+2025-11-29 07:30:39,825 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 07:30:45,472 - INFO - ==================================================
+2025-11-29 07:30:45,472 - INFO - EXPERIMENT RESULTS
+2025-11-29 07:30:45,472 - INFO - ==================================================
+2025-11-29 07:30:45,473 - INFO - Elapsed Time Seconds     : 5.6105
+2025-11-29 07:30:45,473 - INFO - Cpu Usage Percent        : 3.6969
+2025-11-29 07:30:45,473 - INFO - Ram Peak Usage Bytes     : 5967798272.0000
+2025-11-29 07:30:45,473 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 07:30:45,473 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 07:30:45,473 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 07:30:45,473 - INFO - Gpu Power Watts Avg      : 301.2157
+2025-11-29 07:30:45,473 - INFO - Gpu Power Watts Peak     : 352.7860
+2025-11-29 07:30:45,473 - INFO - Gpu Temp Celsius Avg     : 60.9091
+2025-11-29 07:30:45,473 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 07:30:45,473 - INFO - Gpu Utilization Percent Avg: 81.7636
+2025-11-29 07:30:45,473 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 07:30:45,473 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 07:30:45,473 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 07:30:45,473 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 07:30:45,473 - INFO - Accuracy                 : 0.5653
+2025-11-29 07:30:45,473 - INFO - Precision                : 0.5613
+2025-11-29 07:30:45,473 - INFO - Recall                   : 0.5653
+2025-11-29 07:30:45,473 - INFO - F1 Score                 : 0.5597
+2025-11-29 07:30:45,473 - INFO - ==================================================
+2025-11-29 07:35:02,969 - INFO - Época 92 concluída. Loss média: 2.4818
+2025-11-29 07:35:02,970 - INFO - Taxa de aprendizado ajustada para: 0.000010
+2025-11-29 07:35:02,971 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 07:35:08,432 - INFO - ==================================================
+2025-11-29 07:35:08,432 - INFO - EXPERIMENT RESULTS
+2025-11-29 07:35:08,433 - INFO - ==================================================
+2025-11-29 07:35:08,433 - INFO - Elapsed Time Seconds     : 5.4255
+2025-11-29 07:35:08,433 - INFO - Cpu Usage Percent        : 4.5219
+2025-11-29 07:35:08,433 - INFO - Ram Peak Usage Bytes     : 5968003072.0000
+2025-11-29 07:35:08,433 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 07:35:08,433 - INFO - Disk Write Bytes         : 413696.0000
+2025-11-29 07:35:08,433 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 07:35:08,433 - INFO - Gpu Power Watts Avg      : 306.0107
+2025-11-29 07:35:08,433 - INFO - Gpu Power Watts Peak     : 352.3890
+2025-11-29 07:35:08,433 - INFO - Gpu Temp Celsius Avg     : 61.5283
+2025-11-29 07:35:08,433 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 07:35:08,433 - INFO - Gpu Utilization Percent Avg: 85.0189
+2025-11-29 07:35:08,433 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 07:35:08,433 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 07:35:08,433 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 07:35:08,433 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 07:35:08,433 - INFO - Accuracy                 : 0.5650
+2025-11-29 07:35:08,433 - INFO - Precision                : 0.5608
+2025-11-29 07:35:08,433 - INFO - Recall                   : 0.5650
+2025-11-29 07:35:08,433 - INFO - F1 Score                 : 0.5593
+2025-11-29 07:35:08,433 - INFO - ==================================================
+2025-11-29 07:39:26,095 - INFO - Época 93 concluída. Loss média: 2.4744
+2025-11-29 07:39:26,096 - INFO - Taxa de aprendizado ajustada para: 0.000010
+2025-11-29 07:39:26,097 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 07:39:31,690 - INFO - ==================================================
+2025-11-29 07:39:31,690 - INFO - EXPERIMENT RESULTS
+2025-11-29 07:39:31,690 - INFO - ==================================================
+2025-11-29 07:39:31,690 - INFO - Elapsed Time Seconds     : 5.5683
+2025-11-29 07:39:31,690 - INFO - Cpu Usage Percent        : 3.7656
+2025-11-29 07:39:31,690 - INFO - Ram Peak Usage Bytes     : 5968289792.0000
+2025-11-29 07:39:31,690 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 07:39:31,690 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 07:39:31,690 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 07:39:31,690 - INFO - Gpu Power Watts Avg      : 300.1946
+2025-11-29 07:39:31,690 - INFO - Gpu Power Watts Peak     : 353.6570
+2025-11-29 07:39:31,690 - INFO - Gpu Temp Celsius Avg     : 61.4259
+2025-11-29 07:39:31,690 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 07:39:31,690 - INFO - Gpu Utilization Percent Avg: 81.6481
+2025-11-29 07:39:31,690 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 07:39:31,690 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 07:39:31,690 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 07:39:31,690 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 07:39:31,690 - INFO - Accuracy                 : 0.5660
+2025-11-29 07:39:31,690 - INFO - Precision                : 0.5618
+2025-11-29 07:39:31,690 - INFO - Recall                   : 0.5660
+2025-11-29 07:39:31,690 - INFO - F1 Score                 : 0.5603
+2025-11-29 07:39:31,690 - INFO - ==================================================
+2025-11-29 07:43:49,430 - INFO - Época 94 concluída. Loss média: 2.4738
+2025-11-29 07:43:49,431 - INFO - Taxa de aprendizado ajustada para: 0.000010
+2025-11-29 07:43:49,432 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 07:43:54,876 - INFO - ==================================================
+2025-11-29 07:43:54,876 - INFO - EXPERIMENT RESULTS
+2025-11-29 07:43:54,876 - INFO - ==================================================
+2025-11-29 07:43:54,876 - INFO - Elapsed Time Seconds     : 5.4081
+2025-11-29 07:43:54,876 - INFO - Cpu Usage Percent        : 3.8188
+2025-11-29 07:43:54,876 - INFO - Ram Peak Usage Bytes     : 5968429056.0000
+2025-11-29 07:43:54,876 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 07:43:54,876 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 07:43:54,876 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 07:43:54,876 - INFO - Gpu Power Watts Avg      : 305.4935
+2025-11-29 07:43:54,876 - INFO - Gpu Power Watts Peak     : 352.3460
+2025-11-29 07:43:54,876 - INFO - Gpu Temp Celsius Avg     : 61.5660
+2025-11-29 07:43:54,877 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 07:43:54,877 - INFO - Gpu Utilization Percent Avg: 84.6981
+2025-11-29 07:43:54,877 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 07:43:54,877 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 07:43:54,877 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 07:43:54,877 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 07:43:54,877 - INFO - Accuracy                 : 0.5646
+2025-11-29 07:43:54,877 - INFO - Precision                : 0.5608
+2025-11-29 07:43:54,877 - INFO - Recall                   : 0.5646
+2025-11-29 07:43:54,877 - INFO - F1 Score                 : 0.5590
+2025-11-29 07:43:54,877 - INFO - ==================================================
+2025-11-29 07:48:12,235 - INFO - Época 95 concluída. Loss média: 2.4728
+2025-11-29 07:48:12,236 - INFO - Taxa de aprendizado ajustada para: 0.000010
+2025-11-29 07:48:12,237 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 07:48:17,881 - INFO - ==================================================
+2025-11-29 07:48:17,881 - INFO - EXPERIMENT RESULTS
+2025-11-29 07:48:17,881 - INFO - ==================================================
+2025-11-29 07:48:17,881 - INFO - Elapsed Time Seconds     : 5.6068
+2025-11-29 07:48:17,881 - INFO - Cpu Usage Percent        : 4.2969
+2025-11-29 07:48:17,882 - INFO - Ram Peak Usage Bytes     : 5968633856.0000
+2025-11-29 07:48:17,882 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 07:48:17,882 - INFO - Disk Write Bytes         : 155648.0000
+2025-11-29 07:48:17,882 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 07:48:17,882 - INFO - Gpu Power Watts Avg      : 296.8837
+2025-11-29 07:48:17,882 - INFO - Gpu Power Watts Peak     : 351.1780
+2025-11-29 07:48:17,882 - INFO - Gpu Temp Celsius Avg     : 60.9091
+2025-11-29 07:48:17,882 - INFO - Gpu Temp Celsius Peak    : 64.0000
+2025-11-29 07:48:17,882 - INFO - Gpu Utilization Percent Avg: 82.4000
+2025-11-29 07:48:17,882 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 07:48:17,882 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 07:48:17,882 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 07:48:17,882 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 07:48:17,882 - INFO - Accuracy                 : 0.5654
+2025-11-29 07:48:17,882 - INFO - Precision                : 0.5613
+2025-11-29 07:48:17,882 - INFO - Recall                   : 0.5654
+2025-11-29 07:48:17,882 - INFO - F1 Score                 : 0.5596
+2025-11-29 07:48:17,882 - INFO - ==================================================
+2025-11-29 07:52:35,431 - INFO - Época 96 concluída. Loss média: 2.4703
+2025-11-29 07:52:35,431 - INFO - Taxa de aprendizado ajustada para: 0.000010
+2025-11-29 07:52:35,432 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 07:52:41,081 - INFO - ==================================================
+2025-11-29 07:52:41,081 - INFO - EXPERIMENT RESULTS
+2025-11-29 07:52:41,081 - INFO - ==================================================
+2025-11-29 07:52:41,081 - INFO - Elapsed Time Seconds     : 5.6234
+2025-11-29 07:52:41,081 - INFO - Cpu Usage Percent        : 3.7344
+2025-11-29 07:52:41,081 - INFO - Ram Peak Usage Bytes     : 5968838656.0000
+2025-11-29 07:52:41,081 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 07:52:41,081 - INFO - Disk Write Bytes         : 167936.0000
+2025-11-29 07:52:41,081 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 07:52:41,081 - INFO - Gpu Power Watts Avg      : 296.4652
+2025-11-29 07:52:41,081 - INFO - Gpu Power Watts Peak     : 351.3510
+2025-11-29 07:52:41,082 - INFO - Gpu Temp Celsius Avg     : 60.9091
+2025-11-29 07:52:41,082 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 07:52:41,082 - INFO - Gpu Utilization Percent Avg: 83.2727
+2025-11-29 07:52:41,082 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 07:52:41,082 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 07:52:41,082 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 07:52:41,082 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 07:52:41,082 - INFO - Accuracy                 : 0.5649
+2025-11-29 07:52:41,082 - INFO - Precision                : 0.5607
+2025-11-29 07:52:41,082 - INFO - Recall                   : 0.5649
+2025-11-29 07:52:41,082 - INFO - F1 Score                 : 0.5592
+2025-11-29 07:52:41,082 - INFO - ==================================================
+2025-11-29 07:56:58,421 - INFO - Época 97 concluída. Loss média: 2.4688
+2025-11-29 07:56:58,421 - INFO - Taxa de aprendizado ajustada para: 0.000010
+2025-11-29 07:56:58,422 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 07:57:04,239 - INFO - ==================================================
+2025-11-29 07:57:04,239 - INFO - EXPERIMENT RESULTS
+2025-11-29 07:57:04,239 - INFO - ==================================================
+2025-11-29 07:57:04,239 - INFO - Elapsed Time Seconds     : 5.7921
+2025-11-29 07:57:04,239 - INFO - Cpu Usage Percent        : 3.7750
+2025-11-29 07:57:04,239 - INFO - Ram Peak Usage Bytes     : 5969059840.0000
+2025-11-29 07:57:04,239 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 07:57:04,240 - INFO - Disk Write Bytes         : 245760.0000
+2025-11-29 07:57:04,240 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 07:57:04,240 - INFO - Gpu Power Watts Avg      : 290.9436
+2025-11-29 07:57:04,240 - INFO - Gpu Power Watts Peak     : 352.1850
+2025-11-29 07:57:04,240 - INFO - Gpu Temp Celsius Avg     : 60.7193
+2025-11-29 07:57:04,240 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 07:57:04,240 - INFO - Gpu Utilization Percent Avg: 79.6842
+2025-11-29 07:57:04,240 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 07:57:04,240 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 07:57:04,240 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 07:57:04,240 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 07:57:04,240 - INFO - Accuracy                 : 0.5655
+2025-11-29 07:57:04,240 - INFO - Precision                : 0.5614
+2025-11-29 07:57:04,240 - INFO - Recall                   : 0.5655
+2025-11-29 07:57:04,240 - INFO - F1 Score                 : 0.5599
+2025-11-29 07:57:04,240 - INFO - ==================================================
+2025-11-29 08:01:21,788 - INFO - Época 98 concluída. Loss média: 2.4697
+2025-11-29 08:01:21,789 - INFO - Taxa de aprendizado ajustada para: 0.000010
+2025-11-29 08:01:21,790 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 08:01:27,353 - INFO - ==================================================
+2025-11-29 08:01:27,353 - INFO - EXPERIMENT RESULTS
+2025-11-29 08:01:27,353 - INFO - ==================================================
+2025-11-29 08:01:27,353 - INFO - Elapsed Time Seconds     : 5.5250
+2025-11-29 08:01:27,353 - INFO - Cpu Usage Percent        : 4.4156
+2025-11-29 08:01:27,353 - INFO - Ram Peak Usage Bytes     : 5969264640.0000
+2025-11-29 08:01:27,353 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 08:01:27,353 - INFO - Disk Write Bytes         : 151552.0000
+2025-11-29 08:01:27,353 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 08:01:27,353 - INFO - Gpu Power Watts Avg      : 301.9600
+2025-11-29 08:01:27,353 - INFO - Gpu Power Watts Peak     : 352.4110
+2025-11-29 08:01:27,353 - INFO - Gpu Temp Celsius Avg     : 61.0926
+2025-11-29 08:01:27,353 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 08:01:27,353 - INFO - Gpu Utilization Percent Avg: 84.7778
+2025-11-29 08:01:27,353 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 08:01:27,353 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 08:01:27,353 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 08:01:27,353 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 08:01:27,354 - INFO - Accuracy                 : 0.5647
+2025-11-29 08:01:27,354 - INFO - Precision                : 0.5609
+2025-11-29 08:01:27,354 - INFO - Recall                   : 0.5647
+2025-11-29 08:01:27,354 - INFO - F1 Score                 : 0.5591
+2025-11-29 08:01:27,354 - INFO - ==================================================
+2025-11-29 08:05:45,173 - INFO - Época 99 concluída. Loss média: 2.4744
+2025-11-29 08:05:45,173 - INFO - Taxa de aprendizado ajustada para: 0.000010
+2025-11-29 08:05:45,174 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 08:05:50,645 - INFO - ==================================================
+2025-11-29 08:05:50,645 - INFO - EXPERIMENT RESULTS
+2025-11-29 08:05:50,645 - INFO - ==================================================
+2025-11-29 08:05:50,645 - INFO - Elapsed Time Seconds     : 5.4324
+2025-11-29 08:05:50,645 - INFO - Cpu Usage Percent        : 3.8531
+2025-11-29 08:05:50,645 - INFO - Ram Peak Usage Bytes     : 5969547264.0000
+2025-11-29 08:05:50,645 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 08:05:50,645 - INFO - Disk Write Bytes         : 159744.0000
+2025-11-29 08:05:50,645 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 08:05:50,645 - INFO - Gpu Power Watts Avg      : 307.6280
+2025-11-29 08:05:50,645 - INFO - Gpu Power Watts Peak     : 352.1680
+2025-11-29 08:05:50,646 - INFO - Gpu Temp Celsius Avg     : 61.5283
+2025-11-29 08:05:50,646 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 08:05:50,646 - INFO - Gpu Utilization Percent Avg: 86.8679
+2025-11-29 08:05:50,646 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 08:05:50,646 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 08:05:50,646 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 08:05:50,646 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 08:05:50,646 - INFO - Accuracy                 : 0.5654
+2025-11-29 08:05:50,646 - INFO - Precision                : 0.5613
+2025-11-29 08:05:50,646 - INFO - Recall                   : 0.5654
+2025-11-29 08:05:50,646 - INFO - F1 Score                 : 0.5597
+2025-11-29 08:05:50,646 - INFO - ==================================================
+2025-11-29 08:10:08,327 - INFO - Época 100 concluída. Loss média: 2.4727
+2025-11-29 08:10:08,327 - INFO - Taxa de aprendizado ajustada para: 0.000010
+2025-11-29 08:10:08,328 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 08:10:13,867 - INFO - ==================================================
+2025-11-29 08:10:13,867 - INFO - EXPERIMENT RESULTS
+2025-11-29 08:10:13,867 - INFO - ==================================================
+2025-11-29 08:10:13,867 - INFO - Elapsed Time Seconds     : 5.5018
+2025-11-29 08:10:13,867 - INFO - Cpu Usage Percent        : 3.7531
+2025-11-29 08:10:13,867 - INFO - Ram Peak Usage Bytes     : 5969612800.0000
+2025-11-29 08:10:13,867 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 08:10:13,867 - INFO - Disk Write Bytes         : 167936.0000
+2025-11-29 08:10:13,867 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 08:10:13,867 - INFO - Gpu Power Watts Avg      : 304.7049
+2025-11-29 08:10:13,867 - INFO - Gpu Power Watts Peak     : 352.1880
+2025-11-29 08:10:13,868 - INFO - Gpu Temp Celsius Avg     : 61.4074
+2025-11-29 08:10:13,868 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 08:10:13,868 - INFO - Gpu Utilization Percent Avg: 84.2778
+2025-11-29 08:10:13,868 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 08:10:13,868 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 08:10:13,868 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 08:10:13,868 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 08:10:13,868 - INFO - Accuracy                 : 0.5656
+2025-11-29 08:10:13,868 - INFO - Precision                : 0.5613
+2025-11-29 08:10:13,868 - INFO - Recall                   : 0.5656
+2025-11-29 08:10:13,868 - INFO - F1 Score                 : 0.5599
+2025-11-29 08:10:13,868 - INFO - ==================================================
+2025-11-29 08:10:13,973 - INFO - Métricas de performance do treinamento:
+2025-11-29 08:10:13,973 - INFO - ==================================================
+2025-11-29 08:10:13,973 - INFO - EXPERIMENT RESULTS
+2025-11-29 08:10:13,973 - INFO - ==================================================
+2025-11-29 08:10:13,973 - INFO - Elapsed Time Seconds     : 26313.7169
+2025-11-29 08:10:13,973 - INFO - Cpu Usage Percent        : 3.4094
+2025-11-29 08:10:13,973 - INFO - Ram Peak Usage Bytes     : 5969526784.0000
+2025-11-29 08:10:13,973 - INFO - Disk Read Bytes          : 8192.0000
+2025-11-29 08:10:13,973 - INFO - Disk Write Bytes         : 952827904.0000
+2025-11-29 08:10:13,973 - INFO - Vram Peak Usage Bytes    : 5292983940.0000
+2025-11-29 08:10:13,973 - INFO - Gpu Power Watts Avg      : 310.2541
+2025-11-29 08:10:13,973 - INFO - Gpu Power Watts Peak     : 353.6570
+2025-11-29 08:10:13,973 - INFO - Gpu Temp Celsius Avg     : 61.2745
+2025-11-29 08:10:13,973 - INFO - Gpu Temp Celsius Peak    : 65.0000
+2025-11-29 08:10:13,973 - INFO - Gpu Utilization Percent Avg: 99.3322
+2025-11-29 08:10:13,973 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 08:10:13,973 - INFO - Gpu Mem Used Bytes Avg   : 23937340418.1367
+2025-11-29 08:10:13,973 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 08:10:13,974 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 08:10:13,974 - INFO - ==================================================
+2025-11-29 08:10:20,275 - INFO - Modelo salvo em: trained_models/vgg16_final.pth
+2025-11-29 08:10:20,301 - INFO - Pipeline de treinamento concluído. Modelo salvo em: trained_models/vgg16_final.pth
+2025-11-29 08:10:20,301 - INFO - Iniciando pipeline de inferência para avaliação final no conjunto de validação...
+2025-11-29 08:10:21,900 - INFO - Iniciando inferência com o modelo VGG16...
+2025-11-29 08:10:27,427 - INFO - ==================================================
+2025-11-29 08:10:27,427 - INFO - EXPERIMENT RESULTS
+2025-11-29 08:10:27,427 - INFO - ==================================================
+2025-11-29 08:10:27,427 - INFO - Elapsed Time Seconds     : 5.4912
+2025-11-29 08:10:27,427 - INFO - Cpu Usage Percent        : 3.7781
+2025-11-29 08:10:27,428 - INFO - Ram Peak Usage Bytes     : 6010736640.0000
+2025-11-29 08:10:27,428 - INFO - Disk Read Bytes          : 0.0000
+2025-11-29 08:10:27,428 - INFO - Disk Write Bytes         : 0.0000
+2025-11-29 08:10:27,428 - INFO - Vram Peak Usage Bytes    : 4193050944.0000
+2025-11-29 08:10:27,428 - INFO - Gpu Power Watts Avg      : 273.5759
+2025-11-29 08:10:27,428 - INFO - Gpu Power Watts Peak     : 351.5410
+2025-11-29 08:10:27,428 - INFO - Gpu Temp Celsius Avg     : 58.5741
+2025-11-29 08:10:27,428 - INFO - Gpu Temp Celsius Peak    : 63.0000
+2025-11-29 08:10:27,428 - INFO - Gpu Utilization Percent Avg: 81.7222
+2025-11-29 08:10:27,428 - INFO - Gpu Utilization Percent Peak: 100.0000
+2025-11-29 08:10:27,428 - INFO - Gpu Mem Used Bytes Avg   : 24114298880.0000
+2025-11-29 08:10:27,428 - INFO - Gpu Mem Used Bytes Peak  : 24114298880.0000
+2025-11-29 08:10:27,428 - INFO - Gpu Vram Used Bytes      : 24114298880.0000
+2025-11-29 08:10:27,428 - INFO - Accuracy                 : 0.5656
+2025-11-29 08:10:27,428 - INFO - Precision                : 0.5613
+2025-11-29 08:10:27,428 - INFO - Recall                   : 0.5656
+2025-11-29 08:10:27,428 - INFO - F1 Score                 : 0.5599
+2025-11-29 08:10:27,428 - INFO - ==================================================
+2025-11-29 08:10:27,428 - INFO - Projeto executado com sucesso!
