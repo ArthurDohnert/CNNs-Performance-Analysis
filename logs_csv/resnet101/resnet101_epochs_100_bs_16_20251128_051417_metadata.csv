@@ -1,0 +1,2 @@
+model_name,seed,config_path,train_data_path,val_data_path,model_params,train_params,inference_params,scheduler_params,lr_base
+resnet101,72,configs/resnet101_config.yaml,/scratch/ehdmenezes//tiny-imagenet-200/train,/scratch/ehdmenezes//tiny-imagenet-200/val,"{'num_classes': 200}","{'epochs': 100, 'batch_size': 16, 'learning_rate': 0.1}","{'batch_size': 32}","{'type': 'StepLR', 'step_size': 16, 'gamma': 0.1}",0.1
