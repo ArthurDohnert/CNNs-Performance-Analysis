@@ -1,0 +1,312 @@
+% Presentation: CNN Performance Analysis (Final Results)
+\documentclass{beamer}
+
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{graphicx}
+
+% Choose the Inf theme
+\usetheme{Inf}
+
+% Title Information
+\title[Performance Analysis of CNNs]
+      {Performance Analysis of Convolutional Neural Network Architectures for Image Classification}
+
+\subtitle{Comp. Sys. Perf. Analysis}
+
+\date{December, 2025}
+
+\author{Arthur Dohnert, Eduardo Menezes, \\ Fernando Tedesco}
+\institute{Instituto de Informática --- UFRGS}
+
+\begin{document}
+
+% 1. Title Slide
+\InfTitlePage
+
+% 2. Agenda
+\begin{frame}
+  \frametitle{Content}
+  \tableofcontents
+\end{frame}
+
+% =========================================================
+% SECTION 1: Introduction & Objectives
+% =========================================================
+\section{Introduction}
+
+\begin{frame}
+    \frametitle{Context \& Motivation}
+    \begin{itemize}
+        \item \textbf{Problem}: Deploying CNNs in resource-constrained environments (Edge, Embedded, Shared GPU Clusters).
+        \item \textbf{Trade-off}: High predictive performance vs. low latency and memory usage.
+        \item \textbf{Goal}: Systematically benchmark lightweight architectures under a unified, reproducible pipeline.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Evaluated Architectures}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \textbf{Light Models (Green)}
+            \begin{itemize}
+                \item MobileNet V1
+                \item ShuffleNet V2
+                \item SqueezeNet
+                \item EfficientNet-B0
+            \end{itemize}
+            \vspace{0.4cm}
+            \textbf{Medium Models (Blue)}
+            \begin{itemize}
+                \item VGG16
+                \item ResNet34
+                \item Inception V3
+                \item DenseNet121
+            \end{itemize}
+        \end{column}
+
+        \begin{column}{0.5\textwidth}
+            \textbf{Heavy Models (Red)}
+            \begin{itemize}
+                \item ResNet101
+                \item Inception V4
+                \item Xception
+                \item EfficientNet-B7
+            \end{itemize}
+            
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% =========================================================
+% SECTION 2: Methodology
+% =========================================================
+\section{Methodology}
+
+\begin{frame}
+    \frametitle{Experimental Setup}
+    \begin{itemize}
+        \item \textbf{Hardware}: UFRGS PCAD Cluster (Tupi partition).
+            \begin{itemize}
+                \item Single NVIDIA GPU (24 GiB VRAM) per job.
+                \item Data staged to node-local \texttt{SCRATCH} to minimize I/O latency.
+            \end{itemize}
+        \item \textbf{Software}:
+            \begin{itemize}
+                \item Python 3.11, PyTorch 2.0.
+                \item \texttt{PYTORCH\_CUDA\_ALLOC\_CONF} tuned to reduce fragmentation.
+            \end{itemize}
+        \item \textbf{Dataset}: Tiny ImageNet (200 classes, $64\times64$ px).
+        \item \textbf{Protocol}: 100 Epochs, 5 Random Seeds per model.
+    \end{itemize}
+\end{frame}
+
+
+% =========================================================
+% SECTION 3: Results
+% =========================================================
+\section{Results} % faltam muitos gráficos. vamos botar uma página para cada gráfico. não sei se aquela tabela é necessária, se sim, vamos arrumar os dados, até porque agora temos 12 modelos
+
+\subsection{Validation Results}
+
+\begin{frame}
+    \frametitle{Validation Accuracy vs. Epoch}
+    \begin{figure}
+        \centering
+        % Ensure fig_val_accuracy.png is in the folder
+        \includegraphics[width=1\textwidth]{accuracy_vs_epoch.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{F1 Score vs. Epoch}
+    \begin{figure}
+        \centering
+        % Ensure fig_val_accuracy.png is in the folder
+        \includegraphics[width=1\textwidth]{f1_vs_epoch.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Peak Performance Summary}
+    \begin{table}
+        \centering
+        \begin{tabular}{lcc}
+            \toprule
+            \textbf{Model} & \textbf{Top-1 Accuracy} & \textbf{F1-Score} \\
+            \midrule
+            DenseNet121      & $0.184 \pm 0.015$ & $0.154 \pm 0.015$ \\
+            EfficientNet-B0  & $0.603 \pm 0.002$ & $0.598 \pm 0.002$ \\
+            EfficientNet-B7  & $0.463 \pm 0.017$ & $0.449 \pm 0.018$ \\
+            Inception V3     & $0.670 \pm 0.002$ & $0.669 \pm 0.002$ \\
+            Inception V4     & $0.557 \pm 0.011$ & $0.553 \pm 0.011$ \\
+            MobileNet V1     & $0.606 \pm 0.002$ & $0.604 \pm 0.002$ \\
+            ResNet101        & $0.207 \pm 0.102$ & $0.181 \pm 0.092$ \\
+            ResNet34         & $0.633 \pm 0.005$ & $0.630 \pm 0.005$ \\
+            ShuffleNet V2    & $0.506 \pm 0.008$ & $0.498 \pm 0.008$ \\
+            SqueezeNet       & $0.147 \pm 0.071$ & $0.123 \pm 0.062$ \\
+            VGG16            & $0.567 \pm 0.004$ & $0.561 \pm 0.004$ \\
+            Xception         & $0.669 \pm 0.003$ & $0.667 \pm 0.003$ \\
+            \bottomrule
+        \end{tabular}
+        \caption{Peak metrics (Mean $\pm$ 95\% CI) across 5 seeds.}
+    \end{table}
+\end{frame}
+
+\subsection{GPU Usage}
+
+\begin{frame}
+    \frametitle{GPU Utilization vs. Epoch}
+    \begin{figure}
+        \centering
+        % Ensure fig_val_accuracy.png is in the folder
+        \includegraphics[width=1\textwidth]{gpu_utilization.png}
+    \end{figure}
+\end{frame}
+\begin{frame}
+    \frametitle{GPU VRAM Usage vs. Epoch}
+    \begin{figure}
+        \centering
+        % Ensure fig_val_accuracy.png is in the folder
+        \includegraphics[width=1\textwidth]{gpu_vram_usage.png}
+    \end{figure}
+\end{frame}
+\begin{frame}
+    \frametitle{GPU Temperature vs. Epoch}
+    \begin{figure}
+        \centering
+        % Ensure fig_val_accuracy.png is in the folder
+        \includegraphics[width=1\textwidth]{gpu_temperature.png}
+    \end{figure}
+\end{frame}
+\begin{frame}
+    \frametitle{GPU Peak Power per Epoch}
+    \begin{figure}
+        \centering
+        % Ensure fig_val_accuracy.png is in the folder
+        \includegraphics[width=1\textwidth]{gpu_power_peak.png}
+    \end{figure}
+\end{frame} 
+\begin{frame}
+    \frametitle{GPU Average Power per Epoch}
+    \begin{figure}
+        \centering
+        % Ensure fig_val_accuracy.png is in the folder
+        \includegraphics[width=1\textwidth]{gpu_power_avg.png}
+    \end{figure}
+\end{frame} 
+
+\subsection{Efficiency vs. Accuracy}
+
+\begin{frame}
+    \frametitle{Total Training Time}
+    \begin{figure}
+        \centering
+        % Ensure fig_val_accuracy.png is in the folder
+        \includegraphics[width=1\textwidth]{training_time_total_bar.png}
+    \end{figure}
+\end{frame}
+\begin{frame}
+    \frametitle{Training Time Distribution}
+    \begin{figure}
+        \centering
+        % Ensure fig_val_accuracy.png is in the folder
+        \includegraphics[width=1\textwidth]{training_time_boxplot.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Accuracy vs. Training Cost}
+    \begin{figure}
+        \centering
+        % Ensure fig_val_accuracy.png is in the folder
+        \includegraphics[width=1\textwidth]{accuracy_vs_training_cost.png}
+    \end{figure}
+\end{frame}
+\begin{frame}
+    \frametitle{Training Time per Seed}
+    \begin{figure}
+        \centering
+        % Ensure fig_val_accuracy.png is in the folder
+        \includegraphics[width=1\textwidth]{training_time_per_seed.png}
+    \end{figure}
+\end{frame} 
+
+\subsection{Comparing categories}
+\begin{frame}
+    \frametitle{Average Accuracy per Category}
+    \begin{figure}
+        \centering
+        % Ensure fig_val_accuracy.png is in the folder
+        \includegraphics[width=1\textwidth]{cat_accuracy_mean.png}
+    \end{figure}
+\end{frame} 
+\begin{frame}
+    \frametitle{Average Training Time per Category}
+    \begin{figure}
+        \centering
+        % Ensure fig_val_accuracy.png is in the folder
+        \includegraphics[width=1\textwidth]{cat_training_time.png}
+    \end{figure}
+\end{frame} 
+\begin{frame}
+    \frametitle{Category Training Time Distribution}
+    \begin{figure}
+        \centering
+        % Ensure fig_val_accuracy.png is in the folder
+        \includegraphics[width=1\textwidth]{cat_accuracy_distribution.png}
+    \end{figure}
+\end{frame} 
+\begin{frame}
+    \frametitle{Efficiency of Each Category}
+    \begin{figure}
+        \centering
+        % Ensure fig_val_accuracy.png is in the folder
+        \includegraphics[width=1\textwidth]{cat_efficiency.png}
+    \end{figure}
+\end{frame} 
+
+
+% =========================================================
+% SECTION 4: Conclusion
+% =========================================================
+\section{Conclusion}
+
+\begin{frame}
+    \frametitle{Key Takeaways}
+    \begin{enumerate}
+        \item \textbf{Performance does not strictly follow model size.}  
+              Surprisingly, several heavy models underperformed compared to lightweight architectures.  
+              Inception V3, ResNet34, MobileNet V1, and Xception achieved the best accuracies, despite having very different computational footprints.
+
+        \item \textbf{Training time was also inconsistent with model complexity.}  
+              Some lightweight models (e.g., SqueezeNet and ShuffleNet V2) trained slower than expected,  
+              while certain heavier models (e.g., Inception V3) trained efficiently.
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Key Takeaways}
+    \begin{enumerate}
+        \item \textbf{Medium-sized models were generally the weakest group.}  
+              Architectures such as EfficientNet-B7, VGG16 and Inception V4 underperformed  
+              both heavy and light models in accuracy–cost trade-offs.
+
+        \item \textbf{The best overall models were Inception V3, Xception, ResNet34, and MobileNet V1.}  
+              These models consistently offered the best balance between accuracy, training time,  
+              and resource usage in our Tiny ImageNet setup.
+
+        \item \textbf{The worst models were SqueezeNet, DenseNet121 and ResNet101.}  
+              They combined low accuracy with either slow training or high variability.
+    \end{enumerate}
+\end{frame}
+
+% Final Slide
+\begin{frame}
+  \frametitle{Thank You!}
+  \InfContacts
+\end{frame}
+
+\end{document}
