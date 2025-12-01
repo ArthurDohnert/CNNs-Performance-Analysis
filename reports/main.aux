@@ -1,0 +1,94 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\@writefile{toc}{\contentsline {section}{Abstract}{1}{section*.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}Methodology and Experimental Design}{2}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Experimental Design}{2}{subsection.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Job Isolation and Workflow}{2}{subsection.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Studied Architectures}{3}{subsection.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.1}Lightweight Architectures}{3}{subsubsection.2.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.2}Medium-Weight Architectures}{3}{subsubsection.2.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.3}Heavyweight Architectures}{3}{subsubsection.2.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Dataset}{3}{subsection.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Metrics for Analysis}{4}{subsection.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Experimental Environment}{4}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Hardware Configuration}{4}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Reproducibility via GNU Guix}{4}{subsection.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Results}{5}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Predictive Performance}{5}{subsection.4.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Validation Accuracy vs. Epoch. Medium-weight models (ResNet34, InceptionV3) show stable convergence, while heavyweight models (ResNet101, DenseNet121) fail to reach competitive accuracy within the time limit.}}{5}{figure.caption.2}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:acc_vs_epoch}{{1}{5}{Validation Accuracy vs. Epoch. Medium-weight models (ResNet34, InceptionV3) show stable convergence, while heavyweight models (ResNet101, DenseNet121) fail to reach competitive accuracy within the time limit}{figure.caption.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Validation F1-Score vs. Epoch. The trends mirror accuracy, confirming that the successful models are not just predicting majority classes but maintaining balanced precision and recall.}}{6}{figure.caption.3}\protected@file@percent }
+\newlabel{fig:f1_vs_epoch}{{2}{6}{Validation F1-Score vs. Epoch. The trends mirror accuracy, confirming that the successful models are not just predicting majority classes but maintaining balanced precision and recall}{figure.caption.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Training Stability and Variance}{6}{subsection.4.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Total Training Time per Seed. Most models show negligible variance, validating the stability of the Guix environment. EfficientNet-B7 is a notable outlier.}}{6}{figure.caption.4}\protected@file@percent }
+\newlabel{fig:time_per_seed}{{3}{6}{Total Training Time per Seed. Most models show negligible variance, validating the stability of the Guix environment. EfficientNet-B7 is a notable outlier}{figure.caption.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Distribution of Total Training Time per Model. The boxplot highlights the extreme variance in EfficientNet-B7 compared to the tight clustering of other architectures.}}{7}{figure.caption.5}\protected@file@percent }
+\newlabel{fig:time_boxplot}{{4}{7}{Distribution of Total Training Time per Model. The boxplot highlights the extreme variance in EfficientNet-B7 compared to the tight clustering of other architectures}{figure.caption.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Computational Cost}{7}{subsection.4.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Average Total Training Time. There is an order-of-magnitude difference between lightweight models (<5000s) and heavyweight models (>80000s).}}{7}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:time_bar}{{5}{7}{Average Total Training Time. There is an order-of-magnitude difference between lightweight models (<5000s) and heavyweight models (>80000s)}{figure.caption.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Average Inference Time. Larger models have longer inference times, reflecting their increased complexity.}}{8}{figure.caption.7}\protected@file@percent }
+\newlabel{fig:inference}{{6}{8}{Average Inference Time. Larger models have longer inference times, reflecting their increased complexity}{figure.caption.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces GPU Temperature vs. Epoch. Temperatures remain stable (60-65°C) across all models, indicating effective cooling.}}{9}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:temp}{{7}{9}{GPU Temperature vs. Epoch. Temperatures remain stable (60-65°C) across all models, indicating effective cooling}{figure.caption.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces GPU Utilization vs. Epoch. Most models maintain high utilization (>80\%), though dips are visible in models with lighter computational loads.}}{9}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:util}{{8}{9}{GPU Utilization vs. Epoch. Most models maintain high utilization (>80\%), though dips are visible in models with lighter computational loads}{figure.caption.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces GPU VRAM Usage vs. Epoch. EfficientNet-B7 and VGG16 saturate the 24GB buffer, while lightweight models use <5GB.}}{10}{figure.caption.10}\protected@file@percent }
+\newlabel{fig:vram}{{9}{10}{GPU VRAM Usage vs. Epoch. EfficientNet-B7 and VGG16 saturate the 24GB buffer, while lightweight models use <5GB}{figure.caption.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Total Energy Consumption per Model. Models with the most accuracy consume the most energy.}}{10}{figure.caption.11}\protected@file@percent }
+\newlabel{fig:energy}{{10}{10}{Total Energy Consumption per Model. Models with the most accuracy consume the most energy}{figure.caption.11}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Categorical Analysis}{11}{subsection.4.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Validation Accuracy Distribution per Category. The "Heavy" category shows a wide spread due to the failure of ResNet101/DenseNet121 contrasting with the success of InceptionV4.}}{11}{figure.caption.12}\protected@file@percent }
+\newlabel{fig:cat_acc_dist}{{11}{11}{Validation Accuracy Distribution per Category. The "Heavy" category shows a wide spread due to the failure of ResNet101/DenseNet121 contrasting with the success of InceptionV4}{figure.caption.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Average Final Accuracy per Category. Medium-weight models offer the highest average performance.}}{12}{figure.caption.13}\protected@file@percent }
+\newlabel{fig:cat_acc_mean}{{12}{12}{Average Final Accuracy per Category. Medium-weight models offer the highest average performance}{figure.caption.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Efficiency Score (Accuracy per Second). Lightweight models dominate this metric, offering the best return on computational investment.}}{12}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:cat_eff}{{13}{12}{Efficiency Score (Accuracy per Second). Lightweight models dominate this metric, offering the best return on computational investment}{figure.caption.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Average Training Time per Category. The cost penalty for moving from Medium to Heavy is substantial.}}{13}{figure.caption.15}\protected@file@percent }
+\newlabel{fig:cat_time}{{14}{13}{Average Training Time per Category. The cost penalty for moving from Medium to Heavy is substantial}{figure.caption.15}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Global Trade-offs: The Efficiency Frontier}{14}{subsection.4.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Accuracy vs. Training Cost (Efficiency Frontier). The optimal models lie on the top-left boundary.}}{14}{figure.caption.16}\protected@file@percent }
+\newlabel{fig:frontier}{{15}{14}{Accuracy vs. Training Cost (Efficiency Frontier). The optimal models lie on the top-left boundary}{figure.caption.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Accuracy VS. Energy Consumption. Models with the most accuracy consume the most energy.}}{15}{figure.caption.17}\protected@file@percent }
+\newlabel{fig:acc_energy}{{16}{15}{Accuracy VS. Energy Consumption. Models with the most accuracy consume the most energy}{figure.caption.17}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Discussion}{15}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}The "Efficiency Frontier" and Diminishing Returns}{15}{subsection.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Convergence Failures in Heavyweight Models}{16}{subsection.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Architectural Fragility: The Case of SqueezeNet}{16}{subsection.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Study Limitations}{16}{subsection.5.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusions and Recommendations}{16}{section.6}\protected@file@percent }
+\citation{*}
+\bibstyle{ACM-Reference-Format}
+\bibdata{references}
+\bibcite{chollet2017xception}{{1}{2017}{{Chollet}}{{}}}
+\bibcite{courtes2013guix}{{2}{2013}{{Court{\`e}s}}{{}}}
+\bibcite{dolstra2006nix}{{3}{2006}{{Dolstra}}{{}}}
+\bibcite{he2016deep}{{4}{2016}{{He et~al\mbox  {.}}}{{}}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Key Findings}{17}{subsection.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Recommendations for Performance Improvement}{17}{subsection.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Future Work}{17}{subsection.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{References}{17}{section*.19}\protected@file@percent }
+\bibcite{howard2017mobilenets}{{5}{2017}{{Howard et~al\mbox  {.}}}{{}}}
+\bibcite{huang2017densely}{{6}{2017}{{Huang et~al\mbox  {.}}}{{}}}
+\bibcite{iandola2016squeezenet}{{7}{2016}{{Iandola et~al\mbox  {.}}}{{}}}
+\bibcite{tinyimagenet}{{8}{2015}{{Le and Yang}}{{}}}
+\bibcite{schnorr2025course}{{9}{2025}{{Schnorr}}{{}}}
+\bibcite{simonyan2014very}{{10}{2014}{{Simonyan and Zisserman}}{{}}}
+\bibcite{szegedy2017inception}{{11}{2017}{{Szegedy et~al\mbox  {.}}}{{}}}
+\bibcite{szegedy2016rethinking}{{12}{2016}{{Szegedy et~al\mbox  {.}}}{{}}}
+\bibcite{tan2019efficientnet}{{13}{2019}{{Tan and Le}}{{}}}
+\bibcite{yoo2003slurm}{{14}{2003}{{Yoo et~al\mbox  {.}}}{{}}}
+\bibcite{zhang2018shufflenet}{{15}{2018}{{Zhang et~al\mbox  {.}}}{{}}}
+\newlabel{tocindent-1}{0pt}
+\newlabel{tocindent0}{0pt}
+\newlabel{tocindent1}{4.65pt}
+\newlabel{tocindent2}{11.49998pt}
+\newlabel{tocindent3}{20.22pt}
+\newlabel{tocindent4}{0pt}
+\newlabel{tocindent5}{0pt}
+\newlabel{TotPages}{{18}{18}{}{page.18}{}}
+\gdef \@abspage@last{18}

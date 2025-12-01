@@ -92,12 +92,19 @@ Definição dos modelos e das seeds no arquivo submit_all.sh
 
 >>       sh submit_all.sh
 
-### Como gerar análises com o logs_processor ###
+### Como gerar as análises ###
 
 
-Abra logs_processor.ipynb.​
+Certifique-se de estar com o ambiente virtual ativo (venv) e as dependências instaladas. Os scripts abaixo executam os notebooks (atualizando os dados e gráficos) e compilam automaticamente os arquivos LaTeX (Artigo e Slides) localizados na pasta reports/.
 
-Rode as células na ordem.
+Windows (via Python) Recomendado para PowerShell ou CMD.
+
+>>      python analise_windows.py
+
+Linux / macOS / Git Bash
+
+>>      chmod +x analise_linux.sh  # Necessário apenas na primeira execução
+>>      ./analise_linux.sh
 
 
 Convenções de configuração

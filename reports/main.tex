@@ -1,0 +1,393 @@
+\documentclass[acmsmall]{acmart}
+\usepackage{float}
+\usepackage{placeins}
+
+%% Metadata for the ACM Template
+\setcopyright{rightsretained}
+\acmJournal{PACMHCI}
+\acmYear{2025}
+\acmVolume{1}
+\acmNumber{1}
+\acmArticle{1}
+\acmMonth{11}
+
+
+\begin{document}
+
+\title{Performance Analysis of Convolutional Neural Network Architectures for Image Classification}
+
+\author{Eduardo Henrique Drumm Menezes}
+\affiliation{%
+  \institution{Instituto de Informática, UFRGS}
+  \city{Porto Alegre}
+  \country{Brazil}
+}
+\email{eduardo.menezes@inf.ufrgs.br}
+
+\author{Arthur Velho Dohnert}
+\affiliation{%
+  \institution{Instituto de Informática, UFRGS}
+  \city{Porto Alegre}
+  \country{Brazil}
+}
+\email{arthur.dohnert@ufrgs.br}
+
+\author{Fernando Bosquetti Tedesco}
+\affiliation{%
+  \institution{Instituto de Informática, UFRGS}
+  \city{Porto Alegre}
+  \country{Brazil}
+}
+\email{fernando.tedesco@ufrgs.br}
+
+\begin{abstract}
+Convolutional Neural Networks (CNNs) have become the de facto standard for computer vision tasks; however, the pursuit of maximizing predictive accuracy often obscures the critical trade-offs regarding computational efficiency and resource consumption. This study presents a comprehensive performance analysis of diverse CNN architectures—categorized into lightweight, medium-weight, and heavyweight classes—evaluated on the Tiny-ImageNet dataset. To isolate the performance characteristics inherent to each architecture from environmental and stochastic noise, we employ a rigorous measurement-based methodology utilizing GNU Guix for bit-for-bit software environment reproducibility. Furthermore, experimental variance is strictly controlled through the enforcement of deterministic algorithms and fixed random seeds across isolated execution units. We quantify key metrics including Top-1 accuracy, inference latency, memory footprint, and energy consumption. The resulting analysis maps the efficiency frontier of modern CNNs, providing empirical guidance for model selection in constrained deployment scenarios ranging from edge computing to high-performance cluster environments.
+\end{abstract}
+
+%% CCS Concepts and Keywords
+\begin{CCSXML}
+<ccs2012>
+   <concept>
+       <concept_id>10010147.10010257.10010293.10010294</concept_id>
+       <concept_desc>Computing methodologies~Neural networks</concept_desc>
+       <concept_significance>500</concept_significance>
+   </concept>
+   <concept>
+       <concept_id>10002944.10011123.10011673</concept_id>
+       <concept_desc>General and reference~Performance</concept_desc>
+       <concept_significance>500</concept_significance>
+   </concept>
+</ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Computing methodologies~Neural networks}
+\ccsdesc[500]{General and reference~Performance}
+
+\keywords{Performance Analysis, Convolutional Neural Networks, Deep Learning, Model Benchmarking, Computational Efficiency, Reproducibility, GNU Guix}
+
+\maketitle
+
+
+\section{Introduction}
+
+The proliferation of Convolutional Neural Networks (CNNs) has established them as the de facto standard for computer vision tasks, driving state-of-the-art results in image classification, object detection, and segmentation. However, the pursuit of higher accuracy has often resulted in increasingly complex architectures with substantial computational demands. For practitioners and systems engineers, selecting an appropriate architecture is no longer solely a question of predictive quality; it requires a nuanced understanding of the trade-offs between accuracy, latency, memory footprint, and energy consumption.
+
+This work presents a comprehensive performance analysis of CNN architectures trained on the Tiny-ImageNet dataset. We evaluate a spectrum of models categorized into three distinct classes: \textit{Lightweight} (optimized for edge deployment, e.g., MobileNet, EfficientNet-B0), \textit{Medium-weight} (general-purpose, e.g., ResNet34), and \textit{Heavyweight} (high-accuracy, computationally intensive, e.g., ResNet101).
+
+The primary objective is to identify, quantify, and interpret the factors influencing the performance of these computational objects. Unlike theoretical complexity bounds (Big-O), this study adopts an empirical, measurement-based approach to map the practical ``efficiency frontier'' of modern deep learning models. By strictly controlling the experimental environment, we aim to provide actionable insights into how architectural decisions—such as depth, width, and convolution types—impact physical resource usage on high-performance computing (HPC) hardware.
+
+\section{Methodology and Experimental Design}
+
+To isolate the impact of architectural design on performance, we employed a rigorous experimental methodology prioritizing reproducibility and isolation. This section details the experimental design, the computational environment, and the control mechanisms used to ensure data validity.
+
+\subsection{Experimental Design}
+
+We employ a simplified, discrete experimental design where the primary categorical factor is the \textbf{Model Architecture} itself. Due to the nature of this comparative analysis—which aims to benchmark the intrinsic performance of standard architectures rather than to optimize them for a specific production task—we do not employ a complex factorial design for hyperparameter tuning. Instead, a fixed set of hyperparameters (e.g., learning rate schedule, optimizer configuration) is maintained across all models to ensure a direct, \textit{ceteris paribus} comparison of the architectures.
+
+The study acknowledges two sources of variation: the architecture and the stochastic initialization of weights. To control for stochasticity without introducing complex blocking factors, we utilize the tuple $(M, S)$ as the sole input parameters, where $M$ is the model architecture and $S$ is the random seed. By evaluating each architecture with multiple distinct seeds, we report statistical distributions (Mean $\pm$ Standard Deviation) rather than single-point measurements.
+
+To ensure strict reproducibility within this simple design, we implemented the following protocols:
+\begin{itemize}
+    \item \textbf{Fixed Seeds and Determinism:} All experiments are initialized with a fixed global seed. This seed propagates to all pseudo-random number generators (PRNGs), including Python's native \texttt{random} module, NumPy, and PyTorch.
+    \item \textbf{Algorithmic Determinism:} We enforce the use of deterministic algorithms within the GPU backend (cuDNN). This ensures that for a given seed and architecture, the sequence of floating-point operations is identical across runs, eliminating non-deterministic jitter in training dynamics as a confounding variable.
+\end{itemize}
+
+\subsection{Job Isolation and Workflow}
+
+A critical aspect of our methodology is the operational isolation of experimental units. Unlike traditional designs that require randomized execution orders (scrambling) to mitigate temporal interference (e.g., thermal throttling, cache contention, or previous job artifacts), we execute each experiment $(M, S)$ as a discrete, independent job within the cluster's workload manager (Slurm).
+
+Because each job effectively spins up a pristine environment, there is no shared state between experiments. The order of execution is therefore irrelevant to the validity of the results. Each job incurs its own independent initialization overhead (dataset staging and library loading), which is explicitly excluded from the performance measurement windows. This isolation renders complex experimental ordering strategies unnecessary, as the independence of observations is guaranteed by the cluster's job scheduling mechanism rather than by statistical randomization.
+
+\subsection{Studied Architectures}
+
+The study evaluates a diverse spectrum of Convolutional Neural Network (CNN) architectures, selected to represent distinct design paradigms and resource requirements. We categorize the input variable $M$ into three classes based on their parameter count and theoretical FLOPs (Floating Point Operations).
+
+\subsubsection{Lightweight Architectures}
+This class encompasses models optimized for edge deployment and mobile applications, characterized by techniques such as depthwise separable convolutions and channel shuffling to minimize computational cost.
+\begin{itemize}
+    \item \textbf{MobileNetV1:} Utilizes depthwise separable convolutions to drastically reduce parameter count and computation compared to standard convolutions.
+    \item \textbf{SqueezeNet:} Employs "Fire modules" that squeeze network width to reduce parameter size, aiming for AlexNet-level accuracy with 50x fewer parameters.
+    \item \textbf{EfficientNet-B0:} The baseline model of the EfficientNet family, designed via compound scaling to optimize accuracy under strict FLOPs constraints.
+    \item \textbf{ShuffleNetV2:} Introduces channel shuffling to enable information exchange between group convolutions, specifically optimizing memory access cost (MAC) for direct hardware speedup.
+\end{itemize}
+
+\subsubsection{Medium-Weight Architectures}
+These models represent the general-purpose "workhorses" of computer vision, offering a robust balance between accuracy and computational demand suitable for standard server environments.
+\begin{itemize}
+    \item \textbf{VGG16:} A foundational architecture featuring a uniform arrangement of $3\times3$ convolutions, known for its simplicity but high parameter count due to dense layers.
+    \item \textbf{ResNet34:} A residual network of moderate depth that utilizes skip connections to mitigate the vanishing gradient problem, enabling effective training of deeper structures.
+    \item \textbf{InceptionV3:} Utilizes factorized convolutions and auxiliary classifiers to scale network depth and width while maintaining a controlled computational budget.
+    \item \textbf{DenseNet121:} Features dense connectivity where each layer receives inputs from all preceding layers, maximizing feature propagation and encouraging feature reuse.
+\end{itemize}
+
+\subsubsection{Heavyweight Architectures}
+This category includes state-of-the-art, high-capacity models designed to maximize predictive performance, often requiring substantial GPU memory and computational power.
+\begin{itemize}
+    \item \textbf{ResNet101:} A deep variant of the ResNet family, offering increased representational capacity through a larger number of residual blocks.
+    \item \textbf{InceptionV4:} A pure Inception variant that simplifies the architecture while extending network depth, targeting high accuracy on large-scale datasets.
+    \item \textbf{Xception:} An extreme interpretation of the Inception hypothesis, replacing Inception modules with depthwise separable convolutions to capture cross-channel correlations and spatial correlations independently.
+    \item \textbf{EfficientNet-B7:} The largest variant in the EfficientNet family, scaled up significantly in depth, width, and resolution to achieve peak accuracy at the cost of high latency and VRAM usage.
+\end{itemize}
+
+
+\subsection{Dataset}
+
+All experiments are conducted using the \textbf{Tiny-ImageNet} dataset. As a standardized subset of the full ImageNet, it serves as an excellent intermediate benchmark that is more computationally tractable for a wide array of architectures. It consists of 100,000 training images, 10,000 validation images, and 10,000 test images, distributed across 200 distinct classes. Each image is a $64 \times 64$ pixel color image, providing a task sufficiently complex to differentiate the capabilities of the evaluated models.
+
+\subsection{Metrics for Analysis}
+
+Our analysis is based on two complementary categories of metrics, designed to provide a holistic view of the trade-offs between predictive quality and computational cost.
+
+\begin{enumerate}
+    \item \textbf{Model Performance Metrics:} These quantify the predictive quality of each classifier on the test set.
+    \begin{itemize}
+        \item \textit{Top-1 Accuracy:} The primary measure of overall correctness.
+        \item \textit{Precision, Recall, and F1-Score:} Macro-averaged across all 200 classes to provide a balanced view of per-class performance, which is crucial for multi-class problems where accuracy can be misleading.
+    \end{itemize}
+    \item \textbf{Computational Cost Metrics:} These measure resource consumption and efficiency, which are critical for assessing practical viability.
+    \begin{itemize}
+        \item \textit{Training Time:} Total wall-clock time required to train a model to a fixed number of epochs.
+        \item \textit{Inference Latency:} Measured for both single-image (real-time) and batch (throughput) predictions.
+        \item \textit{Memory Usage:} Peak Video RAM (VRAM) consumption during both training and inference.
+        \item \textit{Energy Consumption:} Measured via instantaneous power draw (Watts) and integrated over time to estimate total energy use (Joules).
+    \end{itemize}
+\end{enumerate}
+
+
+\section{Experimental Environment}
+
+This section describes the hardware and software environment established to conduct the experiments, with a strong emphasis on the tools and practices used to ensure full reproducibility.
+
+
+\subsection{Hardware Configuration}
+
+All experiments were executed on the UFRGS High-Performance Computing Cluster (PCAD). We utilized compute nodes from the GPU partition, ensuring a controlled and consistent hardware environment for all measurements. Each job was allocated a single node equipped with:
+
+\begin{itemize}
+    \item \textbf{CPU:} [Enter your specific CPU model, e.g., Intel Xeon Gold 6248R]
+    \item \textbf{System Memory (RAM):} [Enter RAM amount, e.g., 128 GiB]
+    \item \textbf{GPU:} A single NVIDIA RTX 4090 with 24GiB of VRAM.
+\end{itemize}
+
+\subsection{Reproducibility via GNU Guix}
+
+To guarantee bit-for-bit reproducibility of the software stack, we utilize \textbf{GNU Guix}, a transactional package manager. Traditional environmental management (e.g., containers or virtual environments) often suffers from ``software drift'' due to floating dependencies.
+
+In contrast, we define a \texttt{manifest.scm} that locks the entire dependency graph—from the Python interpreter and PyTorch libraries down to the specific commits of system libraries and the CUDA toolchain. This declarative approach ensures that the software environment is mathematically identical for every job execution, regardless of when or on which node the job is scheduled. This rigorous version control allows us to attribute observed performance differences strictly to the model architectures, ruling out software inconsistencies as a confounding variable.All source code, configuration files, and analysis scripts were versioned using Git.
+
+\section{Results}
+
+This section presents the empirical findings of the performance analysis, categorized into predictive performance, computational cost, and overall efficiency. All reported values represent the mean across 5 independent seeds, with error bars indicating the 95\% confidence interval. The figures are referenced sequentially to build a narrative from raw training dynamics to the final efficiency frontier.
+
+\subsection{Predictive Performance}
+
+We first analyze the training dynamics to understand how the architectures converged over the fixed epoch budget.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{../reports/results/accuracy_vs_epoch.png}
+    \caption{Validation Accuracy vs. Epoch. Medium-weight models (ResNet34, InceptionV3) show stable convergence, while heavyweight models (ResNet101, DenseNet121) fail to reach competitive accuracy within the time limit.}
+    \label{fig:acc_vs_epoch}
+\end{figure}
+
+Figure \ref{fig:acc_vs_epoch} illustrates the validation accuracy trajectories. The medium-weight models, specifically \textbf{ResNet34} and \textbf{InceptionV3}, exhibit the most stable convergence, reaching plateau regions of 60-65\% accuracy. In contrast, the heavyweight models (\textbf{ResNet101}, \textbf{DenseNet121}) show a flatlining trajectory at low accuracy ($<20\%$). As detailed in the Discussion, this is partially an artifact of the 24-hour job limit preventing these computationally intensive models from completing the full training schedule.
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=\linewidth]{../reports/results/f1_vs_epoch.png}
+    \caption{Validation F1-Score vs. Epoch. The trends mirror accuracy, confirming that the successful models are not just predicting majority classes but maintaining balanced precision and recall.}
+    \label{fig:f1_vs_epoch}
+\end{figure}
+
+\FloatBarrier
+
+The F1-Score trajectories in Figure \ref{fig:f1_vs_epoch} closely mirror the accuracy curves, confirming that the superior performance of the medium-weight and select lightweight models (MobileNetV1) is robust across classes, rather than being driven by class imbalances.
+
+\subsection{Training Stability and Variance}
+
+To assess the reproducibility of our results, we examine the variance across different random seeds.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{../reports/results/training_time_per_seed.png}
+    \caption{Total Training Time per Seed. Most models show negligible variance, validating the stability of the Guix environment. EfficientNet-B7 is a notable outlier.}
+    \label{fig:time_per_seed}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{../reports/results/training_time_boxplot.png}
+    \caption{Distribution of Total Training Time per Model. The boxplot highlights the extreme variance in EfficientNet-B7 compared to the tight clustering of other architectures.}
+    \label{fig:time_boxplot}
+\end{figure}
+
+Figures \ref{fig:time_per_seed} and \ref{fig:time_boxplot} reveal that for most architectures, training time is highly deterministic, with negligible variance between seeds. However, \textbf{EfficientNet-B7} exhibits a massive spread. We hypothesize this is due to specific seeds causing poor weight initializations.
+
+\subsection{Computational Cost}
+
+We next quantify the raw resources consumed by each architecture.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{../reports/results/training_time_total_bar.png}
+    \caption{Average Total Training Time. There is an order-of-magnitude difference between lightweight models (<5000s) and heavyweight models (>80000s).}
+    \label{fig:time_bar}
+\end{figure}
+
+Figure \ref{fig:time_bar} places the costs in perspective. The lightweight models (\textbf{SqueezeNet}, \textbf{ShuffleNetV2}) are incredibly fast, finishing in under 5,000 seconds. Conversely, the failed heavyweight runs consumed the maximum available cluster time (>80,000 seconds) while yielding poor results, highlighting the risk of deploying un-tuned large models.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{../reports/results/inference_time_per_model.png}
+    \caption{Average Inference Time. Larger models have longer inference times, reflecting their increased complexity.}
+    \label{fig:inference}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{../reports/results/gpu_temperature.png}
+    \caption{GPU Temperature vs. Epoch. Temperatures remain stable (60-65°C) across all models, indicating effective cooling.}
+    \label{fig:temp}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{../reports/results/gpu_utilization.png}
+    \caption{GPU Utilization vs. Epoch. Most models maintain high utilization (>80\%), though dips are visible in models with lighter computational loads.}
+    \label{fig:util}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{../reports/results/gpu_vram_usage.png}
+    \caption{GPU VRAM Usage vs. Epoch. EfficientNet-B7 and VGG16 saturate the 24GB buffer, while lightweight models use <5GB.}
+    \label{fig:vram}
+\end{figure}
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=\linewidth]{../reports/results/total_energy_per_model.png}
+    \caption{Total Energy Consumption per Model. Models with the most accuracy consume the most energy.}
+    \label{fig:energy}
+\end{figure}
+
+\FloatBarrier
+
+The hardware telemetry in Figures \ref{fig:temp}, \ref{fig:util}, and \ref{fig:vram} demonstrates that the \textbf{MobileNetV1} and \textbf{VGG16} are effectively saturating the 24GB VRAM, primarily due to a more efficient accommodation of the batch sizes. Despite this, Figure \ref{fig:temp} shows that thermal management was effective across the board, with no model causing thermal throttling.
+
+\subsection{Categorical Analysis}
+
+Aggregating the results by architectural category (Light, Medium, Heavy) clarifies the high-level trends.
+
+The categorical plots (Figures \ref{fig:cat_acc_dist} - \ref{fig:cat_time}) confirm that the \textbf{Medium-Weight} category offers the most consistent raw accuracy. However, when normalized for time (Figure \ref{fig:cat_eff}), the \textbf{Lightweight} category is undeniably the most efficient, providing the highest accuracy-per-second of training.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{../reports/results/cat_accuracy_distribution.png}
+    \caption{Validation Accuracy Distribution per Category. The "Heavy" category shows a wide spread due to the failure of ResNet101/DenseNet121 contrasting with the success of InceptionV4.}
+    \label{fig:cat_acc_dist}
+\end{figure}
+    
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{../reports/results/cat_accuracy_mean.png}
+    \caption{Average Final Accuracy per Category. Medium-weight models offer the highest average performance.}
+    \label{fig:cat_acc_mean}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{../reports/results/cat_efficiency.png}
+    \caption{Efficiency Score (Accuracy per Second). Lightweight models dominate this metric, offering the best return on computational investment.}
+    \label{fig:cat_eff}
+\end{figure}
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=\linewidth]{../reports/results/cat_training_time.png}
+    \caption{Average Training Time per Category. The cost penalty for moving from Medium to Heavy is substantial.}
+    \label{fig:cat_time}
+\end{figure}
+
+\FloatBarrier
+
+
+\subsection{Global Trade-offs: The Efficiency Frontier}
+
+Finally, we synthesize all metrics into a single view of the efficiency landscape.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{../reports/results/accuracy_vs_training_cost.png}
+    \caption{Accuracy vs. Training Cost (Efficiency Frontier). The optimal models lie on the top-left boundary.}
+    \label{fig:frontier}
+\end{figure}
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=\linewidth]{../reports/results/accuracy_vs_energy.png}
+    \caption{Accuracy VS. Energy Consumption. Models with the most accuracy consume the most energy.}
+    \label{fig:acc_energy}
+\end{figure}
+
+\FloatBarrier
+
+Figure \ref{fig:frontier} represents the core finding of this study. The models on the top-left boundary—\textbf{ShuffleNetV2} and \textbf{VGG16}—define the Pareto efficiency frontier. They represent the optimal choices for resource-constrained and general-purpose applications, respectively. \textbf{SqueezeNet} appears as an outlier with very low cost but insufficient accuracy, while the heavyweight models (\textbf{ResNet101}, \textbf{DenseNet121}) occupy the undesirable bottom-right quadrant, having incurred maximum cost for minimal gain due to the experimental time constraints.
+
+\section{Discussion}
+
+The results of this study highlight the non-trivial relationship between architectural complexity and practical performance. By enforcing a strictly reproducible environment with fixed hyperparameters, we observed that increasing model depth or theoretical capacity does not automatically translate to better predictive quality on the Tiny-ImageNet task. This section interprets the divergence between lightweight and heavyweight models.
+
+\subsection{The "Efficiency Frontier" and Diminishing Returns}
+The core finding of this work is visualized in the "Efficiency Frontier" (Figure \ref{fig:frontier}). We identified a Pareto-optimal boundary defined by \textbf{MobileNetV1} (for low-latency applications) and \textbf{Xception} (for general-purpose accuracy).
+
+Contrary to the common assumption that deeper models yield better features, our results show a regime of diminishing returns. While \textbf{InceptionV3} and \textbf{Resnet34} may offered marginal accuracy gains over ResNet34, they incurred a disproportionate cost in training time and energy. This suggests that for intermediate-complexity datasets like Tiny-ImageNet ($64 \times 64$), the representational capacity of medium-weight models is sufficient, and further scaling primarily adds computational overhead without corresponding predictive value.
+
+
+\subsection{Convergence Failures in Heavyweight Models}
+A critical observation was the sub-optimal performance of \textbf{ResNet101} and \textbf{DenseNet121}, which exhibited surprisingly low accuracy ($<20\%$). Unlike the medium-weight models that converged reliably, these heavyweight architectures failed to learn effective representations within the standard training schedule.
+
+This failure points to an issue with optimization dynamics rather than just resource limits. The extreme depth of these networks likely exacerbates gradient propagation issues or requires a more tailored hyperparameter strategy (e.g., longer warmup periods or different learning rate schedules) than the standardized baseline used in this study. Consequently, we conclude that these architectures are not "plug-and-play" solutions for this scale of problem; they require specific tuning that negates their utility as general-purpose baselines compared to the more robust Xception.
+
+\subsection{Architectural Fragility: The Case of SqueezeNet}
+\textbf{SqueezeNet} presents a distinct case of architectural limitation within this experimental scope. Despite completing its training schedule without resource bottlenecks, it achieved poor accuracy ($\approx 15\%$), significantly lagging behind other lightweight competitors like MobileNetV1.
+
+This underperformance highlights a specific fragility in SqueezeNet's design. Its aggressive use of $1 \times 1$ "squeeze" filters to reduce parameter count appears to create a difficult optimization landscape that is highly sensitive to hyperparameters. In a controlled comparison where all models share a fixed optimizer and scheduler, SqueezeNet failed to generalize. This contrasts sharply with MobileNetV1, whose depthwise separable convolutions proved robust and effective under the same conditions, establishing it as the superior choice for constrained environments in this work.
+
+\subsection{Study Limitations}
+Our analysis must be interpreted within the context of two primary limitations:
+\begin{itemize}
+    \item \textbf{Fixed Hyperparameters:} To isolate the architecture as the variable, we did not tune hyperparameters per model. This likely underestimates the peak potential of specific architectures (like SqueezeNet and EfficientNet).
+    \item \textbf{Hardware Specificity:} Results are specific to the NVIDIA GPU architecture used. Inference latency, in particular, might show different trends on CPU-only edge devices where memory access patterns (e.g., ShuffleNet's channel shuffling) play a larger role than raw FLOPs.
+    \item \textbf{Intrinsic Architectural Constraints:} Certain network families exhibit structural limitations that may inherently hinder performance under standardized training settings. For example, \textbf{SqueezeNet}'s extreme parameter compression, \textbf{DenseNet}'s high feature-map accumulation, and the depth of large \textbf{ResNet} variants all introduce optimization fragilities that are disproportionately sensitive to learning-rate schedules, warmup strategies, and regularization. Because the experimental design held these factors constant, such models may appear weaker than they would under architecture-specific training regimes.
+\end{itemize}
+
+\section{Conclusions and Recommendations}
+
+This study conducted a rigorous performance analysis of Convolutional Neural Network architectures on the Tiny-ImageNet dataset, employing a reproducible methodology based on isolated Slurm jobs and GNU Guix environment pinning. By systematically evaluating predictive quality against computational cost, we mapped the "Efficiency Frontier" for modern image classification tasks and identified critical constraints in high-performance computing (HPC) deployment.
+
+\subsection{Key Findings}
+\begin{itemize}
+    \item \textbf{The Efficiency Frontier:} \textbf{MobileNetV1} and \textbf{Xception} emerged as the Pareto-optimal choices. MobileNetV1 demonstrated that lightweight architectures can rival medium-weight performance ($\approx 60\%$ accuracy) at a fraction of the cost ($<6\%$ of InceptionV3's training time), making it the definitive choice for resource-constrained applications.
+    \item \textbf{The "Deployment Gap":} The failure of heavyweight models (\textbf{ResNet101}, \textbf{DenseNet121}) to converge illustrates a critical practical lesson: "State-of-the-art" capacity is effectively useless if the operational window (e.g., a 24-hour job limit) is insufficient for the model's training throughput. Theoretical power must be balanced against the available compute budget.
+    \item \textbf{Diminishing Returns:} Scaling up from ResNet34 to InceptionV4 yielded no accuracy gains on this $64 \times 64$ dataset, suggesting that for intermediate-resolution tasks, the representational capacity of medium-weight models is already sufficient, and further complexity primarily incurs technical debt.
+\end{itemize}
+
+\subsection{Recommendations for Performance Improvement}
+Based on these findings, we propose the following practical recommendations for engineering teams:
+
+\begin{enumerate}
+    \item \textbf{Adopt "Start Small" Baselines:} Always begin experimentation with \textbf{ResNet34} or \textbf{MobileNetV1}. These models offer the highest probability of convergence and rapid feedback cycles. Heavyweight models should only be introduced if these baselines demonstrably fail to capture dataset complexity.
+    \item \textbf{Match Schedule to Depth:} When deploying deep architectures (>100 layers), the training schedule must be explicitly scaled. If a 24-hour cluster limit exists, using a heavyweight model is counter-productive unless techniques like \textbf{Mixed Precision Training (AMP)} or \textbf{Multi-GPU Data Parallelism} are employed to increase epoch throughput.
+    \item \textbf{Specialized Tuning for Compression:} For architectures with aggressive inductive biases like \textbf{SqueezeNet}, do not rely on standard "ResNet" hyperparameters. Implement a dedicated hyperparameter search (specifically for learning rate and warmup) to unlock their efficiency potential.
+    \item \textbf{Memory-Aware Selection:} In environments with VRAM constraints (e.g., <24 GB), avoid \textbf{EfficientNet-B7} due to its high risk of memory thrashing. Instead, utilize \textbf{EfficientNet-B0} or \textbf{MobileNetV3}, which provide a safer, more deterministic memory profile.
+\end{enumerate}
+
+\subsection{Future Work}
+Future investigations should address the limitations of this study by implementing \textbf{Checkpointed Training} to bypass job time limits for heavyweight models, allowing a fair assessment of their converged accuracy. Additionally, expanding the scope to include \textbf{inference quantization} (INT8) would provide deeper insights into the deployment characteristics of these models on edge hardware.
+
+\nocite{*}
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+
+\end{document}

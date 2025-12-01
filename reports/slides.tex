@@ -116,7 +116,7 @@
     \begin{figure}
         \centering
         % Ensure fig_val_accuracy.png is in the folder
-        \includegraphics[width=1\textwidth]{accuracy_vs_epoch.png}
+        \includegraphics[width=1\textwidth]{../reports/results/accuracy_vs_epoch.png}
     \end{figure}
 \end{frame}
 
@@ -125,25 +125,7 @@
     \begin{figure}
         \centering
         % Ensure fig_val_accuracy.png is in the folder
-        \includegraphics[width=1\textwidth]{f1_vs_epoch.png}
-    \end{figure}
-\end{frame}
-
-\begin{frame}
-    \frametitle{F1 Score vs. Epoch}
-    \begin{figure}
-        \centering
-        % Ensure fig_val_accuracy.png is in the folder
-        \includegraphics[width=1\textwidth]{total_energy_per_model.png}
-    \end{figure}
-\end{frame}
-
-\begin{frame}
-    \frametitle{F1 Score vs. Epoch}
-    \begin{figure}
-        \centering
-        % Ensure fig_val_accuracy.png is in the folder
-        \includegraphics[width=1\textwidth]{accuracy_vs_energy.png}
+        \includegraphics[width=1\textwidth]{../reports/results/f1_vs_epoch.png}
     \end{figure}
 \end{frame}
 
@@ -180,7 +162,7 @@
     \begin{figure}
         \centering
         % Ensure fig_val_accuracy.png is in the folder
-        \includegraphics[width=1\textwidth]{gpu_utilization.png}
+        \includegraphics[width=1\textwidth]{../reports/results/gpu_utilization.png}
     \end{figure}
 \end{frame}
 \begin{frame}
@@ -188,7 +170,7 @@
     \begin{figure}
         \centering
         % Ensure fig_val_accuracy.png is in the folder
-        \includegraphics[width=1\textwidth]{gpu_vram_usage.png}
+        \includegraphics[width=1\textwidth]{../reports/results/gpu_vram_usage.png}
     \end{figure}
 \end{frame}
 \begin{frame}
@@ -196,18 +178,26 @@
     \begin{figure}
         \centering
         % Ensure fig_val_accuracy.png is in the folder
-        \includegraphics[width=1\textwidth]{gpu_temperature.png}
+        \includegraphics[width=1\textwidth]{../reports/results/gpu_temperature.png}
     \end{figure}
 \end{frame}
+\begin{frame}
+    \frametitle{Total Energy Consumption per Model}
+    \begin{figure}
+        \centering
+        % Ensure fig_val_accuracy.png is in the folder
+        \includegraphics[width=1\textwidth]{../reports/results/total_energy_per_model.png}
+    \end{figure}
+\end{frame} 
 
-\subsection{Efficiency vs. Accuracy}
+\subsection{Time Consumption}
 
 \begin{frame}
     \frametitle{Total Training Time}
     \begin{figure}
         \centering
         % Ensure fig_val_accuracy.png is in the folder
-        \includegraphics[width=1\textwidth]{training_time_total_bar.png}
+        \includegraphics[width=1\textwidth]{../reports/results/training_time_total_bar.png}
     \end{figure}
 \end{frame}
 \begin{frame}
@@ -215,16 +205,7 @@
     \begin{figure}
         \centering
         % Ensure fig_val_accuracy.png is in the folder
-        \includegraphics[width=1\textwidth]{training_time_boxplot.png}
-    \end{figure}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Accuracy vs. Training Cost}
-    \begin{figure}
-        \centering
-        % Ensure fig_val_accuracy.png is in the folder
-        \includegraphics[width=1\textwidth]{accuracy_vs_training_cost.png}
+        \includegraphics[width=1\textwidth]{../reports/results/training_time_boxplot.png}
     \end{figure}
 \end{frame}
 \begin{frame}
@@ -232,9 +213,17 @@
     \begin{figure}
         \centering
         % Ensure fig_val_accuracy.png is in the folder
-        \includegraphics[width=1\textwidth]{training_time_per_seed.png}
+        \includegraphics[width=1\textwidth]{../reports/results/training_time_per_seed.png}
     \end{figure}
-\end{frame} 
+\end{frame}
+\begin{frame}
+    \frametitle{Average Inference Time per Model}
+    \begin{figure}
+        \centering
+        % Ensure fig_val_accuracy.png is in the folder
+        \includegraphics[width=1\textwidth]{../reports/results/inference_time_per_model.png}
+    \end{figure}
+\end{frame}  
 
 \subsection{Comparing categories}
 \begin{frame}
@@ -242,7 +231,7 @@
     \begin{figure}
         \centering
         % Ensure fig_val_accuracy.png is in the folder
-        \includegraphics[width=1\textwidth]{cat_accuracy_mean.png}
+        \includegraphics[width=1\textwidth]{../reports/results/cat_accuracy_mean.png}
     \end{figure}
 \end{frame} 
 \begin{frame}
@@ -250,7 +239,7 @@
     \begin{figure}
         \centering
         % Ensure fig_val_accuracy.png is in the folder
-        \includegraphics[width=1\textwidth]{cat_training_time.png}
+        \includegraphics[width=1\textwidth]{../reports/results/cat_training_time.png}
     \end{figure}
 \end{frame} 
 \begin{frame}
@@ -258,7 +247,7 @@
     \begin{figure}
         \centering
         % Ensure fig_val_accuracy.png is in the folder
-        \includegraphics[width=1\textwidth]{cat_accuracy_distribution.png}
+        \includegraphics[width=1\textwidth]{../reports/results/cat_accuracy_distribution.png}
     \end{figure}
 \end{frame} 
 \begin{frame}
@@ -266,11 +255,27 @@
     \begin{figure}
         \centering
         % Ensure fig_val_accuracy.png is in the folder
-        \includegraphics[width=1\textwidth]{cat_efficiency.png}
+        \includegraphics[width=1\textwidth]{../reports/results/cat_efficiency.png}
     \end{figure}
 \end{frame} 
 
-
+\subsection{Trade - Offs}
+\begin{frame}
+    \frametitle{Accuracy vs. Training Cost}
+    \begin{figure}
+        \centering
+        % Ensure fig_val_accuracy.png is in the folder
+        \includegraphics[width=1\textwidth]{../reports/results/accuracy_vs_training_cost.png}
+    \end{figure}
+\end{frame}
+\begin{frame}
+    \frametitle{Accuracy vs. Energy Consumption}
+    \begin{figure}
+        \centering
+        % Ensure fig_val_accuracy.png is in the folder
+        \includegraphics[width=1\textwidth]{../reports/results/accuracy_vs_energy.png}
+    \end{figure}
+\end{frame}
 % =========================================================
 % SECTION 4: Conclusion
 % =========================================================
@@ -284,25 +289,34 @@
               Inception V3, ResNet34, MobileNet V1, and Xception achieved the best accuracies, despite having very different computational footprints.
 
         \item \textbf{Training time was also inconsistent with model complexity.}  
-              Some lightweight models (e.g., SqueezeNet and ShuffleNet V2) trained slower than expected,  
-              while certain heavier models (e.g., Inception V3) trained efficiently.
+              Some lightweight models (e.g., SqueezeNet) trained slower than expected,  
+              while certain heavier models (e.g., Inception V3, Xception) trained efficiently.
     \end{enumerate}
 \end{frame}
 
+
 \begin{frame}
-    \frametitle{Key Takeaways}
-    \begin{enumerate}
-        \item \textbf{Medium-sized models were generally the weakest group.}  
-              Architectures such as EfficientNet-B7, VGG16 and Inception V4 underperformed  
-              both heavy and light models in accuracy–cost trade-offs.
+    \frametitle{Study Limitations}
+    \begin{itemize}
+        \item \textbf{Fixed Hyperparameters.}  
+              All models were trained using identical hyperparameters.  
+              This design isolates architectural effects but likely  
+              underestimates the true performance of models that  
+              require tailored tuning (e.g., SqueezeNet, EfficientNet).
 
-        \item \textbf{The best overall models were Inception V3, Xception, ResNet34, and MobileNet V1.}  
-              These models consistently offered the best balance between accuracy, training time,  
-              and resource usage in our Tiny ImageNet setup.
+        \item \textbf{Hardware Specificity.}  
+              Results reflect performance on NVIDIA GPUs.  
+              Latency and efficiency trends may differ on CPU-only or  
+              low-power edge devices where memory patterns dominate.
 
-        \item \textbf{The worst models were SqueezeNet, DenseNet121 and ResNet101.}  
-              They combined low accuracy with either slow training or high variability.
-    \end{enumerate}
+        \item \textbf{Intrinsic Architectural Constraints.}  
+              Some architectures carry structural limitations that  
+              hinder convergence under standardized training settings.  
+              Examples include SqueezeNet's aggressive compression,  
+              DenseNet's feature-map accumulation, and the depth of  
+              large ResNet variants. These models may require  
+              architecture-specific schedules to reach full potential.
+    \end{itemize}
 \end{frame}
 
 % Final Slide
